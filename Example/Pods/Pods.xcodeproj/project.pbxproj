@@ -7,77 +7,139 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0029393142A8D625B7794ECDF078E1F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		0029393142A8D625B7794ECDF078E1F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */; };
+		042314042979455791304109852530D1 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CF83776F0128F6615E02036CC2A011 /* Step.swift */; };
 		0BF7C848C14367C361613981745DC79C /* Pods-TABTestKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09889BE1A749B944476AE3DCC636B6EA /* Pods-TABTestKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C18507BB2E55AE2CF582E9CBEFA6D42 /* Pods-TABTestKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA909CAD1DA503CFD703CD9AC7EA50EB /* Pods-TABTestKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		132E058EBC3378371D2126CB1C53CB46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		365B449701324FF3CE6BEB510F437B7E /* TABTestKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A8B4F91497F7C2091B76B62A95A23FA /* TABTestKit-dummy.m */; };
-		5B502AC30B5D3EB04FE74953A7EC18CD /* TABTestKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B708831FF8765F6A4DFBC5BB84F4F0 /* TABTestKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1393AB296A3084DD3CB27667ED556415 /* StringGherkinExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7251D4A85F248B79467A46A10C87CED /* StringGherkinExtension.swift */; };
+		2F5D2E839183C22FA5966E68D60B9735 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B722BC5280A1C035B89C5C4DCDB4EC /* GlobalFunctions.swift */; };
+		46BA3644427CE174776080AA4E8B97C7 /* ClassHelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6780F652D41DAE487EACA828B0881885 /* ClassHelperMethods.swift */; };
+		47DF5461B437271DA66B94A8AF14882C /* TABTestKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C648E3E77546EE3E45940A9C39CF95D9 /* TABTestKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4AFAE94EAD9F4D3ADF408CE558094E94 /* XCUIElement+ScrollTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04BBCCC20E6A429F69E07AECA7F9E /* XCUIElement+ScrollTo.swift */; };
+		521D5F2258AA62711E7F036EF78D6D93 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A354923D2B2E7DB72A096D3AC514A7FB /* XCTest.framework */; };
+		58E3791C45C8B68FF2327EE183EFFA6F /* XCTestCase+ServerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF07A590CE0266DD8C1450282618ACAD /* XCTestCase+ServerConfiguration.swift */; };
+		5B610AD5EAE13E4B6D34033388A6DE37 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506F75CB9440705002596ECD41F4045 /* App.swift */; };
 		5DEB475A3EEEE1276A23C94C983595D4 /* Pods-TABTestKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6AFB0CC0CB6AA550E8178BC2670B44 /* Pods-TABTestKit_Tests-dummy.m */; };
-		6927264A657098BB288AC19B627D6AD8 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EBA55A63CC57C9CEDF4960CE500ED7 /* ReplaceMe.swift */; };
-		72738EA9B41304C51F6D0B25877D6C8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		9805055BCE9836C1E9C504265FED2856 /* Pods-TABTestKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BCA60558FC5BE06C834692C256267 /* Pods-TABTestKit_Example-dummy.m */; };
+		5FB45006BA6FE88796BC906EB213B766 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B8F1FAA2DEAA932B7A9314AD96759 /* Example.swift */; };
+		83A7D32C949E32D37CACFDA474A4BA26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */; };
+		8A1F316EDE9E3EB150BB41FFA6166295 /* TABTestKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA0E2F353A14C416F86108A6A96091 /* TABTestKit-dummy.m */; };
+		93E534CF87F84E73B18E321236179E94 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E87CDCC36C4B45B505E34E0022A91 /* Feature.swift */; };
+		AE36BBC0619A0AC51126DED8EFEE65C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */; };
+		C77CC4BDD95C4B0BEECB8D79A3F89A43 /* XCTest-Gherkin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC730843D36B5E9A480DA65C5DB75424 /* XCTest-Gherkin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1E656C873640CF733723D0A2FACDC03 /* BasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97AF6FF556C8664EB6BDEA5C9D8F9AC /* BasePage.swift */; };
+		D3DA3ADFA0BC9156AB3BA36F6B25C2D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */; };
+		E54BB29B585189A8F07B32EFBFD28458 /* XCTestCase+Gherkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E80E38C07B922F0229A344FEEB2723D /* XCTestCase+Gherkin.swift */; };
+		E7830DAD94ECE72F382F6F8A894E35D0 /* Pods-TABTestKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BCA60558FC5BE06C834692C256267 /* Pods-TABTestKit_Example-dummy.m */; };
+		E80D75888DDCF86DD8AA0FF8670A06AC /* MatchedStringRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC86257CB9988CF005BB6BB3C0B66E /* MatchedStringRepresentable.swift */; };
+		E8C4222B517C71C358902C8B182AD270 /* Pods-TABTestKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA909CAD1DA503CFD703CD9AC7EA50EB /* Pods-TABTestKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED51CE7D4AAF3EBB00ADED69538F7C9C /* XCTest-Gherkin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8991FEF0F5096D0683BC9010E2E70F47 /* XCTest-Gherkin-dummy.m */; };
+		EEDD23B281C266485570028242140C62 /* StepDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA16A5C586AC4D94CD085BD40C17D /* StepDefiner.swift */; };
+		FB69D05A80DE08EF9A2939D144086CC0 /* XCTest_Gherkin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10131CE351F7312AED3EF706490700F /* XCTest_Gherkin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7A36316D62A6BF523F7102E37426B0A6 /* PBXContainerItemProxy */ = {
+		5BE6E8016B06266E42F2DD5166341989 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3783AF1EB18525F135D86DF7D3BB15EC;
+			remoteGlobalIDString = E50F1EAA8D4464C4B84B40E202E68737;
 			remoteInfo = TABTestKit;
+		};
+		6B358059098C34E499D996E13A583EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F37C5B89DA47973D4493AC7ED48FB052;
+			remoteInfo = "XCTest-Gherkin";
+		};
+		D16A44A1555DA0F571861A47B1AD35E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F37C5B89DA47973D4493AC7ED48FB052;
+			remoteInfo = "XCTest-Gherkin";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		086157679AEB09E88C843ED7E0F1EF1E /* Pods-TABTestKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_Tests-resources.sh"; sourceTree = "<group>"; };
 		09889BE1A749B944476AE3DCC636B6EA /* Pods-TABTestKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0E80E38C07B922F0229A344FEEB2723D /* XCTestCase+Gherkin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XCTestCase+Gherkin.swift"; path = "Pod/Core/XCTestCase+Gherkin.swift"; sourceTree = "<group>"; };
 		11B79C138FF6E8FA11593DF81DD4A207 /* Pods-TABTestKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1310D632BE72EC4FD6CF29EEB0FE50BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A812BF8DD895C1992F21F02076A4C0D /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TABTestKit.framework; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		210A62F9FEBFDD3521F8F2515B4F0B97 /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TABTestKit.modulemap; sourceTree = "<group>"; };
+		2712AA9CE60AC65F38048D920919F562 /* TABTestKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TABTestKit.xcconfig; sourceTree = "<group>"; };
+		2D190E4FDBA60B17E49DFF4528E8914B /* XCTest-Gherkin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "XCTest-Gherkin.modulemap"; sourceTree = "<group>"; };
+		3506F75CB9440705002596ECD41F4045 /* App.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = App.swift; path = TABTestKit/Classes/App.swift; sourceTree = "<group>"; };
 		4329F3595583E5B15C630DA947D74B29 /* Pods-TABTestKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_Example-frameworks.sh"; sourceTree = "<group>"; };
+		489B8F1FAA2DEAA932B7A9314AD96759 /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Pod/Core/Example.swift; sourceTree = "<group>"; };
+		48B722BC5280A1C035B89C5C4DCDB4EC /* GlobalFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctions.swift; path = TABTestKit/Classes/GlobalFunctions.swift; sourceTree = "<group>"; };
+		51108163267742969E5DAA76A024C385 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51CF83776F0128F6615E02036CC2A011 /* Step.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Step.swift; path = Pod/Core/Step.swift; sourceTree = "<group>"; };
 		525BCA60558FC5BE06C834692C256267 /* Pods-TABTestKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TABTestKit_Example-dummy.m"; sourceTree = "<group>"; };
 		56486477847205E61185534CCB422137 /* Pods-TABTestKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5D25CA456D929541B33BAA25B4B91F3B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65E8C6ACE4962E4C60E48EC8E40BA7C1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		60BA0E2F353A14C416F86108A6A96091 /* TABTestKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TABTestKit-dummy.m"; sourceTree = "<group>"; };
+		65E04BBCCC20E6A429F69E07AECA7F9E /* XCUIElement+ScrollTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XCUIElement+ScrollTo.swift"; path = "TABTestKit/Classes/XCUIElement+ScrollTo.swift"; sourceTree = "<group>"; };
+		660E87CDCC36C4B45B505E34E0022A91 /* Feature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Feature.swift; path = TABTestKit/Classes/Feature.swift; sourceTree = "<group>"; };
+		6780F652D41DAE487EACA828B0881885 /* ClassHelperMethods.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClassHelperMethods.swift; path = Pod/Core/ClassHelperMethods.swift; sourceTree = "<group>"; };
 		6F1551AEBB3C3FAE7F57356D62966EE5 /* Pods-TABTestKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TABTestKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		75C186F8CE4581DCFAF03C827068FBED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75C432AEC956AFDF1C998A9285259F92 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		76829791D6B79FE640CA0A7DB5A98E99 /* TABTestKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TABTestKit.xcconfig; sourceTree = "<group>"; };
+		7B51B403C34D44E60C353E5A2EA154A8 /* XCTest-Gherkin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTest-Gherkin-prefix.pch"; sourceTree = "<group>"; };
 		7D9215997F066DA0152A22067F2646AD /* Pods-TABTestKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TABTestKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8286E0F0CC2888B140CEAE269978D231 /* Pods-TABTestKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		8A8B4F91497F7C2091B76B62A95A23FA /* TABTestKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TABTestKit-dummy.m"; sourceTree = "<group>"; };
-		8B002B9705FD474CC39B9CA5DAA75DFA /* Pods_TABTestKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Example.framework; path = "Pods-TABTestKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8991FEF0F5096D0683BC9010E2E70F47 /* XCTest-Gherkin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XCTest-Gherkin-dummy.m"; sourceTree = "<group>"; };
+		8CC674D8CA8C477CA973810ADBB33F9F /* XCTest-Gherkin.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "XCTest-Gherkin.xcconfig"; sourceTree = "<group>"; };
+		8FEC86257CB9988CF005BB6BB3C0B66E /* MatchedStringRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchedStringRepresentable.swift; path = Pod/Core/MatchedStringRepresentable.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93DFD662671E1447C299E71CACBDAC4A /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
 		9458752EBE63F3BE4400EDF97F47B56A /* Pods-TABTestKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A1C3EB634C2B40C3F1DC6B315D1850B7 /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TABTestKit.framework; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4B708831FF8765F6A4DFBC5BB84F4F0 /* TABTestKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-umbrella.h"; sourceTree = "<group>"; };
+		A354923D2B2E7DB72A096D3AC514A7FB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A46BA16A5C586AC4D94CD085BD40C17D /* StepDefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepDefiner.swift; path = Pod/Core/StepDefiner.swift; sourceTree = "<group>"; };
+		A7251D4A85F248B79467A46A10C87CED /* StringGherkinExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringGherkinExtension.swift; path = Pod/Core/StringGherkinExtension.swift; sourceTree = "<group>"; };
 		A884E638EFCC07382671CD609D9EE381 /* Pods-TABTestKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TABTestKit_Tests.modulemap"; sourceTree = "<group>"; };
+		AAA83CD3876ECB2165917CDB4A8F8393 /* Pods_TABTestKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Tests.framework; path = "Pods-TABTestKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6B04D904F1E3B9156A13FCC9CFC713 /* Pods-TABTestKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TABTestKit_Example.modulemap"; sourceTree = "<group>"; };
-		C4EBA55A63CC57C9CEDF4960CE500ED7 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = TABTestKit/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		C648E3E77546EE3E45940A9C39CF95D9 /* TABTestKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-umbrella.h"; sourceTree = "<group>"; };
+		C6C0E658D9A7ADB9624D23E367AD262C /* Pods_TABTestKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Example.framework; path = "Pods-TABTestKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC730843D36B5E9A480DA65C5DB75424 /* XCTest-Gherkin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTest-Gherkin-umbrella.h"; sourceTree = "<group>"; };
+		D10131CE351F7312AED3EF706490700F /* XCTest_Gherkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTest_Gherkin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6E1495D098F0E6F720B3689C7CCA79D /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
+		D9CF5A75C5C4E8491BA92FFE65461FFE /* XCTest_Gherkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XCTest_Gherkin.framework; path = "XCTest-Gherkin.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA909CAD1DA503CFD703CD9AC7EA50EB /* Pods-TABTestKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		DE2E21A96C1997F3363C963229827E40 /* Pods-TABTestKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DF07A590CE0266DD8C1450282618ACAD /* XCTestCase+ServerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XCTestCase+ServerConfiguration.swift"; path = "TABTestKit/Classes/XCTestCase+ServerConfiguration.swift"; sourceTree = "<group>"; };
 		DF6AFB0CC0CB6AA550E8178BC2670B44 /* Pods-TABTestKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TABTestKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		EC8FCA2051AC79455F51B3A926CDF69B /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TABTestKit.modulemap; sourceTree = "<group>"; };
+		E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E97AF6FF556C8664EB6BDEA5C9D8F9AC /* BasePage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePage.swift; path = TABTestKit/Classes/BasePage.swift; sourceTree = "<group>"; };
 		EF400F48E2E35582214D2B95D30CDD7D /* Pods-TABTestKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		F0FC83CC2F147705D5ED0C9FCC576DF4 /* Pods_TABTestKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Tests.framework; path = "Pods-TABTestKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51985B10EBBB7C59B53832408E3052A /* Pods-TABTestKit_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_Example-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		33266E119E9DC53209E6F1B2AE21DCBB /* Frameworks */ = {
+		26F3CDF0EDD73C1B25B4C2939659336E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72738EA9B41304C51F6D0B25877D6C8F /* Foundation.framework in Frameworks */,
+				AE36BBC0619A0AC51126DED8EFEE65C2 /* Foundation.framework in Frameworks */,
+				521D5F2258AA62711E7F036EF78D6D93 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E16CFE176E8CDE7377DEF4F555818C0C /* Frameworks */ = {
+		61F73FC50671294761DF721FAC63EC46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				132E058EBC3378371D2126CB1C53CB46 /* Foundation.framework in Frameworks */,
+				83A7D32C949E32D37CACFDA474A4BA26 /* Foundation.framework in Frameworks */,
+				FB69D05A80DE08EF9A2939D144086CC0 /* XCTest_Gherkin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9DEA57EBCC937E476FFE4F92136378 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3DA3ADFA0BC9156AB3BA36F6B25C2D6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,45 +154,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20C946E57E9341F9A91A9FD3E25FDBC7 /* Support Files */ = {
+		011B45E275C6EB1383CA9A3DA4E3631E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				65E8C6ACE4962E4C60E48EC8E40BA7C1 /* Info.plist */,
-				EC8FCA2051AC79455F51B3A926CDF69B /* TABTestKit.modulemap */,
-				76829791D6B79FE640CA0A7DB5A98E99 /* TABTestKit.xcconfig */,
-				8A8B4F91497F7C2091B76B62A95A23FA /* TABTestKit-dummy.m */,
-				93DFD662671E1447C299E71CACBDAC4A /* TABTestKit-prefix.pch */,
-				A4B708831FF8765F6A4DFBC5BB84F4F0 /* TABTestKit-umbrella.h */,
+				75C186F8CE4581DCFAF03C827068FBED /* Info.plist */,
+				210A62F9FEBFDD3521F8F2515B4F0B97 /* TABTestKit.modulemap */,
+				2712AA9CE60AC65F38048D920919F562 /* TABTestKit.xcconfig */,
+				60BA0E2F353A14C416F86108A6A96091 /* TABTestKit-dummy.m */,
+				D6E1495D098F0E6F720B3689C7CCA79D /* TABTestKit-prefix.pch */,
+				C648E3E77546EE3E45940A9C39CF95D9 /* TABTestKit-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/TABTestKit";
 			sourceTree = "<group>";
 		};
-		261ECF3525B5325A08D098411FA220BF /* Development Pods */ = {
+		377354E7DEFDC43FB19CB86740EB259E /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C65C83F37B07366B6E8800488453F2E7 /* TABTestKit */,
+				620D4D105BF678E01EA66B3B874E0954 /* TABTestKit */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		72E05CE29B819BBAB96942FC2DB8A4C1 /* Products */ = {
+		5D0216383916DBC868AC00738C08F420 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8B002B9705FD474CC39B9CA5DAA75DFA /* Pods_TABTestKit_Example.framework */,
-				F0FC83CC2F147705D5ED0C9FCC576DF4 /* Pods_TABTestKit_Tests.framework */,
-				A1C3EB634C2B40C3F1DC6B315D1850B7 /* TABTestKit.framework */,
+				E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */,
+				A354923D2B2E7DB72A096D3AC514A7FB /* XCTest.framework */,
 			);
-			name = Products;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		620D4D105BF678E01EA66B3B874E0954 /* TABTestKit */ = {
+			isa = PBXGroup;
+			children = (
+				3506F75CB9440705002596ECD41F4045 /* App.swift */,
+				E97AF6FF556C8664EB6BDEA5C9D8F9AC /* BasePage.swift */,
+				660E87CDCC36C4B45B505E34E0022A91 /* Feature.swift */,
+				48B722BC5280A1C035B89C5C4DCDB4EC /* GlobalFunctions.swift */,
+				DF07A590CE0266DD8C1450282618ACAD /* XCTestCase+ServerConfiguration.swift */,
+				65E04BBCCC20E6A429F69E07AECA7F9E /* XCUIElement+ScrollTo.swift */,
+				011B45E275C6EB1383CA9A3DA4E3631E /* Support Files */,
+			);
+			name = TABTestKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				261ECF3525B5325A08D098411FA220BF /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				72E05CE29B819BBAB96942FC2DB8A4C1 /* Products */,
+				377354E7DEFDC43FB19CB86740EB259E /* Development Pods */,
+				8DC727693168DFA1E1124918ABAFDF10 /* Frameworks */,
+				AAE7B59EB0798C36588825FEFF48D587 /* Pods */,
+				F2D4764A05838D243B33B61EFC639557 /* Products */,
 				BD074EE3FF6E576FA2BB088A0B4366FC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +230,15 @@
 			path = "Target Support Files/Pods-TABTestKit_Tests";
 			sourceTree = "<group>";
 		};
+		8DC727693168DFA1E1124918ABAFDF10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D10131CE351F7312AED3EF706490700F /* XCTest_Gherkin.framework */,
+				5D0216383916DBC868AC00738C08F420 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9361ADCACF305943B0D62E59044474C0 /* Pods-TABTestKit_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,12 +257,12 @@
 			path = "Target Support Files/Pods-TABTestKit_Example";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		AAE7B59EB0798C36588825FEFF48D587 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				E45CB7B0320BB7CCA7B7768EAB4641B5 /* XCTest-Gherkin */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BD074EE3FF6E576FA2BB088A0B4366FC /* Targets Support Files */ = {
@@ -188,40 +274,79 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		C65C83F37B07366B6E8800488453F2E7 /* TABTestKit */ = {
+		E45CB7B0320BB7CCA7B7768EAB4641B5 /* XCTest-Gherkin */ = {
 			isa = PBXGroup;
 			children = (
-				C4EBA55A63CC57C9CEDF4960CE500ED7 /* ReplaceMe.swift */,
-				20C946E57E9341F9A91A9FD3E25FDBC7 /* Support Files */,
+				FF8BF10FACEDFBAC40C9850AB092E23C /* Core */,
+				EB30491FAEC50758A5EBE1F287D09614 /* Support Files */,
 			);
-			name = TABTestKit;
-			path = ../..;
+			name = "XCTest-Gherkin";
+			path = "XCTest-Gherkin";
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		EB30491FAEC50758A5EBE1F287D09614 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				51108163267742969E5DAA76A024C385 /* Info.plist */,
+				2D190E4FDBA60B17E49DFF4528E8914B /* XCTest-Gherkin.modulemap */,
+				8CC674D8CA8C477CA973810ADBB33F9F /* XCTest-Gherkin.xcconfig */,
+				8991FEF0F5096D0683BC9010E2E70F47 /* XCTest-Gherkin-dummy.m */,
+				7B51B403C34D44E60C353E5A2EA154A8 /* XCTest-Gherkin-prefix.pch */,
+				CC730843D36B5E9A480DA65C5DB75424 /* XCTest-Gherkin-umbrella.h */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/XCTest-Gherkin";
+			sourceTree = "<group>";
+		};
+		F2D4764A05838D243B33B61EFC639557 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6C0E658D9A7ADB9624D23E367AD262C /* Pods_TABTestKit_Example.framework */,
+				AAA83CD3876ECB2165917CDB4A8F8393 /* Pods_TABTestKit_Tests.framework */,
+				1A812BF8DD895C1992F21F02076A4C0D /* TABTestKit.framework */,
+				D9CF5A75C5C4E8491BA92FFE65461FFE /* XCTest_Gherkin.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF8BF10FACEDFBAC40C9850AB092E23C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6780F652D41DAE487EACA828B0881885 /* ClassHelperMethods.swift */,
+				489B8F1FAA2DEAA932B7A9314AD96759 /* Example.swift */,
+				8FEC86257CB9988CF005BB6BB3C0B66E /* MatchedStringRepresentable.swift */,
+				51CF83776F0128F6615E02036CC2A011 /* Step.swift */,
+				A46BA16A5C586AC4D94CD085BD40C17D /* StepDefiner.swift */,
+				A7251D4A85F248B79467A46A10C87CED /* StringGherkinExtension.swift */,
+				0E80E38C07B922F0229A344FEEB2723D /* XCTestCase+Gherkin.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1E168C69672BC24D273F7E3B3A4B480E /* Headers */ = {
+		0269EDF8CC7047B7FDB37061E2B92EC5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B502AC30B5D3EB04FE74953A7EC18CD /* TABTestKit-umbrella.h in Headers */,
+				47DF5461B437271DA66B94A8AF14882C /* TABTestKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A5C0871C7956BA51D07E5A87B8A9675 /* Headers */ = {
+		1102C9869604C8310986D612085A999D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C18507BB2E55AE2CF582E9CBEFA6D42 /* Pods-TABTestKit_Example-umbrella.h in Headers */,
+				E8C4222B517C71C358902C8B182AD270 /* Pods-TABTestKit_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D806E47B3DDDBECE6B6C8EDDFFF7F3FE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C77CC4BDD95C4B0BEECB8D79A3F89A43 /* XCTest-Gherkin-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,24 +361,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		12BE5574132ECF731DD4E2FB558770BD /* Pods-TABTestKit_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1D27BBB250213BC2B67CA70FB136C927 /* Build configuration list for PBXNativeTarget "Pods-TABTestKit_Example" */;
-			buildPhases = (
-				8D6EFB3FC8ED933A88C7362FED0177D6 /* Sources */,
-				33266E119E9DC53209E6F1B2AE21DCBB /* Frameworks */,
-				4A5C0871C7956BA51D07E5A87B8A9675 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CB456280AF9B8AF251DFC3B40F0F6774 /* PBXTargetDependency */,
-			);
-			name = "Pods-TABTestKit_Example";
-			productName = "Pods-TABTestKit_Example";
-			productReference = 8B002B9705FD474CC39B9CA5DAA75DFA /* Pods_TABTestKit_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		340F5EF74E91EC0583028507FD95DF79 /* Pods-TABTestKit_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 348B70D7D00A1BE3980BFCE6B6FC3BB8 /* Build configuration list for PBXNativeTarget "Pods-TABTestKit_Tests" */;
@@ -268,24 +375,61 @@
 			);
 			name = "Pods-TABTestKit_Tests";
 			productName = "Pods-TABTestKit_Tests";
-			productReference = F0FC83CC2F147705D5ED0C9FCC576DF4 /* Pods_TABTestKit_Tests.framework */;
+			productReference = AAA83CD3876ECB2165917CDB4A8F8393 /* Pods_TABTestKit_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3783AF1EB18525F135D86DF7D3BB15EC /* TABTestKit */ = {
+		E50F1EAA8D4464C4B84B40E202E68737 /* TABTestKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D2F09E9BE6E0251A80AFC9F9BD9A2AE /* Build configuration list for PBXNativeTarget "TABTestKit" */;
+			buildConfigurationList = 43AEE33BDBD9594E6CC92FD39EDB7D23 /* Build configuration list for PBXNativeTarget "TABTestKit" */;
 			buildPhases = (
-				4B9E359244D13B52A4330F74349E64D2 /* Sources */,
-				E16CFE176E8CDE7377DEF4F555818C0C /* Frameworks */,
-				1E168C69672BC24D273F7E3B3A4B480E /* Headers */,
+				B0803A9BBE66A26C969975006817FF8B /* Sources */,
+				61F73FC50671294761DF721FAC63EC46 /* Frameworks */,
+				0269EDF8CC7047B7FDB37061E2B92EC5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01FD9B49438246B1815BFB9D86D82693 /* PBXTargetDependency */,
+			);
+			name = TABTestKit;
+			productName = TABTestKit;
+			productReference = 1A812BF8DD895C1992F21F02076A4C0D /* TABTestKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E805BC676E60D6138E1218196F63ABAB /* Pods-TABTestKit_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37B6BEBFA0D17AC251B2CBD748994E52 /* Build configuration list for PBXNativeTarget "Pods-TABTestKit_Example" */;
+			buildPhases = (
+				D2C629102178A8921C472AD7A8753F79 /* Sources */,
+				8D9DEA57EBCC937E476FFE4F92136378 /* Frameworks */,
+				1102C9869604C8310986D612085A999D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4FB68D52B9968B062771D0F34F86543 /* PBXTargetDependency */,
+				EE8BF744C84625A3F1EDBB8D0BF2865F /* PBXTargetDependency */,
+			);
+			name = "Pods-TABTestKit_Example";
+			productName = "Pods-TABTestKit_Example";
+			productReference = C6C0E658D9A7ADB9624D23E367AD262C /* Pods_TABTestKit_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F37C5B89DA47973D4493AC7ED48FB052 /* XCTest-Gherkin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6592700DCD8EA31BEE7B7F19AF345A71 /* Build configuration list for PBXNativeTarget "XCTest-Gherkin" */;
+			buildPhases = (
+				ADC0BBA6BD51DD54E10A1678C6C77F38 /* Sources */,
+				26F3CDF0EDD73C1B25B4C2939659336E /* Frameworks */,
+				D806E47B3DDDBECE6B6C8EDDFFF7F3FE /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TABTestKit;
-			productName = TABTestKit;
-			productReference = A1C3EB634C2B40C3F1DC6B315D1850B7 /* TABTestKit.framework */;
+			name = "XCTest-Gherkin";
+			productName = "XCTest-Gherkin";
+			productReference = D9CF5A75C5C4E8491BA92FFE65461FFE /* XCTest_Gherkin.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -305,32 +449,45 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 72E05CE29B819BBAB96942FC2DB8A4C1 /* Products */;
+			productRefGroup = F2D4764A05838D243B33B61EFC639557 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				12BE5574132ECF731DD4E2FB558770BD /* Pods-TABTestKit_Example */,
+				E805BC676E60D6138E1218196F63ABAB /* Pods-TABTestKit_Example */,
 				340F5EF74E91EC0583028507FD95DF79 /* Pods-TABTestKit_Tests */,
-				3783AF1EB18525F135D86DF7D3BB15EC /* TABTestKit */,
+				E50F1EAA8D4464C4B84B40E202E68737 /* TABTestKit */,
+				F37C5B89DA47973D4493AC7ED48FB052 /* XCTest-Gherkin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B9E359244D13B52A4330F74349E64D2 /* Sources */ = {
+		ADC0BBA6BD51DD54E10A1678C6C77F38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6927264A657098BB288AC19B627D6AD8 /* ReplaceMe.swift in Sources */,
-				365B449701324FF3CE6BEB510F437B7E /* TABTestKit-dummy.m in Sources */,
+				46BA3644427CE174776080AA4E8B97C7 /* ClassHelperMethods.swift in Sources */,
+				5FB45006BA6FE88796BC906EB213B766 /* Example.swift in Sources */,
+				E80D75888DDCF86DD8AA0FF8670A06AC /* MatchedStringRepresentable.swift in Sources */,
+				042314042979455791304109852530D1 /* Step.swift in Sources */,
+				EEDD23B281C266485570028242140C62 /* StepDefiner.swift in Sources */,
+				1393AB296A3084DD3CB27667ED556415 /* StringGherkinExtension.swift in Sources */,
+				ED51CE7D4AAF3EBB00ADED69538F7C9C /* XCTest-Gherkin-dummy.m in Sources */,
+				E54BB29B585189A8F07B32EFBFD28458 /* XCTestCase+Gherkin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D6EFB3FC8ED933A88C7362FED0177D6 /* Sources */ = {
+		B0803A9BBE66A26C969975006817FF8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9805055BCE9836C1E9C504265FED2856 /* Pods-TABTestKit_Example-dummy.m in Sources */,
+				5B610AD5EAE13E4B6D34033388A6DE37 /* App.swift in Sources */,
+				D1E656C873640CF733723D0A2FACDC03 /* BasePage.swift in Sources */,
+				93E534CF87F84E73B18E321236179E94 /* Feature.swift in Sources */,
+				2F5D2E839183C22FA5966E68D60B9735 /* GlobalFunctions.swift in Sources */,
+				8A1F316EDE9E3EB150BB41FFA6166295 /* TABTestKit-dummy.m in Sources */,
+				58E3791C45C8B68FF2327EE183EFFA6F /* XCTestCase+ServerConfiguration.swift in Sources */,
+				4AFAE94EAD9F4D3ADF408CE558094E94 /* XCUIElement+ScrollTo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,53 +499,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2C629102178A8921C472AD7A8753F79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7830DAD94ECE72F382F6F8A894E35D0 /* Pods-TABTestKit_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CB456280AF9B8AF251DFC3B40F0F6774 /* PBXTargetDependency */ = {
+		01FD9B49438246B1815BFB9D86D82693 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XCTest-Gherkin";
+			target = F37C5B89DA47973D4493AC7ED48FB052 /* XCTest-Gherkin */;
+			targetProxy = 6B358059098C34E499D996E13A583EAC /* PBXContainerItemProxy */;
+		};
+		D4FB68D52B9968B062771D0F34F86543 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TABTestKit;
-			target = 3783AF1EB18525F135D86DF7D3BB15EC /* TABTestKit */;
-			targetProxy = 7A36316D62A6BF523F7102E37426B0A6 /* PBXContainerItemProxy */;
+			target = E50F1EAA8D4464C4B84B40E202E68737 /* TABTestKit */;
+			targetProxy = 5BE6E8016B06266E42F2DD5166341989 /* PBXContainerItemProxy */;
+		};
+		EE8BF744C84625A3F1EDBB8D0BF2865F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XCTest-Gherkin";
+			target = F37C5B89DA47973D4493AC7ED48FB052 /* XCTest-Gherkin */;
+			targetProxy = D16A44A1555DA0F571861A47B1AD35E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		13B016F07AC5BCD6E71DDAF0EF9B6B4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76829791D6B79FE640CA0A7DB5A98E99 /* TABTestKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TABTestKit/TABTestKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TABTestKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TABTestKit/TABTestKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = TABTestKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		2F4D8DB3C6D52002991633D2DE1A6D60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11B79C138FF6E8FA11593DF81DD4A207 /* Pods-TABTestKit_Tests.release.xcconfig */;
@@ -461,9 +603,47 @@
 			};
 			name = Debug;
 		};
-		61468445233DDEBEF00AD8A0501DEAC0 /* Debug */ = {
+		5F7F5BC0E80941FA1A012B11F20F56B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76829791D6B79FE640CA0A7DB5A98E99 /* TABTestKit.xcconfig */;
+			baseConfigurationReference = DE2E21A96C1997F3363C963229827E40 /* Pods-TABTestKit_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TABTestKit_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TABTestKit_Example/Pods-TABTestKit_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TABTestKit_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		68DD7BEBC8C199681BE688E1F1E02488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9458752EBE63F3BE4400EDF97F47B56A /* Pods-TABTestKit_Example.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -477,17 +657,21 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TABTestKit/TABTestKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TABTestKit/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TABTestKit_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TABTestKit/TABTestKit.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TABTestKit_Example/Pods-TABTestKit_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TABTestKit;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TABTestKit_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -495,6 +679,41 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		6BCBF6F9612A291036CECAB8C122C285 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2712AA9CE60AC65F38048D920919F562 /* TABTestKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TABTestKit/TABTestKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TABTestKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TABTestKit/TABTestKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TABTestKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -540,43 +759,40 @@
 			};
 			name = Release;
 		};
-		940EC5CB8F730F231AB83BD49B1DEBEA /* Release */ = {
+		906A1AB1C948006C9D49AD1E70519DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE2E21A96C1997F3363C963229827E40 /* Pods-TABTestKit_Example.release.xcconfig */;
+			baseConfigurationReference = 8CC674D8CA8C477CA973810ADBB33F9F /* XCTest-Gherkin.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TABTestKit_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/XCTest-Gherkin/XCTest-Gherkin-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XCTest-Gherkin/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TABTestKit_Example/Pods-TABTestKit_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TABTestKit_Example;
+				MODULEMAP_FILE = "Target Support Files/XCTest-Gherkin/XCTest-Gherkin.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = XCTest_Gherkin;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -627,9 +843,9 @@
 			};
 			name = Debug;
 		};
-		B706949B268A76382F0483E1B802A1D7 /* Debug */ = {
+		B5485BF1FE1EAEC8C724414FDF6BB103 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9458752EBE63F3BE4400EDF97F47B56A /* Pods-TABTestKit_Example.debug.xcconfig */;
+			baseConfigurationReference = 2712AA9CE60AC65F38048D920919F562 /* TABTestKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -643,21 +859,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-TABTestKit_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TABTestKit/TABTestKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TABTestKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TABTestKit_Example/Pods-TABTestKit_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/TABTestKit/TABTestKit.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_TABTestKit_Example;
+				PRODUCT_NAME = TABTestKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -666,18 +878,44 @@
 			};
 			name = Debug;
 		};
+		EAC41D0EE66496D60212DD1CAD27ECC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC674D8CA8C477CA973810ADBB33F9F /* XCTest-Gherkin.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/XCTest-Gherkin/XCTest-Gherkin-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XCTest-Gherkin/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XCTest-Gherkin/XCTest-Gherkin.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = XCTest_Gherkin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D27BBB250213BC2B67CA70FB136C927 /* Build configuration list for PBXNativeTarget "Pods-TABTestKit_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B706949B268A76382F0483E1B802A1D7 /* Debug */,
-				940EC5CB8F730F231AB83BD49B1DEBEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -696,11 +934,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D2F09E9BE6E0251A80AFC9F9BD9A2AE /* Build configuration list for PBXNativeTarget "TABTestKit" */ = {
+		37B6BEBFA0D17AC251B2CBD748994E52 /* Build configuration list for PBXNativeTarget "Pods-TABTestKit_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				61468445233DDEBEF00AD8A0501DEAC0 /* Debug */,
-				13B016F07AC5BCD6E71DDAF0EF9B6B4A /* Release */,
+				68DD7BEBC8C199681BE688E1F1E02488 /* Debug */,
+				5F7F5BC0E80941FA1A012B11F20F56B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43AEE33BDBD9594E6CC92FD39EDB7D23 /* Build configuration list for PBXNativeTarget "TABTestKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5485BF1FE1EAEC8C724414FDF6BB103 /* Debug */,
+				6BCBF6F9612A291036CECAB8C122C285 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6592700DCD8EA31BEE7B7F19AF345A71 /* Build configuration list for PBXNativeTarget "XCTest-Gherkin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				906A1AB1C948006C9D49AD1E70519DDD /* Debug */,
+				EAC41D0EE66496D60212DD1CAD27ECC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

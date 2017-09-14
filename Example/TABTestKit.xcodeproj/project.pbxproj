@@ -290,10 +290,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TABTestKit_Example/Pods-TABTestKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TABTestKit/TABTestKit.framework",
+				"${BUILT_PRODUCTS_DIR}/XCTest-Gherkin/XCTest_Gherkin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABTestKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCTest_Gherkin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

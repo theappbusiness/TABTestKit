@@ -1,5 +1,9 @@
 PODS:
-  - TABTestKit (0.1.0)
+  - TABTestKit (0.1.0):
+    - XCTest-Gherkin
+  - XCTest-Gherkin (0.10.3):
+    - XCTest-Gherkin/Core (= 0.10.3)
+  - XCTest-Gherkin/Core (0.10.3)
 
 DEPENDENCIES:
   - TABTestKit (from `../`)
@@ -9,7 +13,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  TABTestKit: 47521c024385e107f1b1e276a2e1361adae4cb6a
+  TABTestKit: ac4faf687a827fe53794314e139452df3ce332a5
+  XCTest-Gherkin: d5c43c800f3fca5b05226a4dba973390a3788598
 
 PODFILE CHECKSUM: 3d6d736d0e210247cae7ab3694c9528c7c7bf960
 
