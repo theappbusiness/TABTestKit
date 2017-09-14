@@ -1,0 +1,6 @@
+framework module Pods_TABTestKit_Example {
+  umbrella header "Pods-TABTestKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

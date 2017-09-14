@@ -1,0 +1,22 @@
+{
+  "name": "TABTestKit",
+  "version": "0.1.0",
+  "summary": "A short description of TABTestKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/zacoid55/TABTestKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zacoid55": "zac@theappbusiness.com"
+  },
+  "source": {
+    "git": "https://github.com/zacoid55/TABTestKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TABTestKit/Classes/**/*"
+}
