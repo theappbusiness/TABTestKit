@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "TABTestKit/Classes/**/*"
+  "source_files": "TABTestKit/Classes/**/*",
+  "dependencies": {
+    "XCTest-Ghekin": [
+
+    ]
+  }
 }
