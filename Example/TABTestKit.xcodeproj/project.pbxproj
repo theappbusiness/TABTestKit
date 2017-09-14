@@ -13,7 +13,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		70FEA77F1F6AC29400633C5C /* TABTestKit_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA77E1F6AC29400633C5C /* TABTestKit_ExampleUITests.swift */; };
+		70FEA78A1F6AC74800633C5C /* ExampleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA7891F6AC74800633C5C /* ExampleFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		70FEA77C1F6AC29400633C5C /* TABTestKit_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TABTestKit_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		70FEA77E1F6AC29400633C5C /* TABTestKit_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TABTestKit_ExampleUITests.swift; sourceTree = "<group>"; };
 		70FEA7801F6AC29400633C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70FEA7891F6AC74800633C5C /* ExampleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFeature.swift; sourceTree = "<group>"; };
 		7C63340D41DA8ECC5990ED5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,10 +155,34 @@
 		70FEA77D1F6AC29400633C5C /* TABTestKit_ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				70FEA77E1F6AC29400633C5C /* TABTestKit_ExampleUITests.swift */,
+				70FEA7881F6AC58B00633C5C /* Features */,
+				70FEA7871F6AC57600633C5C /* Steps */,
+				70FEA7861F6AC57200633C5C /* Pages */,
 				70FEA7801F6AC29400633C5C /* Info.plist */,
 			);
 			path = TABTestKit_ExampleUITests;
+			sourceTree = "<group>";
+		};
+		70FEA7861F6AC57200633C5C /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
+		70FEA7871F6AC57600633C5C /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Steps;
+			sourceTree = "<group>";
+		};
+		70FEA7881F6AC58B00633C5C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				70FEA7891F6AC74800633C5C /* ExampleFeature.swift */,
+			);
+			name = Features;
 			sourceTree = "<group>";
 		};
 		86888BF0805049FCC685A082 /* Frameworks */ = {
@@ -229,6 +253,7 @@
 					70FEA77B1F6AC29400633C5C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = PR289YX2Y5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -343,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FEA77F1F6AC29400633C5C /* TABTestKit_ExampleUITests.swift in Sources */,
+				70FEA78A1F6AC74800633C5C /* ExampleFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -456,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -496,15 +521,16 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = PR289YX2Y5;
 				INFOPLIST_FILE = TABTestKit_ExampleUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theappbusiness.TABTestKit-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TABTestKit_Example;
 			};
@@ -516,10 +542,10 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = PR289YX2Y5;
 				INFOPLIST_FILE = TABTestKit_ExampleUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theappbusiness.TABTestKit-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,6 +582,7 @@
 				70FEA7851F6AC29400633C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
