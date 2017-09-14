@@ -19,6 +19,7 @@
     "ios": "8.0"
   },
   "source_files": "TABTestKit/Classes/**/*",
+  "frameworks": "XCTest",
   "dependencies": {
     "XCTest-Gherkin": [
 

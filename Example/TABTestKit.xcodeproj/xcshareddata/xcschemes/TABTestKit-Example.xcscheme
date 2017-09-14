@@ -52,6 +52,16 @@
                ReferencedContainer = "container:TABTestKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "70FEA77B1F6AC29400633C5C"
+               BuildableName = "TABTestKit_ExampleUITests.xctest"
+               BlueprintName = "TABTestKit_ExampleUITests"
+               ReferencedContainer = "container:TABTestKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

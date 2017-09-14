@@ -1,11 +1,6 @@
 use_frameworks!
 
-target 'TABTestKit_Example' do
-  pod 'TABTestKit', :path => '../'
-
-  target 'TABTestKit_Tests' do
+target 'TABTestKit_ExampleUITests' do
+    pod 'TABTestKit', :path => '../'
     inherit! :search_paths
-
-    
-  end
 end
