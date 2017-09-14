@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TABTestKit_Example' do
+  pod 'TABTestKit', :path => '../'
+
+  target 'TABTestKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
