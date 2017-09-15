@@ -7,7 +7,11 @@
 //
 
 import XCTest
+import TABTestKit
 
 class ExampleFeature: Feature {
   
+  func test_ExampleFeature() {
+    Given("I have opened the application")
+  }
 }

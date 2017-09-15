@@ -9,9 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  @IBOutlet var helloWorldLabel: UILabel!
+  
     override func viewDidLoad() {
-        super.viewDidLoad()
+      helloWorldLabel.text = "Hello world!"
+      helloWorldLabel.accessibilityIdentifier = "Hello World Label"
+      super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,6 +22,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+  
 }
 
