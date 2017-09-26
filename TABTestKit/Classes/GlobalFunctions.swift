@@ -12,34 +12,33 @@ import Foundation
 import XCTest
 
 open class GlobalFunctions {
-  /**
-   Waits for an element to appear and raises a failure if it doesn't appear in the specified time
-   
-   - parameter explicitElement: Element that's supposed to appear
-   - parameter maxDuration:     Maximum wait time
-   */
+  /// Waits for an element to appear and raises a failure if it doesn't appear in the specified time
+  ///
+  /// - Parameters:
+  ///   - element: element to wait for
+  ///   - maxDuration: maximum wait time
   func waitForElementToAppear(_ element: XCUIElement, maxDuration: Double = 5, file: StaticString = #file, line: UInt = #line) {
-    if !element.waitForExistence(timeout: maxDuration) {
+    if !element.waitForExistence(timeout: maxDuration) && !element.isHittable {
       XCTFail("Timed out waiting for element: -\(element)- to appear.", file: file, line: line)
     }
   }
   
-  func tapWhenElementAppears(_ element: XCUIElement, maxDuration: Double = 5, file: StaticString = #file, line: UInt = #line) {
-    if !element.waitForExistence(timeout: maxDuration) {
-      XCTFail("Timed out waiting for element: -\(element)- to appear.", file: file, line: line)
-    }
+  /// Waits for an element to appear and then taps it
+  ///
+  /// - Parameters:
+  ///   - element: Element to wait for and tap
+  func tapWhenElementAppears(_ element: XCUIElement, file: StaticString = #file, line: UInt = #line) {
+    waitForElementToAppear(element)
     element.tap()
   }
   
-  /**
-   Waits for an elemnt to disappear and raises a failure if it doesn't disappear in the specified time
-   
-   - parameter element:     Element that's supposed to disappear
-   - parameter testCase:    Scenario the wait function is called from
-   - parameter maxDuration: Eaximum wait time
-   */
+  /// Waits for an elemnt to disappear and raises a failure if it doesn't disappear in the specified time
+  ///
+  /// - Parameters:
+  ///   - element: element to wait to disappear
+  ///   - maxDuration: maximum wait time
   func waitForElementToDisappear(_ element: XCUIElement, maxDuration: Double = 5, file: StaticString = #file, line: UInt = #line) {
-    if element.waitForExistence(timeout: maxDuration) {
+    if element.waitForExistence(timeout: maxDuration) && element.isHittable {
       XCTFail("Timed out waiting for element: -\(element)- to disappear.", file: file, line: line)
     }
   }
