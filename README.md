@@ -10,6 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+XCTest-Gherkin
 
 ## Installation
 
@@ -22,7 +23,7 @@ pod 'TABTestKit'
 
 ## Author
 
-zacoid55, zac@theappbusiness.com
+Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55
 
 ## License
 

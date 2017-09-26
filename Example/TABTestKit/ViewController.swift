@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  TABTestKit
 //
-//  Created by zacoid55 on 09/14/2017.
-//  Copyright (c) 2017 zacoid55. All rights reserved.
+//  Created by Zachary Borrelli on 09/14/2017.
+//  Copyright (c) 2017 Zachary Borrelli. All rights reserved.
 //
 
 import UIKit
@@ -14,14 +14,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
       helloWorldLabel.text = "Hello world!"
       helloWorldLabel.accessibilityIdentifier = "Hello World Label"
-      super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-  
 }
 
