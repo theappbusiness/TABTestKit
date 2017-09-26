@@ -2,6 +2,8 @@
 //  ExampleSteps.swift
 //  TABTestKit
 //
+//  The MIT License (MIT)
+//
 //  Created by Zachary Borrelli on 15/09/2017.
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
