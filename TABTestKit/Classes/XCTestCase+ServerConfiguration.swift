@@ -19,8 +19,18 @@ public class Server {
    - parameter jsonFileName: Name of the JSON file that's supposed to be returned
    - parameter errorCode:    Error code that's supposed to be returned (e.g. 400, 500)
    */
-  static func configure(endpoint: String, newJsonFileName: String? = nil, errorCode: Int = 200, file: StaticString = #file, lineNumber: UInt = #line) {
-    let requestURL = createServerConfigurationURL(endpoint, newJsonFileName: newJsonFileName, errorCode: errorCode, file: file, lineNumber: lineNumber)
+  
+  
+  /// Configures a mock server to return the specified file and error code for a specific endpoint
+  ///
+  /// - Parameters:
+  ///   - endpoint: Endpoint that's supposed to be configured (e.g. /search/place)
+  ///   - jsonFileName: json file
+  ///   - errorCode: <#errorCode description#>
+  ///   - file: <#file description#>
+  ///   - lineNumber: <#lineNumber description#>
+  static func configure(endpoint: String, jsonFileName: String? = nil, errorCode: Int = 200, file: StaticString = #file, lineNumber: UInt = #line) {
+    let requestURL = createServerConfigurationURL(endpoint, jsonFileName: jsonFileName, errorCode: errorCode, file: file, lineNumber: lineNumber)
     sendServerRequest(requestURL, file: file, line: lineNumber)
   }
   
@@ -36,15 +46,15 @@ public class Server {
     sendServerRequest(resetURL, file: file, line: line)
   }
   
-  private static func createServerConfigurationURL(_ endpoint: String, newJsonFileName: String?, errorCode: Int, file: StaticString = #file, lineNumber: UInt = #line) -> URL {
+  private static func createServerConfigurationURL(_ endpoint: String, jsonFileName: String?, errorCode: Int, file: StaticString = #file, lineNumber: UInt = #line) -> URL {
     var components = URLComponents()
     components.scheme = "http"
     components.host = "localhost"
     components.port = 8081
     components.path = "/configure/\(endpoint)"
     var queryItems = [URLQueryItem]()
-    if let fileName = newJsonFileName {
-      queryItems.append(URLQueryItem(name: "newJsonFileName", value: fileName))
+    if let fileName = jsonFileName {
+      queryItems.append(URLQueryItem(name: "jsonFileName", value: fileName))
     }
     queryItems.append(URLQueryItem(name: "errorCode", value: "\(errorCode)"))
     components.queryItems = queryItems
