@@ -1,0 +1,6 @@
+os:
+  - osx
+osx_image: xcode9
+language: swift
+script:
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty

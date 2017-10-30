@@ -1,0 +1,21 @@
+PODS:
+  - TABTestKit (0.1.0):
+    - XCTest-Gherkin
+  - XCTest-Gherkin (0.10.3):
+    - XCTest-Gherkin/Core (= 0.10.3)
+  - XCTest-Gherkin/Core (0.10.3)
+
+DEPENDENCIES:
+  - TABTestKit (from `../`)
+
+EXTERNAL SOURCES:
+  TABTestKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TABTestKit: 2a772c6d2582a22a51a55ac266316e954ab96722
+  XCTest-Gherkin: d5c43c800f3fca5b05226a4dba973390a3788598
+
+PODFILE CHECKSUM: 2d5942119f07a47e8176e45ffc5404a961e403ff
+
+COCOAPODS: 1.3.1
