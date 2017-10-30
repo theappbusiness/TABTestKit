@@ -27,26 +27,27 @@ public final class App {
   
   fileprivate init () {}
   
+  /// Function to terminate the currentApp singleton
   public func terminate() {
     currentApp?.terminate()
     currentApp = nil
   }
   
+  /// Creates the currentApp instance and launches it
   public func launchWithOptions() {
     currentApp = XCUIApplication()
     currentApp?.launch()
   }
   
+  /// Function that sets up and returns the singleton instance of the app
+  ///
+  /// - Returns: XCUIApplication object which serves as the current app under test
   public func current() -> XCUIApplication {
-    if let app =  currentApp {
+    if let app = currentApp {
       return app
     }
     let app = XCUIApplication()
     currentApp = app
     return app
-  }
-  
-  public func calendar() -> Calendar {
-    return globalCalendar
   }
 }
