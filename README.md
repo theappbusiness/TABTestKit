@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
+Framework for structuring BDD style UI tests using POM, steps and gherkin styled feature files. Also a collection of functions to make XCUI easier to use and read.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
