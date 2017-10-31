@@ -11,12 +11,17 @@
 import XCTest
 
 public extension XCUIElement {
+  
+  func visible() -> Bool {
+    guard self.exists && !self.frame.isEmpty else { return false }
+    return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
+  }
+  
   /// This uses a generic call for cells on the page and scrolls to the last one it can find on the page
   func scollToLastCell() {
     let lastCell = cells.element(boundBy: cells.count-1)
     scroll(toElement: lastCell)
   }
-  
   
   /// Scrolls to the given element if that element exists and is hittable. Uses a drag to scroll the page
   ///
