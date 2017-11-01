@@ -1,3 +1,5 @@
+![The App Business](Assets/logo.png)
+
 # TABTestKit
 
 [![CI Status](http://img.shields.io/travis/zacoid55/TABTestKit.svg?style=flat)](https://travis-ci.org/zacoid55/TABTestKit)
@@ -5,13 +7,12 @@
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
-Framework for extending the structuring XCUI tests in a BDD style using POM, steps and gherkin styled feature files found in the pod `XCTest-Gherkin`. Also a collection of functions to make XCUI easier to use and read.
+Framework for extending the structuring of XCUI tests in a BDD style using the POM, steps and gherkin styled feature files found in the pod `XCTest-Gherkin`. Also a collection of functions to make XCUI easier to use and read.
 
 ## Requirements
 XCTest-Gherkin (Read more on the setting up of Feature and Step files here: [XCTest-Gherkin Github](https://github.com/net-a-porter-mobile/XCTest-Gherkin))
 
 ## Installation
-
 TABTestKit is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -92,11 +93,11 @@ To run the UI automation tests, switch to the `TABTestKit_ExampleUITests` and us
 Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 ## Author
-
 Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
 Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
+
+## Credits
 [XCTest-Gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin) - Sam Dean, sam.dean@net-a-porter.com
 
 ## License
-
 TABTestKit is available under the MIT license. See the LICENSE file for more info.
