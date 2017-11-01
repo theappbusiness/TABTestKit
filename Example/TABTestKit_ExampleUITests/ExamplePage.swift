@@ -19,6 +19,4 @@ final class ExamplePage: BasePage {
     app = App.shared.current()
     trait = app.staticTexts["Hello World!"]
   }
-  
-  
 }
