@@ -65,8 +65,6 @@ You will recognise this as setting up page objects for ineracting with e.g. a bu
 See below for a more indepth usage guide of `BasePage` and `BaseFeature`
 
 ## Usage
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 To run the UI automation tests, switch to the `TABTestKit_ExampleUITests` and use `CMD + U`.
 
 ### BasePage
@@ -95,7 +93,9 @@ Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 ## Author
 
-Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55
+Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
+Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
+[XCTest-Gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin) - Sam Dean, sam.dean@net-a-porter.com
 
 ## License
 

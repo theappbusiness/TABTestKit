@@ -15,7 +15,7 @@ To contribute to this library you can:
 Follow standard [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching procedures:
 
 - **master** - This should exactly mirror what's currently in production. Never commit directly to `master`.
-- **develop** - Not currently used.
+- **develop** - This should be the latest development code and the branch that feeds into `master`.
 - **feature/\<issue-number\>/\<issue-name\>** - Used for developing features before submitting for code review. Choose a short, meaningful description of the change being made, such as `swift-3-api-improvements`. Where possible add the Github issue number, e.g `feature/9/swift-3-api-improvements`. If the feature is too large to be code reviewed in one go a base branch can be created where the sub branches will merge into. For this, branch off the main `feature` branch including a short description of what it's for.
 - **bugfix/\<issue-number\>/\<issue-name\>** - Used for bug fixes before submitting for code review. Use Github issue number if one exists, e.g `bugfix/666/something-broken`.
 - **chore/\<issue-number\>/\<issue-name\>** - Used for code changes that are not part of a feature or bug fix, such as updating automated build settings. Use Github issue number if one exists, e.g `chore/3/updated-ci-configuration`.
