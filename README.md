@@ -69,24 +69,24 @@ See below for a more indepth usage guide of `BasePage` and `BaseFeature`
 To run the UI automation tests, switch to the `TABTestKit_ExampleUITests` and use `CMD + U`.
 
 ### BasePage
-`trait`: This is a page element that can be defined once a page has inherited from `BasePage` which will allow you to call `.await()` on that page.
-`await`: Uses the given `trait` element for a page and calls `waitForElementToAppear()` on it. Using a unique element to that page is the recommended selection for a trait.
+`trait`: This is a page element that can be defined once a page has inherited from `BasePage` which will allow you to call `.await()` on that page.  
+`await`: Uses the given `trait` element for a page and calls `waitForElementToAppear()` on it. Using a unique element to that page is the recommended selection for a trait.  
 `tapBackButton`: Use a generic identifier matcher to find the native Back button and tap it. Note: This is done by the specific "Back" string - will need to be overriden for a custom back button.
 
 ### BaseFeature
-`setUp`: Starts the XCTestCase instance with, defaulting `continueAfterFailure` to `false` and launches the App using `launchApp()`.
-`launchApp`: Calls `launchWithOptions()` from the App singleton to launch the app at the beginning of each XCTestCase.
+`setUp`: Starts the XCTestCase instance with, defaulting `continueAfterFailure` to `false` and launches the App using `launchApp()`.  
+`launchApp`: Calls `launchWithOptions()` from the App singleton to launch the app at the beginning of each XCTestCase.  
 `tearDown`: Calls `terminate()`  from the App singleton to terminate the app after each XCTestCase.
 
 ### Global functions
-`waitForElementToAppear`: Takes an element and waits for a default (but overridable) amount of time and checks over that time period whether that element exists and is hittable.
-`tapWhenElementAppears`: Runs  `waitForElementToAppear` and adds a `.tap()` call onto the element.
-`waitForElementToDisappear`: Takes an element and waits a for a default (overridable) amount of time and checks over that time period whether that element doesn't exist and isn't hittable. 
+`waitForElementToAppear`: Takes an element and waits for a default (but overridable) amount of time and checks over that time period whether that element exists and is hittable.  
+`tapWhenElementAppears`: Runs  `waitForElementToAppear` and adds a `.tap()` call onto the element.  
+`waitForElementToDisappear`: Takes an element and waits a for a default (overridable) amount of time and checks over that time period whether that element doesn't exist and isn't hittable.  
 `tapCoordinate`: Takes an x and y value and taps it.
 
 ### XCUIElement+ScrollTo
-(This is an extension of XCUIElement)
-`scollToLastCell`: Finds the last cell on the page and uses `scroll` to get to it.
+(This is an extension of XCUIElement)  
+`scollToLastCell`: Finds the last cell on the page and uses `scroll` to get to it.  
 `scroll`: Scrolls to a given element, the default is to scroll down but this is overridable using a `bool` argument flag.
 
 ## Contributing
