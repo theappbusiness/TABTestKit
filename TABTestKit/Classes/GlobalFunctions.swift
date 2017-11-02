@@ -50,7 +50,7 @@ open class GlobalFunctions {
   ///   - yCoordinate: The given coordinate down the y axis
   func tapCoordinate(x xCoordinate: Double, y yCoordinate: Double) {
     //Sets up a base coordinate (the top left of the screen)
-    let normalized = App.shared.current().coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+    let normalized = App.shared.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
     let coordinate = normalized.withOffset(CGVector(dx: xCoordinate, dy: yCoordinate))
     coordinate.tap()
   }
