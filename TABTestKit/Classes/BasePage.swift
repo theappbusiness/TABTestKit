@@ -21,13 +21,3 @@ public extension UITestPage {
     GlobalFunctions().waitForElementToAppear(trait, maxDuration: duration)
   }
 }
-
-open class BasePage {
-  
-  public init() { }
-  
-  /// Native back button control
-  public func tapBackButton() {
-    App.shared.navigationBars.children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
-  }
-}

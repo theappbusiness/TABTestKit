@@ -11,13 +11,12 @@
 import XCTest
 import TABTestKit
 
-final class ExamplePage: BasePage, UITestPage {
+final class ExamplePage: UITestPage {
   let app: XCUIApplication
   let trait: XCUIElement
   
-  override init() {
+  init() {
     app = App.shared
     trait = app.staticTexts["Hello world!"]
-    super.init()
   }
 }
