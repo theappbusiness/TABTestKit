@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00392AD7188500A2E77FE0FFB34F4ED0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74EEFAE00E46EC67DBD69D2ADC01CFE /* Foundation.framework */; };
-		03399B06BBE40889DB34A020854F7A2B /* BaseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E87CDCC36C4B45B505E34E0022A91 /* BaseFeature.swift */; };
+		03399B06BBE40889DB34A020854F7A2B /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660E87CDCC36C4B45B505E34E0022A91 /* TestBase.swift */; };
 		27438AF1C93979C37D524E20495C9FC4 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489B8F1FAA2DEAA932B7A9314AD96759 /* Example.swift */; };
 		2A7BFE4CA48737A4E23F6543999EFD03 /* TABTestKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BA0E2F353A14C416F86108A6A96091 /* TABTestKit-dummy.m */; };
 		2BA5F15B0FD550725EE72039F0862B9E /* StepDefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA16A5C586AC4D94CD085BD40C17D /* StepDefiner.swift */; };
@@ -75,7 +75,7 @@
 		5AD64C597BFAACAD4B3EE0B07B2BF8E2 /* Pods-TABTestKit_ExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TABTestKit_ExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		60BA0E2F353A14C416F86108A6A96091 /* TABTestKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TABTestKit-dummy.m"; sourceTree = "<group>"; };
 		65E04BBCCC20E6A429F69E07AECA7F9E /* XCUIElement+ScrollTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XCUIElement+ScrollTo.swift"; path = "TABTestKit/Classes/XCUIElement+ScrollTo.swift"; sourceTree = "<group>"; };
-		660E87CDCC36C4B45B505E34E0022A91 /* BaseFeature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseFeature.swift; path = TABTestKit/Classes/BaseFeature.swift; sourceTree = "<group>"; };
+		660E87CDCC36C4B45B505E34E0022A91 /* TestBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestBase.swift; path = TABTestKit/Classes/TestBase.swift; sourceTree = "<group>"; };
 		6780F652D41DAE487EACA828B0881885 /* ClassHelperMethods.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClassHelperMethods.swift; path = Pod/Core/ClassHelperMethods.swift; sourceTree = "<group>"; };
 		716ED031E1B32FEEE889D77284A513E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75C186F8CE4581DCFAF03C827068FBED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			children = (
 				3506F75CB9440705002596ECD41F4045 /* App.swift */,
 				E97AF6FF556C8664EB6BDEA5C9D8F9AC /* BasePage.swift */,
-				660E87CDCC36C4B45B505E34E0022A91 /* BaseFeature.swift */,
+				660E87CDCC36C4B45B505E34E0022A91 /* TestBase.swift */,
 				48B722BC5280A1C035B89C5C4DCDB4EC /* GlobalFunctions.swift */,
 				DF07A590CE0266DD8C1450282618ACAD /* XCTestCase+ServerConfiguration.swift */,
 				65E04BBCCC20E6A429F69E07AECA7F9E /* XCUIElement+ScrollTo.swift */,
@@ -416,7 +416,7 @@
 			files = (
 				531006EA8B5430699F47965BBE1FF8C3 /* App.swift in Sources */,
 				990FAC43AF2C4530EA133C6B9BE4E9F4 /* BasePage.swift in Sources */,
-				03399B06BBE40889DB34A020854F7A2B /* BaseFeature.swift in Sources */,
+				03399B06BBE40889DB34A020854F7A2B /* TestBase.swift in Sources */,
 				D2AEB49F509BE8B3B856DF7D942D6F06 /* GlobalFunctions.swift in Sources */,
 				2A7BFE4CA48737A4E23F6543999EFD03 /* TABTestKit-dummy.m in Sources */,
 				B7F2FC324AB2A394FBE61D5F80F7B00C /* XCTestCase+ServerConfiguration.swift in Sources */,

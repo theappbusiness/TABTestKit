@@ -10,34 +10,14 @@
 
 import XCTest
 
-/// All pages should inherit from this class
-protocol PageProtocol {
-  var trait: XCUIElement? { get }
+public protocol UITestPage: class {
+  var trait: XCUIElement { get }
 }
 
-open class BasePage: GlobalFunctions, PageProtocol {
-  
-  var trait: XCUIElement?
-  
-  public override init() {}
-
-  /// Native back button control
-  public func tapBackButton() {
-    let app = XCUIApplication()
-    
-    app.navigationBars.children(matching: .button).matching(identifier: "Back").element(boundBy: 0).tap()
-  }
-  
+public extension UITestPage {
   /// Use primarily to assert that you're on the correct screen - all screens should try to have a trait element.
   /// If the trait is static it can be decalred in the init() function of a page, if you want it to be dynamic you can pass it an element to use as a trait
-  ///
-  /// - Parameter trait: An element that can be used as an "anchor" to discern whether you're on that page or not
-  public func await(trait: XCUIElement? = nil) {
-    if let trait = trait {
-      waitForElementToAppear(trait)
-    } else if let trait = self.trait {
-      waitForElementToAppear(trait)
-    }
+  func await(maxDuration duration: Double = 5) {
+    GlobalFunctions().waitForElementToAppear(trait, maxDuration: duration)
   }
-
 }

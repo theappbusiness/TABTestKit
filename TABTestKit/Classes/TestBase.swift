@@ -1,5 +1,5 @@
 //
-//  BaseFeature.swift
+//  TestBase.swift
 //  TABTestKit
 //
 //  The MIT License (MIT)
@@ -11,7 +11,7 @@
 import XCTest
 
 /// All Features should inherit from this class
-open class BaseFeature: XCTestCase {
+open class TestBase: XCTestCase {
   
   /// Provides the setup for appication that happens before each XCTestCase
   open override func setUp() {
@@ -22,7 +22,7 @@ open class BaseFeature: XCTestCase {
   
   /// Launches the application with options if needed
   func launchApp() {
-    App.shared.launchWithOptions()
+    App.shared.launch()
   }
   
   /// Provides the tear down for the application and each XCTestCase
