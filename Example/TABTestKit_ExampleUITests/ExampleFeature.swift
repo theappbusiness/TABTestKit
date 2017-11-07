@@ -11,7 +11,7 @@
 import XCTest
 import TABTestKit
 
-class ExampleFeature: BaseFeature {
+class ExampleFeature: TestBase {
   
   func test_ExampleFeature() {
     Given("I have opened the application")
