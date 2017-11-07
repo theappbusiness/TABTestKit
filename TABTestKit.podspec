@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'TABTestKit'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'Base to work off of for XCUI.'
-  s.homepage         = 'https://bitbucket.org/theappbusiness/tabtestkit'
+  s.homepage         = 'https://cocoapods.org/pods/TABTestKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zacoid55' => 'zac@theappbusiness.com' }
   s.source           = { :git => 'https://github.com/theappbusiness/TABTestKit.git', :tag => s.version.to_s }
