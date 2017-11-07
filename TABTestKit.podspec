@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TABTestKit'
-  s.version          = '1.0.0'
+  s.version          = '0.1.0'
   s.summary          = 'Base to work off of for XCUI.'
   s.homepage         = 'https://bitbucket.org/theappbusiness/tabtestkit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
