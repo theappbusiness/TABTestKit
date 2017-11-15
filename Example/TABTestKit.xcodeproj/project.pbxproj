@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6048911B986922C931CBCBD4 /* Pods_TABTestKit_ExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F961EE8274AEF63C32361E2 /* Pods_TABTestKit_ExampleUITests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,9 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0642FEC1D43A76605A007144 /* Pods_TABTestKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0757BAFCD86952BF1F8792FB /* TABTestKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TABTestKit.podspec; path = ../TABTestKit.podspec; sourceTree = "<group>"; };
-		0F961EE8274AEF63C32361E2 /* Pods_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD6C67461B52B92ADDBB9FD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4AB14B2CDD5EE795DC5CFEBE /* Pods-TABTestKit_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TABTestKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TABTestKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,10 +42,7 @@
 		70FEA7891F6AC74800633C5C /* ExampleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFeature.swift; sourceTree = "<group>"; };
 		70FEA78B1F6AC98700633C5C /* ExamplePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePage.swift; sourceTree = "<group>"; };
 		7C63340D41DA8ECC5990ED5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E5A0F1B1A8B65BA16C080FA9 /* Pods_TABTestKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAB5004412DF96067009CA81 /* Pods-TABTestKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6048911B986922C931CBCBD4 /* Pods_TABTestKit_ExampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +66,6 @@
 		11E8E251909851EDDEE7F1D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */,
-				FAB5004412DF96067009CA81 /* Pods-TABTestKit_Tests.release.xcconfig */,
 				BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */,
 				4AB14B2CDD5EE795DC5CFEBE /* Pods-TABTestKit_ExampleUITests.release.xcconfig */,
 			);
@@ -163,9 +154,6 @@
 		86888BF0805049FCC685A082 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0642FEC1D43A76605A007144 /* Pods_TABTestKit_Example.framework */,
-				E5A0F1B1A8B65BA16C080FA9 /* Pods_TABTestKit_Tests.framework */,
-				0F961EE8274AEF63C32361E2 /* Pods_TABTestKit_ExampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
