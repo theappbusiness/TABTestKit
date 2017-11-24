@@ -13,7 +13,7 @@ import XCTest
 public extension XCUIElement {
   
   func visible() -> Bool {
-    guard self.exists && !self.frame.isEmpty else { return false }
+    guard self.exists && !self.frame.isEmpty && self.frame.origin.x != 0.0 else { return false }
     return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
   }
   
@@ -35,7 +35,7 @@ public extension XCUIElement {
     
     // Scroll until the requested cell is hittable, or until we try and scroll but nothing changes
     while lastMidCellID != currentMidCell.identifier || !lastMidCellRect.equalTo(currentMidCell.frame) {
-      if element.exists && element.isHittable {
+      if element.exists && element.visible() {
         break
       }
       
