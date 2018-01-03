@@ -24,32 +24,31 @@ class GherkinState {
     var steps = Set<Step>()
     
     // Used to track step nesting i.e. steps calling out to other steps
-    var currentStepDepth:Int = 0
+    var currentStepDepth: Int = 0
     
     // When we are in an Outline block, this defines the examples to loop over
-    var examples:[Example]? = nil
+    var examples: [Example]?
     
     // The current example the Outline is running over
-    var currentExample:Example? = nil
+    var currentExample: Example?
     
     // Store the name of the current test to help debugging output
-    var currentTestName:String = "NO TESTS RUN YET"
+    var currentTestName: String = "NO TESTS RUN YET"
     
     // Store the name of the current step to help debugging output
-    var currentStepName:String = "NO CURRENT STEP YET"
+    var currentStepName: String = "NO CURRENT STEP YET"
     
     fileprivate var missingStepsImplementations = [String]()
     
-    func gherkinStepsAndMatchesMatchingExpression(_ expression: String) -> [(step:Step, match:NSTextCheckingResult)] {
-        let range = NSMakeRange(0, expression.characters.count)
-        let matches = self.steps.map { (step: Step) -> (step:Step, match:NSTextCheckingResult)? in
+    func gherkinStepsAndMatchesMatchingExpression(_ expression: String) -> [(step: Step, match: NSTextCheckingResult)] {
+        let range = NSMakeRange(0, expression.count)
+        return self.steps.flatMap { (step: Step) -> (step: Step, match: NSTextCheckingResult)? in
             if let match = step.regex.firstMatch(in: expression, options: [], range: range) {
                 return (step:step, match:match)
             } else {
                 return nil
             }
-        }.flatMap { $0 }
-        return matches
+        }
     }
     
     func gherkinStepsMatchingExpression(_ expression: String) -> [Step] {
@@ -252,58 +251,66 @@ extension XCTestCase {
      Finds and performs a step test based on expression
      */
     func performStep(_ initialExpression: String) {
-        // Get a mutable copy - if we are in an outline we might be changing this
-        var expression = initialExpression
-        
-        // Make sure that we have created our steps
-        self.state.loadAllStepsIfNeeded()
-        
-        // If we are in an example, transform the step to reflect the current example's value
-        if let example = state.currentExample {
-            // For each field in the example, go through the step expression and replace the placeholders if needed
-            example.forEach { (key, value) in
-                let needle = "<\(key)>"
-                expression = (expression as NSString).replacingOccurrences(of: needle, with: value)
+
+        func perform(expression: String) {
+            
+            // Get a mutable copy - if we are in an outline we might be changing this
+            var expression = initialExpression
+            
+            // Make sure that we have created our steps
+            self.state.loadAllStepsIfNeeded()
+            
+            // If we are in an example, transform the step to reflect the current example's value
+            if let example = state.currentExample {
+                // For each field in the example, go through the step expression and replace the placeholders if needed
+                example.forEach { (key, value) in
+                    let needle = "<\(key)>"
+                    expression = (expression as NSString).replacingOccurrences(of: needle, with: value)
+                }
             }
-        }
-        
-        // Get the step and the matches inside it
-        guard let (step, match) = self.state.gherkinStepsAndMatchesMatchingExpression(expression).first else {
-            if !self.state.matchingGherkinStepExpressionFound(expression) && self.state.shouldPrintTemplateCodeForAllMissingSteps() {
-                self.state.printStepDefinitions()
-                self.state.printTemplatedCodeForAllMissingSteps()
-                self.state.resetMissingSteps()
+            
+            // Get the step and the matches inside it
+            guard let (step, match) = self.state.gherkinStepsAndMatchesMatchingExpression(expression).first else {
+                if !self.state.matchingGherkinStepExpressionFound(expression) && self.state.shouldPrintTemplateCodeForAllMissingSteps() {
+                    self.state.printStepDefinitions()
+                    self.state.printTemplatedCodeForAllMissingSteps()
+                    self.state.resetMissingSteps()
+                }
+                fatalError("Failed to find a match for a step: \(expression)")
             }
-            fatalError("Failed to find a match for a step: \(expression)")
-        }
-        
-        // Covert them to strings to pass back into the step function
-        // TODO: This should really only need to be a map function :(
-        var matchStrings = Array<String>()
-        for i in 1..<match.numberOfRanges {
-            let range = match.rangeAt(i)
-            let string = range.location != NSNotFound ? (expression as NSString).substring(with: range) : ""
-            matchStrings.append(string)
-        }
-        
-        // If this the first step, debug the test name as well
-        if state.currentStepDepth == 0 {
-            let rawName = String(describing: self.invocation!.selector)
-            let testName = rawName.hasPrefix("test") ? (rawName as NSString).substring(from: 4) : rawName
-            if testName != state.currentTestName {
-                NSLog("steps from \(testName.humanReadableString)")
-                state.currentTestName = testName
+            
+            // Covert them to strings to pass back into the step function
+            // TODO: This should really only need to be a map function :(
+            var matchStrings = Array<String>()
+            for i in 1..<match.numberOfRanges {
+                let range = match.range(at: i)
+                let string = range.location != NSNotFound ? (expression as NSString).substring(with: range) : ""
+                matchStrings.append(string)
             }
+            
+            // If this the first step, debug the test name as well
+            if state.currentStepDepth == 0 {
+                let rawName = String(describing: self.invocation!.selector)
+                let testName = rawName.hasPrefix("test") ? (rawName as NSString).substring(from: 4) : rawName
+                if testName != state.currentTestName {
+                    NSLog("steps from \(testName.humanReadableString)")
+                    state.currentTestName = testName
+                }
+            }
+            
+            // Debug the step name
+            NSLog("step \(currentStepDepthString())\(expression)")
+            state.currentStepName = expression
+            
+            // Run the step
+            state.currentStepDepth += 1
+            step.function(matchStrings)
+            state.currentStepDepth -= 1
         }
         
-        // Debug the step name
-        NSLog("step \(currentStepDepthString())\(expression)")
-        state.currentStepName = expression
-        
-        // Run the step
-        state.currentStepDepth += 1
-        step.function(matchStrings)
-        state.currentStepDepth -= 1
+        XCTContext.runActivity(named: initialExpression) { (_) in
+            perform(expression: initialExpression)
+        }
     }
     
     /**
