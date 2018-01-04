@@ -1,9 +1,8 @@
 {
   "name": "TABTestKit",
-  "version": "0.1.0",
-  "summary": "A short description of TABTestKit.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/zacoid55/TABTestKit",
+  "version": "0.2.2",
+  "summary": "Base to work off of for XCUI.",
+  "homepage": "https://github.com/theappbusiness/TABTestKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +11,8 @@
     "zacoid55": "zac@theappbusiness.com"
   },
   "source": {
-    "git": "https://github.com/zacoid55/TABTestKit.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/theappbusiness/TABTestKit.git",
+    "tag": "0.2.2"
   },
   "platforms": {
     "ios": "9.0"
