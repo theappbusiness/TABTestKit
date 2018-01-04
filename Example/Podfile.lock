@@ -1,9 +1,9 @@
 PODS:
-  - TABTestKit (0.1.0):
+  - TABTestKit (0.2.2):
     - XCTest-Gherkin
-  - XCTest-Gherkin (0.10.3):
-    - XCTest-Gherkin/Core (= 0.10.3)
-  - XCTest-Gherkin/Core (0.10.3)
+  - XCTest-Gherkin (0.13.2):
+    - XCTest-Gherkin/Core (= 0.13.2)
+  - XCTest-Gherkin/Core (0.13.2)
 
 DEPENDENCIES:
   - TABTestKit (from `../`)
@@ -13,9 +13,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  TABTestKit: 2a772c6d2582a22a51a55ac266316e954ab96722
-  XCTest-Gherkin: d5c43c800f3fca5b05226a4dba973390a3788598
+  TABTestKit: a6520c5e135dc37a1c25f9e1aee9698d19c246d0
+  XCTest-Gherkin: 5b5b9c98baed1f889893a8222c47c76557eb705b
 
-PODFILE CHECKSUM: 2d5942119f07a47e8176e45ffc5404a961e403ff
+PODFILE CHECKSUM: 586109cf66e08d38d778a2fbf283cbcb0701dfa6
 
 COCOAPODS: 1.3.1
