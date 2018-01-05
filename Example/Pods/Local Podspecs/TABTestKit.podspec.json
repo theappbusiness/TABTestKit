@@ -21,7 +21,7 @@
   "frameworks": "XCTest",
   "dependencies": {
     "XCTest-Gherkin": [
-
+      "0.13.2"
     ]
   }
 }
