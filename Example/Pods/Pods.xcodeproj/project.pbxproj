@@ -63,10 +63,10 @@
 		17DC8FC8CC008F721FA68E88AEF84883 /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
 		23AD2B852B98DADF3907CF1F635E05D4 /* Pods-TABTestKit_ExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_ExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		241A0E193CDF3F8F27B9AD6BED26EE69 /* Pods-TABTestKit_ExampleUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_ExampleUITests-resources.sh"; sourceTree = "<group>"; };
-		2D190E4FDBA60B17E49DFF4528E8914B /* XCTest-Gherkin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "XCTest-Gherkin.modulemap"; sourceTree = "<group>"; };
+		2D190E4FDBA60B17E49DFF4528E8914B /* XCTest-Gherkin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "XCTest-Gherkin.modulemap"; sourceTree = "<group>"; };
 		2E2AFFCCEB5068ED56B27C13F7F16105 /* Pods-TABTestKit_ExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_ExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		392498BD9416B3D84227E06208BE5560 /* App.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = App.swift; path = TABTestKit/Classes/App.swift; sourceTree = "<group>"; };
-		3EFF2C5B35F072DCD0C605D42F99881A /* Pods-TABTestKit_ExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TABTestKit_ExampleUITests.modulemap"; sourceTree = "<group>"; };
+		3EFF2C5B35F072DCD0C605D42F99881A /* Pods-TABTestKit_ExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TABTestKit_ExampleUITests.modulemap"; sourceTree = "<group>"; };
 		489B8F1FAA2DEAA932B7A9314AD96759 /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Pod/Core/Example.swift; sourceTree = "<group>"; };
 		4F1A266210EB41154B51122CD1E50C33 /* XCUIElement+ScrollTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XCUIElement+ScrollTo.swift"; path = "TABTestKit/Classes/XCUIElement+ScrollTo.swift"; sourceTree = "<group>"; };
 		51108163267742969E5DAA76A024C385 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,15 +76,15 @@
 		6780F652D41DAE487EACA828B0881885 /* ClassHelperMethods.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClassHelperMethods.swift; path = Pod/Core/ClassHelperMethods.swift; sourceTree = "<group>"; };
 		716ED031E1B32FEEE889D77284A513E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B51B403C34D44E60C353E5A2EA154A8 /* XCTest-Gherkin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTest-Gherkin-prefix.pch"; sourceTree = "<group>"; };
-		86D01B170296B16CDBFA25EC757480C4 /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TABTestKit.modulemap; sourceTree = "<group>"; };
+		86D01B170296B16CDBFA25EC757480C4 /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TABTestKit.modulemap; sourceTree = "<group>"; };
 		8991FEF0F5096D0683BC9010E2E70F47 /* XCTest-Gherkin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XCTest-Gherkin-dummy.m"; sourceTree = "<group>"; };
 		8CC674D8CA8C477CA973810ADBB33F9F /* XCTest-Gherkin.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "XCTest-Gherkin.xcconfig"; sourceTree = "<group>"; };
 		8FD4BD6157E29ABC75A38AB062D4FDD4 /* TABTestKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-umbrella.h"; sourceTree = "<group>"; };
 		8FEC86257CB9988CF005BB6BB3C0B66E /* MatchedStringRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchedStringRepresentable.swift; path = Pod/Core/MatchedStringRepresentable.swift; sourceTree = "<group>"; };
 		8FF310F71FBE622A174C888C048FBBC2 /* XCTestCase+ServerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XCTestCase+ServerConfiguration.swift"; path = "TABTestKit/Classes/XCTestCase+ServerConfiguration.swift"; sourceTree = "<group>"; };
-		929D963DB46007BAEC1EFDE29A822EB0 /* XCTest_Gherkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XCTest_Gherkin.framework; path = "XCTest-Gherkin.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93B391B291A2BE338C11C7450B1E60AD /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TABTestKit.framework; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		929D963DB46007BAEC1EFDE29A822EB0 /* XCTest_Gherkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCTest_Gherkin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93B391B291A2BE338C11C7450B1E60AD /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		946014756D66105A1F1FD5D979B1F4FB /* Pods-TABTestKit_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		97E74F6030754F6453AD8BD9E8F03FB3 /* Pods-TABTestKit_ExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_ExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A2974D14343EAE64461FE2AD3A9574D9 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		A7251D4A85F248B79467A46A10C87CED /* StringGherkinExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringGherkinExtension.swift; path = Pod/Core/StringGherkinExtension.swift; sourceTree = "<group>"; };
 		B7E240603EC5D553CF8EE6989F9FD46D /* Pods-TABTestKit_ExampleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TABTestKit_ExampleUITests-dummy.m"; sourceTree = "<group>"; };
 		B8F7EBDE9E6DD5E2096227636B179E01 /* TABTestKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TABTestKit.xcconfig; sourceTree = "<group>"; };
-		BF1C28952681C8B33D3B4C879F68EFAD /* Pods_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_ExampleUITests.framework; path = "Pods-TABTestKit_ExampleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1C28952681C8B33D3B4C879F68EFAD /* Pods_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65D66774E2557E90A623E725A404ADE /* BasePage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePage.swift; path = TABTestKit/Classes/BasePage.swift; sourceTree = "<group>"; };
 		CC730843D36B5E9A480DA65C5DB75424 /* XCTest-Gherkin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XCTest-Gherkin-umbrella.h"; sourceTree = "<group>"; };
 		CD7AD116CBE950EA2412F8AEF2F4EBCB /* TestBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestBase.swift; path = TABTestKit/Classes/TestBase.swift; sourceTree = "<group>"; };
@@ -229,7 +229,6 @@
 				FF8BF10FACEDFBAC40C9850AB092E23C /* Core */,
 				EB30491FAEC50758A5EBE1F287D09614 /* Support Files */,
 			);
-			name = "XCTest-Gherkin";
 			path = "XCTest-Gherkin";
 			sourceTree = "<group>";
 		};
@@ -716,6 +715,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/TABTestKit/TABTestKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TABTestKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -747,6 +747,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/TABTestKit/TABTestKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TABTestKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
