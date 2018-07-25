@@ -11,15 +11,15 @@
 import XCTest
 
 /**
-Singleton in charge of creating XCUIApplication instance and managing the global app state,
-This is created so the same application instance can be used accross different pages of the app and
-the instance we are calling is the one that got launched.
-*/
+ Singleton in charge of creating XCUIApplication instance and managing the global app state,
+ This is created so the same application instance can be used accross different pages of the app and
+ the instance we are calling is the one that got launched.
+ */
 public final class App: XCUIApplication {
-	
-	public static let shared = App()
-	
-	private override init () {
-		super.init()
-	}
+  
+  public static let shared = App()
+  
+  private override init () {
+    super.init()
+  }
 }
