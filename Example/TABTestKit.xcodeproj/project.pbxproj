@@ -14,8 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		70FEA78A1F6AC74800633C5C /* ExampleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA7891F6AC74800633C5C /* ExampleFeature.swift */; };
-		70FEA78C1F6AC98700633C5C /* ExamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA78B1F6AC98700633C5C /* ExamplePage.swift */; };
-		70FEA78F1F6BD04D00633C5C /* ExampleSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA78E1F6BD04D00633C5C /* ExampleSteps.swift */; };
+		70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +43,7 @@
 		70FEA77C1F6AC29400633C5C /* TABTestKit_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TABTestKit_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FEA7801F6AC29400633C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70FEA7891F6AC74800633C5C /* ExampleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFeature.swift; sourceTree = "<group>"; };
-		70FEA78B1F6AC98700633C5C /* ExamplePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplePage.swift; sourceTree = "<group>"; };
-		70FEA78E1F6BD04D00633C5C /* ExampleSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSteps.swift; sourceTree = "<group>"; };
+		70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleScreen.swift; sourceTree = "<group>"; };
 		7C63340D41DA8ECC5990ED5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +92,7 @@
 				86888BF0805049FCC685A082 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
@@ -109,9 +108,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for TABTestKit";
@@ -121,6 +117,9 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -140,27 +139,18 @@
 			isa = PBXGroup;
 			children = (
 				70FEA7881F6AC58B00633C5C /* Features */,
-				70FEA7871F6AC57600633C5C /* Steps */,
-				70FEA7861F6AC57200633C5C /* Pages */,
-				70FEA7801F6AC29400633C5C /* Info.plist */,
+				70FEA7861F6AC57200633C5C /* Screens */,
+				C36B77442108B00E00005DB6 /* Supporting Files */,
 			);
 			path = TABTestKit_ExampleUITests;
 			sourceTree = "<group>";
 		};
-		70FEA7861F6AC57200633C5C /* Pages */ = {
+		70FEA7861F6AC57200633C5C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				70FEA78B1F6AC98700633C5C /* ExamplePage.swift */,
+				70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */,
 			);
-			name = Pages;
-			sourceTree = "<group>";
-		};
-		70FEA7871F6AC57600633C5C /* Steps */ = {
-			isa = PBXGroup;
-			children = (
-				70FEA78E1F6BD04D00633C5C /* ExampleSteps.swift */,
-			);
-			name = Steps;
+			name = Screens;
 			sourceTree = "<group>";
 		};
 		70FEA7881F6AC58B00633C5C /* Features */ = {
@@ -179,6 +169,14 @@
 				0F961EE8274AEF63C32361E2 /* Pods_TABTestKit_ExampleUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C36B77442108B00E00005DB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70FEA7801F6AC29400633C5C /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,8 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70FEA78A1F6AC74800633C5C /* ExampleFeature.swift in Sources */,
-				70FEA78F1F6BD04D00633C5C /* ExampleSteps.swift in Sources */,
-				70FEA78C1F6AC98700633C5C /* ExamplePage.swift in Sources */,
+				70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

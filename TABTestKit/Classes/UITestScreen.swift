@@ -1,5 +1,5 @@
 //
-//  GlobalFunctions.swift
+//  UITestScreen.swift
 //  TABTestKit
 //
 //  The MIT License (MIT)
@@ -8,10 +8,19 @@
 //  Copyright © 2017 The App Business LTD. All rights reserved.
 //
 
-import Foundation
 import XCTest
 
-open class GlobalFunctions {
+public protocol UITestScreen: class {
+  var trait: XCUIElement { get }
+}
+
+public extension UITestScreen {
+  /// Use primarily to assert that you're on the correct screen - all screens should try to have a trait element.
+  /// If the trait is static it can be decalred in the init() function of a page, if you want it to be dynamic you can pass it an element to use as a trait
+  func await(maxDuration duration: Double = 5) {
+    waitForElementToAppear(trait, maxDuration: duration)
+  }
+  
   /// Waits for an element to appear and raises a failure if it doesn't appear in the specified time
   ///
   /// - Parameters:
@@ -49,9 +58,8 @@ open class GlobalFunctions {
   ///   - xCoordinate: The given coordinate across the x axis
   ///   - yCoordinate: The given coordinate down the y axis
   func tapCoordinate(x xCoordinate: Double, y yCoordinate: Double) {
-    //Sets up a base coordinate (the top left of the screen)
-    let normalized = App.shared.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
-    let coordinate = normalized.withOffset(CGVector(dx: xCoordinate, dy: yCoordinate))
+    let topLeftOfScreen = App.shared.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+    let coordinate = topLeftOfScreen.withOffset(CGVector(dx: xCoordinate, dy: yCoordinate))
     coordinate.tap()
   }
 }
