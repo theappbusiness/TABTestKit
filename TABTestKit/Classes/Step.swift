@@ -22,32 +22,32 @@ public typealias And = Step
 public struct Step {
   
   @discardableResult
-  public init(_ handler: () -> Void, function: StaticString = #function) {
+  public init(_ handler: () -> Void) {
     handler()
   }
   
   @discardableResult
-  public init(_ handler: @autoclosure () -> Void, function: StaticString = #function) {
+  public init(_ handler: @autoclosure () -> Void) {
     handler()
   }
   
   @discardableResult
-  public init(I handler: () -> Void, function: StaticString = #function) {
+  public init(I handler: () -> Void) {
     handler()
   }
   
   @discardableResult
-  public init(I handler: @autoclosure () -> Void, function: StaticString = #function) {
+  public init(I handler: @autoclosure () -> Void) {
     handler()
   }
   
   @discardableResult
-  public init(the handler: () -> Void, function: StaticString = #function) {
+  public init(the handler: () -> Void) {
     handler()
   }
   
   @discardableResult
-  public init(the handler: @autoclosure () -> Void, function: StaticString = #function) {
+  public init(the handler: @autoclosure () -> Void) {
     handler()
   }
   
