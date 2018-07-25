@@ -9,5 +9,4 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.source_files = 'TABTestKit/Classes/**/*'
   s.frameworks = 'XCTest'
-  s.dependency 'XCTest-Gherkin', '0.13.2'
 end

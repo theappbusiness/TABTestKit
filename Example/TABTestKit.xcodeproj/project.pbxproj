@@ -210,7 +210,6 @@
 				70FEA7791F6AC29400633C5C /* Frameworks */,
 				70FEA77A1F6AC29400633C5C /* Resources */,
 				501E37B32ED7D38DF85EB072 /* [CP] Embed Pods Frameworks */,
-				7CD68BA2CA63F00D4F315D32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,31 +292,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TABTestKit/TABTestKit.framework",
-				"${BUILT_PRODUCTS_DIR}/XCTest-Gherkin/XCTest_Gherkin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABTestKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCTest_Gherkin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7CD68BA2CA63F00D4F315D32 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C568D81453F5883C4FFCDFF0 /* [CP] Check Pods Manifest.lock */ = {
