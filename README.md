@@ -76,9 +76,6 @@ When the `test_exampleTest` function runs as part of a test run, each step gets 
 
 See below for more in-depth discussion around steps and scenarios.
 
-## Usage
-To run the UI automation tests, switch to the UI test scheme in your project and press `CMD + U`.
-
 ### UITestScreen
 - `trait`: This is a page element that can be defined once a page has inherited from `BasePage` which will allow you to call `.await()` on that page.  
 - `await`: Uses the given `trait` element for a page and calls `waitForElementToAppear()` on it. Using a unique element to that page is the recommended selection for a trait.  
@@ -88,21 +85,78 @@ To run the UI automation tests, switch to the UI test scheme in your project and
 - `tapCoordinate`: Takes an x and y value and taps it.
 
 ### TestBase
-`setUp`: Starts the XCTestCase instance with, defaulting `continueAfterFailure` to `false` and launches the App using `launchApp()`.  
-`launchApp`: Calls `launchWithOptions()` from the App singleton to launch the app at the beginning of each XCTestCase.  
-`tearDown`: Calls `terminate()`  from the App singleton to terminate the app after each XCTestCase.
+- `setUp`: Starts the XCTestCase instance with, defaulting `continueAfterFailure` to `false` and launches the App using `launchApp()`.  
+- `launchApp`: Calls `launchWithOptions()` from the App singleton to launch the app at the beginning of each XCTestCase.  
+- `tearDown`: Calls `terminate()`  from the App singleton to terminate the app after each XCTestCase.
 
-### XCUIElement+ScrollTo
-(This is an extension of XCUIElement)  
-`scollToLastCell`: Finds the last cell on the page and uses `scroll` to get to it.  
-`scroll`: Scrolls to a given element, the default is to scroll down but this is overridable using a `bool` argument flag.
+### Steps and Scenarios
+Within test functions you define different steps. Steps can be one of the following:
+- `Given`
+- `When`
+- `Then`
+- `And`
+
+Steps are all typealiases of a struct called `Step`, which is initialised with a handler or function to call when the test runs.
+Thanks to Swift treating functions as reference types, you can pass functions directly into steps like this:
+
+```swift
+func doSomething() {}
+Given(I: doSomething)
+```
+
+Notice how it's possible to omit the `()` from the function. That's because you're not actually calling the function here, you're just passing it in to be called by the step when it's created during the test run.
+
+Steps have three different initialisers, allowing your test code to be human readable and expressive:
+
+```swift
+Given(I: doSomething)
+When(the: backEndIsErroring)
+Then(nothingHappens)
+```
+
+To make your code even more readable, you can go one step further and group steps in scenarios:
+```swift
+Scenario("Doing something when the back end is erroring") {
+  Given(I: doSomething)
+  When(the: backEndIsErroring)
+  Then(nothingHappens)
+}
+```
+
+Grouping steps in scenarios not only make your tests more readable, it also improves the Xcode test report logs as well as allowing you to run multiple scenarios in one test function, reducing test run time, without losing clarity:
+
+```swift
+func test_happyPath() {
+  Scenario("Launching the app") {
+    Given(I: launchTheApp)
+    When(the: backEndIsWorking)
+    Then(I: seeTheLoginScreen)
+  }
+
+  Scenario("Logging in") {
+    Given(I: seeTheLoginScreen)
+    When(I: logIn)
+    Then(I: seeTheSettingsScreen)
+  }
+}
+
+```
+
+### XCUIElement Extensions
+- `scollToLastCell`: Finds the last cell on the page and uses `scroll` to get to it.  
+- `scroll`: Scrolls to a given element, the default is to scroll down but this is overridable using a `bool` argument flag.
+- `visible`: Whether the element is visible.
+
+## Usage
+To run the UI automation tests, switch to the UI test scheme in your project and press `CMD + U`.
 
 ## Contributing
 Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 ## Author
 Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
-Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
+Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55
+Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire
 
 ## License
 TABTestKit is available under the MIT license. See the LICENSE file for more info.
