@@ -1,5 +1,5 @@
 //
-//  ExamplePage.swift
+//  ExampleScreen.swift
 //  TABTestKit
 //
 //  The MIT License (MIT)
@@ -11,7 +11,8 @@
 import XCTest
 import TABTestKit
 
-final class ExamplePage: UITestPage {
+final class ExampleScreen: UITestScreen {
+	
   let app: XCUIApplication
   let trait: XCUIElement
   
@@ -19,4 +20,5 @@ final class ExamplePage: UITestPage {
     app = App.shared
     trait = app.staticTexts["Hello world!"]
   }
+	
 }

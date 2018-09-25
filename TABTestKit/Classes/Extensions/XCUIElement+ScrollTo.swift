@@ -12,7 +12,7 @@ import XCTest
 
 public extension XCUIElement {
   
-  func visible() -> Bool {
+  func visible() -> Bool { // FIXME: Filename doesn't suggest this function would be here
     guard self.exists && !self.frame.isEmpty && self.frame.origin.x != 0.0 else { return false }
     return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
   }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TABTestKit'
-  s.version          = '0.3.2'
+  s.version          = '0.4.0'
   s.summary          = 'Base to work off of for XCUI.'
   s.homepage         = 'https://github.com/theappbusiness/TABTestKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -9,5 +9,4 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.source_files = 'TABTestKit/Classes/**/*'
   s.frameworks = 'XCTest'
-  s.dependency 'XCTest-Gherkin', '0.13.2'
 end

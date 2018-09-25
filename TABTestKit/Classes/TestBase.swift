@@ -20,7 +20,7 @@ open class TestBase: XCTestCase {
     launchApp()
   }
   
-  /// Launches the application with options if needed
+  /// Launches the application with options if needed // TODO: What does this mean "with options if needed"?
   func launchApp() {
     App.shared.launch()
   }

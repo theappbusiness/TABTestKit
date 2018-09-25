@@ -19,7 +19,7 @@ public final class App: XCUIApplication {
   
   public static let shared = App()
   
-  fileprivate override init () {
+  private override init () {
     super.init()
   }
 }
