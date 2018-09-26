@@ -77,8 +77,8 @@ When the `test_exampleTest` function runs as part of a test run, each step gets 
 See below for more in-depth discussion around steps and scenarios.
 
 ### UITestScreen
-- `trait`: This is a page element that can be defined once a page has inherited from `BasePage` which will allow you to call `.await()` on that page.  
-- `await`: Uses the given `trait` element for a page and calls `waitForElementToAppear()` on it. Using a unique element to that page is the recommended selection for a trait.  
+- `trait`: This is a screen element that must be defined once a page has conformed to `UITestScreen` which will allow you to call `.await()` on that screen.  
+- `await`: Uses the given `trait` element for a screen and calls `waitForElementToAppear()` on it. Using a unique element to that screen is the recommended selection for a trait.  
 - `waitForElementToAppear`: Takes an element and waits for a default (but overridable) amount of time and checks over that time period whether that element exists and is hittable.  
 - `tapWhenElementAppears`: Runs  `waitForElementToAppear` and adds a `.tap()` call onto the element.  
 - `waitForElementToDisappear`: Takes an element and waits a for a default (overridable) amount of time and checks over that time period whether that element doesn't exist and isn't hittable.  
@@ -140,6 +140,23 @@ func test_happyPath() {
   }
 }
 
+```
+
+Finally, you can pass functions into steps that take arguments, meaning you can do stuff like this:
+```swift
+enum Screen {
+  case login
+  case settings
+}
+func see(theScreen screen: Screen) {
+  switch screen {
+    case .login: loginScreen.await()
+    case .settings: settingsScreen.await()
+  }
+}
+Given(I: see(theScreen: .login))
+When(I: logIn)
+Then(I: see(theScreen: .settings))
 ```
 
 ### XCUIElement Extensions
