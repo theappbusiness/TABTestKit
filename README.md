@@ -20,6 +20,14 @@ it, simply add the following line to your Podfile:
 pod 'TABTestKit'
 ```
 
+### Subspecs
+
+There's 1 subspec available: `Biometrics`. This means you can get a subset of `TABTestKit`'s functionality.
+
+```ruby
+pod 'TABTestKit/Biometrics'
+```
+
 ## Getting started
 There are three core concepts in TABTestKit:
 
@@ -143,6 +151,7 @@ func test_happyPath() {
 ```
 
 Finally, you can pass functions into steps that take arguments, meaning you can do stuff like this:
+
 ```swift
 enum Screen {
   case login
@@ -163,6 +172,30 @@ Then(I: see(theScreen: .settings))
 - `scollToLastCell`: Finds the last cell on the page and uses `scroll` to get to it.  
 - `scroll`: Scrolls to a given element, the default is to scroll down but this is overridable using a `bool` argument flag.
 - `visible`: Whether the element is visible.
+
+### Biometrics
+
+`TABTestKit` allows you to simulate biometrics on the simulator. This means you can enroll or unenroll biometrics and simulate a successful or unsuccessful biometric authentication. This can be really helpful when trying to automate biometric features of your app.
+
+#### Simulating enrollment and unenrollment:
+
+```swift
+// Enrollment
+Biometrics.enrolled()
+
+// Unenrollment
+Biometrics.unenrolled()
+```
+
+#### Simulating successful and unsuccessful authentication:
+
+```swift
+// Successful authentication
+Biometrics.successfulAuthentication()
+
+// Unsuccessful authentication
+Biometrics.unsuccessfulAuthentication()
+```
 
 ## Usage
 To run the UI automation tests, switch to the UI test scheme in your project and press `CMD + U`.
