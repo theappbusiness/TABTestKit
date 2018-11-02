@@ -19,11 +19,15 @@
     [self postEnrollment:false];
 }
 
+// Uses Touch ID ('fingerTouch') and FaceID ('pearl') to perform 
+// an successful authentication.
 + (void)successfulAuthentication {
     notify_post("com.apple.BiometricKit_Sim.fingerTouch.match");
     notify_post("com.apple.BiometricKit_Sim.pearl.match");
 }
 
+// Uses Touch ID ('fingerTouch') and FaceID ('pearl') to perform 
+// an unsuccessful authentication.
 + (void)unsuccessfulAuthentication {
     notify_post("com.apple.BiometricKit_Sim.fingerTouch.nomatch");
     notify_post("com.apple.BiometricKit_Sim.pearl.nomatch");
