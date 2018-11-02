@@ -12,6 +12,5 @@ Pod::Spec.new do |s|
 
   s.subspec 'Biometrics' do |b|
     b.source_files = 'TABTestKit/Classes/Biometrics/**/*'
-    b.user_target_xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'TABTestKit/Classes/Biometrics/Biometrics-Bridging-Header.h' }
   end
 end

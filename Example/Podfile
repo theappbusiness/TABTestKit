@@ -1,7 +1,5 @@
-use_frameworks!
-
 target 'TABTestKit_ExampleUITests' do
+    use_frameworks!
     pod 'TABTestKit', :path => '../'
-    inherit! :search_paths
     platform :ios, '10.0'
 end

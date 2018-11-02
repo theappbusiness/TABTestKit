@@ -207,7 +207,7 @@
 				70FEA7781F6AC29400633C5C /* Sources */,
 				70FEA7791F6AC29400633C5C /* Frameworks */,
 				70FEA77A1F6AC29400633C5C /* Resources */,
-				501E37B32ED7D38DF85EB072 /* [CP] Embed Pods Frameworks */,
+				552D8304E1CA206FDDA9F6F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,22 +282,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		501E37B32ED7D38DF85EB072 /* [CP] Embed Pods Frameworks */ = {
+		552D8304E1CA206FDDA9F6F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TABTestKit/TABTestKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABTestKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C568D81453F5883C4FFCDFF0 /* [CP] Check Pods Manifest.lock */ = {
