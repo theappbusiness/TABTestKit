@@ -177,6 +177,8 @@ Then(I: see(theScreen: .settings))
 
 `TABTestKit` allows you to simulate biometrics on the simulator. This means you can enroll or unenroll biometrics and simulate a successful or unsuccessful biometric authentication. This can be really helpful when trying to automate biometric features of your app.
 
+**Note**: You will also need to handle the Face ID authentication dialog, which shows up when your app uses Face ID for the first time. In order to do so, you need to define the `NSFaceIDUsageDescription` key in the Info.plist file and handle the dialog in your UI test code.
+
 #### Simulating enrollment and unenrollment:
 
 ```swift
