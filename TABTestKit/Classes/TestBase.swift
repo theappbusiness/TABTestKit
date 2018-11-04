@@ -17,6 +17,7 @@ open class TestBase: XCTestCase {
   open override func setUp() {
     super.setUp()
     continueAfterFailure = false
+		Biometrics.unenrolled()
     launchApp()
   }
   

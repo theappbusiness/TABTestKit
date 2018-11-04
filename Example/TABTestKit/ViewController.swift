@@ -12,35 +12,36 @@ import UIKit
 import LocalAuthentication
 
 class ViewController: UIViewController {
-  @IBOutlet var helloWorldLabel: UILabel!
-  @IBOutlet var testTextField: UITextField!
-  
+  @IBOutlet private var helloWorldLabel: UILabel!
+  @IBOutlet private var testTextField: UITextField!
   @IBOutlet private var biometricsStateLabel: UILabel!
   @IBOutlet private var authenticateButton: UIButton!
   
   @IBAction private func authenticateButtonTapped(_ sender: UIButton) {
     let context = LAContext()
-    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
-                           localizedReason: "Authenticate now!",
-                           reply: { _, _ in })
+    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authenticate now!", reply: { _, _ in })
   }
   
   override func viewDidLoad() {
-    setup()
     configure()
+    setupNotificationListener()
+    setup()
   }
   
-  private func setup() {
+  @objc private func setup() {
     let context = LAContext()
     var error: NSError?
     let errorPointer: NSErrorPointer = NSErrorPointer(&error)
-    let isBiometryAvailable = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
-                                                        error: errorPointer)
+    let isBiometryAvailable = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: errorPointer)
     if isBiometryAvailable {
       handleBiometryAvailable()
     } else {
       handleBiometryUnavailable()
     }
+  }
+  
+  private func setupNotificationListener() {
+    NotificationCenter.default.addObserver(self, selector: #selector(setup), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
   }
   
   private func configure() {
@@ -57,6 +58,10 @@ class ViewController: UIViewController {
   private func handleBiometryUnavailable() {
     biometricsStateLabel.text = "Biometrics unavailable"
     authenticateButton.isEnabled = false
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
 }
 
