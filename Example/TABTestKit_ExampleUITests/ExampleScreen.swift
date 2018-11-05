@@ -18,7 +18,9 @@ final class ExampleScreen: UITestScreen {
   let authenticateButton: XCUIElement
   let authenticateLabel: XCUIElement
   
-  init() {
+  static let shared = ExampleScreen()
+  
+  private init() {
     app = App.shared
     trait = app.staticTexts["Hello world!"]
     authenticateButton = app.buttons.element(matching: .button, identifier: "authenticateButton")

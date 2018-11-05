@@ -9,17 +9,14 @@
 import XCTest
 import TABTestKit
 
-class BiometricFeature: TestBase {
-  
-  private let exampleScreen = ExampleScreen()
-  private let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+class BiometricFeature: TestBase, AppContext, ExampleContext {
   
   func test_launchWithBiometricsDisabled() {
     Scenario("Launching the app with biometrics disabled") {
       Given(I: acceptFaceIDAuthenticationPromptIfRequired)
-      And(I: seeTheExampleScreen)
-      And(I: seeBiometricsUnavailableStatus())
-      And(the: authenticateButtonIsDisabled())
+      When(I: seeTheExampleScreen)
+      Then(I: seeBiometricsUnavailableStatus)
+      And(the: authenticateButtonIsDisabled)
     }
   }
   
@@ -40,23 +37,6 @@ class BiometricFeature: TestBase {
 
 private extension BiometricFeature {
   
-  func backgroundTheApp() {
-    XCUIDevice.shared.press(.home)
-  }
-  
-  func foregroundTheApp() {
-    App.shared.activate()
-  }
-  
-  func acceptFaceIDAuthenticationPromptIfRequired() {
-    let okayButton = springboard.alerts.buttons["OK"].firstMatch
-    guard okayButton.exists else { return }
-    okayButton.tap()
-  }
-}
-
-private extension BiometricFeature {
-  
   func performEnrollment() {
     Biometrics.enrolled()
   }
@@ -66,11 +46,11 @@ private extension BiometricFeature {
   }
   
   func tapAuthenticateButton() {
-    exampleScreen.authenticateButton.tap()
+    ExampleScreen.shared.authenticateButton.tap()
   }
   
   func seeTheExampleScreen() {
-    exampleScreen.await()
+    ExampleScreen.shared.await()
   }
   
   func performSuccessfulAuthentication() {
@@ -80,18 +60,18 @@ private extension BiometricFeature {
 
 private extension BiometricFeature {
   func seeBiometricsUnavailableStatus() {
-    XCTAssertEqual(exampleScreen.authenticateLabel.label, "Biometrics unavailable")
+    XCTAssertEqual(ExampleScreen.shared.authenticateLabel.label, "Biometrics unavailable")
   }
   
   func authenticateButtonIsDisabled() {
-    XCTAssertFalse(exampleScreen.authenticateButton.isEnabled)
+    XCTAssertFalse(ExampleScreen.shared.authenticateButton.isEnabled)
   }
   
   func authenticateButtonIsEnabled() {
-    XCTAssertTrue(exampleScreen.authenticateButton.isEnabled)
+    XCTAssertTrue(ExampleScreen.shared.authenticateButton.isEnabled)
   }
   
   func seeBiometricsAvailableStatus() {
-    XCTAssertEqual(exampleScreen.authenticateLabel.label, "Biometrics available")
+    XCTAssertEqual(ExampleScreen.shared.authenticateLabel.label, "Biometrics available")
   }
 }

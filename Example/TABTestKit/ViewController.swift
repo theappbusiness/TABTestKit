@@ -17,15 +17,22 @@ class ViewController: UIViewController {
   @IBOutlet private var biometricsStateLabel: UILabel!
   @IBOutlet private var authenticateButton: UIButton!
   
-  @IBAction private func authenticateButtonTapped(_ sender: UIButton) {
-    let context = LAContext()
-    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authenticate now!", reply: { _, _ in })
-  }
   
   override func viewDidLoad() {
+    super.viewDidLoad()
     configure()
     setupNotificationListener()
     setup()
+  }
+  
+  private func configure() {
+    helloWorldLabel.text = "Hello world!"
+    testTextField.accessibilityIdentifier = "Test Text Field"
+    helloWorldLabel.accessibilityIdentifier = "Hello World Label"
+  }
+  
+  private func setupNotificationListener() {
+    NotificationCenter.default.addObserver(self, selector: #selector(setup), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
   }
   
   @objc private func setup() {
@@ -40,16 +47,6 @@ class ViewController: UIViewController {
     }
   }
   
-  private func setupNotificationListener() {
-    NotificationCenter.default.addObserver(self, selector: #selector(setup), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-  }
-  
-  private func configure() {
-    helloWorldLabel.text = "Hello world!"
-    testTextField.accessibilityIdentifier = "Test Text Field"
-    helloWorldLabel.accessibilityIdentifier = "Hello World Label"
-  }
-  
   private func handleBiometryAvailable() {
     biometricsStateLabel.text = "Biometrics available"
     authenticateButton.isEnabled = true
@@ -60,8 +57,9 @@ class ViewController: UIViewController {
     authenticateButton.isEnabled = false
   }
   
-  deinit {
-    NotificationCenter.default.removeObserver(self)
+  @IBAction private func authenticateButtonTapped(_ sender: UIButton) {
+    let context = LAContext()
+    context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authenticate now!", reply: { _, _ in })
   }
 }
 

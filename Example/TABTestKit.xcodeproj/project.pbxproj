@@ -16,6 +16,8 @@
 		70FEA78A1F6AC74800633C5C /* ExampleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA7891F6AC74800633C5C /* ExampleFeature.swift */; };
 		70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */; };
 		7C0007B3218FAD61008605D4 /* BiometricFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0007B2218FAD61008605D4 /* BiometricFeature.swift */; };
+		7C0007B621903F29008605D4 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0007B521903F29008605D4 /* AppContext.swift */; };
+		7C0007B821903FE1008605D4 /* ExampleContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0007B721903FE1008605D4 /* ExampleContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		70FEA7891F6AC74800633C5C /* ExampleFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFeature.swift; sourceTree = "<group>"; };
 		70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleScreen.swift; sourceTree = "<group>"; };
 		7C0007B2218FAD61008605D4 /* BiometricFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricFeature.swift; sourceTree = "<group>"; };
+		7C0007B521903F29008605D4 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		7C0007B721903FE1008605D4 /* ExampleContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleContext.swift; sourceTree = "<group>"; };
 		7C63340D41DA8ECC5990ED5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		70FEA77D1F6AC29400633C5C /* TABTestKit_ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7C0007B421903F19008605D4 /* Contexts */,
 				70FEA7881F6AC58B00633C5C /* Features */,
 				70FEA7861F6AC57200633C5C /* Screens */,
 				C36B77442108B00E00005DB6 /* Supporting Files */,
@@ -162,6 +167,15 @@
 				7C0007B2218FAD61008605D4 /* BiometricFeature.swift */,
 			);
 			name = Features;
+			sourceTree = "<group>";
+		};
+		7C0007B421903F19008605D4 /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				7C0007B521903F29008605D4 /* AppContext.swift */,
+				7C0007B721903FE1008605D4 /* ExampleContext.swift */,
+			);
+			name = Contexts;
 			sourceTree = "<group>";
 		};
 		86888BF0805049FCC685A082 /* Frameworks */ = {
@@ -342,8 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70FEA78A1F6AC74800633C5C /* ExampleFeature.swift in Sources */,
+				7C0007B621903F29008605D4 /* AppContext.swift in Sources */,
 				70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */,
 				7C0007B3218FAD61008605D4 /* BiometricFeature.swift in Sources */,
+				7C0007B821903FE1008605D4 /* ExampleContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
