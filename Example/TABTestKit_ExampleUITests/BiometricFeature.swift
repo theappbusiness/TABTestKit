@@ -11,6 +11,8 @@ import TABTestKit
 
 class BiometricFeature: TestBase, AppContext, ExampleContext {
   
+  var exampleScreen = ExampleScreen()
+  
   func test_launchWithBiometricsDisabled() {
     Scenario("Launching the app with biometrics disabled") {
       Given(I: acceptFaceIDAuthenticationPromptIfRequired)
@@ -46,11 +48,11 @@ private extension BiometricFeature {
   }
   
   func tapAuthenticateButton() {
-    ExampleScreen.shared.authenticateButton.tap()
+    exampleScreen.authenticateButton.tap()
   }
   
   func seeTheExampleScreen() {
-    ExampleScreen.shared.await()
+    exampleScreen.await()
   }
   
   func performSuccessfulAuthentication() {
@@ -60,18 +62,18 @@ private extension BiometricFeature {
 
 private extension BiometricFeature {
   func seeBiometricsUnavailableStatus() {
-    XCTAssertEqual(ExampleScreen.shared.authenticateLabel.label, "Biometrics unavailable")
+    XCTAssertEqual(exampleScreen.authenticateLabel.label, "Biometrics unavailable")
   }
   
   func authenticateButtonIsDisabled() {
-    XCTAssertFalse(ExampleScreen.shared.authenticateButton.isEnabled)
+    XCTAssertFalse(exampleScreen.authenticateButton.isEnabled)
   }
   
   func authenticateButtonIsEnabled() {
-    XCTAssertTrue(ExampleScreen.shared.authenticateButton.isEnabled)
+    XCTAssertTrue(exampleScreen.authenticateButton.isEnabled)
   }
   
   func seeBiometricsAvailableStatus() {
-    XCTAssertEqual(ExampleScreen.shared.authenticateLabel.label, "Biometrics available")
+    XCTAssertEqual(exampleScreen.authenticateLabel.label, "Biometrics available")
   }
 }

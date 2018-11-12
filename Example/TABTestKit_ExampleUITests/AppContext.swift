@@ -10,7 +10,7 @@ import XCTest
 import TABTestKit
 
 protocol AppContext {}
-extension AppContext where Self: TestBase {
+extension AppContext {
   
   func backgroundTheApp() {
     XCUIDevice.shared.press(.home)

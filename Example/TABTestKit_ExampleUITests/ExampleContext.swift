@@ -7,15 +7,15 @@
 //
 
 import Foundation
-
 import XCTest
 import TABTestKit
 
 protocol ExampleContext {}
-extension ExampleContext where Self: TestBase {
+extension ExampleContext {
   
   func seeTheExampleScreen() {
-    ExampleScreen.shared.await()
+    let exampleScreen = ExampleScreen()
+    exampleScreen.await()
   }
   
   func acceptFaceIDAuthenticationPromptIfRequired() {
