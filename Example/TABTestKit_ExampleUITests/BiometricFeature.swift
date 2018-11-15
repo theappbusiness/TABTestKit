@@ -29,8 +29,7 @@ class BiometricFeature: TestBase, AppContext, ExampleContext {
       And(I: seeBiometricsUnavailableStatus)
       And(the: authenticateButtonIsDisabled)
       When(I: performEnrollment)
-      And(I: backgroundTheApp)
-      And(I: foregroundTheApp)
+      And(I: relaunchTheApp)
       And(I: tapAuthenticateButton)
       Then(I: performSuccessfulAuthentication)
     }

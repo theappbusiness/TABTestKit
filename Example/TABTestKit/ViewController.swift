@@ -21,7 +21,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
-    setupNotificationListener()
     setup()
   }
   
@@ -29,10 +28,6 @@ class ViewController: UIViewController {
     helloWorldLabel.text = "Hello world!"
     testTextField.accessibilityIdentifier = "Test Text Field"
     helloWorldLabel.accessibilityIdentifier = "Hello World Label"
-  }
-  
-  private func setupNotificationListener() {
-    NotificationCenter.default.addObserver(self, selector: #selector(setup), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
   }
   
   @objc private func setup() {

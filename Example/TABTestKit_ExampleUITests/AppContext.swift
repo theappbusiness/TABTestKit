@@ -19,4 +19,9 @@ extension AppContext {
   func foregroundTheApp() {
     App.shared.activate()
   }
+  
+  func relaunchTheApp() {
+    App.shared.terminate()
+    App.shared.launch()
+  }
 }
