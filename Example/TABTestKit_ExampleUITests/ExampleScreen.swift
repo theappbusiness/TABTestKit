@@ -15,10 +15,14 @@ final class ExampleScreen: UITestScreen {
 	
   let app: XCUIApplication
   let trait: XCUIElement
+  let authenticateButton: XCUIElement
+  let authenticateLabel: XCUIElement
   
   init() {
     app = App.shared
     trait = app.staticTexts["Hello world!"]
+    authenticateButton = app.buttons.element(matching: .button, identifier: "authenticateButton")
+    authenticateLabel = app.staticTexts.element(matching: .any, identifier: "biometricStatusLabel")
   }
 	
 }

@@ -11,9 +11,7 @@
 import XCTest
 import TABTestKit
 
-class ExampleFeature: TestBase {
-  
-  private let exampleScreen = ExampleScreen()
+class ExampleFeature: TestBase, AppContext, ExampleContext {
   
   func test_example() {
     Scenario("Backgrounding and foregrounding the app") {
@@ -22,21 +20,4 @@ class ExampleFeature: TestBase {
       Then(I: seeTheExampleScreen)
     }
   }
-  
-}
-
-private extension ExampleFeature {
-  
-  func backgroundTheApp() {
-    XCUIDevice.shared.press(.home)
-  }
-  
-  func foregroundTheApp() {
-    App.shared.activate()
-  }
-  
-  func seeTheExampleScreen() {
-    exampleScreen.await()
-  }
-  
 }
