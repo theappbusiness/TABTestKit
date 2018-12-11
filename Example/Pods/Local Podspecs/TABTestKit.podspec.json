@@ -1,6 +1,6 @@
 {
   "name": "TABTestKit",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "summary": "Base to work off of for XCUI.",
   "homepage": "https://github.com/theappbusiness/TABTestKit",
   "license": {
@@ -12,16 +12,17 @@
   },
   "source": {
     "git": "https://github.com/theappbusiness/TABTestKit.git",
-    "tag": "0.3.0"
+    "tag": "0.5.0"
   },
   "platforms": {
     "ios": "10.0"
   },
   "source_files": "TABTestKit/Classes/**/*",
   "frameworks": "XCTest",
-  "dependencies": {
-    "XCTest-Gherkin": [
-      "0.13.2"
-    ]
-  }
+  "subspecs": [
+    {
+      "name": "Biometrics",
+      "source_files": "TABTestKit/Classes/Biometrics/**/*"
+    }
+  ]
 }

@@ -12,22 +12,23 @@ import XCTest
 
 /// All Features should inherit from this class
 open class TestBase: XCTestCase {
-  
-  /// Provides the setup for appication that happens before each XCTestCase
-  open override func setUp() {
-    super.setUp()
-    continueAfterFailure = false
-    launchApp()
-  }
-  
-  /// Launches the application with options if needed
-  func launchApp() {
-    App.shared.launch()
-  }
-  
-  /// Provides the tear down for the application and each XCTestCase
-  open override func tearDown() {
-    App.shared.terminate()
-    super.tearDown()
-  }
+	
+	/// Provides the setup for appication that happens before each XCTestCase
+	open override func setUp() {
+		super.setUp()
+		continueAfterFailure = false
+		Biometrics.unenrolled()
+		launchApp()
+	}
+	
+	/// Launches the application with options if needed // TODO: What does this mean "with options if needed"?
+	func launchApp() {
+		App.shared.launch()
+	}
+	
+	/// Provides the tear down for the application and each XCTestCase
+	open override func tearDown() {
+		App.shared.terminate()
+		super.tearDown()
+	}
 }

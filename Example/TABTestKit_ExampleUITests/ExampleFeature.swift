@@ -11,9 +11,13 @@
 import XCTest
 import TABTestKit
 
-class ExampleFeature: TestBase {
+class ExampleFeature: TestBase, AppContext, ExampleContext {
   
-  func test_ExampleFeature() {
-    Given("I have opened the application")
+  func test_example() {
+    Scenario("Backgrounding and foregrounding the app") {
+      Given(I: backgroundTheApp)
+      When(I: foregroundTheApp)
+      Then(I: seeTheExampleScreen)
+    }
   }
 }
