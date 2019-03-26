@@ -1,6 +1,6 @@
 os:
   - osx
-osx_image: xcode9
+osx_image: xcode10.2
 language: swift
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -sdk iphonesimulator11.0 -destination "OS=11.0,name=iPhone 6s" | xcpretty
