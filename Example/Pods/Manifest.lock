@@ -1,5 +1,7 @@
 PODS:
-  - TABTestKit (0.5.0)
+  - TABTestKit (0.5.0):
+    - TABTestKit/Biometrics (= 0.5.0)
+  - TABTestKit/Biometrics (0.5.0)
 
 DEPENDENCIES:
   - TABTestKit (from `../`)
@@ -9,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TABTestKit: f4f936e04e630a0dceffd9f6eb26ee6aa6a59820
+  TABTestKit: a5f7f55733973c2a743751a60490bae89693f523
 
 PODFILE CHECKSUM: 2287bc227af6697b9a9273b1974b8f98749ae630
 

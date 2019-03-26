@@ -305,17 +305,13 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TABTestKit/TABTestKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABTestKit.framework",
+				'${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABTestKit.framework',
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -333,7 +329,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TABTestKit_ExampleUITests-checkManifestLockResult.txt",
+				'$(DERIVED_FILE_DIR)/Pods-TABTestKit_ExampleUITests-checkManifestLockResult.txt',
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

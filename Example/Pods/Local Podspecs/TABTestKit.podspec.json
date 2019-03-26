@@ -8,7 +8,9 @@
     "file": "LICENSE"
   },
   "authors": {
-    "zacoid55": "zac@theappbusiness.com"
+    "zacoid55": "zac@theappbusiness.com",
+    "KaneCheshire": "kane.cheshire@theappbusiness.com",
+    "theblixguy": "suyash.srijan@theappbuisness.com"
   },
   "source": {
     "git": "https://github.com/theappbusiness/TABTestKit.git",
