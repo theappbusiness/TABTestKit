@@ -18,5 +18,11 @@
     "ios": "10.0"
   },
   "source_files": "TABTestKit/Classes/**/*",
-  "frameworks": "XCTest"
+  "frameworks": "XCTest",
+  "subspecs": [
+    {
+      "name": "Biometrics",
+      "source_files": "TABTestKit/Classes/Biometrics/**/*"
+    }
+  ]
 }
