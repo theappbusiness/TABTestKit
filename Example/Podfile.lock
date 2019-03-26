@@ -1,5 +1,5 @@
 PODS:
-  - TABTestKit (0.4.0)
+  - TABTestKit (0.5.0)
 
 DEPENDENCIES:
   - TABTestKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TABTestKit: 4df0cc3d1612d898e2ab40c6c94a62bded0e0832
+  TABTestKit: f4f936e04e630a0dceffd9f6eb26ee6aa6a59820
 
 PODFILE CHECKSUM: 8b09a0d1a95ec21d6e263f1a0957959c6030cdbb
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.1
