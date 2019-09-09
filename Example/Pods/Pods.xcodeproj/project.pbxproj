@@ -17,6 +17,8 @@
 		B1EC39367BFD3B36E5DB6E8AE5541A73 /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 39E45F07D677EB65990CE07942AACB32 /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C30B013B2326AB2000A9EB87 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01392326AB1800A9EB87 /* SecureTextField.swift */; };
 		C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */; };
+		C30B013F2326AF0B00A9EB87 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B013E2326AF0B00A9EB87 /* Alert.swift */; };
+		C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01402326AF7A00A9EB87 /* AlertContext.swift */; };
 		C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* ViewController.swift */; };
 		C36FD68E2326663200D7CED6 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68A2326663200D7CED6 /* Tappable.swift */; };
 		C36FD68F2326663200D7CED6 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68B2326663200D7CED6 /* Element.swift */; };
@@ -89,6 +91,8 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C30B01392326AB1800A9EB87 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+isVisible.swift"; sourceTree = "<group>"; };
+		C30B013E2326AF0B00A9EB87 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C30B01402326AF7A00A9EB87 /* AlertContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContext.swift; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C36FD6892326663200D7CED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 				C36FD6BD2326741700D7CED6 /* TextView.swift */,
 				C36FD6BF2326742A00D7CED6 /* NavBar.swift */,
 				C36FD6C12326743D00D7CED6 /* TabBar.swift */,
+				C30B013E2326AF0B00A9EB87 /* Alert.swift */,
 			);
 			name = Element;
 			path = TABTestKit/Classes/Element;
@@ -292,6 +297,7 @@
 				C36FD69F2326676C00D7CED6 /* InteractionContext.swift */,
 				C36FD6C823267BA700D7CED6 /* AppContext.swift */,
 				C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */,
+				C30B01402326AF7A00A9EB87 /* AlertContext.swift */,
 			);
 			name = Contexts;
 			path = TABTestKit/Classes/Contexts;
@@ -502,7 +508,9 @@
 				C36FD68F2326663200D7CED6 /* Element.swift in Sources */,
 				C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */,
 				C36FD6C72326790400D7CED6 /* Scrollable.swift in Sources */,
+				C30B013F2326AF0B00A9EB87 /* Alert.swift in Sources */,
 				4075D83B7601010B7A0503426020C0D4 /* Biometrics.m in Sources */,
+				C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */,
 				C36FD6942326664900D7CED6 /* Step.swift in Sources */,
 				F785827A6F363207A87B0DDF8B435B10 /* TABTestKit-dummy.m in Sources */,
 				C36FD68E2326663200D7CED6 /* Tappable.swift in Sources */,

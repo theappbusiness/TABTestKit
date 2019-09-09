@@ -10,12 +10,14 @@
 
 import XCTest
 
-/// All tests should inherit from this class
-open class TABTestCase: XCTestCase, InteractionContext, NavigationContext, AppContext, BiometricsContext {
+/// All tests should inherit from this class.
+/// By inheriting from this class, you'll automatically get all the functions available in the contexts this class
+/// conforms to.
+open class TABTestCase: XCTestCase, InteractionContext, NavigationContext, AppContext, BiometricsContext, AlertContext {
 	
-	/// Provides the setup for appication that happens before each XCTestCase
-	/// As part of setUp, prelaunchSetup will be called.
-	/// Override prelaunchSetup to provide custom prelaunch setup behaviour.
+	/// Provides the setup for appication that happens before each XCTestCase.
+	/// As part of setUp, preLaunchSetup will be called.
+	/// Override preLaunchSetup to provide custom prelaunch setup behaviour.
 	open override func setUp() {
 		continueAfterFailure = false
 		Biometrics.unenrolled()
@@ -25,7 +27,9 @@ open class TABTestCase: XCTestCase, InteractionContext, NavigationContext, AppCo
 		}
 	}
 	
-	/// Provides the tear down for the application and each XCTestCase
+	/// Provides the tear down for the application and each XCTestCase.
+	/// As part of tearDown, preTerminationTearDown will be called.
+	/// Override preTerminationTearDown to provide custom pretermination tear down behaviour.
 	open override func tearDown() {
 		preTerminationTearDown {
 			App().terminate()
