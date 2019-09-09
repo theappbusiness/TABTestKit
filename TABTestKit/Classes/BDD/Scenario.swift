@@ -17,14 +17,14 @@ public struct Scenario {
 	/// The description of this scenario.
 	public let description: String
 	
-  @discardableResult
-  public init(_ description: String, _ handler: () -> Void) {
+	@discardableResult
+	public init(_ description: String, _ handler: () -> Void) {
 		self.description = description
 		Scenario.current = self
-    XCTContext.runActivity(named: description) { _ in
-      handler()
-    }
-  }
-  
+		XCTContext.runActivity(named: description) { _ in
+			handler()
+		}
+	}
+	
 }
 

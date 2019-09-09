@@ -13,13 +13,13 @@ public protocol Scrollable {
 	
 	/// Scrolls in a direction.
 	/// - Parameter direction: The direction to scroll in.
-	func scroll(direction: ElementAttributes.Direction)
+	func scroll(_ direction: ElementAttributes.Direction)
 	
 }
 
 public extension Scrollable where Self: Element {
 	
-	func scroll(direction: ElementAttributes.Direction) {
+	func scroll(_ direction: ElementAttributes.Direction) {
 		await(.exists, .hittable)
 		switch direction {
 		case .up:

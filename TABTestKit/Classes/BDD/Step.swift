@@ -32,39 +32,39 @@ public struct Step {
 	
 	// MARK: - Standard init, i.e. Given(somethingHappens)
 	
-  @discardableResult
-  public init(_ handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
+	@discardableResult
+	public init(_ handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
-  }
-  
-  @discardableResult
-  public init(_ handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
+	}
+	
+	@discardableResult
+	public init(_ handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
-  }
+	}
 	
 	// MARK: - "I" init, i.e. Given(I: doSomething)
-  
-  @discardableResult
-  public init(I handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
+	
+	@discardableResult
+	public init(I handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
-  }
-  
-  @discardableResult
-  public init(I handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
+	}
+	
+	@discardableResult
+	public init(I handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
-  }
+	}
 	
 	// MARK: - "the" init, i.e. Given(the: thingIsTrue)
-  
-  @discardableResult
-  public init(the handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
+	
+	@discardableResult
+	public init(the handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
-  }
-  
-  @discardableResult
-  public init(the handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
+	}
+	
+	@discardableResult
+	public init(the handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
-  }
+	}
 	
 	// MARK: - "a" init, i.e. Given(a: serverErrorIsReturned)
 	
@@ -77,7 +77,7 @@ public struct Step {
 	init(a handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
 		self.init(handler: handler, line: line, function: function)
 	}
-  
+	
 }
 
 private extension Step {

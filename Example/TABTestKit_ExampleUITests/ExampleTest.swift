@@ -38,7 +38,7 @@ final class ExampleTest: TABTestCase {
     }
     
     Scenario("Terminating and relaunching the app") {
-      Given(I: relaunchTheApp())
+      Given(I: relaunchTheApp)
       Then(I: see(exampleScreen))
     }
   }
