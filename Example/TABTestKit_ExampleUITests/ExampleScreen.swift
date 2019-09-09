@@ -19,18 +19,3 @@ struct ExampleScreen: Screen {
 }
 
 let exampleScreen = ExampleScreen()
-
-
-struct AScreen: Screen {
-  
-  let trait = ViewController(id: "")
-  let collectionView = CollectionView(id: "")
-  var firstCell: CollectionView.Cell {
-    return .init(id: "cell", index: 0, collectionView: collectionView)
-  }
-  var lastCell: CollectionView.Cell {
-    let lastIndex = collectionView.numberOfCells(matchingID: "cell") - 1
-    return .init(id: "cell", index: lastIndex, collectionView: collectionView)
-  }
-  
-}
