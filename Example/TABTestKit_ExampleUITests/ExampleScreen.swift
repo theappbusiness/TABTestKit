@@ -8,21 +8,14 @@
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-import XCTest
 import TABTestKit
 
-final class ExampleScreen: UITestScreen {
+struct ExampleScreen: Screen {
 	
-  let app: XCUIApplication
-  let trait: XCUIElement
-  let authenticateButton: XCUIElement
-  let authenticateLabel: XCUIElement
-  
-  init() {
-    app = App.shared
-    trait = app.staticTexts["Hello world!"]
-    authenticateButton = app.buttons.element(matching: .button, identifier: "authenticateButton")
-    authenticateLabel = app.staticTexts.element(matching: .any, identifier: "biometricStatusLabel")
-  }
+  let trait = Label(id: "Hello world!")
+  let authenticateButton = Button(id: "authenticateButton")
+  let authenticateLabel = Label(id: "biometricStatusLabel")
 	
 }
+
+let exampleScreen = ExampleScreen()

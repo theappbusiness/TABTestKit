@@ -18,15 +18,15 @@ extension XCUIElement { // TODO: Move
 
 extension XCUIElement {
 	
-	func wait(for somethingThatShouldBeTrue: @autoclosure () -> Bool, timeout: TimeInterval) -> Bool {
+	func wait(for somethingThatShouldBeTrue: @autoclosure () -> Bool, timeout: TimeInterval, file: StaticString = #file, line: UInt = #line) {
 		var interval = 0.0
 		repeat {
 			let shouldTryAgain = !somethingThatShouldBeTrue()
-			guard shouldTryAgain else { return true }
+			guard shouldTryAgain else { return }
 			interval += 1
 			sleep(1)
 		} while interval <= timeout
-		return false
+		XCTFail("Failed waiting for element state", file: file, line: line)
 	}
 	
 }

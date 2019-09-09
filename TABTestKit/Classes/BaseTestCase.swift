@@ -11,7 +11,7 @@
 import XCTest
 
 /// All tests should inherit from this class
-open class BaseTestCase: XCTestCase {
+open class TABTestCase: XCTestCase, InteractionContext, NavigationContext, AppContext, BiometricsContext {
 	
 	/// Provides the setup for appication that happens before each XCTestCase
 	/// As part of setUp, prelaunchSetup will be called.
@@ -19,8 +19,16 @@ open class BaseTestCase: XCTestCase {
 	open override func setUp() {
 		continueAfterFailure = false
 		Biometrics.unenrolled()
-		prelaunchSetup {
-			App.shared.launch()
+		App().launchEnvironment["TABTestKit.UUID"] = ProcessInfo.processInfo.environment["SIMULATOR_UDID"]
+		preLaunchSetup {
+			App().launch(clean: true)
+		}
+	}
+	
+	/// Provides the tear down for the application and each XCTestCase
+	open override func tearDown() {
+		preTerminationTearDown {
+			App().terminate()
 		}
 	}
 	
@@ -30,12 +38,17 @@ open class BaseTestCase: XCTestCase {
 	/// is not required, so long as you call the completion handler in your own implementation.
 	///
 	/// - Parameter completion: The completion to call when your prelaunch setup is complete.
-	open func prelaunchSetup(_ completion: @escaping () -> Void) { // TODO: Test
+	open func preLaunchSetup(_ completion: @escaping () -> Void) {
 		completion()
 	}
 	
-	/// Provides the tear down for the application and each XCTestCase
-	open override func tearDown() {
-		App.shared.terminate()
+	/// Called automatically as part of tearDown to allow you to provide your own preTermination tear down.
+	/// For example you could use this to unregister
+	/// By default this function does nothing except call the completion handler, so calling the super implementation
+	/// is not required, so long as you call the completion handler in your own implementation.
+	///
+	/// - Parameter completion: The completion to call when your prelaunch setup is complete.
+	open func preTerminationTearDown(_ completion: @escaping () -> Void) {
+		completion()
 	}
 }
