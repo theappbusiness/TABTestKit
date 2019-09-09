@@ -10,13 +10,8 @@
 
 import XCTest
 
-public extension XCUIElement {
-  
-  func visible() -> Bool { // FIXME: Filename doesn't suggest this function would be here
-    guard self.exists && !self.frame.isEmpty && self.frame.origin.x != 0.0 else { return false }
-    return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
-  }
-  
+extension XCUIElement {
+
   /// This uses a generic call for cells on the page and scrolls to the last one it can find on the page
   func scollToLastCell() {
     let lastCell = cells.element(boundBy: cells.count-1)
@@ -29,26 +24,26 @@ public extension XCUIElement {
   ///   - element: the element that is to be scrolled to
   ///   - scrollUp: by default this function will scroll down, change this to true to reverse that
   func scroll(toElement element: XCUIElement, scrollUp: Bool = false) {
-    var lastMidCellID = ""
-    var lastMidCellRect = CGRect.zero
-    var currentMidCell = cells.element(boundBy: cells.count / 2)
-    
-    // Scroll until the requested cell is hittable, or until we try and scroll but nothing changes
-    while lastMidCellID != currentMidCell.identifier || !lastMidCellRect.equalTo(currentMidCell.frame) {
-      if element.exists && element.visible() {
-        break
-      }
-      
-      lastMidCellID = currentMidCell.identifier
-      lastMidCellRect = currentMidCell.frame      // Need to capture this before the scroll
-      
-      if scrollUp {
-        coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.4)).press(forDuration: 0.01, thenDragTo: coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.9)))
-      } else {
-        coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.9)).press(forDuration: 0.01, thenDragTo: coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.2)))
-      }
-      currentMidCell = cells.element(boundBy: cells.count / 2)
-    }
+//    var lastMidCellID = ""
+//    var lastMidCellRect = CGRect.zero
+//    var currentMidCell = cells.element(boundBy: cells.count / 2)
+//    
+//    // Scroll until the requested cell is hittable, or until we try and scroll but nothing changes
+//    while lastMidCellID != currentMidCell.identifier || !lastMidCellRect.equalTo(currentMidCell.frame) {
+//      if element.exists && element.visible() {
+//        break
+//      }
+//      
+//      lastMidCellID = currentMidCell.identifier
+//      lastMidCellRect = currentMidCell.frame      // Need to capture this before the scroll
+//      
+//      if scrollUp {
+//        coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.4)).press(forDuration: 0.01, thenDragTo: coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.9)))
+//      } else {
+//        coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.9)).press(forDuration: 0.01, thenDragTo: coordinate(withNormalizedOffset: CGVector(dx: 0.99, dy: 0.2)))
+//      }
+//      currentMidCell = cells.element(boundBy: cells.count / 2)
+//    }
   }
   
 }
