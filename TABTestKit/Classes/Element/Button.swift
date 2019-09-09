@@ -7,6 +7,7 @@
 
 import XCTest
 
+/// Represents a Button element.
 public struct Button: Element, Tappable {
 
 	public let id: String

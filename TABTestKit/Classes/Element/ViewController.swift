@@ -7,6 +7,10 @@
 
 import XCTest
 
+/// Represents a controller in your app.
+/// More specifically, you actually set the identifier on a view controller's view:
+/// `viewController.view.accessibilityIdentifier = "SomeIdentifier"`
+/// This is typically what you should use as a Screen's trait (or a Header).
 public struct ViewController: Element {
 	
 	public let id: String

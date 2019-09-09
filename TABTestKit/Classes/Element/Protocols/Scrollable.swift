@@ -7,8 +7,12 @@
 
 import Foundation
 
+/// Represents a type that can be scrolled.
+/// Any Element that conforms to Scrollable will get this behaviour for free.
 public protocol Scrollable {
 	
+	/// Scrolls in a direction.
+	/// - Parameter direction: The direction to scroll in.
 	func scroll(direction: ElementAttributes.Direction)
 	
 }
@@ -16,6 +20,7 @@ public protocol Scrollable {
 public extension Scrollable where Self: Element {
 	
 	func scroll(direction: ElementAttributes.Direction) {
+		await(.exists, .hittable)
 		switch direction {
 		case .up:
 			underlyingXCUIElement.swipeDown() // TODO: Better scrolling

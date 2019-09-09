@@ -14,9 +14,11 @@ public extension NavigationContext {
 		screen.await()
 	}
 	
-	func complete<ScreenType: Completable & Screen>(_ screen: ScreenType) {
-		screen.await()
-		screen.complete()
+	func complete<ScreenType: Completable & Screen>(_ screens: ScreenType...) {
+		screens.forEach { screen in
+			screen.await()
+			screen.complete()			
+		}
 	}
 	
 	func dismiss<ScreenType: Dismissable & Screen>(_ screen: ScreenType) {

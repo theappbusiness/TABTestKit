@@ -7,6 +7,7 @@
 
 import XCTest
 
+/// Repreesnts the UITabBar/
 public struct TabBar: Element {
 	
 	public let id: String
@@ -19,15 +20,19 @@ public struct TabBar: Element {
 	
 }
 
-public struct TabBarButton: Element {
+public extension TabBar {
 	
-	public let id: String
-	public let type: XCUIElement.ElementType = .button
-	public let parent: XCUIElement
-	
-	public init(id: String, tabBar: TabBar = TabBar()) {
-		self.id = id
-		self.parent = tabBar.underlyingXCUIElement
+	struct Button: Element, Tappable {
+		
+		public let id: String
+		public let type: XCUIElement.ElementType = .button
+		public let parent: XCUIElement
+		
+		public init(id: String, tabBar: TabBar = TabBar()) {
+			self.id = id
+			self.parent = tabBar.underlyingXCUIElement
+		}
+		
 	}
 	
 }

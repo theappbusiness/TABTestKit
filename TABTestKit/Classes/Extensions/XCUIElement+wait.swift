@@ -1,20 +1,11 @@
 //
-//  XCUIElement+waitToBecomeHittable.swift
+//  XCUIElement+wait.swift
 //  TABTestKit
 //
 //  Created by Kane Cheshire on 06/09/2019.
 //
 
 import XCTest
-
-extension XCUIElement { // TODO: Move
-	
-	var isVisible: Bool {
-		guard exists && !frame.isEmpty && frame.origin.x != 0.0 else { return false }
-		return XCUIApplication().windows.element(boundBy: 0).frame.contains(frame)
-	}
-	
-}
 
 extension XCUIElement {
 	

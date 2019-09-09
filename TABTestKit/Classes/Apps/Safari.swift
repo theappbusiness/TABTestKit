@@ -7,6 +7,7 @@
 
 import XCTest
 
+/// Represents the Mobile Safari app.
 public final class Safari: BaseApp {
 	
 	public override init() {

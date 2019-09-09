@@ -7,6 +7,8 @@
 
 import XCTest
 
+/// Represents a Tappable type.
+/// Elements that conform to Tappable will get this behaviour for free.
 public protocol Tappable {
 	
 	func tap()

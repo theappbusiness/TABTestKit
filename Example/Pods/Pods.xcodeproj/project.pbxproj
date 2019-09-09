@@ -15,6 +15,8 @@
 		97A31BB8719729AD5D8658A84EA11B42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
 		B1CF31CCC03F6031224D7BEA76895EF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD98DB8C1AA8E2390412D61DB64864D /* XCTest.framework */; };
 		B1EC39367BFD3B36E5DB6E8AE5541A73 /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 39E45F07D677EB65990CE07942AACB32 /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C30B013B2326AB2000A9EB87 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01392326AB1800A9EB87 /* SecureTextField.swift */; };
+		C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */; };
 		C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* ViewController.swift */; };
 		C36FD68E2326663200D7CED6 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68A2326663200D7CED6 /* Tappable.swift */; };
 		C36FD68F2326663200D7CED6 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68B2326663200D7CED6 /* Element.swift */; };
@@ -26,7 +28,7 @@
 		C36FD6AA232672E600D7CED6 /* Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6A7232672E600D7CED6 /* Completable.swift */; };
 		C36FD6AB232672E600D7CED6 /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6A8232672E600D7CED6 /* Dismissable.swift */; };
 		C36FD6AC232672E600D7CED6 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6A9232672E600D7CED6 /* Screen.swift */; };
-		C36FD6AE232672FD00D7CED6 /* ValueRepresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6AD232672FD00D7CED6 /* ValueRepresenting.swift */; };
+		C36FD6AE232672FD00D7CED6 /* ValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6AD232672FD00D7CED6 /* ValueRepresentable.swift */; };
 		C36FD6B02326730A00D7CED6 /* Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6AF2326730A00D7CED6 /* Editable.swift */; };
 		C36FD6B2232673A800D7CED6 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6B1232673A800D7CED6 /* Header.swift */; };
 		C36FD6B4232673C600D7CED6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6B3232673C600D7CED6 /* Label.swift */; };
@@ -46,7 +48,7 @@
 		C36FD6D9232680B700D7CED6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6D5232680B700D7CED6 /* App.swift */; };
 		C36FD6DD2326852A00D7CED6 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6DC2326852A00D7CED6 /* Springboard.swift */; };
 		C36FD6DF232685AF00D7CED6 /* BiometricsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */; };
-		C3B1BC3E2322B00E00CBBA7C /* XCUIElement+waitToBecomeHittable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1BC3D2322B00E00CBBA7C /* XCUIElement+waitToBecomeHittable.swift */; };
+		C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */; };
 		D44E9A4B1EB5B7D919B7E63310504802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
 		E3F9248962BE23A3A27959717262C126 /* Pods-TABTestKit_ExampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A497868E641D6CB0971B6F7330EA2E2 /* Pods-TABTestKit_ExampleUITests-dummy.m */; };
 		F785827A6F363207A87B0DDF8B435B10 /* TABTestKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCBDE03EF5AB73CE3053E4CCF56073C /* TABTestKit-dummy.m */; };
@@ -85,6 +87,8 @@
 		8FDF7F203EE5A7D9EC701EE74383119D /* Pods-TABTestKit_ExampleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_ExampleUITests-Info.plist"; sourceTree = "<group>"; };
 		9A96BB1A5FE2F48AF260A797724A7679 /* Pods_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C30B01392326AB1800A9EB87 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+isVisible.swift"; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C36FD6892326663200D7CED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
@@ -97,7 +101,7 @@
 		C36FD6A7232672E600D7CED6 /* Completable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
 		C36FD6A8232672E600D7CED6 /* Dismissable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 		C36FD6A9232672E600D7CED6 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		C36FD6AD232672FD00D7CED6 /* ValueRepresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresenting.swift; sourceTree = "<group>"; };
+		C36FD6AD232672FD00D7CED6 /* ValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
 		C36FD6AF2326730A00D7CED6 /* Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		C36FD6B1232673A800D7CED6 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		C36FD6B3232673C600D7CED6 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -117,7 +121,7 @@
 		C36FD6D5232680B700D7CED6 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		C36FD6DC2326852A00D7CED6 /* Springboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
 		C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsContext.swift; sourceTree = "<group>"; };
-		C3B1BC3D2322B00E00CBBA7C /* XCUIElement+waitToBecomeHittable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+waitToBecomeHittable.swift"; sourceTree = "<group>"; };
+		C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+wait.swift"; sourceTree = "<group>"; };
 		C675C5EFFC1CF43CCCED0B5A3B91F2FE /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TABTestKit.modulemap; sourceTree = "<group>"; };
 		CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D903D2DCF657BC000714183B4D81F49A /* Pods-TABTestKit_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,20 +256,20 @@
 		C36FD6882326663200D7CED6 /* Element */ = {
 			isa = PBXGroup;
 			children = (
+				C36FD6C42326763400D7CED6 /* Attributes.swift */,
 				C36FD6C32326759500D7CED6 /* Protocols */,
 				C36FD6892326663200D7CED6 /* ViewController.swift */,
 				C36FD6B1232673A800D7CED6 /* Header.swift */,
 				C36FD6B3232673C600D7CED6 /* Label.swift */,
+				C36FD68C2326663200D7CED6 /* Button.swift */,
 				C36FD6B5232673D300D7CED6 /* ScrollView.swift */,
 				C36FD6B9232673F000D7CED6 /* CollectionView.swift */,
 				C36FD6B7232673E000D7CED6 /* Table.swift */,
 				C36FD6BB2326740A00D7CED6 /* TextField.swift */,
+				C30B01392326AB1800A9EB87 /* SecureTextField.swift */,
 				C36FD6BD2326741700D7CED6 /* TextView.swift */,
 				C36FD6BF2326742A00D7CED6 /* NavBar.swift */,
 				C36FD6C12326743D00D7CED6 /* TabBar.swift */,
-				C36FD68A2326663200D7CED6 /* Tappable.swift */,
-				C36FD68C2326663200D7CED6 /* Button.swift */,
-				C36FD6C42326763400D7CED6 /* Attributes.swift */,
 			);
 			name = Element;
 			path = TABTestKit/Classes/Element;
@@ -307,10 +311,11 @@
 		C36FD6C32326759500D7CED6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C36FD6AD232672FD00D7CED6 /* ValueRepresenting.swift */,
+				C36FD6AD232672FD00D7CED6 /* ValueRepresentable.swift */,
 				C36FD68B2326663200D7CED6 /* Element.swift */,
 				C36FD6AF2326730A00D7CED6 /* Editable.swift */,
 				C36FD6C62326790400D7CED6 /* Scrollable.swift */,
+				C36FD68A2326663200D7CED6 /* Tappable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -342,7 +347,8 @@
 		D1618D6466D8E454ACEA3AE66400236A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C3B1BC3D2322B00E00CBBA7C /* XCUIElement+waitToBecomeHittable.swift */,
+				C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */,
+				C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */,
 			);
 			name = Extensions;
 			path = TABTestKit/Classes/Extensions;
@@ -475,6 +481,7 @@
 				C36FD6B2232673A800D7CED6 /* Header.swift in Sources */,
 				C36FD6C923267BA700D7CED6 /* AppContext.swift in Sources */,
 				C36FD6B6232673D300D7CED6 /* ScrollView.swift in Sources */,
+				C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */,
 				C36FD6C02326742A00D7CED6 /* NavBar.swift in Sources */,
 				C36FD6D8232680B700D7CED6 /* BaseApp.swift in Sources */,
 				C36FD6AA232672E600D7CED6 /* Completable.swift in Sources */,
@@ -484,6 +491,7 @@
 				C36FD6A02326676C00D7CED6 /* NavigationContext.swift in Sources */,
 				C36FD6BA232673F000D7CED6 /* CollectionView.swift in Sources */,
 				C36FD6C52326763400D7CED6 /* Attributes.swift in Sources */,
+				C30B013B2326AB2000A9EB87 /* SecureTextField.swift in Sources */,
 				C36FD6B4232673C600D7CED6 /* Label.swift in Sources */,
 				C36FD6DD2326852A00D7CED6 /* Springboard.swift in Sources */,
 				C36FD6952326664900D7CED6 /* Scenario.swift in Sources */,
@@ -492,7 +500,7 @@
 				C36FD6DF232685AF00D7CED6 /* BiometricsContext.swift in Sources */,
 				C36FD6B02326730A00D7CED6 /* Editable.swift in Sources */,
 				C36FD68F2326663200D7CED6 /* Element.swift in Sources */,
-				C3B1BC3E2322B00E00CBBA7C /* XCUIElement+waitToBecomeHittable.swift in Sources */,
+				C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */,
 				C36FD6C72326790400D7CED6 /* Scrollable.swift in Sources */,
 				4075D83B7601010B7A0503426020C0D4 /* Biometrics.m in Sources */,
 				C36FD6942326664900D7CED6 /* Step.swift in Sources */,
@@ -504,7 +512,7 @@
 				C36FD6AB232672E600D7CED6 /* Dismissable.swift in Sources */,
 				86FC9769E428EB5072CF0ED3BFA7AAED /* BaseTestCase.swift in Sources */,
 				C36FD6AC232672E600D7CED6 /* Screen.swift in Sources */,
-				C36FD6AE232672FD00D7CED6 /* ValueRepresenting.swift in Sources */,
+				C36FD6AE232672FD00D7CED6 /* ValueRepresentable.swift in Sources */,
 				C36FD6902326663200D7CED6 /* Button.swift in Sources */,
 				C36FD6C22326743D00D7CED6 /* TabBar.swift in Sources */,
 			);

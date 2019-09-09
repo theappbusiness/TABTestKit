@@ -7,6 +7,7 @@
 
 import XCTest
 
+/// Represents the UINavigationBar.
 public struct NavBar: Element {
 	
 	public let id: String

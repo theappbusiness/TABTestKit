@@ -10,7 +10,9 @@
 
 import XCTest
 
-/// Represents the app being tested. Using this instead of XCUIApplication() means you get the enhanced waits for the correct states when launching/backgrounding etc, inherited from Baseapp.
+/// Represents the app being tested.
+/// Using this instead of XCUIApplication() means you get the
+/// enhanced waits for the correct states when launching/backgrounding etc, inherited from Baseapp.
 public final class App: BaseApp {
 	
 	/// Launches the app, cleaning if required.

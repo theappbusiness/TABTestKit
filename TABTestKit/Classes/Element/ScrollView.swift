@@ -7,6 +7,7 @@
 
 import XCTest
 
+/// Represents a basic UIScrollView element.
 public struct ScrollView: Element, Scrollable {
 	
 	public let id: String

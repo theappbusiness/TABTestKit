@@ -7,6 +7,11 @@
 
 import Foundation
 
+/// Represents something that is dismissable.
+/// Typically you'd make a screen that can be dismissed (like a modal) conform to this protocol,
+/// and then perform whatever needs to be performed for a dismissal for that screen.
+///
+/// This works particularly well with NavigationContext.
 public protocol Dismissable {
 	
 	func dismiss()
