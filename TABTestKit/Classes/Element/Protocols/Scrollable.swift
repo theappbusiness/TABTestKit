@@ -17,7 +17,7 @@ public protocol Scrollable {
 	
 }
 
-public extension Scrollable where Self: Element {
+public extension Element where Self: Scrollable {
 	
 	func scroll(_ direction: ElementAttributes.Direction) {
 		await(.exists, .hittable)

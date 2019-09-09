@@ -12,7 +12,7 @@ import XCTest
 /// it will be recognized as a Header (some UIKit views have this already,
 /// like UITableView section headers).
 /// This is typically what you should use as a Screen's trait (or a ViewController).
-public struct Header: Element, ValueRepresentable {
+public struct Header: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .other

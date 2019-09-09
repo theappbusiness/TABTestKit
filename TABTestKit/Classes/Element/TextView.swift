@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a UITextView element,
-public struct TextView: Element, Editable, ValueRepresentable, Scrollable {
+public struct TextView: Element, Editable, Scrollable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .textView

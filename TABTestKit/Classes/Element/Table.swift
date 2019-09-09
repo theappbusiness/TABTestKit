@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a UITableView element.
-public struct Table: Element, Scrollable {
+public struct Table: Element, Scrollable, CellContaining {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .table
@@ -22,7 +22,7 @@ public struct Table: Element, Scrollable {
 public extension Table {
 	
 	/// Represents a UITableViewCell
-	struct Cell: Element, ValueRepresentable, Tappable {
+	struct Cell: Element, Tappable {
 		
 		public let id: String
 		public let parent: XCUIElement

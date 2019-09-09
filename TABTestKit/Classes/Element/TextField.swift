@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a standard UITextField.
-public struct TextField: Element, Editable, ValueRepresentable {
+public struct TextField: Element, Editable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .textField

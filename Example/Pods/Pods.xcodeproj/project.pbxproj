@@ -19,6 +19,7 @@
 		C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */; };
 		C30B013F2326AF0B00A9EB87 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B013E2326AF0B00A9EB87 /* Alert.swift */; };
 		C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01402326AF7A00A9EB87 /* AlertContext.swift */; };
+		C30B01452326B4A900A9EB87 /* CellContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01442326B4A900A9EB87 /* CellContaining.swift */; };
 		C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* ViewController.swift */; };
 		C36FD68E2326663200D7CED6 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68A2326663200D7CED6 /* Tappable.swift */; };
 		C36FD68F2326663200D7CED6 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68B2326663200D7CED6 /* Element.swift */; };
@@ -30,7 +31,6 @@
 		C36FD6AA232672E600D7CED6 /* Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6A7232672E600D7CED6 /* Completable.swift */; };
 		C36FD6AB232672E600D7CED6 /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6A8232672E600D7CED6 /* Dismissable.swift */; };
 		C36FD6AC232672E600D7CED6 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6A9232672E600D7CED6 /* Screen.swift */; };
-		C36FD6AE232672FD00D7CED6 /* ValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6AD232672FD00D7CED6 /* ValueRepresentable.swift */; };
 		C36FD6B02326730A00D7CED6 /* Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6AF2326730A00D7CED6 /* Editable.swift */; };
 		C36FD6B2232673A800D7CED6 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6B1232673A800D7CED6 /* Header.swift */; };
 		C36FD6B4232673C600D7CED6 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6B3232673C600D7CED6 /* Label.swift */; };
@@ -93,6 +93,7 @@
 		C30B013C2326AD1F00A9EB87 /* XCUIElement+isVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+isVisible.swift"; sourceTree = "<group>"; };
 		C30B013E2326AF0B00A9EB87 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C30B01402326AF7A00A9EB87 /* AlertContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContext.swift; sourceTree = "<group>"; };
+		C30B01442326B4A900A9EB87 /* CellContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContaining.swift; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C36FD6892326663200D7CED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		C36FD6A7232672E600D7CED6 /* Completable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
 		C36FD6A8232672E600D7CED6 /* Dismissable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 		C36FD6A9232672E600D7CED6 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		C36FD6AD232672FD00D7CED6 /* ValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
 		C36FD6AF2326730A00D7CED6 /* Editable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		C36FD6B1232673A800D7CED6 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		C36FD6B3232673C600D7CED6 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -317,11 +317,11 @@
 		C36FD6C32326759500D7CED6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C36FD6AD232672FD00D7CED6 /* ValueRepresentable.swift */,
 				C36FD68B2326663200D7CED6 /* Element.swift */,
 				C36FD6AF2326730A00D7CED6 /* Editable.swift */,
 				C36FD6C62326790400D7CED6 /* Scrollable.swift */,
 				C36FD68A2326663200D7CED6 /* Tappable.swift */,
+				C30B01442326B4A900A9EB87 /* CellContaining.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -509,6 +509,7 @@
 				C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */,
 				C36FD6C72326790400D7CED6 /* Scrollable.swift in Sources */,
 				C30B013F2326AF0B00A9EB87 /* Alert.swift in Sources */,
+				C30B01452326B4A900A9EB87 /* CellContaining.swift in Sources */,
 				4075D83B7601010B7A0503426020C0D4 /* Biometrics.m in Sources */,
 				C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */,
 				C36FD6942326664900D7CED6 /* Step.swift in Sources */,
@@ -520,7 +521,6 @@
 				C36FD6AB232672E600D7CED6 /* Dismissable.swift in Sources */,
 				86FC9769E428EB5072CF0ED3BFA7AAED /* BaseTestCase.swift in Sources */,
 				C36FD6AC232672E600D7CED6 /* Screen.swift in Sources */,
-				C36FD6AE232672FD00D7CED6 /* ValueRepresentable.swift in Sources */,
 				C36FD6902326663200D7CED6 /* Button.swift in Sources */,
 				C36FD6C22326743D00D7CED6 /* TabBar.swift in Sources */,
 			);

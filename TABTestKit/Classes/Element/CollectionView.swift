@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a UICollectionView element.
-public struct CollectionView: Element, Scrollable {
+public struct CollectionView: Element, Scrollable, CellContaining {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .collectionView
@@ -24,7 +24,7 @@ public struct CollectionView: Element, Scrollable {
 public extension CollectionView {
 	
 	/// Represents a UICollectionViewCell.
-	struct Cell: Element, ValueRepresentable, Tappable {
+	struct Cell: Element, Tappable {
 		
 		public let id: String
 		public let parent: XCUIElement

@@ -18,7 +18,7 @@ public protocol Editable  {
 	
 }
 
-public extension Editable where Self: Element {
+public extension Element where Self: Editable {
 	
 	func type(_ text: String) {
 		await(.exists, .hittable)

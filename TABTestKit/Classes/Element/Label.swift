@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a basic Label element.
-public struct Label: Element, ValueRepresentable {
+public struct Label: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .staticText

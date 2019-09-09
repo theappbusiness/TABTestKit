@@ -55,4 +55,30 @@ open class TABTestCase: XCTestCase, InteractionContext, NavigationContext, AppCo
 	open func preTerminationTearDown(_ completion: @escaping () -> Void) {
 		completion()
 	}
+	
+	override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
+		// When using Steps and Scenarios it can be really hard to pinpoint where failed, so this attachment saves the info with the last known step and scenario (including the line that failed), to help you.
+		// You can find this attachment in the .xcresult bundle (usually Derived Data).
+		let attachment = createFailureAttachment(description: description, filePath: filePath, lineNumber: lineNumber)
+		add(attachment)
+		super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
+	}
+	
+	private func createFailureAttachment(description: String, filePath: String, lineNumber: Int) -> XCTAttachment {
+		let attachmentInfo = """
+		Full failure info (scenarios and steps may be in a different file to the actual failure):
+		
+		Failed scenario: \(Scenario.current?.description ?? "No scenario")
+		Failed step: \(name) on line \(Step.current?.line ?? 0)
+		
+		Actual file that failed: \(filePath)
+		Actual line that failed: \(lineNumber)
+		
+		Description: \(description)
+		"""
+		let attachment = XCTAttachment(string: attachmentInfo)
+		attachment.name = "Failure at \(Date())"
+		return attachment
+	}
+	
 }

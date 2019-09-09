@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a secure text field (e.g. a password field)
-public struct SecureTextField: Element, Editable, ValueRepresentable {
+public struct SecureTextField: Element, Editable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .secureTextField
