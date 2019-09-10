@@ -25,8 +25,11 @@ struct BiometricLoginScreen: Screen {
 extension BiometricLoginScreen: Completable {
   
   func complete() {
+    Biometrics.enrolled()
     logInButton.tap()
-    faceIDPermissionAlert.confirmButton.tap()
+    if faceIDPermissionAlert.determine(.exists, timeout: 1) {
+      faceIDPermissionAlert.confirmButton.tap()
+    }
     Biometrics.successfulAuthentication()
   }
   

@@ -10,8 +10,8 @@ import TABTestKit
 
 let tableScreen = TableScreen()
 
-struct TableScreen: Screen, TableDisplaying {
+struct TableScreen: Screen, TableDisplaying, Scrollable {
   
-  let trait = Table(id: "TableController")
+  let trait = Header(id: "Table")
   
 }

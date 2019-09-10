@@ -7,11 +7,14 @@
 
 import XCTest
 
-extension XCUIElement {
+public extension XCUIElement {
 	
+	/// Determines whether the element is visible.
+	/// The result is determined by assessing if the element's frame
+	/// intersects with the device's window frame.
 	var isVisible: Bool {
-		guard exists && !frame.isEmpty && frame.origin.x != 0.0 else { return false }
-		return XCUIApplication().windows.element(boundBy: 0).frame.contains(frame)
+		guard !frame.isEmpty else { return false }
+		return XCUIDevice.shared.frame.intersects(frame)
 	}
 	
 }

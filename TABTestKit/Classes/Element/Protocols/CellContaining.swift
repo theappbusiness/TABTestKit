@@ -19,8 +19,12 @@ public protocol CellContaining {
 
 public extension Element where Self: CellContaining {
 	
-	func numberOfCells(matchingID id: String) -> Int {
-		return underlyingXCUIElement.cells.matching(identifier: id).count
+	func numberOfCells(matchingID id: String = "") -> Int {
+		if id.isEmpty {
+			return underlyingXCUIElement.cells.count
+		} else {
+			return underlyingXCUIElement.cells.matching(identifier: id).count
+		}
 	}
 	
 }

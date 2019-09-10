@@ -17,8 +17,16 @@ public protocol TableDisplaying {
 	
 }
 
-public extension TableDisplaying where Self: Screen {
+public extension Screen where Self: TableDisplaying {
 	
 	var table: Table { return Table(parent: app) }
+	
+}
+
+public extension Screen where Self: TableDisplaying & Scrollable {
+	
+	func scroll(_ direction: ElementAttributes.Direction) {
+		table.scroll(direction)
+	}
 	
 }

@@ -20,10 +20,8 @@ final class BiometricLogin_HappyPathTests: TABTestCase, SystemPreferencesContext
   func test_happyPath() {
     Scenario("Logging in with biometrics") {
       Given(I: see(biometricLoginScreen))
-      And(deviceBiometricsAreEnabled)
       When(I: complete(biometricLoginScreen))
       Then(I: doNotSee(biometricLoginScreen))
-      And(I: see(tableScreen))
     }
   }
   
