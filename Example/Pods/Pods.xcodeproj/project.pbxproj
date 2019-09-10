@@ -257,11 +257,9 @@
 			path = "Example/Pods/Target Support Files/TABTestKit";
 			sourceTree = "<group>";
 		};
-		C36FD6882326663200D7CED6 /* Element */ = {
+		C326D65E2327878C001AB082 /* Predefined Elements */ = {
 			isa = PBXGroup;
 			children = (
-				C36FD6C42326763400D7CED6 /* Attributes.swift */,
-				C36FD6C32326759500D7CED6 /* Protocols */,
 				C36FD6892326663200D7CED6 /* ViewController.swift */,
 				C36FD6B1232673A800D7CED6 /* Header.swift */,
 				C36FD6B3232673C600D7CED6 /* Label.swift */,
@@ -275,6 +273,16 @@
 				C36FD6BF2326742A00D7CED6 /* NavBar.swift */,
 				C36FD6C12326743D00D7CED6 /* TabBar.swift */,
 				C30B013E2326AF0B00A9EB87 /* Alert.swift */,
+			);
+			path = "Predefined Elements";
+			sourceTree = "<group>";
+		};
+		C36FD6882326663200D7CED6 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				C36FD6C42326763400D7CED6 /* Attributes.swift */,
+				C36FD6C32326759500D7CED6 /* Protocols */,
+				C326D65E2327878C001AB082 /* Predefined Elements */,
 			);
 			name = Element;
 			path = TABTestKit/Classes/Element;

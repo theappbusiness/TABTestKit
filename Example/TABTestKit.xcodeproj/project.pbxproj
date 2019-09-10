@@ -16,6 +16,11 @@
 		70FEA78A1F6AC74800633C5C /* ExampleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA7891F6AC74800633C5C /* ExampleTest.swift */; };
 		70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */; };
 		7C0007B3218FAD61008605D4 /* BiometricFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0007B2218FAD61008605D4 /* BiometricFeature.swift */; };
+		C326D660232788BA001AB082 /* BiometricLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */; };
+		C326D66223278C65001AB082 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66123278C65001AB082 /* RootController.swift */; };
+		C326D66423278D62001AB082 /* BiometricLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66323278D62001AB082 /* BiometricLoginTests.swift */; };
+		C326D66623278E2E001AB082 /* BiometricLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */; };
+		C326D66923279502001AB082 /* FaceIDPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66823279502001AB082 /* FaceIDPermissionAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		7C63340D41DA8ECC5990ED5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginViewController.swift; sourceTree = "<group>"; };
+		C326D66123278C65001AB082 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		C326D66323278D62001AB082 /* BiometricLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginTests.swift; sourceTree = "<group>"; };
+		C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginScreen.swift; sourceTree = "<group>"; };
+		C326D66823279502001AB082 /* FaceIDPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FaceIDPermissionAlert.swift; path = "Custom Elements/FaceIDPermissionAlert.swift"; sourceTree = "<group>"; };
 		E5A0F1B1A8B65BA16C080FA9 /* Pods_TABTestKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5004412DF96067009CA81 /* Pods-TABTestKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +120,8 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */,
+				C326D66123278C65001AB082 /* RootController.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for TABTestKit";
@@ -150,7 +162,9 @@
 		70FEA7861F6AC57200633C5C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C326D667232794F3001AB082 /* Custom Elements */,
 				70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */,
+				C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -160,6 +174,7 @@
 			children = (
 				70FEA7891F6AC74800633C5C /* ExampleTest.swift */,
 				7C0007B2218FAD61008605D4 /* BiometricFeature.swift */,
+				C326D66323278D62001AB082 /* BiometricLoginTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -172,6 +187,14 @@
 				0F961EE8274AEF63C32361E2 /* Pods_TABTestKit_ExampleUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C326D667232794F3001AB082 /* Custom Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C326D66823279502001AB082 /* FaceIDPermissionAlert.swift */,
+			);
+			name = "Custom Elements";
 			sourceTree = "<group>";
 		};
 		C36B77442108B00E00005DB6 /* Supporting Files */ = {
@@ -230,7 +253,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = "The App Business LTD";
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -329,8 +352,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C326D660232788BA001AB082 /* BiometricLoginViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C326D66223278C65001AB082 /* RootController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +364,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70FEA78A1F6AC74800633C5C /* ExampleTest.swift in Sources */,
+				C326D66623278E2E001AB082 /* BiometricLoginScreen.swift in Sources */,
 				70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */,
+				C326D66923279502001AB082 /* FaceIDPermissionAlert.swift in Sources */,
+				C326D66423278D62001AB082 /* BiometricLoginTests.swift in Sources */,
 				7C0007B3218FAD61008605D4 /* BiometricFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

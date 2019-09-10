@@ -1,0 +1,24 @@
+//
+//  BiometricLoginTests.swift
+//  TABTestKit_ExampleUITests
+//
+//  Created by Kane Cheshire on 10/09/2019.
+//  Copyright © 2019 The App Business LTD. All rights reserved.
+//
+
+import TABTestKit
+
+// NOTE: Parallel UI tests are best optimised if you only have one test function per test case.
+
+final class BiometricLoginTests_HappyPath: TABTestCase { // TODO: Enable parallel tests
+  
+  func test_happyPath() {
+    Scenario("Logging in with biometrics") {
+      Given(I: see(biometricLoginScreen))
+      And(deviceBiometricsAreEnabled)
+      When(I: complete(biometricLoginScreen))
+      Then(I: doNotSee(biometricLoginScreen))
+    }
+  }
+  
+}

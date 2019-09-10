@@ -11,10 +11,12 @@ import XCTest
 public struct Button: Element, Tappable {
 
 	public let id: String
+	public let parent: XCUIElement
 	public let type: XCUIElement.ElementType = .button
 	
-	public init(id: String) {
+	public init(id: String, parent: Element = nil) {
 		self.id = id
+		self.parent = parent?.underlyingXCUIElement ?? App()
 	}
 	
 }

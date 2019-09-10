@@ -14,6 +14,10 @@ public extension NavigationContext {
 		screen.await()
 	}
 	
+	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) {
+		screen.trait.await(.doesNotExist)
+	}
+	
 	func complete<ScreenType: Completable & Screen>(_ screens: ScreenType...) {
 		screens.forEach { screen in
 			screen.await()
