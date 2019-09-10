@@ -12,7 +12,6 @@ public struct TabBar: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .tabBar
-	var underlyingXCUIElement: XCUIElement { return id.isEmpty ? parent.tabBars.firstMatch : parent.tabBars[id].firstMatch } // TODO: Check this actually works
 	
 	public init(id: String = "") {
 		self.id = id
@@ -26,11 +25,11 @@ public extension TabBar {
 		
 		public let id: String
 		public let type: XCUIElement.ElementType = .button
-		public let parent: XCUIElement
+		public let parent: Element
 		
 		public init(id: String, tabBar: TabBar = TabBar()) {
 			self.id = id
-			self.parent = tabBar.underlyingXCUIElement
+			self.parent = tabBar
 		}
 		
 	}

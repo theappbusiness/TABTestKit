@@ -7,7 +7,11 @@
 
 import XCTest
 
-open class BaseApp: XCUIApplication {
+open class BaseApp: XCUIApplication, Element {
+	
+	public var id: String { return identifier }
+	public var type: XCUIElement.ElementType { return .application }
+	public var underlyingXCUIElement: XCUIElement { return self }
 	
 	/// Terminates the app, waiting for the state to be not running before continuing.
 	override open func terminate() {

@@ -1,5 +1,5 @@
 //
-//  BaseTestCase.swift
+//  TABTestCase.swift
 //  TABTestKit
 //
 //  The MIT License (MIT)
@@ -10,10 +10,12 @@
 
 import XCTest
 
+public typealias DefaultContexts = InteractionContext & NavigationContext & AppContext & BiometricsContext & AlertContext & SheetContext
+
 /// All tests should inherit from this class.
 /// By inheriting from this class, you'll automatically get all the functions available in the contexts this class
 /// conforms to.
-open class TABTestCase: XCTestCase, InteractionContext, NavigationContext, AppContext, BiometricsContext, AlertContext {
+open class TABTestCase: XCTestCase, DefaultContexts {
 	
 	/// Provides the setup for appication that happens before each XCTestCase.
 	/// As part of setUp, preLaunchSetup will be called.

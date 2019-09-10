@@ -32,12 +32,8 @@ public extension AppContext {
 		launchTheApp(clean: false)
 	}
 	
-	func openSafari() {
+	func openSafari() { // TODO: Move to Safari context
 		Safari().activate()
-	}
-	
-	func openSystemPreferences() {
-		SystemPreferences().activate()
 	}
 	
 }

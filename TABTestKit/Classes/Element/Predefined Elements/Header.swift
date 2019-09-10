@@ -16,10 +16,12 @@ public struct Header: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .other
+	public let parent: Element
 	public var value: String { return underlyingXCUIElement.label }
 	
-	public init(id: String) {
+	public init(id: String, parent: Element = App()) {
 		self.id = id
+		self.parent = parent
 	}
 	
 }

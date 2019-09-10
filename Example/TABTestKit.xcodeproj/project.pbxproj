@@ -13,14 +13,15 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		70FEA78A1F6AC74800633C5C /* ExampleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA7891F6AC74800633C5C /* ExampleTest.swift */; };
-		70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */; };
-		7C0007B3218FAD61008605D4 /* BiometricFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0007B2218FAD61008605D4 /* BiometricFeature.swift */; };
 		C326D660232788BA001AB082 /* BiometricLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */; };
 		C326D66223278C65001AB082 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66123278C65001AB082 /* RootController.swift */; };
-		C326D66423278D62001AB082 /* BiometricLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66323278D62001AB082 /* BiometricLoginTests.swift */; };
+		C326D66423278D62001AB082 /* BiometricLogin_HappyPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66323278D62001AB082 /* BiometricLogin_HappyPathTests.swift */; };
 		C326D66623278E2E001AB082 /* BiometricLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */; };
-		C326D66923279502001AB082 /* FaceIDPermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D66823279502001AB082 /* FaceIDPermissionAlert.swift */; };
+		C326D6A62327DAA7001AB082 /* TableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A52327DAA7001AB082 /* TableScreen.swift */; };
+		C326D6A82327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A72327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift */; };
+		C326D6AA2327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A92327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift */; };
+		C326D6AC2327E847001AB082 /* TableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6AB2327E847001AB082 /* TableTests.swift */; };
+		C326D6AD2327E8F7001AB082 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A32327D994001AB082 /* TableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,17 +49,18 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		70FEA77C1F6AC29400633C5C /* TABTestKit_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TABTestKit_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FEA7801F6AC29400633C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70FEA7891F6AC74800633C5C /* ExampleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTest.swift; sourceTree = "<group>"; };
-		70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleScreen.swift; sourceTree = "<group>"; };
-		7C0007B2218FAD61008605D4 /* BiometricFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricFeature.swift; sourceTree = "<group>"; };
 		7C63340D41DA8ECC5990ED5C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		88A33D2BE86AADC8D87E7049 /* Pods-TABTestKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC195701249FE2326B791C2 /* Pods-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginViewController.swift; sourceTree = "<group>"; };
 		C326D66123278C65001AB082 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
-		C326D66323278D62001AB082 /* BiometricLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginTests.swift; sourceTree = "<group>"; };
+		C326D66323278D62001AB082 /* BiometricLogin_HappyPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLogin_HappyPathTests.swift; sourceTree = "<group>"; };
 		C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLoginScreen.swift; sourceTree = "<group>"; };
-		C326D66823279502001AB082 /* FaceIDPermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FaceIDPermissionAlert.swift; path = "Custom Elements/FaceIDPermissionAlert.swift"; sourceTree = "<group>"; };
+		C326D6A32327D994001AB082 /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		C326D6A52327DAA7001AB082 /* TableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableScreen.swift; sourceTree = "<group>"; };
+		C326D6A72327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLogin_PermissionDeniedTests.swift; sourceTree = "<group>"; };
+		C326D6A92327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLogin_AuthenticationFailureTests.swift; sourceTree = "<group>"; };
+		C326D6AB2327E847001AB082 /* TableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTests.swift; sourceTree = "<group>"; };
 		E5A0F1B1A8B65BA16C080FA9 /* Pods_TABTestKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5004412DF96067009CA81 /* Pods-TABTestKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */,
 				C326D66123278C65001AB082 /* RootController.swift */,
+				C326D6A32327D994001AB082 /* TableController.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for TABTestKit";
@@ -162,9 +165,8 @@
 		70FEA7861F6AC57200633C5C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C326D667232794F3001AB082 /* Custom Elements */,
-				70FEA78B1F6AC98700633C5C /* ExampleScreen.swift */,
 				C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */,
+				C326D6A52327DAA7001AB082 /* TableScreen.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -172,9 +174,10 @@
 		70FEA7881F6AC58B00633C5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				70FEA7891F6AC74800633C5C /* ExampleTest.swift */,
-				7C0007B2218FAD61008605D4 /* BiometricFeature.swift */,
-				C326D66323278D62001AB082 /* BiometricLoginTests.swift */,
+				C326D66323278D62001AB082 /* BiometricLogin_HappyPathTests.swift */,
+				C326D6A72327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift */,
+				C326D6A92327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift */,
+				C326D6AB2327E847001AB082 /* TableTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -187,14 +190,6 @@
 				0F961EE8274AEF63C32361E2 /* Pods_TABTestKit_ExampleUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C326D667232794F3001AB082 /* Custom Elements */ = {
-			isa = PBXGroup;
-			children = (
-				C326D66823279502001AB082 /* FaceIDPermissionAlert.swift */,
-			);
-			name = "Custom Elements";
 			sourceTree = "<group>";
 		};
 		C36B77442108B00E00005DB6 /* Supporting Files */ = {
@@ -355,6 +350,7 @@
 				C326D660232788BA001AB082 /* BiometricLoginViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C326D6AD2327E8F7001AB082 /* TableController.swift in Sources */,
 				C326D66223278C65001AB082 /* RootController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FEA78A1F6AC74800633C5C /* ExampleTest.swift in Sources */,
+				C326D6A62327DAA7001AB082 /* TableScreen.swift in Sources */,
 				C326D66623278E2E001AB082 /* BiometricLoginScreen.swift in Sources */,
-				70FEA78C1F6AC98700633C5C /* ExampleScreen.swift in Sources */,
-				C326D66923279502001AB082 /* FaceIDPermissionAlert.swift in Sources */,
-				C326D66423278D62001AB082 /* BiometricLoginTests.swift in Sources */,
-				7C0007B3218FAD61008605D4 /* BiometricFeature.swift in Sources */,
+				C326D66423278D62001AB082 /* BiometricLogin_HappyPathTests.swift in Sources */,
+				C326D6A82327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift in Sources */,
+				C326D6AC2327E847001AB082 /* TableTests.swift in Sources */,
+				C326D6AA2327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -499,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

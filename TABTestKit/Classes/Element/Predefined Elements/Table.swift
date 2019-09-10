@@ -12,9 +12,11 @@ public struct Table: Element, Scrollable, CellContaining {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .table
+	public let parent: Element
 	
-	public init(id: String) {
+	public init(id: String = "", parent: Element = App()) {
 		self.id = id
+		self.parent = parent
 	}
 	
 }
@@ -25,7 +27,7 @@ public extension Table {
 	struct Cell: Element, Tappable {
 		
 		public let id: String
-		public let parent: XCUIElement
+		public let parent: Element
 		public let type: XCUIElement.ElementType = .cell
 		public let index: Int
 		public var value: String { return underlyingXCUIElement.label }
@@ -34,10 +36,10 @@ public extension Table {
 		/// - Parameter id: The ID of the cell. You should set this in code as the accessibilityIdentifier, or as the accessibilityLabel.
 		/// - Parameter index: The index of the cell in the table. Sections are not supported in UI tests, so the index accounts for ALL cells.
 		/// - Parameter table: The parent/containing table of the cell.
-		public init(id: String, index: Int = 0, table: Table) {
+		public init(id: String, index: Int = 0, table: Table = Table()) {
 			self.id = id
 			self.index = index
-			self.parent = table.underlyingXCUIElement
+			self.parent = table
 		}
 		
 	}

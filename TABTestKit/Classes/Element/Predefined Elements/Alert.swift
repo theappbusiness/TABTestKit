@@ -13,29 +13,23 @@ public struct Alert: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .alert
-	public let confirmButton: Button
-	public let dismissButton: Button?
-	
-	public init(id: String, confirmButton: Button, dismissButton: Button? = nil) {
-		self.id = id
-		self.confirmButton = confirmButton
-		self.dismissButton = dismissButton
+	public let parent: Element
+	public var confirmButton: Button {
+		return Button(id: confirmButtonID, parent: self)
+	}
+	public var dismissButton: Button? {
+		guard let id = dismissButtonID else { return nil }
+		return Button(id: id, parent: self)
 	}
 	
-}
-
-public extension Alert {
+	private let confirmButtonID: String // TODO: What happens if there are multiple buttons?
+	private let dismissButtonID: String?
 	
-	/// Represents a button in the alert.
-	struct Button: Element, Tappable {
-		
-		public let id: String
-		public let type: XCUIElement.ElementType = .button
-		
-		public init(id: String) {
-			self.id = id
-		}
-		
+	public init(id: String, parent: Element = App(), confirmButtonID: String, dismissButtonID: String? = nil) {
+		self.id = id
+		self.parent = parent
+		self.confirmButtonID = confirmButtonID
+		self.dismissButtonID = dismissButtonID
 	}
 	
 }

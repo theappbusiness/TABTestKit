@@ -20,13 +20,24 @@ public protocol Element {
 	var index: Int { get }
 	/// The type of the element, i.e. button, textField, scrollView.
 	var type: XCUIElement.ElementType { get }
+	/// The underlying XCUIElement that this element represents. You should rarely need to access this.
+	var underlyingXCUIElement: XCUIElement { get }
 	
 }
 
 public extension Element {
 	
-	var parent: Element { return Application() }
+	var parent: Element { return App() }
+	
 	var index: Int { return 0 }
+	
+	var underlyingXCUIElement: XCUIElement {
+		var query = parent.underlyingXCUIElement.descendants(matching: type)
+		if !id.isEmpty {
+			query = query.matching(identifier: id)
+		}
+		return query.element(boundBy: index)
+	}
 	
 }
 
@@ -69,32 +80,10 @@ public extension Element {
 			case .visible:
 					guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
 			case .notVisible:
-						guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
+					guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
 			}
 		}
 		return true
-	}
-	
-}
-
-extension Element {
-	
-	/// Represents the underlying XCUI element from the XCTest framework.
-	/// This is internal, intentionally not exposed to users of TABTestKit so that they have to use
-	/// our custom stuff.
-	var underlyingXCUIElement: XCUIElement {
-		return parent.underlyingXCUIElement.descendants(matching: type).matching(identifier: id).element(boundBy: index)
-	}
-	
-}
-
-public struct Application: Element {
-	
-	public let id: String
-	public let type: XCUIElement.ElementType = .application
-	
-	public init(id: String = App().identifier) {
-		self.id = id
 	}
 	
 }

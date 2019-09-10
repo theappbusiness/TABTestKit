@@ -11,7 +11,7 @@
 		2350C6D66A5F5CEF0CF64BA0ACDE29CF /* TABTestKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5337B5E4EAFC2ED84B7658C5C81075A7 /* TABTestKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28DD3C048B27E46CB6ADE2A5C7768FE7 /* Pods-TABTestKit_ExampleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E9DAD9EBA29E7E6B6188A4887CE5D20 /* Pods-TABTestKit_ExampleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4075D83B7601010B7A0503426020C0D4 /* Biometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DEDAFA410B6A41783D2DCF1C69D347 /* Biometrics.m */; };
-		86FC9769E428EB5072CF0ED3BFA7AAED /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93E09B02D1EFC61A99E47F4E1E6C6F /* BaseTestCase.swift */; };
+		86FC9769E428EB5072CF0ED3BFA7AAED /* TABTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A93E09B02D1EFC61A99E47F4E1E6C6F /* TABTestCase.swift */; };
 		97A31BB8719729AD5D8658A84EA11B42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
 		B1CF31CCC03F6031224D7BEA76895EF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD98DB8C1AA8E2390412D61DB64864D /* XCTest.framework */; };
 		B1EC39367BFD3B36E5DB6E8AE5541A73 /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 39E45F07D677EB65990CE07942AACB32 /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +20,14 @@
 		C30B013F2326AF0B00A9EB87 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B013E2326AF0B00A9EB87 /* Alert.swift */; };
 		C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01402326AF7A00A9EB87 /* AlertContext.swift */; };
 		C30B01452326B4A900A9EB87 /* CellContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01442326B4A900A9EB87 /* CellContaining.swift */; };
+		C326D6902327B092001AB082 /* SystemSettingsRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D68E2327B083001AB082 /* SystemSettingsRootScreen.swift */; };
+		C326D6932327C625001AB082 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6912327C5E1001AB082 /* Sheet.swift */; };
+		C326D6972327C81D001AB082 /* TableDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6952327C801001AB082 /* TableDisplaying.swift */; };
+		C326D69A2327C998001AB082 /* SystemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6982327C989001AB082 /* SystemScreen.swift */; };
+		C326D69C2327C9CB001AB082 /* SystemSettingsGeneralScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D69B2327C9CB001AB082 /* SystemSettingsGeneralScreen.swift */; };
+		C326D69E2327C9D9001AB082 /* SystemSettingsResetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D69D2327C9D9001AB082 /* SystemSettingsResetScreen.swift */; };
+		C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D69F2327CD52001AB082 /* SheetContext.swift */; };
+		C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */; };
 		C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* ViewController.swift */; };
 		C36FD68E2326663200D7CED6 /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68A2326663200D7CED6 /* Tappable.swift */; };
 		C36FD68F2326663200D7CED6 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68B2326663200D7CED6 /* Element.swift */; };
@@ -83,7 +91,7 @@
 		6E34A9EB3B107FFED821C12DCDD04FB8 /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
 		6FD98DB8C1AA8E2390412D61DB64864D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6FE517142E39C72982D3E4D78C29E13A /* TABTestKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TABTestKit-Info.plist"; sourceTree = "<group>"; };
-		7A93E09B02D1EFC61A99E47F4E1E6C6F /* BaseTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseTestCase.swift; path = TABTestKit/Classes/BaseTestCase.swift; sourceTree = "<group>"; };
+		7A93E09B02D1EFC61A99E47F4E1E6C6F /* TABTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TABTestCase.swift; path = TABTestKit/Classes/TABTestCase.swift; sourceTree = "<group>"; };
 		7E9DAD9EBA29E7E6B6188A4887CE5D20 /* Pods-TABTestKit_ExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_ExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		88EBD14B960290CA5783F0638F98FA69 /* Pods-TABTestKit_ExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_ExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		8FDF7F203EE5A7D9EC701EE74383119D /* Pods-TABTestKit_ExampleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_ExampleUITests-Info.plist"; sourceTree = "<group>"; };
@@ -94,6 +102,14 @@
 		C30B013E2326AF0B00A9EB87 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C30B01402326AF7A00A9EB87 /* AlertContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContext.swift; sourceTree = "<group>"; };
 		C30B01442326B4A900A9EB87 /* CellContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContaining.swift; sourceTree = "<group>"; };
+		C326D68E2327B083001AB082 /* SystemSettingsRootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingsRootScreen.swift; sourceTree = "<group>"; };
+		C326D6912327C5E1001AB082 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		C326D6952327C801001AB082 /* TableDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDisplaying.swift; sourceTree = "<group>"; };
+		C326D6982327C989001AB082 /* SystemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemScreen.swift; sourceTree = "<group>"; };
+		C326D69B2327C9CB001AB082 /* SystemSettingsGeneralScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingsGeneralScreen.swift; sourceTree = "<group>"; };
+		C326D69D2327C9D9001AB082 /* SystemSettingsResetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettingsResetScreen.swift; sourceTree = "<group>"; };
+		C326D69F2327CD52001AB082 /* SheetContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetContext.swift; sourceTree = "<group>"; };
+		C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPreferencesContext.swift; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C36FD6892326663200D7CED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
@@ -219,7 +235,7 @@
 		B044DA9B80B38542AA6613BBF019A881 /* TABTestKit */ = {
 			isa = PBXGroup;
 			children = (
-				7A93E09B02D1EFC61A99E47F4E1E6C6F /* BaseTestCase.swift */,
+				7A93E09B02D1EFC61A99E47F4E1E6C6F /* TABTestCase.swift */,
 				C36FD6D1232680B700D7CED6 /* Apps */,
 				C36FD6A6232672E600D7CED6 /* Screen */,
 				C36FD6882326663200D7CED6 /* Element */,
@@ -273,8 +289,31 @@
 				C36FD6BF2326742A00D7CED6 /* NavBar.swift */,
 				C36FD6C12326743D00D7CED6 /* TabBar.swift */,
 				C30B013E2326AF0B00A9EB87 /* Alert.swift */,
+				C326D6912327C5E1001AB082 /* Sheet.swift */,
 			);
 			path = "Predefined Elements";
+			sourceTree = "<group>";
+		};
+		C326D68D2327B076001AB082 /* Predefined Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C326D68E2327B083001AB082 /* SystemSettingsRootScreen.swift */,
+				C326D69B2327C9CB001AB082 /* SystemSettingsGeneralScreen.swift */,
+				C326D69D2327C9D9001AB082 /* SystemSettingsResetScreen.swift */,
+			);
+			path = "Predefined Screens";
+			sourceTree = "<group>";
+		};
+		C326D6942327C7EF001AB082 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C36FD6A9232672E600D7CED6 /* Screen.swift */,
+				C326D6982327C989001AB082 /* SystemScreen.swift */,
+				C326D6952327C801001AB082 /* TableDisplaying.swift */,
+				C36FD6A7232672E600D7CED6 /* Completable.swift */,
+				C36FD6A8232672E600D7CED6 /* Dismissable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C36FD6882326663200D7CED6 /* Element */ = {
@@ -306,6 +345,8 @@
 				C36FD6C823267BA700D7CED6 /* AppContext.swift */,
 				C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */,
 				C30B01402326AF7A00A9EB87 /* AlertContext.swift */,
+				C326D69F2327CD52001AB082 /* SheetContext.swift */,
+				C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */,
 			);
 			name = Contexts;
 			path = TABTestKit/Classes/Contexts;
@@ -314,9 +355,8 @@
 		C36FD6A6232672E600D7CED6 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				C36FD6A9232672E600D7CED6 /* Screen.swift */,
-				C36FD6A7232672E600D7CED6 /* Completable.swift */,
-				C36FD6A8232672E600D7CED6 /* Dismissable.swift */,
+				C326D6942327C7EF001AB082 /* Protocols */,
+				C326D68D2327B076001AB082 /* Predefined Screens */,
 			);
 			name = Screen;
 			path = TABTestKit/Classes/Screen;
@@ -447,7 +487,7 @@
 				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					9FD98B23E57B60FD126227D379736971 = {
-						LastSwiftMigration = 1100;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -496,38 +536,46 @@
 				C36FD6C923267BA700D7CED6 /* AppContext.swift in Sources */,
 				C36FD6B6232673D300D7CED6 /* ScrollView.swift in Sources */,
 				C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */,
+				C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */,
 				C36FD6C02326742A00D7CED6 /* NavBar.swift in Sources */,
+				C326D69E2327C9D9001AB082 /* SystemSettingsResetScreen.swift in Sources */,
 				C36FD6D8232680B700D7CED6 /* BaseApp.swift in Sources */,
 				C36FD6AA232672E600D7CED6 /* Completable.swift in Sources */,
 				C36FD6D7232680B700D7CED6 /* Safari.swift in Sources */,
 				C36FD6BE2326741700D7CED6 /* TextView.swift in Sources */,
+				C326D69C2327C9CB001AB082 /* SystemSettingsGeneralScreen.swift in Sources */,
 				C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */,
 				C36FD6A02326676C00D7CED6 /* NavigationContext.swift in Sources */,
 				C36FD6BA232673F000D7CED6 /* CollectionView.swift in Sources */,
+				C326D6972327C81D001AB082 /* TableDisplaying.swift in Sources */,
 				C36FD6C52326763400D7CED6 /* Attributes.swift in Sources */,
 				C30B013B2326AB2000A9EB87 /* SecureTextField.swift in Sources */,
 				C36FD6B4232673C600D7CED6 /* Label.swift in Sources */,
+				C326D69A2327C998001AB082 /* SystemScreen.swift in Sources */,
 				C36FD6DD2326852A00D7CED6 /* Springboard.swift in Sources */,
 				C36FD6952326664900D7CED6 /* Scenario.swift in Sources */,
 				C36FD6A12326676C00D7CED6 /* InteractionContext.swift in Sources */,
 				C36FD6D6232680B700D7CED6 /* SystemPreferences.swift in Sources */,
 				C36FD6DF232685AF00D7CED6 /* BiometricsContext.swift in Sources */,
 				C36FD6B02326730A00D7CED6 /* Editable.swift in Sources */,
+				C326D6932327C625001AB082 /* Sheet.swift in Sources */,
 				C36FD68F2326663200D7CED6 /* Element.swift in Sources */,
 				C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */,
 				C36FD6C72326790400D7CED6 /* Scrollable.swift in Sources */,
 				C30B013F2326AF0B00A9EB87 /* Alert.swift in Sources */,
 				C30B01452326B4A900A9EB87 /* CellContaining.swift in Sources */,
 				4075D83B7601010B7A0503426020C0D4 /* Biometrics.m in Sources */,
+				C326D6902327B092001AB082 /* SystemSettingsRootScreen.swift in Sources */,
 				C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */,
 				C36FD6942326664900D7CED6 /* Step.swift in Sources */,
+				C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */,
 				F785827A6F363207A87B0DDF8B435B10 /* TABTestKit-dummy.m in Sources */,
 				C36FD68E2326663200D7CED6 /* Tappable.swift in Sources */,
 				C36FD6D9232680B700D7CED6 /* App.swift in Sources */,
 				C36FD6B8232673E000D7CED6 /* Table.swift in Sources */,
 				C36FD6BC2326740A00D7CED6 /* TextField.swift in Sources */,
 				C36FD6AB232672E600D7CED6 /* Dismissable.swift in Sources */,
-				86FC9769E428EB5072CF0ED3BFA7AAED /* BaseTestCase.swift in Sources */,
+				86FC9769E428EB5072CF0ED3BFA7AAED /* TABTestCase.swift in Sources */,
 				C36FD6AC232672E600D7CED6 /* Screen.swift in Sources */,
 				C36FD6902326663200D7CED6 /* Button.swift in Sources */,
 				C36FD6C22326743D00D7CED6 /* TabBar.swift in Sources */,
