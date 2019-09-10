@@ -12,7 +12,7 @@ public struct TextField: Element, Editable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .textField
-	public var value: String { underlyingXCUIElement.value as? String ?? "" }
+	public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 	
 	public init(id: String) {
 		self.id = id

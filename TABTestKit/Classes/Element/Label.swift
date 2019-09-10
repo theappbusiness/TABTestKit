@@ -12,7 +12,7 @@ public struct Label: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .staticText
-	public var value: String { underlyingXCUIElement.label }
+	public var value: String { return underlyingXCUIElement.label }
 	
 	public init(id: String) {
 		self.id = id

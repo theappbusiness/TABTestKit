@@ -13,7 +13,7 @@ public struct CollectionView: Element, Scrollable, CellContaining {
 	public let id: String
 	public let type: XCUIElement.ElementType = .collectionView
 	
-	public func numberOfCells(matchingID id: String) -> Int { underlyingXCUIElement.cells.matching(identifier: id).count }
+	public func numberOfCells(matchingID id: String) -> Int { return underlyingXCUIElement.cells.matching(identifier: id).count }
 	
 	public init(id: String) {
 		self.id = id
@@ -30,7 +30,7 @@ public extension CollectionView {
 		public let parent: XCUIElement
 		public let type: XCUIElement.ElementType = .cell
 		public let index: Int
-		public var value: String { underlyingXCUIElement.label }
+		public var value: String { return underlyingXCUIElement.label }
 		
 		/// Creates a new CollectionView.Cell instance.
 		/// - Parameter id: The ID of the cell. You should set this in code as the accessibilityIdentifier, or as the accessibilityLabel.

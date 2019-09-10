@@ -12,7 +12,7 @@ public struct TextView: Element, Editable, Scrollable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .textView
-	public var value: String { underlyingXCUIElement.value as? String ?? "" }
+	public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 	
 	public init(id: String) {
 		self.id = id

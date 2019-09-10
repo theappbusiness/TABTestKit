@@ -25,8 +25,8 @@ public protocol Element {
 
 public extension Element {
 	
-	var parent: XCUIElement { App() }
-	var index: Int { 0 }
+	var parent: XCUIElement { return App() }
+	var index: Int { return 0 }
 	
 }
 
@@ -63,7 +63,7 @@ extension Element {
 	/// This is internal, intentionally not exposed to users of TABTestKit so that they have to use
 	/// our custom stuff.
 	var underlyingXCUIElement: XCUIElement {
-		parent.descendants(matching: type).matching(identifier: id).element(boundBy: index)
+		return parent.descendants(matching: type).matching(identifier: id).element(boundBy: index)
 	}
 	
 }

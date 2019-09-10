@@ -12,7 +12,7 @@ public struct SecureTextField: Element, Editable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .secureTextField
-	public var value: String { underlyingXCUIElement.value as? String ?? "" }
+	public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 	
 	public init(id: String) {
 		self.id = id

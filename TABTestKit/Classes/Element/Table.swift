@@ -28,7 +28,7 @@ public extension Table {
 		public let parent: XCUIElement
 		public let type: XCUIElement.ElementType = .cell
 		public let index: Int
-		public var value: String { underlyingXCUIElement.label }
+		public var value: String { return underlyingXCUIElement.label }
 		
 		/// Creates a new Table.Cell instance.
 		/// - Parameter id: The ID of the cell. You should set this in code as the accessibilityIdentifier, or as the accessibilityLabel.

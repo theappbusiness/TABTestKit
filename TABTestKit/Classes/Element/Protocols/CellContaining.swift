@@ -20,7 +20,7 @@ public protocol CellContaining {
 public extension Element where Self: CellContaining {
 	
 	func numberOfCells(matchingID id: String) -> Int {
-		underlyingXCUIElement.cells.matching(identifier: id).count
+		return underlyingXCUIElement.cells.matching(identifier: id).count
 	}
 	
 }

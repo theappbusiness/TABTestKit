@@ -12,7 +12,7 @@ public struct TabBar: Element {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .tabBar
-	var underlyingXCUIElement: XCUIElement { id.isEmpty ? parent.tabBars.firstMatch : parent.tabBars[id].firstMatch } // TODO: Check this actually works
+	var underlyingXCUIElement: XCUIElement { return id.isEmpty ? parent.tabBars.firstMatch : parent.tabBars[id].firstMatch } // TODO: Check this actually works
 	
 	public init(id: String = "") {
 		self.id = id
