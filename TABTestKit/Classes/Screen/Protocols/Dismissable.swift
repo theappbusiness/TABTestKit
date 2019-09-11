@@ -18,3 +18,11 @@ public protocol Dismissable {
 	func dismiss()
 	
 }
+
+public extension Element where Self: Dismissable {
+	
+	func await() {
+		await(.exists, .hittable)
+	}
+	
+}

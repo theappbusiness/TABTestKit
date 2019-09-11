@@ -60,6 +60,7 @@
 		C36FD6D9232680B700D7CED6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6D5232680B700D7CED6 /* App.swift */; };
 		C36FD6DD2326852A00D7CED6 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6DC2326852A00D7CED6 /* Springboard.swift */; };
 		C36FD6DF232685AF00D7CED6 /* BiometricsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */; };
+		C3AC13872328DADC002A0F54 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC13852328DAD3002A0F54 /* Cell.swift */; };
 		C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */; };
 		D44E9A4B1EB5B7D919B7E63310504802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */; };
 		E3F9248962BE23A3A27959717262C126 /* Pods-TABTestKit_ExampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A497868E641D6CB0971B6F7330EA2E2 /* Pods-TABTestKit_ExampleUITests-dummy.m */; };
@@ -145,6 +146,7 @@
 		C36FD6D5232680B700D7CED6 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		C36FD6DC2326852A00D7CED6 /* Springboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
 		C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsContext.swift; sourceTree = "<group>"; };
+		C3AC13852328DAD3002A0F54 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+wait.swift"; sourceTree = "<group>"; };
 		C675C5EFFC1CF43CCCED0B5A3B91F2FE /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TABTestKit.modulemap; sourceTree = "<group>"; };
 		CDE92ABC2F7B9A21F56722990F2D34E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -286,6 +288,7 @@
 				C36FD68C2326663200D7CED6 /* Button.swift */,
 				C36FD6B5232673D300D7CED6 /* ScrollView.swift */,
 				C36FD6B9232673F000D7CED6 /* CollectionView.swift */,
+				C3AC13852328DAD3002A0F54 /* Cell.swift */,
 				C36FD6B7232673E000D7CED6 /* Table.swift */,
 				C36FD6BB2326740A00D7CED6 /* TextField.swift */,
 				C30B01392326AB1800A9EB87 /* SecureTextField.swift */,
@@ -575,6 +578,7 @@
 				4075D83B7601010B7A0503426020C0D4 /* Biometrics.m in Sources */,
 				C326D6902327B092001AB082 /* SystemSettingsRootScreen.swift in Sources */,
 				C30B01412326AF7A00A9EB87 /* AlertContext.swift in Sources */,
+				C3AC13872328DADC002A0F54 /* Cell.swift in Sources */,
 				C36FD6942326664900D7CED6 /* Step.swift in Sources */,
 				C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */,
 				F785827A6F363207A87B0DDF8B435B10 /* TABTestKit-dummy.m in Sources */,

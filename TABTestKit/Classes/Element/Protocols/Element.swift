@@ -13,13 +13,18 @@ import XCTest
 public protocol Element {
 	
 	/// The ID of the element. This could be the accessibilityIdentifier or the text of a label.
-	var id: String { get }
+	/// An ID is not required, but it is recommended.
+	/// You may however wish to just match the first navBar (for example), and since there's usually only one navBar in an
+	/// app, you don't really need to provide an ID for it.
+	var id: String? { get }
 	/// The parent element. By default the parent element is the app being tested.
 	var parent: Element { get }
 	/// The index of the element. 0 by default.
 	var index: Int { get }
 	/// The type of the element, i.e. button, textField, scrollView.
 	var type: XCUIElement.ElementType { get }
+	/// The label value of the element. This corresponds to the accessibilityLabel.
+	var label: String { get }
 	/// The underlying XCUIElement that this element represents. You should rarely need to access this.
 	var underlyingXCUIElement: XCUIElement { get }
 	
@@ -31,12 +36,12 @@ public extension Element {
 	
 	var index: Int { return 0 }
 	
+	var label: String {
+		return underlyingXCUIElement.label
+	}
+	
 	var underlyingXCUIElement: XCUIElement {
-		var query = parent.underlyingXCUIElement.descendants(matching: type)
-		if !id.isEmpty {
-			query = query.matching(identifier: id)
-		}
-		return query.element(boundBy: index)
+		return parent.underlyingXCUIElement.descendants(matching: type).matching(type, identifier: id).element(boundBy: index)
 	}
 	
 }

@@ -15,7 +15,7 @@ final class RootController: UITabBarController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     if !hasLoggedIn {
-//      performSegue(withIdentifier: "BiometricLoginViewController", sender: nil)
+      performSegue(withIdentifier: "BiometricLoginViewController", sender: nil)
     }
   }
   

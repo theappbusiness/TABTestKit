@@ -17,7 +17,7 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
   
   func test_table() {
     Scenario("Viewing both sections") {
-//      Given(I: complete(biometricLoginScreen))
+      Given(I: complete(biometricLoginScreen))
       Then(I: see(tableScreen))
       And(I: see(tableScreen.table.header(withID: "SECTION NUMERO 0")))
       And(I: scroll(tableScreen, .down, until: tableScreen.table.header(withID: "SECTION NUMERO 1"), .exists))

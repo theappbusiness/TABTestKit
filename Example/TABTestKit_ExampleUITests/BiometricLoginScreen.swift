@@ -15,10 +15,10 @@ struct BiometricLoginScreen: Screen {
   let trait = Header(id: "Welcome")
   let logInLabel = Label(id: "Please log in with biometrics")
   let logInButton = Button(id: "Log in")
-  let faceIDPermissionAlert = Alert(id: "Do you want to allow “TABTestKit_Example” to use Face ID?", parent: Springboard(), confirmButtonID: "OK", dismissButtonID: "Don’t Allow") // The style of apostrophe is actually important in "Don’t Allow", rather than "Don't Allow" which will fail!
-  let faceNotRecognizedAlert = Alert(id: "", parent: Springboard(), confirmButtonID: "Try Face ID Again", dismissButtonID: "Cancel")
-  let biometricsUnavailableAlert = Alert(id: "Login failed", confirmButtonID: "OK")
-  let biometricsFailedAlert = Alert(id: "Login failed", confirmButtonID: "OK")
+  let faceIDPermissionAlert: Alert = .faceIDPermission
+  let faceNotRecognizedAlert: Alert = .faceNotRecognized
+  let biometricsUnavailableAlert: Alert = .biometricsUnavailable
+  let biometricsFailedAlert: Alert = .biometricsFailed
   
 }
 
@@ -28,9 +28,19 @@ extension BiometricLoginScreen: Completable {
     Biometrics.enrolled()
     logInButton.tap()
     if faceIDPermissionAlert.determine(.exists, timeout: 1) {
-      faceIDPermissionAlert.confirmButton.tap()
+      faceIDPermissionAlert.actionButton(withID: "OK").tap()
     }
     Biometrics.successfulAuthentication()
   }
+  
+}
+
+extension Alert {
+  
+  // The style of apostrophe is actually important in "Don’t Allow", rather than "Don't Allow" which will fail!
+  static let faceIDPermission = Alert(id: "Do you want to allow “TABTestKit_Example” to use Face ID?", parent: Springboard(), dismissButtonID: "Don’t Allow")
+  static let faceNotRecognized = Alert(id: nil, parent: Springboard(), dismissButtonID: "Cancel")
+  static let biometricsUnavailable = Alert(id: "Login failed", dismissButtonID: "OK") // TODO: Assert message? Since both have the same title
+  static let biometricsFailed = Alert(id: "Login failed", dismissButtonID: "OK")
   
 }

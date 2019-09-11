@@ -31,7 +31,7 @@ final class BiometricLogin_PermissionDeniedTests: TABTestCase, SystemPreferences
     
     Scenario("Confirming the error alert") {
       Given(I: see(biometricLoginScreen.biometricsUnavailableAlert))
-      When(I: confirm(biometricLoginScreen.biometricsUnavailableAlert))
+      When(I: dismiss(biometricLoginScreen.biometricsUnavailableAlert))
       Then(I: doNotSee(biometricLoginScreen.biometricsUnavailableAlert))
       And(I: see(biometricLoginScreen))
       And(I: doNotSee(tableScreen))

@@ -7,11 +7,7 @@
 
 import XCTest
 
-open class BaseApp: XCUIApplication, Element {
-	
-	public var id: String { return "" }
-	public var type: XCUIElement.ElementType { return .application }
-	public var underlyingXCUIElement: XCUIElement { return self }
+open class BaseApp: XCUIApplication {
 	
 	/// Terminates the app, waiting for the state to be not running before continuing.
 	override open func terminate() {
@@ -36,5 +32,13 @@ open class BaseApp: XCUIApplication, Element {
 		super.launch()
 		XCTAssert(wait(for: .runningForeground, timeout: 60))
 	}
+	
+}
+
+extension BaseApp: Element {
+	
+	public var id: String? { return nil }
+	public var type: XCUIElement.ElementType { return .application }
+	public var underlyingXCUIElement: XCUIElement { return self }
 	
 }

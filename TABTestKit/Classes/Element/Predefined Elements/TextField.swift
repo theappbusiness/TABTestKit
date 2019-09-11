@@ -10,12 +10,13 @@ import XCTest
 /// Represents a standard UITextField.
 public struct TextField: Element, Editable {
 	
-	public let id: String
+	public let id: String?
+	public let parent: Element
 	public let type: XCUIElement.ElementType = .textField
-	public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 	
-	public init(id: String) {
+	public init(id: String, parent: Element = App()) {
 		self.id = id
+		self.parent = parent
 	}
 	
 }

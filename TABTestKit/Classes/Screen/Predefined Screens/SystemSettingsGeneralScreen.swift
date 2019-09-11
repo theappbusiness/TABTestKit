@@ -12,6 +12,8 @@ public let systemPreferencesGeneralScreen = SystemPreferencesGeneralScreen()
 public struct SystemPreferencesGeneralScreen: SystemPreferencesScreen, TableDisplaying {
 	
 	public let trait = Header(id: "General", parent: SystemPreferences())
-	public var resetCell: Table.Cell { return .init(id: "Reset", table: table) }
+	public var resetCell: Cell {
+		return table.cell(matchingID: "Reset")
+	}
 	
 }

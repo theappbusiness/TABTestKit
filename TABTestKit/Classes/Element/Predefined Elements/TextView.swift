@@ -10,12 +10,13 @@ import XCTest
 /// Represents a UITextView element,
 public struct TextView: Element, Editable, Scrollable {
 	
-	public let id: String
+	public let id: String?
+	public let parent: Element
 	public let type: XCUIElement.ElementType = .textView
-	public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 	
-	public init(id: String) {
+	public init(id: String, parent: Element = App()) {
 		self.id = id
+		self.parent = parent
 	}
 	
 }

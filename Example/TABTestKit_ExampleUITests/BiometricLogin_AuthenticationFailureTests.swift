@@ -25,7 +25,7 @@ final class BiometricLogin_AuthenticationFailureTests: TABTestCase, SystemPrefer
     
     Scenario("Allowing permission but failing authentication") {
       Given(I: see(biometricLoginScreen.faceIDPermissionAlert))
-      And(I: confirm(biometricLoginScreen.faceIDPermissionAlert))
+      And(I: tap("OK", in: biometricLoginScreen.faceIDPermissionAlert))
       When(I: failToAuthenticateBiometrics)
       Then(I: see(biometricLoginScreen.faceNotRecognizedAlert))
     }
@@ -39,7 +39,7 @@ final class BiometricLogin_AuthenticationFailureTests: TABTestCase, SystemPrefer
     
     Scenario("Dismissing failure alert") {
       Given(I: see(biometricLoginScreen.biometricsFailedAlert))
-      When(I: confirm(biometricLoginScreen.biometricsFailedAlert))
+      When(I: dismiss(biometricLoginScreen.biometricsFailedAlert))
       Then(I: see(biometricLoginScreen))
       And(I: doNotSee(tableScreen))
     }
