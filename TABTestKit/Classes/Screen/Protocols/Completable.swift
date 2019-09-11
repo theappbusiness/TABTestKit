@@ -14,6 +14,7 @@ import Foundation
 /// This works particularly well with NavigationContext.
 public protocol Completable {
 	
+	func await()
 	func complete()
 	
 }

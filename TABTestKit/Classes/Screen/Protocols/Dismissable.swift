@@ -14,6 +14,7 @@ import Foundation
 /// This works particularly well with NavigationContext.
 public protocol Dismissable {
 	
+	func await()
 	func dismiss()
 	
 }

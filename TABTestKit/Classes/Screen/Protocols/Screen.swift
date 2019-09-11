@@ -31,3 +31,11 @@ public extension Screen {
 	var app: BaseApp { return App() }
 	
 }
+
+public extension Screen {
+	
+	func await() {
+		trait.await(.exists, .hittable, .visible)
+	}
+	
+}

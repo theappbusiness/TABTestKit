@@ -48,19 +48,24 @@ public extension NavigationContext {
 		XCTAssertEqual(value, element.value)
 	}
 	
-	/// Completes a
+	/// Completes one or more things that knows how to complete itself.
 	///
-	/// - Parameter screens: <#screens description#>
-	func complete<ScreenType: Completable & Screen>(_ screens: ScreenType...) {
-		screens.forEach { screen in
-			see(screen)
-			screen.complete()			
+	/// - Parameter completableThings: One or more Completable things. Typically, this would be a Screen that conforms to Completable.
+	func complete(_ completableThings: Completable...) {
+		completableThings.forEach {
+			$0.await()
+			$0.complete()
 		}
 	}
 	
-	func dismiss<ScreenType: Dismissable & Screen>(_ screen: ScreenType) {
-		see(screen)
-		screen.dismiss()
+	/// Dismisses one or more things that knows how to complete itself.
+	///
+	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Completable.
+	func dismiss(_ dismissableThings: Dismissable...) {
+		dismissableThings.forEach {
+			$0.await()
+			$0.dismiss()
+		}
 	}
 	
 }

@@ -14,8 +14,7 @@ public extension InteractionContext {
 		element.tap()
 	}
 	
-	func type(_ text: String, into element: Editable & Tappable, tappingFirst shouldTapFirst: Bool = true) {
-		if shouldTapFirst { tap(element) }
+	func type(_ text: String, into element: Editable) {
 		element.type(text)
 	}
 	
