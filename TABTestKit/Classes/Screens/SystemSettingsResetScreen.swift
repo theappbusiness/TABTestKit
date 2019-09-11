@@ -9,9 +9,10 @@ import Foundation
 
 public let systemPreferencesResetScreen = SystemPreferencesResetScreen()
 
-public struct SystemPreferencesResetScreen: SystemPreferencesScreen, TableDisplaying {
+public struct SystemPreferencesResetScreen: Screen {
 	
 	public let trait = Header(id: "Reset", parent: SystemPreferences())
+	public let table = Table(parent: SystemPreferences())
 	public var resetCell: Cell {
 		return table.cell(matchingID: "Reset Location & Privacy")
 	}

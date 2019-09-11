@@ -20,16 +20,7 @@ public protocol Screen {
 	/// The trait of the screen. Typically a ViewController or Header.
 	/// By default, the traits are used to await a screen.
 	var trait: Trait { get }
-	
-	/// The app this screen is in. Defaults to the main app, but you can provide other apps (like Safari).
-	var app: BaseApp { get }
 
-}
-
-public extension Screen {
-	
-	var app: BaseApp { return App() }
-	
 }
 
 public extension Screen {

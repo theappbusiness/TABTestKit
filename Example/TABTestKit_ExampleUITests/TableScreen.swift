@@ -10,8 +10,19 @@ import TABTestKit
 
 let tableScreen = TableScreen()
 
-struct TableScreen: Screen, TableDisplaying, Scrollable {
+struct TableScreen: Screen {
   
   let trait = Header(id: "Table")
+  let table = Table(parent: SystemPreferences())
   
 }
+
+extension TableScreen: Scrollable {
+  
+  func scroll(_ direction: ElementAttributes.Direction) {
+    table.scroll(direction)
+  }
+  
+}
+
+

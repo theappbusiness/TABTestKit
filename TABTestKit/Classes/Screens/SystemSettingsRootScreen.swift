@@ -9,9 +9,10 @@ import XCTest
 
 public let systemPreferencesRootScreen = SystemPreferencesRootScreen()
 
-public struct SystemPreferencesRootScreen: SystemPreferencesScreen, TableDisplaying {
+public struct SystemPreferencesRootScreen: Screen {
 	
 	public let trait = Header(id: "Settings", parent: SystemPreferences())
+	public let table = Table(parent: SystemPreferences())
 	public var generalCell: Cell {
 		return table.cell(matchingID: "General")
 	}
