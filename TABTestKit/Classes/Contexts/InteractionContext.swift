@@ -19,7 +19,7 @@ public extension InteractionContext {
 		element.type(text)
 	}
 	
-	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, is state: ElementAttributes.State, maxTries: Int = 10) {
+	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, _ state: ElementAttributes.State, maxTries: Int = 10) {
 		var numberOfTries = 0
 		repeat {
 			guard !otherElement.determine(state, timeout: 1) else { return }
@@ -27,11 +27,6 @@ public extension InteractionContext {
 			element.scroll(direction)
 		} while numberOfTries <= maxTries
 		XCTFail("Ran of out tries") // TODO: Better failure message
-	}
-	
-	func see<ElementType: Element & ValueRepresentable>(_ value: ElementType.Value, in element: ElementType) {
-		element.await(.visible)
-		XCTAssertEqual(value, element.value)
 	}
 	
 }

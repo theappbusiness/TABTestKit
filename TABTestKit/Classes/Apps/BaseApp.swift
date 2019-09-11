@@ -9,7 +9,7 @@ import XCTest
 
 open class BaseApp: XCUIApplication, Element {
 	
-	public var id: String { return identifier }
+	public var id: String { return "" }
 	public var type: XCUIElement.ElementType { return .application }
 	public var underlyingXCUIElement: XCUIElement { return self }
 	

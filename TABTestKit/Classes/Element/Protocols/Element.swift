@@ -15,7 +15,7 @@ public protocol Element {
 	/// The ID of the element. This could be the accessibilityIdentifier or the text of a label.
 	var id: String { get }
 	/// The parent element. By default the parent element is the app being tested.
-	var parent: XCUIElement { get }
+	var parent: Element { get }
 	/// The index of the element. 0 by default.
 	var index: Int { get }
 	/// The type of the element, i.e. button, textField, scrollView.
@@ -27,12 +27,12 @@ public protocol Element {
 
 public extension Element {
 	
-	var parent: XCUIElement { return App() }
+	var parent: Element { return App() }
 	
 	var index: Int { return 0 }
 	
 	var underlyingXCUIElement: XCUIElement {
-		var query = parent.descendants(matching: type)
+		var query = parent.underlyingXCUIElement.descendants(matching: type)
 		if !id.isEmpty {
 			query = query.matching(identifier: id)
 		}
@@ -78,9 +78,9 @@ public extension Element {
 			case .notHittable:
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isHittable, timeout: timeout) else { return false }
 			case .visible:
-					guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
+				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
 			case .notVisible:
-					guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
+				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
 			}
 		}
 		return true

@@ -19,8 +19,8 @@ public struct Table: Element, Scrollable, CellContaining {
 		self.parent = parent
 	}
 	
-	public func header(forSection section: Int) -> SectionHeader {
-		return SectionHeader(section: section, table: self)
+	public func header(withID id: String) -> Header {
+		return Header(id: id, parent: self)
 	}
 	
 }
@@ -43,22 +43,6 @@ public extension Table {
 		public init(id: String, index: Int = 0, table: Table = Table()) {
 			self.id = id
 			self.index = index
-			self.parent = table
-		}
-		
-	}
-	
-	struct SectionHeader: Element, ValueRepresentable {
-		
-		public let id: String
-		public let parent: Element
-		public let type: XCUIElement.ElementType = .other
-		public let index: Int
-		public var value: String { return underlyingXCUIElement.label }
-		
-		public init(id: String = "", section: Int, table: Table = Table()) {
-			self.id = id
-			self.index = section
 			self.parent = table
 		}
 		

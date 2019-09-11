@@ -16,7 +16,7 @@ public struct Header: Element, ValueRepresentable {
 	
 	public let id: String
 	public let type: XCUIElement.ElementType = .other
-	public let parent: XCUIElement
+	public let parent: Element
 	public var value: String { return underlyingXCUIElement.label }
 	
 	public init(id: String, parent: Element = App()) {
