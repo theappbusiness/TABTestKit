@@ -23,7 +23,7 @@ public struct TabBar: Element {
 	/// if you need to.
 	///
 	/// - Parameter id: The ID of the tab bar. Defaults to nil.
-	public init(id: String? = nil, parent: Element = App()) {
+	public init(id: String? = nil, parent: Element = App.shared) {
 		self.id = id
 		self.parent = parent
 	}

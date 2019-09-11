@@ -32,7 +32,7 @@ public protocol Element {
 
 public extension Element {
 	
-	var parent: Element { return App() }
+	var parent: Element { return App.shared }
 	
 	var index: Int { return 0 }
 	

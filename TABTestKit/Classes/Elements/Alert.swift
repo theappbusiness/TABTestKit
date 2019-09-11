@@ -20,7 +20,7 @@ public struct Alert: Element {
 	
 	private let dismissButtonID: String
 	
-	public init(id: String?, parent: Element = App(), dismissButtonID: String) {
+	public init(id: String?, parent: Element = App.shared, dismissButtonID: String) {
 		self.id = id
 		self.parent = parent
 		self.dismissButtonID = dismissButtonID

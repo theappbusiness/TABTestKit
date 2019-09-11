@@ -14,7 +14,7 @@ public struct NavBar: Element {
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .navigationBar
 	
-	public init(id: String? = nil, parent: Element = App()) {
+	public init(id: String? = nil, parent: Element = App.shared) {
 		self.id = id
 		self.parent = parent
 	}

@@ -11,19 +11,19 @@ public protocol AppContext {}
 public extension AppContext {
 	
 	func backgroundTheApp() {
-		App().background()
+		App.shared.background()
 	}
 	
 	func foregroundTheApp() {
-		App().activate()
+		App.shared.activate()
 	}
 	
 	func terminateTheApp() {
-		App().terminate()
+		App.shared.terminate()
 	}
 	
 	func launchTheApp(clean: Bool) {
-		clean ? App().launch(clean: true): App().activate() // Quicker! Doesn't re-install the app, but still launches.
+		clean ? App.shared.launch(clean: true): App.shared.activate() // Quicker! Doesn't re-install the app, but still launches.
 	}
 	
 	func relaunchTheApp() {

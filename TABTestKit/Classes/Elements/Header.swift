@@ -20,7 +20,7 @@ public struct Header: Element {
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .other
 	
-	public init(id: String, parent: Element = App()) {
+	public init(id: String, parent: Element = App.shared) {
 		self.id = id
 		self.parent = parent
 	}

@@ -18,7 +18,7 @@ public struct Sheet: Element {
 	
 	private let dismissButtonID: String
 	
-	public init(id: String, parent: Element = App(), dismissButtonID: String = "Cancel") {
+	public init(id: String, parent: Element = App.shared, dismissButtonID: String = "Cancel") {
 		self.id = id
 		self.parent = parent
 		self.dismissButtonID = dismissButtonID

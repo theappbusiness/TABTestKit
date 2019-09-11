@@ -14,7 +14,7 @@ public struct TextField: Element, Editable {
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .textField
 	
-	public init(id: String, parent: Element = App()) {
+	public init(id: String, parent: Element = App.shared) {
 		self.id = id
 		self.parent = parent
 	}

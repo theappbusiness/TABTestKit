@@ -23,9 +23,9 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	open override func setUp() {
 		continueAfterFailure = false
 		Biometrics.unenrolled()
-		App().launchEnvironment["TABTestKit.UUID"] = ProcessInfo.processInfo.environment["SIMULATOR_UDID"]
+		App.shared.launchEnvironment["TABTestKit.UUID"] = ProcessInfo.processInfo.environment["SIMULATOR_UDID"]
 		preLaunchSetup {
-			App().launch(clean: true)
+			App.shared.launch(clean: true)
 		}
 	}
 	
@@ -34,7 +34,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	/// Override preTerminationTearDown to provide custom pretermination tear down behaviour.
 	open override func tearDown() {
 		preTerminationTearDown {
-			App().terminate()
+			App.shared.terminate()
 		}
 	}
 	
