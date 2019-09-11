@@ -18,7 +18,7 @@ public protocol Tappable {
 public extension Element where Self: Tappable {
 	
 	func tap() {
-		await(.exists, .hittable)
+		await(.exists)
 		underlyingXCUIElement.tap()
 	}
 	

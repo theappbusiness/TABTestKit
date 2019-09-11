@@ -16,11 +16,20 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
   }
   
   func test_table() {
-    Scenario("Viewing both sections") {
+    Scenario("Tapping on a cell in the first section and seeing the detail screen") {
       Given(I: complete(biometricLoginScreen))
-      Then(I: see(tableScreen))
-      And(I: see(tableScreen.table.header(withID: "SECTION NUMERO 0")))
-      And(I: scroll(tableScreen, .down, until: tableScreen.table.header(withID: "SECTION NUMERO 1"), .exists))
+      When(I: see(tableScreen))
+      And(I: see(tableScreen.section0Header))
+      When(I: tap(tableScreen.table.cell(index: 0)))
+      Then(I: see(tableSelectionScreen))
+    }
+    
+    Scenario("Scrolling to more elements") {
+      Given(I: tap(tableSelectionScreen.backButton))
+      And(I: scroll(tableScreen, .down, until: tableScreen.section1Header, .visible))
+      And(I: scroll(tableScreen, .down, until: tableScreen.lastCell, .visible))
+      When(I: tap(tableScreen.lastCell))
+      Then(I: see(tableSelectionScreen))
     }
   }
   

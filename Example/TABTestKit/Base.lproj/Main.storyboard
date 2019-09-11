@@ -55,6 +55,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="n7M-8o-6yS" kind="show" id="YnG-sT-lkn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,6 +70,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5k-Z9-RLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2060" y="-653.52323838080963"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="puN-bP-pcH">
+            <objects>
+                <viewController id="n7M-8o-6yS" customClass="TableSelectionController" customModule="TABTestKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Tn-qz-eKq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="H4B-X3-wDr"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="tjT-ju-zC8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vM-wQ-pJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986" y="-653"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="cCb-ed-mZg">

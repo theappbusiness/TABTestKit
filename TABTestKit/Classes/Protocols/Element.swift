@@ -83,9 +83,9 @@ public extension Element {
 			case .notHittable:
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isHittable, timeout: timeout) else { return false }
 			case .visible:
-				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
+				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible(in: parent.underlyingXCUIElement), timeout: timeout) else { return false }
 			case .notVisible:
-				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible, timeout: timeout) else { return false }
+				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible(in: parent.underlyingXCUIElement), timeout: timeout) else { return false }
 			}
 		}
 		return true

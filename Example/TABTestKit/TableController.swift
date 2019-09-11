@@ -33,6 +33,11 @@ final class TableController: UITableViewController {
     return cell
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let selectedRow = tableView.indexPathForSelectedRow else { return assertionFailure("No selection") }
+    segue.destination.navigationItem.title = "Row \(selectedRow.row) section \(selectedRow.section)"
+  }
+  
   private func setup() {
     view.accessibilityIdentifier = "TableController"
   }

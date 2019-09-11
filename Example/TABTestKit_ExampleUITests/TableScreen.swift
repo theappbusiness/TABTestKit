@@ -13,7 +13,16 @@ let tableScreen = TableScreen()
 struct TableScreen: Screen {
   
   let trait = Header(id: "Table")
-  let table = Table(parent: SystemPreferences())
+  let table = Table()
+  var section0Header: Header {
+    return table.header(withID: "SECTION NUMERO 0")
+  }
+  var section1Header: Header {
+    return table.header(withID: "SECTION NUMERO 1")
+  }
+  var lastCell: Cell {
+    return table.cell(index: table.numberOfCells() - 1)
+  }
   
 }
 
