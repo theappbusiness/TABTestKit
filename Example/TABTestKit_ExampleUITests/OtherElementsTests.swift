@@ -10,9 +10,9 @@ import TABTestKit
 
 final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
   
-  override func preLaunchSetup(_ completion: @escaping () -> Void) {
+  override func preLaunchSetup(_ launch: @escaping () -> Void) {
     resetAllPrivacyPrompts()
-    completion()
+    launch()
   }
   
   func test_otherElements() {

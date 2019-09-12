@@ -40,22 +40,22 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	
 	/// Called automatically as part of setUp to allow you to provide your own prelaunch setup.
 	/// For example you could use this to reset a mock server's state or collected analytics.
-	/// By default this function does nothing except call the completion handler, so calling the super implementation
-	/// is not required, so long as you call the completion handler in your own implementation.
+	/// By default this function does nothing except call the launch handler, so calling the super implementation
+	/// is not required, so long as you call the launch handler in your own implementation.
 	///
-	/// - Parameter completion: The completion to call when your prelaunch setup is complete.
-	open func preLaunchSetup(_ completion: @escaping () -> Void) {
-		completion()
+	/// - Parameter launch: The handler to call when your prelaunch setup is complete to launch the app.
+	open func preLaunchSetup(_ launch: @escaping () -> Void) {
+		launch()
 	}
 	
 	/// Called automatically as part of tearDown to allow you to provide your own preTermination tear down.
 	/// For example you could use this to unregister
-	/// By default this function does nothing except call the completion handler, so calling the super implementation
-	/// is not required, so long as you call the completion handler in your own implementation.
+	/// By default this function does nothing except call the terminate handler, so calling the super implementation
+	/// is not required, so long as you call the terminate handler in your own implementation.
 	///
-	/// - Parameter completion: The completion to call when your prelaunch setup is complete.
-	open func preTerminationTearDown(_ completion: @escaping () -> Void) {
-		completion()
+	/// - Parameter terminate: The handler to call when your prelaunch setup is complete.
+	open func preTerminationTearDown(_ terminate: @escaping () -> Void) {
+		terminate()
 	}
 	
 	override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
