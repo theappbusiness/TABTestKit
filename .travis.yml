@@ -1,7 +1,7 @@
 os:
   - osx
-osx_image: xcode10.2
+osx_image: xcode10.3
 language: swift
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -sdk iphonesimulator12.2 -destination "OS=12.2,name=iPhone Xs" | xcpretty
-- xcodebuild -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk iphonesimulator12.2 -destination "OS=12.2,name=iPhone Xs" test -enableCodeCoverage YES
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk iphonesimulator12.4 -destination "OS=12.4,name=iPhone Xs" | xcpretty
+- xcodebuild -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk iphonesimulator12.2 -destination "OS=12.4,name=iPhone Xs" test -enableCodeCoverage YES
