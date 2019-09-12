@@ -30,8 +30,8 @@ public enum ElementAttributes {
 
 	public enum Direction {
 		
-		case up
-		case down
+		case upwards
+		case downwards
 		case left
 		case right
 		

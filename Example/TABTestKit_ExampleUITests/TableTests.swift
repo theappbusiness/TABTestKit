@@ -22,14 +22,16 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
       And(I: see(tableScreen.section0Header))
       When(I: tap(tableScreen.table.cell(index: 0)))
       Then(I: see(tableSelectionScreen))
+      And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 0 section 0"))
     }
     
     Scenario("Scrolling to more elements") {
       Given(I: tap(tableSelectionScreen.backButton))
-      And(I: scroll(tableScreen, .down, until: tableScreen.section1Header, .visible))
-      And(I: scroll(tableScreen, .down, until: tableScreen.lastCell, .visible))
+      And(I: scroll(tableScreen, .downwards, until: tableScreen.section1Header, .visible))
+      And(I: scroll(tableScreen, .downwards, until: tableScreen.lastCell, .visible))
       When(I: tap(tableScreen.lastCell))
       Then(I: see(tableSelectionScreen))
+      And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
     }
   }
   

@@ -21,7 +21,7 @@ public struct Header: Element, ValueRepresentable {
 	public let type: XCUIElement.ElementType = .other
 	public var value: String { return label }
 	
-	public init(id: String, parent: Element = App.shared) {
+	public init(id: String?, parent: Element = App.shared) {
 		self.id = id
 		self.parent = parent
 	}

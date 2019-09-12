@@ -22,9 +22,9 @@ public extension Element where Self: Scrollable {
 	func scroll(_ direction: ElementAttributes.Direction) {
 		await(.exists, .hittable)
 		switch direction {
-		case .up:
-			underlyingXCUIElement.swipeDown() // TODO: Better scrolling
-		case .down:
+		case .upwards:
+			underlyingXCUIElement.swipeDown() // TODO: Better scrolling to account for keyboards
+		case .downwards:
 			underlyingXCUIElement.swipeUp()
 		case .left:
 			underlyingXCUIElement.swipeRight()

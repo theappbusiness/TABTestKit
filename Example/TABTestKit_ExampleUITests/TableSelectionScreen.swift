@@ -13,7 +13,7 @@ let tableSelectionScreen = TableSelectionScreen()
 struct TableSelectionScreen: Screen {
   
   let trait = View(id: "TableSelection")
-  let header = Header(id: "Row 0 section 0")
+  let navBar = NavBar()
   let backButton = Button(id: "Table")
   
 }
