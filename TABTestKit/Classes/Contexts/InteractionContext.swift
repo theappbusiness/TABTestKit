@@ -22,6 +22,10 @@ public extension InteractionContext {
 		states.forEach { element.await($0) }
 	}
 	
+	func state(of element: Element, isNot states: ElementAttributes.State...) {
+		states.forEach { element.await(not: $0) }
+	}
+	
 	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, _ state: ElementAttributes.State, maxTries: Int = 10) {
 		var numberOfTries = 0
 		repeat {

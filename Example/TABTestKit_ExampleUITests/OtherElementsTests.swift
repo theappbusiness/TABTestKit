@@ -33,10 +33,10 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     Scenario("Seeing and interacting with the segmented control") {
       Given(I: see(otherElementsScreen.segmentedControl))
       Then(I: tap(otherElementsScreen.segmentedControl.button(withID: "Second")))
-      And(the: state(of: otherElementsScreen.segmentedControl.button(withID: "First"), is: .notSelected))
+      And(the: state(of: otherElementsScreen.segmentedControl.button(withID: "First"), isNot: .selected))
       And(the: state(of: otherElementsScreen.segmentedControl.button(withID: "Second"), is: .selected))
       And(I: tap(otherElementsScreen.segmentedControl.button(withID: "Third")))
-      And(the: state(of: otherElementsScreen.segmentedControl.button(withID: "Second"), is: .notSelected))
+      And(the: state(of: otherElementsScreen.segmentedControl.button(withID: "Second"), isNot: .selected))
       And(the: state(of: otherElementsScreen.segmentedControl.button(withID: "Third"), is: .selected))
     }
     
@@ -71,19 +71,19 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing and interacting with the stepper") {
       Given(I: see(otherElementsScreen.stepper))
-      And(the: state(of: otherElementsScreen.stepper.decrementButton, is: .disabled))
+      And(the: state(of: otherElementsScreen.stepper.decrementButton, isNot: .enabled))
       And(the: state(of: otherElementsScreen.stepper.incrementButton, is: .enabled))
       Then(I: tap(otherElementsScreen.stepper.incrementButton))
       And(the: state(of: otherElementsScreen.stepper.decrementButton, is: .enabled))
       And(the: state(of: otherElementsScreen.stepper.incrementButton, is: .enabled))
       And(I: tap(otherElementsScreen.stepper.incrementButton))
       And(the: state(of: otherElementsScreen.stepper.decrementButton, is: .enabled))
-      And(the: state(of: otherElementsScreen.stepper.incrementButton, is: .disabled))
+      And(the: state(of: otherElementsScreen.stepper.incrementButton, isNot: .enabled))
     }
     
     Scenario("Seeing and interacting with the page indicator") {
       Given(I: see(otherElementsScreen.pageIndicator))
-      Then(the: value(of: otherElementsScreen.pageIndicator, is: "Page 1 of 3"))
+      Then(the: value(of: otherElementsScreen.pageIndicator, is: "page 1 of 3"))
     }
   }
   

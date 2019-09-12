@@ -7,24 +7,16 @@
 
 import Foundation
 
+/// Serves as the namespace for Element, since you can't nest enums in a protocol.
 public enum ElementAttributes {
 	
 	public enum State {
 		
 		case exists
-		case doesNotExist
-		
 		case hittable
-		case notHittable
-		
 		case visible
-		case notVisible
-		
 		case selected
-		case notSelected
-		
 		case enabled
-		case disabled
 		
 	}
 

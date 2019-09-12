@@ -35,7 +35,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter element: The element to await.
 	func doNotSee(_ element: Element) {
-		element.await(.doesNotExist)
+		element.await(not: .exists)
 	}
 	
 	/// Asserts that an element has a value that matches the expected value.
