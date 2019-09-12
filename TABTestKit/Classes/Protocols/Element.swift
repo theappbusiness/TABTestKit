@@ -36,9 +36,7 @@ public extension Element {
 	
 	var index: Int { return 0 }
 	
-	var label: String {
-		return underlyingXCUIElement.label
-	}
+	var label: String { return underlyingXCUIElement.label }
 	
 	var underlyingXCUIElement: XCUIElement {
 		return parent.underlyingXCUIElement.descendants(matching: type).matching(type, identifier: id).element(boundBy: index)
@@ -56,6 +54,7 @@ public extension Element {
 	/// - Parameter states: The states to wait for.
 	/// - Parameter timeout: The timout. Defaults to 30 seconds.
 	func await(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) {
+		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
 		states.forEach { state in
 			XCTAssertTrue(determine(state, timeout: timeout))
 		}
@@ -72,6 +71,7 @@ public extension Element {
 	///   - timeout: The maxium duration the state should be waited for.
 	/// - Returns: `true` if the element ends up in the required state before the timeout. Defaults to 30 seconds.
 	func determine(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) -> Bool {
+		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
 		for state in states {
 			switch state {
 			case .exists:
@@ -86,6 +86,14 @@ public extension Element {
 				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible(in: parent.underlyingXCUIElement), timeout: timeout) else { return false }
 			case .notVisible:
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible(in: parent.underlyingXCUIElement), timeout: timeout) else { return false }
+			case .selected:
+				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isSelected, timeout: timeout) else { return false }
+			case .notSelected:
+				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isSelected, timeout: timeout) else { return false }
+			case .enabled:
+				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isEnabled, timeout: timeout) else { return false }
+			case .disabled:
+				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isEnabled, timeout: timeout) else { return false }
 			}
 		}
 		return true

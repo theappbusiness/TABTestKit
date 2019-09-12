@@ -23,6 +23,10 @@
 		C326D6AD2327E8F7001AB082 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A32327D994001AB082 /* TableController.swift */; };
 		C3DE8E452328F646007E583B /* TableSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E442328F646007E583B /* TableSelectionScreen.swift */; };
 		C3DE8E48232903B5007E583B /* TableSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E462329037B007E583B /* TableSelectionController.swift */; };
+		C3DE8E4C232920F4007E583B /* OtherElementsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E4B232920F4007E583B /* OtherElementsScreen.swift */; };
+		C3DE8E4E23293D4B007E583B /* OtherElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E4D23293D4B007E583B /* OtherElementsTests.swift */; };
+		C3DE8E4F232A3DBF007E583B /* OtherElementsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E4923291A34007E583B /* OtherElementsController.swift */; };
+		C3DE8E5F232A7564007E583B /* TabBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E5E232A7564007E583B /* TabBarScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		C326D6AB2327E847001AB082 /* TableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTests.swift; sourceTree = "<group>"; };
 		C3DE8E442328F646007E583B /* TableSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSelectionScreen.swift; sourceTree = "<group>"; };
 		C3DE8E462329037B007E583B /* TableSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSelectionController.swift; sourceTree = "<group>"; };
+		C3DE8E4923291A34007E583B /* OtherElementsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherElementsController.swift; sourceTree = "<group>"; };
+		C3DE8E4B232920F4007E583B /* OtherElementsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherElementsScreen.swift; sourceTree = "<group>"; };
+		C3DE8E4D23293D4B007E583B /* OtherElementsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherElementsTests.swift; sourceTree = "<group>"; };
+		C3DE8E5E232A7564007E583B /* TabBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarScreen.swift; sourceTree = "<group>"; };
 		E5A0F1B1A8B65BA16C080FA9 /* Pods_TABTestKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB5004412DF96067009CA81 /* Pods-TABTestKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Tests/Pods-TABTestKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +135,7 @@
 				C326D65F232788BA001AB082 /* BiometricLoginViewController.swift */,
 				C326D6A32327D994001AB082 /* TableController.swift */,
 				C3DE8E462329037B007E583B /* TableSelectionController.swift */,
+				C3DE8E4923291A34007E583B /* OtherElementsController.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for TABTestKit";
@@ -170,6 +179,8 @@
 				C326D66523278E2E001AB082 /* BiometricLoginScreen.swift */,
 				C326D6A52327DAA7001AB082 /* TableScreen.swift */,
 				C3DE8E442328F646007E583B /* TableSelectionScreen.swift */,
+				C3DE8E4B232920F4007E583B /* OtherElementsScreen.swift */,
+				C3DE8E5E232A7564007E583B /* TabBarScreen.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -181,6 +192,7 @@
 				C326D6A72327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift */,
 				C326D6A92327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift */,
 				C326D6AB2327E847001AB082 /* TableTests.swift */,
+				C3DE8E4D23293D4B007E583B /* OtherElementsTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -353,6 +365,7 @@
 				C326D660232788BA001AB082 /* BiometricLoginViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C326D6AD2327E8F7001AB082 /* TableController.swift in Sources */,
+				C3DE8E4F232A3DBF007E583B /* OtherElementsController.swift in Sources */,
 				C3DE8E48232903B5007E583B /* TableSelectionController.swift in Sources */,
 				C326D66223278C65001AB082 /* RootController.swift in Sources */,
 			);
@@ -363,12 +376,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C326D6A62327DAA7001AB082 /* TableScreen.swift in Sources */,
+				C3DE8E4E23293D4B007E583B /* OtherElementsTests.swift in Sources */,
+				C3DE8E4C232920F4007E583B /* OtherElementsScreen.swift in Sources */,
 				C326D66623278E2E001AB082 /* BiometricLoginScreen.swift in Sources */,
 				C326D66423278D62001AB082 /* BiometricLogin_HappyPathTests.swift in Sources */,
 				C326D6A82327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift in Sources */,
 				C326D6AC2327E847001AB082 /* TableTests.swift in Sources */,
 				C3DE8E452328F646007E583B /* TableSelectionScreen.swift in Sources */,
 				C326D6AA2327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift in Sources */,
+				C3DE8E5F232A7564007E583B /* TabBarScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

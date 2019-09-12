@@ -36,7 +36,7 @@ public struct TabBar: Element {
 	///
 	/// - Parameter buttonID: The ID of the button. Typically the title of the button.
 	/// - Returns: A button representing a tab in the tab bar.
-	func button(withID buttonID: String) -> Button {
+	public func button(withID buttonID: String) -> Button {
 		return Button(id: buttonID, parent: self)
 	}
 	

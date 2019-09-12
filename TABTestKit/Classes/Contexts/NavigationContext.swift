@@ -28,7 +28,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter element: The element to await.
 	func see(_ element: Element) {
-		element.await(.exists, .visible)
+			element.await(.exists, .visible)
 	}
 	
 	/// Asserts that an element does not exist, by waiting for it to not exist.

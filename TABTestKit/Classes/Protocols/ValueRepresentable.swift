@@ -17,3 +17,9 @@ public protocol ValueRepresentable {
 	
 }
 
+public protocol Adjustable {
+	
+	associatedtype Value: Equatable
+	func adjust(to value: Value)
+	
+}

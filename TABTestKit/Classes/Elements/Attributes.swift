@@ -20,6 +20,12 @@ public enum ElementAttributes {
 		case visible
 		case notVisible
 		
+		case selected
+		case notSelected
+		
+		case enabled
+		case disabled
+		
 	}
 
 	public enum Direction {

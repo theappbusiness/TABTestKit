@@ -14,11 +14,12 @@ import XCTest
 /// like UITableView section headers).
 ///
 /// This is typically what you should use as a Screen's trait (or a ViewController).
-public struct Header: Element {
+public struct Header: Element, ValueRepresentable {
 	
 	public let id: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .other
+	public var value: String { return label }
 	
 	public init(id: String, parent: Element = App.shared) {
 		self.id = id

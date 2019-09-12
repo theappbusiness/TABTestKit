@@ -7,9 +7,9 @@
 
 import XCTest
 
-extension XCUIElement {
+public extension XCUIElement {
 	
-	func wait(for somethingThatShouldBeTrue: @autoclosure () -> Bool, timeout: TimeInterval) -> Bool {
+	func wait(for somethingThatShouldBeTrue: @autoclosure () -> Bool, timeout: TimeInterval = 10) -> Bool {
 		var interval = 0.0
 		repeat {
 			let shouldTryAgain = !somethingThatShouldBeTrue()

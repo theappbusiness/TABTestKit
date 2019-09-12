@@ -18,6 +18,10 @@ public extension InteractionContext {
 		element.type(text)
 	}
 	
+	func state(of element: Element, is states: ElementAttributes.State...) {
+		states.forEach { element.await($0) }
+	}
+	
 	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, _ state: ElementAttributes.State, maxTries: Int = 10) {
 		var numberOfTries = 0
 		repeat {
@@ -25,7 +29,15 @@ public extension InteractionContext {
 			numberOfTries += 1
 			element.scroll(direction)
 		} while numberOfTries <= maxTries
-		XCTFail("Ran of out tries") // TODO: Better failure message
+		XCTFail("Ran of out tries waiting for element to become \(state)")
+	}
+	
+	func value<ElementWithValue: Element & ValueRepresentable>(of element: ElementWithValue, is expectedValue: ElementWithValue.Value) {
+		XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.value == expectedValue), "Element did not have the right value before timing out! Expected: \(expectedValue), actual: \(element.value)")
+	}
+	
+	func adjust<AdjustableElement: Adjustable>(_ element: AdjustableElement, to newValue: AdjustableElement.Value) {
+		element.adjust(to: newValue)
 	}
 	
 }
