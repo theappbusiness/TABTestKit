@@ -21,5 +21,6 @@ struct OtherElementsScreen: Screen {
   let slider = Slider(id: "ExampleSlider")
   let toggle = Switch(id: "ExampleSwitch")
   let stepper = Stepper(id: "ExampleStepper")
+  let pageIndicator = PageIndicator(id: "ExamplePageControl")
   
 }

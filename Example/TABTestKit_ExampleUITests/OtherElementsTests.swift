@@ -80,6 +80,11 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
       And(the: state(of: otherElementsScreen.stepper.decrementButton, is: .enabled))
       And(the: state(of: otherElementsScreen.stepper.incrementButton, is: .disabled))
     }
+    
+    Scenario("Seeing and interacting with the page indicator") {
+      Given(I: see(otherElementsScreen.pageIndicator))
+      Then(the: value(of: otherElementsScreen.pageIndicator, is: "Page 1 of 3"))
+    }
   }
   
 }

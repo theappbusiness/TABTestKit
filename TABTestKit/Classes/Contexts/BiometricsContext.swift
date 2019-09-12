@@ -26,11 +26,4 @@ public extension BiometricsContext {
 		Biometrics.unsuccessfulAuthentication()
 	}
 	
-	func acceptFaceIDAuthenticationPromptIfRequired() {
-		let okayButton = Springboard().alerts.buttons["OK"].firstMatch
-		if okayButton.exists { // TouchID does not have a permissions prompt
-			okayButton.tap()
-		}
-	}
-	
 }
