@@ -336,9 +336,9 @@
 				C36FD69E2326676C00D7CED6 /* NavigationContext.swift */,
 				C36FD69F2326676C00D7CED6 /* InteractionContext.swift */,
 				C36FD6C823267BA700D7CED6 /* AppContext.swift */,
-				C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */,
 				C30B01402326AF7A00A9EB87 /* AlertContext.swift */,
 				C326D69F2327CD52001AB082 /* SheetContext.swift */,
+				C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */,
 				C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */,
 			);
 			name = Contexts;
@@ -361,9 +361,9 @@
 		C3DE8E272328E9AF007E583B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				C3DE8E2A2328E9AF007E583B /* Screen.swift */,
 				C3DE8E282328E9AF007E583B /* Completable.swift */,
 				C3DE8E292328E9AF007E583B /* Dismissable.swift */,
-				C3DE8E2A2328E9AF007E583B /* Screen.swift */,
 				C36FD68B2326663200D7CED6 /* Element.swift */,
 				C36FD6AF2326730A00D7CED6 /* Editable.swift */,
 				C36FD6C62326790400D7CED6 /* Scrollable.swift */,

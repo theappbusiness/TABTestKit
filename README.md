@@ -8,7 +8,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
 TABTestKit is an extremely human readable, strongly typed wrapper, around XCUI/XCTest for automation of
-Apple platforms.
+Apple platforms, which helps reduce flakiness and lowers the barrier to entry for most people.
 
 ```swift
 func test_login() {
@@ -21,6 +21,7 @@ func test_login() {
   Scenario("Logging in successfully with biometrics") {
     Given(I: see(the: loginScreen.logInButton))
     And(the: deviceBiometricsAreEnabled)
+    And(the: state(of: loginScreen.loginButton, is: .enabled))
     When(I: tap(loginScreen.logInButton))
     And(I: successfullyAuthenticateBiometrics)
     Then(I: see(the: profileScreen))
@@ -28,12 +29,19 @@ func test_login() {
 }
 ```
 
+## Quick start
+
+TODO
+
 ## Why?
 
 TABTestKit makes it so you can write very little code to automate the behaviours
 in your app, as well as being extremely human readable by leveraging powerful
 Swift features. This means the barrier to entry for Swift automation is
 essentially removed.
+
+Additionally, TABTestKit waits for things rather than asserting
+directly, which massively reduces flakiness in your tests.
 
 Unlike XCTest, where every XCUIElement can be tapped, adjusted, typed into or scrolled,
 regardless of whether it's adjustable etc, TABTestKit has specific elements that
@@ -982,7 +990,7 @@ conforms to it all those functions become available.
 
 TABTestKit comes with many predefined contexts, which `TABTestCase` already conforms
 to, so by subclassing TABTestCase, you'll automatically have access to a wealth of
-helper functions that work beautifully with [steps and secenarios](#steps-and-scenarios), and [`Element`](#element) and other protocols
+helper functions that work beautifully with [steps](#steps) & [scenarios](#scenarios), and [`Element`](#element) and other protocols
 
 Most of the time, you won't even have to write any extra functions yourself, making it
 ridiculously fast for you to get automation for your project running.
@@ -994,25 +1002,29 @@ which means your test cases can already use the functions in it.
 
 `NavigationContext` provides helper functions for navigating through the app:
 
-#### Asserting whether screens are visible
+##### Asserting whether screens and elements are visible
 
-Using `NavigationContext`, you can assert whether any [`Screen`](#screen) is visible:
+Using `NavigationContext`, you can assert whether any [`Screen`](#screen)
+or [`Element`](#element) is visible:
 
 ```swift
 see(myScreen)
 doNotSee(myScreen)
-```
 
-#### Asserting whether elements are visible
-
-Using `NavigationContext`, you can assert whether any [`Element`](#element) is visible:
-
-```swift
 see(myScreen.button)
 doNotSee(myScreen.button)
 ```
 
-#### Completing and Dismissing
+This reads really nicely with [steps](#steps) and [scenarios](#scenarios):
+
+```swift
+Given(I: see(myScreen))
+Given(I: doNotSee(myScreen))
+Given(I: see(myScreen.button))
+Given(I: doNotSee(myScreen.button))
+```
+
+##### Completing and Dismissing
 
 Using `NavigationContext`, you can complete and dismiss anything that conforms
 to [`Completable`](#completable) and [`Dismissable`](#dismissable)
@@ -1020,16 +1032,299 @@ to [`Completable`](#completable) and [`Dismissable`](#dismissable)
 ```swift
 complete(myScreen)
 dismiss(myScreen)
-
 dismiss(myScreen.alert)
+
+Given(I: complete(myScreen))
+Given(I: dismiss(myScreen))
+Given(I: dismiss(myScreen.alert))
 ```
 
 You can also pass any number of `Completable` or `Dismissable` things into the function, which makes it possible for you to build up a flow through the app really
 easily:
 
 ```swift
-complete(nameScreen, birthDateScren, usernameScreen)
+complete(nameScreen, birthDateScreen, usernameScreen)
 ```
+
+#### NavigationContext
+
+`InteractionContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`InteractionContext` provides helper functions for interacting with elements in the app:
+
+##### Tapping elements
+
+Anything that conforms to `Tappable` can be tapped using `InteractionContext`:
+
+```swift
+tap(myScreen.button)
+tap(myScreen.textField)
+
+Given(I: tap(myScreen.button))
+Given(I: tap(myScreen.textField))
+```
+
+##### Typing into elements
+
+Anything that conforms to `Editable` can be typed into using `InteractionContext`:
+
+```swift
+type("Hello", into: myScreen.textField)
+delete(5, charactersFrom: myScreen.textField)
+
+Given(I: type("Hello", into: myScreen.textField))
+Given(I: delete(5, charactersFrom: myScreen.textField))
+```
+
+##### Asserting the states of elements
+
+With `InteractionContext` you can assert the states of any [`Element`](#element):
+
+```swift
+state(of: myScreen.button, is: .enabled)
+state(of: myScreen.title, isNot: .hittable)
+
+Given(the: state(of: myScreen.button, is: .enabled))
+Given(the: state(of: myScreen.title, isNot: .hittable))
+```
+
+Under the hood, to avoid flakiness, TABTestKit will wait briefly for the expected
+state, rather than asserting immediately, which is a common mistake in automation tests.
+
+You can also pass in multiple states to assert:
+
+```swift
+state(of: myScreen.button, is: .enabled, .visible)
+```
+
+##### Scrolling elements
+
+Anything that conforms to [`Scrollable`](#scrollable) can be scrolled
+using `InteractionContext` until some element is in a particular state:
+
+```swift
+scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .visible)
+
+Given(I: scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .visible))
+```
+
+##### Asserting and adjusting values
+
+Anything element that conforms to [`ValueRepresentable`](#ValueRepresentable) can
+have its value asserted using `InteractionContext`:
+
+```swift
+value(of: myScreen.header, is: "My header text")
+
+Given(the: value(of: myScreen.header, is: "My header text"))
+```
+
+Under the hood, to avoid flakiness, TABTestKit will wait briefly for the expected
+value, rather than asserting immediately, which is a common mistake in automation tests.
+
+Anything that conforms to `Adjustable` can have its value adjusted using `InteractionContext`:
+
+```swift
+adjust(myScreen.toggle, to: .on)
+adjust(myScreen.slider, to: 0.5)
+
+Given(I: adjust(myScreen.toggle, to: .on))
+Given(I: adjust(myScreen.slider, to: 0.5))
+```
+
+#### AppContext
+
+`AppContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`AppContext` provides helper functions for controlling the [App](#app):
+
+##### Backgrounding and foregrounding the app
+
+You can background and foreground the app using `AppContext`:
+
+```swift
+backgroundTheApp()
+foregroundTheApp()
+
+Given(I: backgroundTheApp) // No need for `()` in Steps
+Given(I: foregroundTheApp)
+```
+
+##### Terminating and launching the app
+
+You can terminate, background and relaunch the app using `AppContext`:
+
+```swift
+terminateTheApp()
+launchTheApp(clean: true)
+relaunchTheApp()
+
+Given(I: terminateTheApp) // No need for `()` in Steps
+Given(I: launchTheApp(clean: true))
+Given(I: relaunchTheApp)
+```
+
+> **NOTE:** Launching the app clean requires some work on your part in your app.
+See [App](#app) for more information.
+
+#### AlertContext
+
+`AlertContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`AlertContext` provides helper functions for interacting with [`Alert`s](#alert):
+
+```swift
+tap("OK", in: myScreen.alert)
+
+Given(I: tap("OK", in: myScreen.alert))
+```
+
+#### SheetContext
+
+`SheetContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`SheetContext` provides helper functions for interacting with [`Sheet`s](#sheet):
+
+```swift
+tap("Delete", in: myScreen.sheet)
+
+Given(I: tap("Delete", in: myScreen.sheet))
+```
+
+#### BiometricsContext
+
+`BiometricsContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`BiometricsContext` provides helper functions for simulating [Biometrics](#biometrics) in tests:
+
+> **NOTE:** Biometric simulation only works in simulators, not on a real device
+
+##### Enabling and disabling biometrics
+
+`BiometricsContext` allows you to easily control whether device biometrics are
+enabled on the simulator:
+
+```swift
+deviceBiometricsAreEnabled()
+deviceBiometricsAreDisabled()
+
+Given(deviceBiometricsAreEnabled) // No need for `()` in Steps
+Given(deviceBiometricsAreDisabled)
+```
+
+##### Simulating successful and failed authentication
+
+`BiometricsContext` allows you to easily simulate either a successful, or unsuccessful
+authentication. This works for both Face ID and Touch ID:
+
+```swift
+successfullyAuthenticateBiometrics()
+failToAuthenticateBiometrics()
+
+Given(I: successfullyAuthenticateBiometrics) // No need for `()` in Steps
+Given(I: failToAuthenticateBiometrics)
+```
+
+#### SystemPreferencesContext
+
+`SystemPreferencesContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`SystemPreferencesContext` provides helper functions for interacting with System Preferences:
+
+##### Opening and terminating System Preferences
+
+```swift
+openSystemPreferences()
+terminateSystemPreferences()
+
+Given(I: openSystemPreferences)  // No need for `()` in Steps
+Given(I: terminateSystemPreferences)
+```
+
+##### Resetting all privacy prompts
+
+`SystemPreferencesContext` provides a way to reset all privacy prompts in a
+simulator without having to delete and re-install the app:
+
+```swift
+resetAllPrivacyPrompts()
+
+Given(I: resetAllPrivacyPrompts)  // No need for `()` in Steps
+```
+
+As an example, you could call `resetAllPrivacyPrompts()` as part of your [`preLaunchSetup`](#tabtestcase).
+
+### Protocols
+
+TABTestKit is driven under the hood by protocols. Unless you're creating your own
+elements, the likelihood is you will only need to implement a few yourself, like
+[`Screen`](#screen), [`Completable`](#completable) and [`Dismissable`](#dismissable).
+
+#### Screen
+
+You use `Screen`s in your app to describe your UI in a particular screen.
+
+Each `Screen` must have a trait that identifies it, and that trait can be anything
+that conforms to `Element`:
+
+```swift
+struct MyScreen: Screen {
+
+  let trait = View(id: "MyViewControllerView")
+
+}
+```
+
+Typically, your screen's trait would be a `View` or `Header`, but it can be anything
+that consistently identifies your screen.
+
+The `trait` is used by TABTestKit in [`NavigationContext`](#navigationcontext) to assert
+whether your screen is or isn't on-screen currently.
+
+#### Completable
+
+Generally, you would make your screens conform to `Completable`:
+
+```swift
+extension MyScreen: Completable {
+
+  func complete() {
+    nextButton.tap()
+  }
+
+}
+```
+
+The `complete` function should know how to complete itself, in the case of a screen
+that would be the primary happy path flow through it.
+
+You can make anything conform to `Completable` and use it with [`NavigationContext`](#navigationcontext)
+
+#### Dismissable
+
+Generally, you would make your screens conform to `Dismissable`:
+
+```swift
+extension MyScreen: Dismissable {
+
+  func dismiss() {
+    backButton.tap()
+  }
+
+}
+```
+
+The `dismiss` function should know how to dismiss itself, in the case of a screen
+that would generally be tapping the back, done or close button.
+
+You can make anything conform to `Dismissable` and use it with [`NavigationContext`](#navigationcontext),
+just like [`Alert`](#alert).
 
 ## Requirements
 
