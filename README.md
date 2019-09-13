@@ -355,7 +355,7 @@ struct MyCustomElement: Element {
 
 By default, Elements in TABTestKit don't support any interaction (unless you use
 the `underlyingXCUIElement`). Elements that support interaction declare that by
-conforming to other protocols, like how `Button` conforms to both `Element` and `Tappable`.
+conforming to other protocols, like how [`Button`](#button) conforms to both `Element` and `Tappable`.
 
 If you need extra behaviour for any element you can create an extension and provide
 more functionality, either by conforming to another protocol or creating new properties
@@ -593,10 +593,138 @@ table.cell(index: 0).tap()
 ```
 #### TextField
 
-`TextField` represents a regular text field in your app:
+`TextField` represents a regular text field in the app:
 
 ```swift
+let textField = TextField(id: "MyTextField")
 ```
+
+> **NOTE:** UITextFields that have secure entry should be represented by a
+[`SecureTextField`](#securetextfield)
+
+Since `TextField` conforms to [`Editable`](#editable), you can type into or delete
+text from it:
+
+```swift
+textField.type("Hello!")
+textField.delete(numberOfCharacters: 6)
+```
+
+Since `TextField` also conforms to [`Tappable`](#tappable), you can tap it:
+
+```swift
+textField.tap()
+```
+
+And since `TextField` also conforms to [`ValueRepresentable`](#valuerepresentable),
+you can also retrieve the `String` value:
+
+```swift
+XCTAssertEqual(textField.value, "Hello!")
+```
+
+#### SecureTextField
+
+`SecureTextField` represents a secure text field in the app (i.e. a password field):
+
+```swift
+let secureTextField = SecureTextField(id: "MySecureTextField")
+```
+
+Since `SecureTextField` conforms to [`Editable`](#editable), you can type into
+or delete text from it:
+
+```swift
+secureTextField.type("Password1")
+secureTextField.delete(numberOfCharacters: 6)
+```
+
+Since `SecureTextField` also conforms to [`Tappable`](#tappable), you can tap it:
+
+```swift
+secureTextField.tap()
+```
+
+And since `SecureTextField` also conforms to [`ValueRepresentable`](#valuerepresentable),
+you can also retrieve the `String` value:
+
+```swift
+XCTAssertEqual(secureTextField.value, "•••••••••") // Not sure how useful this is but you can assert it if you want 😂
+```
+
+#### TextView
+
+`TextView` represents a text view in the app:
+
+```swift
+let textView = TextView(id: "MyTextView")
+```
+
+Since `TextView` conforms to [`Editable`](#editable), you can type text into or
+delete text from it:
+
+```swift
+textView.type("Lorem Ipsum")
+textView.delete(numberOfCharacters: 12)
+```
+
+Since `TextView` also conforms to [`Tappable`](#tappable), you can tap it:
+
+```swift
+textView.tap()
+```
+
+And since `TextView` also conforms to [`ValueRepresentable`](#valuerepresentable), you can also retrieve
+the `String` value:
+
+```swift
+XCTAssertEqual(textView.value, "Lorem Ipsum")
+```
+
+And since `TextView` also conforms to [`Scrollable`](#scrollable), you can scroll it:
+
+```swift
+textView.scroll(.downwards)
+```
+
+#### NavBar
+
+`NavBar` represents a navigation bar in your app:
+
+```swift
+let navBar = NavBar()
+let navBar = NavBar(id: "MyNavBar")
+```
+
+Since there's typically only one nav bar on screen at one time, you don't need to
+provide an ID, but you can if you like.
+
+`NavBar` can vend you its [`Header`](#header), which you can use to assert the value:
+
+```swift
+XCTAssertEqual(navBar.header.value, "Screen Title")
+```
+
+#### TabBar
+
+`TabBar` represents a tab bar in your app:
+
+```swift
+let tabBar = TabBar()
+let tabBar = TabBar(id: "MyTabBar")
+```
+
+Since there's typically only one tab bar on screen at one time, you don't need to
+provide an ID, but you can if you like.
+
+`TabBar` can vend you its [`Button`s](#button):
+
+```swift
+tabBar.button(withID: "Tab 1").tap()
+```
+
+Like other `Button`s, the ID for the button can be the button title, or a custom
+ID you've set as the `accessibilityIdentifier`.
 
 ## Requirements
 
