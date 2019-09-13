@@ -97,7 +97,59 @@ func test_login() {
 
 ## Quick start
 
-TODO
+### Step 1: Create screens that represents your UI
+
+```swift
+// ProfileScreen.swift
+
+struct ProfileScreen: Screen {
+
+  let trait = Header(id: "Not Instagram") // The trait of a screen is what consistently and uniquely identifies it
+  let usernameLabel = Label(id: "UsernameLabel") // IDs can either be the accessibilityLabel or accessibilityIdentifier of views in the app
+  let logOutButton = Button(id: "Log out")
+
+}
+
+let profileScreen = ProfileScreen() // Create an instance of your screen that is globally available
+```
+
+### Step 2: Create a test case that subclasses TABTestCase
+
+```swift
+// ProfileTests.swift
+
+class ProfileTests: TABTestCase {
+
+  func test_loggingOut() {
+  }
+
+}
+```
+
+### Step 3: Write steps and scenarios that describe your test
+
+```swift
+// ProfileTests.swift
+
+class ProfileTests: TABTestCase {
+
+  func test_loggingOut() {
+    Scenario("Logging out") { // Scenarios group steps with a description, so you can have multiple Scenarios in a test function
+      Given(I: see(profileScreen)) // Steps can be either Given, When, Then, or And and can take any function which is executed automatically
+      And(the: value(of: profileScreen.usernameLabel, is: "My username"))
+      When(I: tap(profileScreen.logOutButton))
+      Then(I: doNotSee(profileScreen))
+    }
+  }
+
+}
+```
+
+### Step 4: Create more screens, scenarios and steps!
+
+Once you start to define more [`Screen`s](#screen), you can execute longer flows
+in your app and start to take advantage of [Scenarios](#scenarios)
+and [Steps](#steps), as well as leverage [`Element`s](#elements) and [Contexts](#contexts).
 
 ## Why?
 
