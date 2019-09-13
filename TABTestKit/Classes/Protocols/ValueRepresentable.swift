@@ -16,10 +16,3 @@ public protocol ValueRepresentable {
 	var value: Value { get }
 	
 }
-
-public protocol Adjustable {
-	
-	associatedtype Value: Equatable
-	func adjust(to value: Value)
-	
-}

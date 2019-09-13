@@ -23,6 +23,7 @@
 		C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D69F2327CD52001AB082 /* SheetContext.swift */; };
 		C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */; };
 		C326D6AF2327ECE2001AB082 /* XCUIDevice+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6AE2327ECE2001AB082 /* XCUIDevice+frame.swift */; };
+		C3590CAE232BD4AC006EE1C2 /* Adjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3590CAC232BD4A8006EE1C2 /* Adjustable.swift */; };
 		C36FD68D2326663200D7CED6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* View.swift */; };
 		C36FD6902326663200D7CED6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68C2326663200D7CED6 /* Button.swift */; };
 		C36FD6942326664900D7CED6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6922326664900D7CED6 /* Step.swift */; };
@@ -116,6 +117,7 @@
 		C326D6AE2327ECE2001AB082 /* XCUIDevice+frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIDevice+frame.swift"; sourceTree = "<group>"; };
 		C326D6B02327F08E001AB082 /* ValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C3590CAC232BD4A8006EE1C2 /* Adjustable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjustable.swift; sourceTree = "<group>"; };
 		C36FD6892326663200D7CED6 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
 		C36FD68B2326663200D7CED6 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
@@ -365,11 +367,12 @@
 				C3DE8E282328E9AF007E583B /* Completable.swift */,
 				C3DE8E292328E9AF007E583B /* Dismissable.swift */,
 				C36FD68B2326663200D7CED6 /* Element.swift */,
+				C36FD68A2326663200D7CED6 /* Tappable.swift */,
 				C36FD6AF2326730A00D7CED6 /* Editable.swift */,
 				C36FD6C62326790400D7CED6 /* Scrollable.swift */,
-				C36FD68A2326663200D7CED6 /* Tappable.swift */,
-				C30B01442326B4A900A9EB87 /* CellContaining.swift */,
 				C326D6B02327F08E001AB082 /* ValueRepresentable.swift */,
+				C3590CAC232BD4A8006EE1C2 /* Adjustable.swift */,
+				C30B01442326B4A900A9EB87 /* CellContaining.swift */,
 			);
 			name = Protocols;
 			path = TABTestKit/Classes/Protocols;
@@ -583,6 +586,7 @@
 				C36FD6B8232673E000D7CED6 /* Table.swift in Sources */,
 				C36FD6BC2326740A00D7CED6 /* TextField.swift in Sources */,
 				86FC9769E428EB5072CF0ED3BFA7AAED /* TABTestCase.swift in Sources */,
+				C3590CAE232BD4AC006EE1C2 /* Adjustable.swift in Sources */,
 				C3DE8E55232A7499007E583B /* SegmentedControl.swift in Sources */,
 				C3DE8E3C2328ED34007E583B /* ValueRepresentable.swift in Sources */,
 				C36FD6902326663200D7CED6 /* Button.swift in Sources */,

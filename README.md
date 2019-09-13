@@ -1326,6 +1326,132 @@ that would generally be tapping the back, done or close button.
 You can make anything conform to `Dismissable` and use it with [`NavigationContext`](#navigationcontext),
 just like [`Alert`](#alert).
 
+#### Element
+
+`Element` is the backbone of TABTestKit, and essentially replaces `XCUIElement`
+(more technically, `Element` wraps `XCUIElement`).
+
+Every `Element` must provide:
+
+- An optional `id`
+- The element's `parent` element (generally the app)
+- The `index` of the element (in the case of multiple matches or cells)
+- The underlying `type` of the element (i.e. staticText, alert etc)
+- The `label` of the element (i.e the accessibilityLabel of your view)
+- The `underlyingXCUIElement` that it represents.
+
+If you're creating your own `Element` type, TABTestKit figures most of this out
+for you, so at minimum you only have to provide the ID and type:
+
+```swift
+struct MyElement: Element {
+
+  let id: String? = "MyElementID"
+  let type: XCUIElement.ElementType = .other
+
+}
+```
+
+`Element` has defaults for the other properties that mean the `underlyingXCUIElement`
+can be automatically figured out. You can override any of these defaults as you need.
+
+You shouldn't often need to create your own elements, but if you do and you think
+people would benefit from it, please consider contributing and creating a PR!
+
+##### Element states
+
+The `Element` protocol has some functions for asserting and determining states,
+that anything conforming to `Element` will have access to.
+
+You can wait for the element to be (or not be) in a particular state:
+
+```swift
+button.await(.visible, .enabled, timeout: 10) // You can provide more than one state to wait for :)
+button.await(not: .enabled, timeout: 10)
+```
+
+If the element doesn't become the expected state within the timeout, the test will fail.
+
+If you're not using TABTestKit [contexts](#contexts), it is extremely advisable to
+use the functions provided by `Element`, rather than asserting values immediately.
+
+Not waiting for values and states to be true is one of the highest contributors to flaky and
+frustrating automation tests.
+
+#### Tappable
+
+Anything that conforms to `Tappable` (like [`Button`](#button)), is declaring it
+can be tapped.
+
+`Tappable` works really well wit [`InteractionContext`](#interactioncontext).
+
+Additionally, any [`Element`](#element) that conforms to `Tappable` doesn't have
+to do any extra work, default implementations will be provided automatically.
+
+#### Editable
+
+Anything that conforms to `Editable` (like [`TextField`](#textfield)), is declaring
+it can have text entered into/removed from it.
+
+`Editable` works really well with [`InteractionContext`](#interactioncontext).
+
+Additionally, any [`Element`](#element) that conforms to `Editable` doesn't have to
+do any extra work, default implementations will be provided automatically.
+
+#### Scrollable
+
+Anything that conforms to `Editable`, (like [`ScrollView`](#scrollview)), is
+declaring it can be scrolled.
+
+`Scrollable` works really well with [`InteractionContext`](#interactioncontext),
+you can also make your screens conform to `Scrollable` so they can be scrolled
+directly:
+
+```swift
+extension MyScreen: Scrollable {
+
+  func scroll(_ direction: ElementAttributes.Direction) {
+    scrollView.scroll(direction)
+  }
+
+}
+```
+
+Additionally, any [`Element`](#element) that conforms to `Scrollable` doesn't
+have to do any extra work, default implementations will be provided automatically.
+
+#### ValueRepresentable
+
+Anything that conforms to `ValueRepresentable`, (like [`Label`](#label)) is
+declaring that is has some sort of value.
+
+The conforming type decides what the type of value it is when conforming to
+`ValueRepresentable`. In the case of [`Header`](#header), it's a `String`, but
+a [`Slider`](#slider)'s value is a `CGFloat`.
+
+Regardless of what the value is, it can be used with [`InteractionContext`] to
+assert the value of the `ValueRepresentable` thing.
+
+#### Adjustable
+
+Anything that conforms to `Adjustable`, (like [`Slider`](#slider)) is
+declaring that it can be adjusted or have its value changed.
+
+The conforming type decides what the type of value it is when conforming to
+`Adjustable`. In the case of [`Slider`](#slider), it's a `CGFLoat`, but
+a [`Switch`](#switch)'s value is a `Switch.State` (either `.on` or `.off`).
+
+Regardless of what the value is, it can be used with [`InteractionContext`] to
+adjust/change the value.
+
+#### CellContaining
+
+Anything that conforms to `CellContaining`, (like [`Table`](#table)) is declaring
+that it can provide the number of cells it contains, and can also vend a [`Cell`](#cell).
+
+Additionally, any [`Element`](#element) that conforms to `CellContaining` doesn't have to
+do any extra work, default implementations will be provided automatically.
+
 ## Requirements
 
 TABTestKit has **no dependencies** and supports **iOS 10** and newer. 🎉
