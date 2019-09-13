@@ -9,7 +9,7 @@ import XCTest
 
 public struct SegmentedControl: Element {
 	
-	public let id: String? = nil // Unfortunately you can't set an ID or label on a segmented control, so we'll just have to assume there's only one.
+	public let id: String? = nil // Unfortunately you can't set an ID or label on a segmented control, so we'll just have to reference by index in the parent.
 	public let index: Int
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .segmentedControl

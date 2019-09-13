@@ -8,7 +8,7 @@
 import XCTest
 
 /// Represents a webview in your app.
-public struct WebView: Element {
+public struct WebView: Element, Scrollable {
 	
 	public let id: String?
 	public let parent: Element

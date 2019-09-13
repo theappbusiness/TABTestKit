@@ -726,6 +726,215 @@ tabBar.button(withID: "Tab 1").tap()
 Like other `Button`s, the ID for the button can be the button title, or a custom
 ID you've set as the `accessibilityIdentifier`.
 
+#### Alert
+
+`Alert` represents an alert (sometimes called popup or dialog) in the app:
+
+```swift
+let alert = Alert(id: "My alert title")
+let alert = Alert(id: "My alert title", dismissButtonID: "OK")
+```
+
+Typically, the ID of an alert is its title. You can also optionally provide a
+`dismissButtonID` if your alert is not dismissed with `"Cancel"`.
+
+`Alert` vends you action buttons based on ID, so you can be sure that you're
+referencing the correct button on screen:
+
+```swift
+alert.actionButton(withID: "Delete").tap()
+```
+
+Since `Alert` conforms to [`Dismissable`](#dismissable), you can dismiss it:
+
+```swift
+alert.dismiss()
+```
+
+> **NOTE:** `Alert` uses the `dismissButtonID` to dismiss itself, which is
+`"Cancel"` by default.
+
+#### Sheet
+
+`Sheet` represents an activity sheet in the app:
+
+```swift
+let sheet = Sheet(id: "My sheet title")
+let sheet = Sheet(id: "My sheet title", dismissButtonID: "OK")
+```
+
+Typically, the ID of an sheet is its title. You can also optionally provide a
+`dismissButtonID` if your sheet is not dismissed with `"Cancel"`.
+
+`Sheet` vends you action buttons based on ID, so you can be sure that you're
+referencing the correct button on screen:
+
+```swift
+sheet.actionButton(withID: "Delete").tap()
+```
+
+Since `Sheet` conforms to [`Dismissable`](#dismissable), you can dismiss it:
+
+```swift
+sheet.dismiss()
+```
+
+> **NOTE:** `Sheet` uses the `dismissButtonID` to dismiss itself, which is
+`"Cancel"` by default.
+
+#### Switch
+
+`Switch` represents a switch (sometimes called a toggle) in the app:
+
+```swift
+let toggle = Switch(id: "MySwitch")
+```
+
+Since `Switch` conforms to `ValueRepresentable`, you can get the current state:
+
+```switch
+XCTAssertEqual(toggle.value, .on)
+XCTAssertEqual(toggle.value, .off)
+```
+
+Since `Switch` also conforms to `Adjustable`, you can adjust the state to `on` or `off`:
+
+```switch
+toggle.adjust(to: .on)
+toggle.adjust(to: .off)
+```
+
+Since `Switch` also conforms to `Tappable`, you can tap it:
+
+```switch
+toggle.tap()
+```
+
+> **NOTE:** TABTestKit fails the test if the value is already the value you're trying
+to set it to.
+
+#### Slider
+
+`Slider` represents a slider in the app:
+
+```swift
+let slider = Slider(id: "MySlider")
+```
+
+Since `Slider` conforms to `ValueRepresentable`, you can get the current `CGFLoat` value:
+
+```swift
+XCTAssertEqual(slider.value, 0.5)
+```
+
+Since `Slider` also conforms to `Adjustable`, you can set the current `CGFloat` value:
+
+```swift
+slider.adjust(to: 1)
+```
+
+> **NOTE:** TABTestKit fails the test if the value is already the value you're trying
+to set it to.
+
+#### Stepper
+
+`Stepper` represents a stepper in the app:
+
+```swift
+let stepper = Stepper(id: "MyStepper")
+```
+
+You can interact with the `incrementButton` and `decrementButton` in the `Stepper`:
+
+```swift
+stepper.incrementButton.tap()
+stepper.decrementButton.tap()
+```
+
+Unfortunately, the underlying `XCUIElement` for a `Stepper` does not provide the
+current value, so you will need to assert the value using some other element (like
+a label).
+
+You can, however, assert the states of the buttons, like checking if the buttons are
+enabled:
+
+```swift
+stepper.decrementButton.await(not: .enabled, timeout: 1) // Waits a max of 1 second for the button to be disabled
+```
+
+You can learn more about `await(not:)` and other `Element` methods in the
+documentation for [`Element`](#element).
+
+#### SegmentedControl
+
+`SegmentedControl` represents a segmented control in the app:
+
+```swift
+let segmentedControl = SegmentedControl()
+```
+
+Unfortunately, UIKit doesn't seem to support setting a custom accessibilityIdentifier
+or accessibilityLabel on a `UISegmentedControl`, so you can't reference it by ID like
+other elements.
+
+You can get around this by wrapping your `UISegmentedControl` in a container `UIView` and
+giving that container view an identifier:
+
+```swift
+let segmentedControl = UISegmentedControl()
+let containerView = UIView()
+containerView.accessibilityIdentifier = "MySegmentedControl"
+containerView.addSubview(segmentedControl)
+```
+
+And then you can reference that container view as the parent in your tests:
+
+```swift
+let segmentedControl = SegmentedControl(parent: View(id: "MySegmentedControl"))
+```
+
+Alternatively, you can reference the segmented control by index:
+
+```swift
+let segmentedControl = SegmentedControl(index: 0)
+let segmentedControl = SegmentedControl(index: 1)
+```
+
+`SegmentedControl` vends you segment buttons based on ID, so you can be sure that you're
+referencing the correct button on screen:
+
+```swift
+segmentedControl.button(withID: "Segment 2").tap()
+```
+
+#### PageIndicator
+
+`PageIndicator` represents a page control or page indicator in the app:
+
+```swift
+let pageIndicator = PageIndicator(id: "MyPageIndicator")
+```
+
+Since `PageIndicator` conforms to `ValueRepresentable`, you can get the string value:
+
+```swift
+XCTAssertEqual(pageIndicator.value, "page 1 of 3")
+```
+
+#### WebView
+
+`WebView` represents a web view in the app:
+
+```swift
+let webView = WebView(id: "MyWebView")
+```
+
+Since `WebView` conforms to `Scrollable`, you can scroll it:
+
+```swift
+webView.scroll(.left)
+```
+
 ## Requirements
 
 TABTestKit has no dependencies and supports iOS 10 and newer. 🎉

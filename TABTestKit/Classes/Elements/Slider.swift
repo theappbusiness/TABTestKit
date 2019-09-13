@@ -21,8 +21,10 @@ public struct Slider: Element, ValueRepresentable, Adjustable {
 		self.parent = parent
 	}
 	
-	public func adjust(to value: CGFloat) {
-		underlyingXCUIElement.adjust(toNormalizedSliderPosition: value)
+	public func adjust(to newValue: CGFloat) {
+		guard newValue != value else { XCTFatalFail("Slider is already set to \(newValue)") }
+		underlyingXCUIElement.adjust(toNormalizedSliderPosition: newValue)
+		XCTAssert(underlyingXCUIElement.wait(for: newValue == value, timeout: 1))
 	}
 	
 }

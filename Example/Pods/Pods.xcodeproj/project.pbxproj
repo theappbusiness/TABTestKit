@@ -309,12 +309,12 @@
 				C36FD6C12326743D00D7CED6 /* TabBar.swift */,
 				C30B013E2326AF0B00A9EB87 /* Alert.swift */,
 				C326D6912327C5E1001AB082 /* Sheet.swift */,
-				C3DE8E52232A740C007E583B /* WebView.swift */,
-				C3DE8E54232A7499007E583B /* SegmentedControl.swift */,
+				C3DE8E5A232A7529007E583B /* Switch.swift */,
 				C3DE8E56232A74E6007E583B /* Slider.swift */,
 				C3DE8E58232A7509007E583B /* Stepper.swift */,
-				C3DE8E5A232A7529007E583B /* Switch.swift */,
+				C3DE8E54232A7499007E583B /* SegmentedControl.swift */,
 				C3DE8E5C232A753F007E583B /* PageIndicator.swift */,
+				C3DE8E52232A740C007E583B /* WebView.swift */,
 			);
 			name = Elements;
 			path = TABTestKit/Classes/Elements;
