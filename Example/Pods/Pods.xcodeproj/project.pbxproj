@@ -58,9 +58,9 @@
 		C3DE8E3A2328ED34007E583B /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68A2326663200D7CED6 /* Tappable.swift */; };
 		C3DE8E3B2328ED34007E583B /* CellContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01442326B4A900A9EB87 /* CellContaining.swift */; };
 		C3DE8E3C2328ED34007E583B /* ValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6B02327F08E001AB082 /* ValueRepresentable.swift */; };
-		C3DE8E412328ED7B007E583B /* SystemSettingsResetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */; };
-		C3DE8E422328ED7B007E583B /* SystemSettingsGeneralScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */; };
-		C3DE8E432328ED7B007E583B /* SystemSettingsRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */; };
+		C3DE8E412328ED7B007E583B /* SystemPreferencesResetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3E2328ED7B007E583B /* SystemPreferencesResetScreen.swift */; };
+		C3DE8E422328ED7B007E583B /* SystemPreferencesGeneralScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3F2328ED7B007E583B /* SystemPreferencesGeneralScreen.swift */; };
+		C3DE8E432328ED7B007E583B /* systemPreferencesRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E402328ED7B007E583B /* systemPreferencesRootScreen.swift */; };
 		C3DE8E51232A5FDA007E583B /* XCTFatalFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E50232A5FDA007E583B /* XCTFatalFail.swift */; };
 		C3DE8E53232A740C007E583B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E52232A740C007E583B /* WebView.swift */; };
 		C3DE8E55232A7499007E583B /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E54232A7499007E583B /* SegmentedControl.swift */; };
@@ -150,9 +150,9 @@
 		C3DE8E282328E9AF007E583B /* Completable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
 		C3DE8E292328E9AF007E583B /* Dismissable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 		C3DE8E2A2328E9AF007E583B /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsResetScreen.swift; sourceTree = "<group>"; };
-		C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsGeneralScreen.swift; sourceTree = "<group>"; };
-		C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsRootScreen.swift; sourceTree = "<group>"; };
+		C3DE8E3E2328ED7B007E583B /* SystemPreferencesResetScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesResetScreen.swift; sourceTree = "<group>"; };
+		C3DE8E3F2328ED7B007E583B /* SystemPreferencesGeneralScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesGeneralScreen.swift; sourceTree = "<group>"; };
+		C3DE8E402328ED7B007E583B /* systemPreferencesRootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = systemPreferencesRootScreen.swift; sourceTree = "<group>"; };
 		C3DE8E50232A5FDA007E583B /* XCTFatalFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTFatalFail.swift; sourceTree = "<group>"; };
 		C3DE8E52232A740C007E583B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		C3DE8E54232A7499007E583B /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -381,9 +381,9 @@
 		C3DE8E3D2328ED7B007E583B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */,
-				C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */,
-				C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */,
+				C3DE8E402328ED7B007E583B /* systemPreferencesRootScreen.swift */,
+				C3DE8E3F2328ED7B007E583B /* SystemPreferencesGeneralScreen.swift */,
+				C3DE8E3E2328ED7B007E583B /* SystemPreferencesResetScreen.swift */,
 			);
 			name = Screens;
 			path = TABTestKit/Classes/Screens;
@@ -539,7 +539,7 @@
 				C36FD6B2232673A800D7CED6 /* Header.swift in Sources */,
 				C36FD6C923267BA700D7CED6 /* AppContext.swift in Sources */,
 				C36FD6B6232673D300D7CED6 /* ScrollView.swift in Sources */,
-				C3DE8E432328ED7B007E583B /* SystemSettingsRootScreen.swift in Sources */,
+				C3DE8E432328ED7B007E583B /* systemPreferencesRootScreen.swift in Sources */,
 				C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */,
 				C3DE8E51232A5FDA007E583B /* XCTFatalFail.swift in Sources */,
 				C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */,
@@ -549,7 +549,7 @@
 				C36FD6D7232680B700D7CED6 /* Safari.swift in Sources */,
 				C36FD6BE2326741700D7CED6 /* TextView.swift in Sources */,
 				C3DE8E53232A740C007E583B /* WebView.swift in Sources */,
-				C3DE8E422328ED7B007E583B /* SystemSettingsGeneralScreen.swift in Sources */,
+				C3DE8E422328ED7B007E583B /* SystemPreferencesGeneralScreen.swift in Sources */,
 				C36FD68D2326663200D7CED6 /* View.swift in Sources */,
 				C36FD6A02326676C00D7CED6 /* NavigationContext.swift in Sources */,
 				C36FD6BA232673F000D7CED6 /* CollectionView.swift in Sources */,
@@ -581,7 +581,7 @@
 				C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */,
 				F785827A6F363207A87B0DDF8B435B10 /* TABTestKit-dummy.m in Sources */,
 				C3DE8E362328ED34007E583B /* Screen.swift in Sources */,
-				C3DE8E412328ED7B007E583B /* SystemSettingsResetScreen.swift in Sources */,
+				C3DE8E412328ED7B007E583B /* SystemPreferencesResetScreen.swift in Sources */,
 				C36FD6D9232680B700D7CED6 /* App.swift in Sources */,
 				C36FD6B8232673E000D7CED6 /* Table.swift in Sources */,
 				C36FD6BC2326740A00D7CED6 /* TextField.swift in Sources */,

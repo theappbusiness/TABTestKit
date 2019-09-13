@@ -1,5 +1,5 @@
 //
-//  SystemSettingsRootScreen.swift
+//  systemPreferencesRootScreen.swift
 //  Pods-TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 10/09/2019.

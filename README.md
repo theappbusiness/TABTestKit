@@ -37,7 +37,7 @@ func test_login() {
     - [`Step`s](#steps)
     - [`Scenario`s](#scenarios)
   - [Biometrics](#biometrics)
-  - [Screens & Elements](#screens-elements)
+  - [Screens & Elements](#screens--elements)
     - [Screens](#screens)
     - [Elements](#elements)
       - [Parent Elements](#parent-elements)
@@ -62,21 +62,21 @@ func test_login() {
       - [`Switch`](#switch)
       - [`Slider`](#slider)
       - [`Stepper`](#stepper)
-      - [`SegmentedControl`](#segmentedconrol)
+      - [`SegmentedControl`](#segmentedcontrol)
       - [`PageIndicator`](#pageindicator)
       - [`WebView`](#webview)
-    - [Predefined Screens](#predefined-screen)
-      - [`SystemSettingsRootScreen`](#systemsettingsrootscreen)
-      - [`SystemSettingsGeneralScreen`](#systemsettingsgeneralscreen)
-      - [`SystemPreferencesResetScreen`](#systemsettingsresetscreen)
+    - [Predefined Screens](#predefined-screens)
+      - [`systemPreferencesRootScreen`](#systempreferencesrootscreen)
+      - [`systemPreferencesGeneralScreen`](#systempreferencesgeneralscreen)
+      - [`SystemPreferencesResetScreen`](#systempreferencesresetscreen)
   - [Contexts](#contexts)
-   - [`NavigationContext`](#navigationcontext)
-   - [`InteractionContext`](#interactioncontext)
-   - [`AppContext`](#appcontext)
-   - [`AlertContext`](#alertcontext)
-   - [`SheetContext`](#sheetcontext)
-   - [`BiometricsContext`](#biometricscontext)
-   - [`SystemPreferencesContext`](#systempreferencescontext)
+    - [`NavigationContext`](#navigationcontext)
+    - [`InteractionContext`](#interactioncontext)
+    - [`AppContext`](#appcontext)
+    - [`AlertContext`](#alertcontext)
+    - [`SheetContext`](#sheetcontext)
+    - [`BiometricsContext`](#biometricscontext)
+    - [`SystemPreferencesContext`](#systempreferencescontext)
   - [Protocols](#protocols)
     - [`Screen`](#screen)
     - [`Completable`](#completable)
@@ -104,7 +104,7 @@ func test_login() {
 
 struct ProfileScreen: Screen {
 
-  let trait = Header(id: "Not Instagram") // The trait of a screen is what consistently and uniquely identifies it
+  let trait = Header(id: "Not Instagram") // The trait of a screen is what consistently and uniquely identifies it. It can be anything that conforms to `Element`
   let usernameLabel = Label(id: "UsernameLabel") // IDs can either be the accessibilityLabel or accessibilityIdentifier of views in the app
   let logOutButton = Button(id: "Log out")
 
@@ -1030,10 +1030,10 @@ webView.scroll(.left)
 
 TABTestKit comes with some helpful predefined screens that you can use in your tests.
 
-#### SystemSettingsRootScreen
+#### SystemPreferencesRootScreen
 
 The root of the system Settings app. You can use this to navigate
-to [`SystemSettingsGeneralScreen`](#SystemSettingsGeneralScreen):
+to [`SystemPreferencesGeneralScreen`](#systempreferencesgeneralscreen):
 
 ```swift
 systemPreferencesRootScreen.generalCell.tap()
@@ -1043,13 +1043,13 @@ systemPreferencesRootScreen.generalCell.tap()
 or other predefined screens, since they have already been created and are globally
 available anywhere in your tests.
 
-#### SystemSettingsGeneralScreen
+#### SystemPreferencesGeneralScreen
 
 The General screen in system Settings. You can use this to
-navigate to [`SystemPreferencesResetScreen`](#SystemPreferencesResetScreen):
+navigate to [`SystemPreferencesResetScreen`](#systempreferencesresetscreen):
 
 ```swift
-systemSettingsGeneralScreen.resetCell.tap()
+systemPreferencesGeneralScreen.resetCell.tap()
 ```
 
 #### SystemPreferencesResetScreen
