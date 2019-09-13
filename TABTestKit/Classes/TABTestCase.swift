@@ -29,7 +29,7 @@ public typealias DefaultContexts = InteractionContext & NavigationContext & AppC
 /// which are found in the xcresult bundle created as part of the test run (usually in Derived Data).
 open class TABTestCase: XCTestCase, DefaultContexts {
 	
-	/// Provides the setup for appication that happens before each XCTestCase.
+	/// Provides the setup for application that happens before each XCTestCase.
 	/// As part of setUp, preLaunchSetup will be called.
 	/// Override preLaunchSetup to provide custom prelaunch setup behaviour.
 	open override func setUp() {
@@ -61,7 +61,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	}
 	
 	/// Called automatically as part of tearDown to allow you to provide your own preTermination tear down.
-	/// For example you could use this to unregister
+	/// For example you could use this to unregister a custom UUID on a mock server.
 	/// By default this function does nothing except call the terminate handler, so calling the super implementation
 	/// is not required, so long as you call the terminate handler in your own implementation.
 	///
