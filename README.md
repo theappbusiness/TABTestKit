@@ -7,8 +7,8 @@
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
-TABTestKit is an extremely human readable, strongly typed wrapper, around XCUI/XCTest for automation of
-Apple platforms, which helps reduce flakiness and lowers the barrier to entry for most people.
+TABTestKit is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
+which helps reduce flakiness and lowers the barrier to entry for most people.
 
 ```swift
 func test_login() {
@@ -28,6 +28,72 @@ func test_login() {
   }
 }
 ```
+
+- [Quick Start](#quick-start)
+- [Why?](#why)
+- [Usage](#usage)
+  - [`TABTestCase`](#tabtestcase)
+  - [Steps & Scenarios](#steps-and-scenarios)
+    - [Steps](#steps)
+    - [Scenarios](#scenarios)
+  - [Biometrics](#biometrics)
+  - [Screens & Elements](#screens-elements)
+    - [Screens](#screens)
+    - [Elements](#elements)
+      - [Parent Elements](#parent-elements)
+      - [Creating your own elements](#creating-your-own-elements)
+      - [Extending existing elements](#extending-existing-elements)
+    - [Predefined Elements](#predefined-elements)
+      - [View](#view)
+      - [Header](#header)
+      - [Label](#label)
+      - [Button](#button)
+      - [ScrollView](#scrollview)
+      - [Table](#table)
+      - [CollectionView](#collectionview)
+      - [Cell](#cell)
+      - [TextField](#textfield)
+      - [SecureTextField](#securetextfield)
+      - [TextView](#textview)
+      - [NavBar](#navbar)
+      - [TabBar](#tabbar)
+      - [Alert](#alert)
+      - [Sheet](#sheet)
+      - [Switch](#switch)
+      - [Slider](#slider)
+      - [Stepper](#stepper)
+      - [SegmentedControl](#segmentedconrol)
+      - [PageIndicator](#pageindicator)
+      - [WebView](#webview)
+    - [Predefined Screens](#predefined-screen)
+      - [SystemSettingsRootScreen](#systemsettingsrootscreen)
+      - [SystemSettingsGeneralScreen](#systemsettingsgeneralscreen)
+      - [SystemPreferencesResetScreen](#systemsettingsresetscreen)
+  - [Contexts](#contexts)
+   - [NavigationContext](#navigationcontext)
+   - [InteractionContext](#interactioncontext)
+   - [AppContext](#appcontext)
+   - [AlertContext](#alertcontext)
+   - [SheetContext](#sheetcontext)
+   - [BiometricsContext](#biometricscontext)
+   - [SystemPreferencesContext](#systempreferencescontext)
+  - [Protocols](#protocols)
+    - [Screen](#screen)
+    - [Completable](#completable)
+    - [Dismissable](#dismissable)
+    - [Element](#element)
+    - [Tappable](#tappable)
+    - [Editable](#editable)
+    - [Scrollable](#scrollable)
+    - [ValueRepresentable](#valuerepresentable)
+    - [Adjustable](#adjustable)
+    - [CellContaining](#cellcontaining)
+  - [Apps](#apps)
+    - [BaseApp](#baseapp)
+    - [App](#app)
+    - [SystemPreferences](#systempreferences)
+    - [Safari](#safari)
+    - [Springboard](#springboard)
 
 ## Quick start
 
@@ -194,7 +260,7 @@ Biometrics.enrolled()
 Biometrics.unenrolled()
 ```
 
-> **NOTE:** The term "enrolement" comes from the Simulator menu options to enable or disable biometrics.
+> **NOTE:** The term "enrolment" comes from the Simulator menu options to enable or disable biometrics.
 
 You can also simulate a successful or unsuccessful authentication:
 
@@ -320,50 +386,15 @@ TABTestKit comes with a lot of common elements that you can use to represent and
 interact with your UI, but you can also create custom elements if none of the
 predefined elements works for you.
 
-To create your own, you can create a struct that conforms to the `Element` protocol:
-
-```swift
-struct MyCustomElement: Element {
-
-  // Required Element properties
-
-  let id: String? // The ID of the element
-  let type: XCUIElement.ElementType = .other // The underlying type of the element. TABTestKit uses this to build the XCUIElementQuery.
-
-}
-```
-
-To conform to `Element` the only things you _must_ provide yourself are the optional
-ID, and the underlying `XCUIElement.ElementType`.
-
-That's enough information for TABTestKit to build the underlying XCUIElementQuery,
-since the other optional `Element` properties have defaults.
-
-If you need more control, you can always provide more information yourself:
-
-```swift
-struct MyCustomElement: Element {
-
-  // Required Element properties
-
-  let id: String?
-  let type: XCUIElement.ElementType = .other
-
-  // Optional Element properties
-
-  let parent: Element // The parent Element. You can provide any Element or an app that inherits from BaseApp. By default this is the app under test.
-  let index: Int // The index of the Element. By default this is 0, meaning the first match.
-  let label: String // The label of the Element. By default this uses the accessibilityLabel of the underlying XCUIElement.
-  let underlyingXCUIElement: XCUIElement // The underlying XCUIElement used to interact with the element. By default this is generated for you using the other properties, so you should rarely need to access this or generate it yourself, but you can if you want :)
-
-}
-```
+To create your own, you can create a struct that conforms to the [`Element`](#element) protocol.
 
 #### Extending existing Elements
 
-By default, Elements in TABTestKit don't support any interaction (unless you use
-the `underlyingXCUIElement`). Elements that support interaction declare that by
-conforming to other protocols, like how [`Button`](#button) conforms to both `Element` and `Tappable`.
+By default, [`Element`s](#element) in TABTestKit don't support any interaction (unless you use
+the `underlyingXCUIElement`).
+
+Elements that support interaction declare that by
+conforming to other protocols, like how [`Button`](#button) conforms to both `Element` and [`Tappable`](#tappable).
 
 If you need extra behaviour for any element you can create an extension and provide
 more functionality, either by conforming to another protocol or creating new properties
@@ -1046,7 +1077,7 @@ easily:
 complete(nameScreen, birthDateScreen, usernameScreen)
 ```
 
-#### NavigationContext
+#### InteractionContext
 
 `InteractionContext` is a predefined context that `TABTestCase` already conforms to,
 which means your test cases can already use the functions in it.
