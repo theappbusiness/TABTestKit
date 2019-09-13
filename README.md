@@ -1527,7 +1527,7 @@ pod 'TABTestKit'
 To use the version under development you can target the `develop` branch specifically:
 
 ```ruby
-pod 'TABTestKit' # TODO: Target branch
+pod 'TABTestKit', :git => 'https://github.com/theappbusiness/TABTestKit.git', :branch => 'develop'
 ```
 
 #### Subspecs
