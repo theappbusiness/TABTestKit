@@ -136,7 +136,7 @@ class ProfileTests: TABTestCase {
   func test_loggingOut() {
     Scenario("Logging out") { // Scenarios group steps with a description, so you can have multiple Scenarios in a test function
       Given(I: see(profileScreen)) // Steps can be either Given, When, Then, or And and can take any function which is executed automatically
-      And(the: value(of: profileScreen.usernameLabel, is: "My username"))
+      And(the: value(of: profileScreen.usernameLabel, is: "My username")) // This `value(of)` function comes for free with TABTestCase!
       When(I: tap(profileScreen.logOutButton))
       Then(I: doNotSee(profileScreen))
     }
