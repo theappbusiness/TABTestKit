@@ -2,12 +2,12 @@
 
 # TABTestKit
 
-[![Build Status](https://travis-ci.org/theappbusiness/TABTestKit.svg?branch=master)](https://travis-ci.org/theappbusiness/TABTestKit)
-[![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
-[![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
-[![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
+[![Build Status](https://travis-ci.org/theappbusiness/**TABTestKit**.svg?branch=master)](https://travis-ci.org/theappbusiness/**TABTestKit**)
+[![Version](https://img.shields.io/cocoapods/v/**TABTestKit**.svg?style=flat)](http://cocoapods.org/pods/**TABTestKit**)
+[![License](https://img.shields.io/cocoapods/l/**TABTestKit**.svg?style=flat)](http://cocoapods.org/pods/**TABTestKit**)
+[![Platform](https://img.shields.io/cocoapods/p/**TABTestKit**.svg?style=flat)](http://cocoapods.org/pods/**TABTestKit**)
 
-TABTestKit is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
+**TABTestKit** is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
 which helps reduce flakiness and lowers the barrier to entry for most people.
 
 ```swift
@@ -153,46 +153,50 @@ and [Steps](#steps), as well as leverage [`Element`s](#elements) and [Contexts](
 
 ## Why?
 
-TABTestKit makes it so you can write very little code to automate the behaviours
-in your app, as well as being extremely human readable by leveraging powerful
-Swift features. This means the barrier to entry for Swift automation is
+**TABTestKit** enables you to write **very little code** to automate the behaviours
+in your app, as well as being **extremely human readable** by leveraging powerful
+Swift features.
+
+This means the barrier to entry for Swift automation is
 essentially removed.
 
-Additionally, TABTestKit waits for things rather than asserting
-directly, which massively reduces flakiness in your tests.
+Additionally, **TABTestKit** makes a habit to _wait_ for things, rather than asserting
+immediately, which **massively reduces flakiness in your tests**.
 
 Unlike XCTest, where every XCUIElement can be tapped, adjusted, typed into or scrolled,
-regardless of whether it's adjustable etc, TABTestKit has specific elements that
-represent common UIKit and AppKit elements, like `Button`, `Slider` and `ScrollView`.
+regardless of whether it's adjustable etc, **TABTestKit** has specific elements that
+represent common UIKit and AppKit elements, like [`Button`](#button), [`Slider`](#slider)
+and [`ScrollView`](#scrollview).
 
-TABTestKit comes with most common elements out the box, but is also completely customisable
-by either creating your own custom elements, or by extending existing elements.
+**TABTestKit** comes with most common elements out the box, but is also **completely customisable**,
+either by [creating your own custom elements](#creating-your-own-elements), or by [extending existing elements](#extending-existing-elements).
 
 The framework is intended to make it so easy to write automation, but also make
-it really difficult to write bad automation or make mistakes.
+it difficult to write bad, flaky automation, or make mistakes.
 
-For example, TABTestKit introduces the concept of _parent_ elements, so that you're
-always trying to reference the correct element within the right context.
+For example, **TABTestKit** introduces the concept of `parent` elements, so that you're
+always trying to reference the correct element within the appropriate parent.
 This becomes really important when matching buttons by their labels, where you could
-have multiple buttons on screen with the same text (i.e. on the screen and in an alert, like "OK").
+have multiple buttons on screen with the same text (i.e. on the screen and in an alert, like `"OK"`).
 
-TABTestKit also provides a BDD-style approach to writing tests, which mean you
-can write Steps, grouped inside Scenarios, which mean that people with very little
-coding skills can still get involved and write automation.
+**TABTestKit** also provides a BDD-style approach to writing tests, which mean you
+can write [Steps](#steps), grouped inside [Scenarios](#scenarios), which means
+that people with very little coding experience can still get involved and write automation,
+because it reads (mostly) like English.
 
-You can mix and match whatever parts of TABTestKit you want in your project, so you're not
+You can mix and match whatever parts of **TABTestKit** you want in your project, so you're not
 limited by the framework.
 
-See the example app for real examples on how TABTestKit could be used to leverage writing
-automation with not much custom code.
+See the example app for real examples on how **TABTestKit** could be used to leverage writing
+automation with essentially no custom code.
 
 ## Usage
 
-There are several components to TABTestKit, which you can pick and choose to use.
+There are several components to **TABTestKit**, which you can pick and choose to use.
 
 ### TABTestCase
 
-TABTestCase is the base test case you should make all your test cases subclass:
+`TABTestCase` is the base test case you should make **all your test cases subclass**:
 
 ```swift
 class MyTestCase: TABTestCase {
@@ -211,6 +215,8 @@ app instance in parallel tests.
 
 This is useful for mock servers, so that you can tailor the
 mock server's responses for each running instance.
+
+> **NOTE:** you can query the UUID in your app at any time using `ProcessInfo.process.environment["TABTestKit.UUID"]`
 
 `TABTestCase` automatically launches and terminates your app at the start and end
 of each test. You can delay the launch or termination to provide extra setup (like
@@ -231,15 +237,18 @@ class MyTestCase: TABTestCase {
 }
 ```
 
-> **NOTE**: If you override `preLaunchSetup` or `preTerminationTearDown` and need to do some asynchronous work before launching or terminating the app, you will need to force the tests to wait until the task is complete, by using `XCTWaiter`.
+> **NOTE**: If you override `preLaunchSetup` or `preTerminationTearDown` and need
+to do some asynchronous work before launching or terminating the app, you will
+need to force the tests to wait until the task is complete, by using `XCTWaiter`.
 
 ### Steps and Scenarios
 
-A huge part in making your tests human readable so they're approachable by everyone,
-is to write them as Steps and Scenarios.
+A huge part in making your tests human readable and they're approachable by everyone,
+is to write them as [Steps](#steps) and [Scenarios](#scenarios).
 
-Steps & Scenarios are a core part of what makes TABTestKit great, and you can choose
-to just use Steps & Scenarios without the rest of TABTestKit if you prefer.
+Steps & Scenarios are a core part of what makes **TABTestKit** so great, and since
+the framework is so flexible, you can choose to just use Steps & Scenarios without
+the rest of **TABTestKit**, if you prefer.
 
 #### Steps
 
@@ -273,12 +282,14 @@ func seeAnError() {
 ```
 
 The syntax for the steps above might seem a bit odd to Swift developers.
-`Given`/`When`/`Then` are actually just a `typealias` of a `Step` struct, which has
-an `init` that takes any function, which is executed automatically by the step.
+`Given`/`When`/`Then` are actually just a `typealias` of a `Step` struct.
 
-What's really nice, is that you can _pass a function by reference_, which essentially
-means you can drop the `()` for step functions that have no parameters,
-to make your code super human readable.
+The `Step` struct has an `init` that takes **any function**, which is executed
+automatically by the step at the right time.
+
+What's really nice, is that you can **pass a function by reference**, which essentially
+means you can drop the `()` for step functions that have no parameters, which makes your
+code read even more like a regular sentence.
 
 #### Scenarios
 
@@ -303,7 +314,7 @@ func test_serverErrorLoggingIn() {
 
 ### Biometrics
 
-TABTestKit makes it possible and very easy to automate iOS biometrics in the simulator.
+**TABTestKit** makes it possible and very easy to automate iOS biometrics in the simulator.
 
 You can enable or disable device biometrics:
 
@@ -330,7 +341,7 @@ a physical device.
 
 #### Screens
 
-A `Screen` in TABTestKit represents a screen in your app (i.e. a UIViewController),
+A `Screen` in **TABTestKit** represents a screen in your app (i.e. a UIViewController),
 and is a really nice way to clearly define the structure of your screens for automation
 tests.
 
@@ -352,11 +363,11 @@ for it to appear on-screen during tests when using [contexts](#contexts).
 
 #### Elements
 
-`Element`s in TABTestKit represent all the different elements on-screen, like `View`s,
+`Element`s in **TABTestKit** represent all the different elements on-screen, like `View`s,
 `Header`s, `Slider`s, `Alert`s, and so on.
 
 Unlike XCTest where all `XCUIElement` objects can be tapped, scrolled and typed into,
-an `Element` in TABTestKit declares whether it is scrollable (i.e. `ScrollView`,
+an `Element` in **TABTestKit** declares whether it is scrollable (i.e. `ScrollView`,
 `TextView`, `TableView` etc), whether it has a value (i.e. `Header`, `Label`, `Switch` etc)
 and so on.
 
@@ -385,7 +396,7 @@ All elements conform to the `Element` protocol which ensures that every element
 has a parent element (defaults to the `App`), underlying `type`, `index` (defaults to `0`),
 and has an optional ID.
 
-TABTestKit uses this information to automatically query XCTest for the right `XCUIElement`
+**TABTestKit** uses this information to automatically query XCTest for the right `XCUIElement`
 when you want to use it, using the parent element as the root. This is all done automatically,
 so you don't have to learn about `XCUIElementQuery` to get started.
 
@@ -405,7 +416,7 @@ XCUIApplication().buttons["OK"].firstMatch
 It's very likely there could be other buttons on screen with "OK", so the right button might
 not be matched, or it might be the wrong alert with an OK button.
 
-TABTestKit makes it much harder to reference the wrong button, because you use the `Alert`
+**TABTestKit** makes it much harder to reference the wrong button, because you use the `Alert`
 element to interact with the buttons contained within it:
 
 ```swift
@@ -424,7 +435,7 @@ let customView = View(id: "CustomView") // By default, the `App` is the parent o
 let button = Button(id: "OK", parent: customView) // Now only OK buttons within customView will be matched
 ```
 
-TABTestKit automatically builds the `XCUIElementQuery` under the hood for you
+**TABTestKit** automatically builds the `XCUIElementQuery` under the hood for you
 (although you [can do it yourself](#creating-your-own-elements) if you want),
 so all you have to do is describe your UI.
 
@@ -434,7 +445,7 @@ the [`InteractionContext`](#interactioncontext) documentation.
 
 #### Creating your own Elements
 
-TABTestKit comes with a lot of common elements that you can use to represent and
+**TABTestKit** comes with a lot of common elements that you can use to represent and
 interact with your UI, but you can also create custom elements if none of the
 predefined elements works for you.
 
@@ -442,7 +453,7 @@ To create your own, you can create a struct that conforms to the [`Element`](#el
 
 #### Extending existing Elements
 
-By default, [`Element`s](#element) in TABTestKit don't support any interaction (unless you use
+By default, [`Element`s](#element) in **TABTestKit** don't support any interaction (unless you use
 the `underlyingXCUIElement`).
 
 Elements that support interaction declare that by
@@ -500,7 +511,7 @@ let header = Header(id: "MyHeaderIdentifier")
 
 You can use either the `Header`'s text or a custom ID as the identifier.
 
-For TABTestKit and XCTest to be able to find your `Header`, your UIKit view
+For **TABTestKit** and XCTest to be able to find your `Header`, your UIKit view
 must have the header trait set:
 
 ```swift
@@ -526,7 +537,7 @@ let label = Label(id: "MyLabelIdentifier")
 Like [`Header`](#header) you can use either the `Label`'s text or a custom ID
 as the identifier.
 
-For TABTestKit and XCTest to be able to find your `Label`, your UIKit view
+For **TABTestKit** and XCTest to be able to find your `Label`, your UIKit view
 must have the staticText trait set:
 
 ```swift
@@ -554,7 +565,7 @@ Since `Button` conforms to `Tappable`, you can tap it:
 button.tap()
 ```
 
-For TABTestKit and XCTest to be able to find your `Label`, your UIKit view
+For **TABTestKit** and XCTest to be able to find your `Label`, your UIKit view
 must have the staticText trait set:
 
 ```swift
@@ -576,7 +587,7 @@ let scrollView = ScrollView(id: "MyScrollView")
 ```
 
 Because it's common to only have one scroll view on screen at once, you don't
-need to provide an ID to create one in TABTestKit, unless you need to.
+need to provide an ID to create one in **TABTestKit**, unless you need to.
 
 Since `ScrollView` conforms to `Scrollable`, you can scroll it:
 
@@ -901,7 +912,7 @@ Since `Switch` also conforms to `Tappable`, you can tap it:
 toggle.tap()
 ```
 
-> **NOTE:** TABTestKit fails the test if the value is already the value you're trying
+> **NOTE:** **TABTestKit** fails the test if the value is already the value you're trying
 to set it to.
 
 #### Slider
@@ -924,7 +935,7 @@ Since `Slider` also conforms to `Adjustable`, you can set the current `CGFloat` 
 slider.adjust(to: 1)
 ```
 
-> **NOTE:** TABTestKit fails the test if the value is already the value you're trying
+> **NOTE:** **TABTestKit** fails the test if the value is already the value you're trying
 to set it to.
 
 #### Stepper
@@ -1028,7 +1039,7 @@ webView.scroll(.left)
 
 ### Predefined Screens
 
-TABTestKit comes with some helpful predefined screens that you can use in your tests.
+**TABTestKit** comes with some helpful predefined screens that you can use in your tests.
 
 #### SystemPreferencesRootScreen
 
@@ -1071,7 +1082,7 @@ inheritances.
 A context is just a protocol with pre-implemented functions, so whenever a test case
 conforms to it all those functions become available.
 
-TABTestKit comes with many predefined contexts, which `TABTestCase` already conforms
+**TABTestKit** comes with many predefined contexts, which `TABTestCase` already conforms
 to, so by subclassing TABTestCase, you'll automatically have access to a wealth of
 helper functions that work beautifully with [steps](#steps) & [scenarios](#scenarios), and [`Element`](#element) and other protocols
 
@@ -1172,7 +1183,7 @@ Given(the: state(of: myScreen.button, is: .enabled))
 Given(the: state(of: myScreen.title, isNot: .hittable))
 ```
 
-Under the hood, to avoid flakiness, TABTestKit will wait briefly for the expected
+Under the hood, to avoid flakiness, **TABTestKit** will wait briefly for the expected
 state, rather than asserting immediately, which is a common mistake in automation tests.
 
 You can also pass in multiple states to assert:
@@ -1203,7 +1214,7 @@ value(of: myScreen.header, is: "My header text")
 Given(the: value(of: myScreen.header, is: "My header text"))
 ```
 
-Under the hood, to avoid flakiness, TABTestKit will wait briefly for the expected
+Under the hood, to avoid flakiness, **TABTestKit** will wait briefly for the expected
 value, rather than asserting immediately, which is a common mistake in automation tests.
 
 Anything that conforms to `Adjustable` can have its value adjusted using `InteractionContext`:
@@ -1345,7 +1356,7 @@ As an example, you could call `resetAllPrivacyPrompts()` as part of your [`preLa
 
 ### Protocols
 
-TABTestKit is driven under the hood by protocols. Unless you're creating your own
+**TABTestKit** is driven under the hood by protocols. Unless you're creating your own
 elements, the likelihood is you will only need to implement a few yourself, like
 [`Screen`](#screen), [`Completable`](#completable) and [`Dismissable`](#dismissable).
 
@@ -1367,7 +1378,7 @@ struct MyScreen: Screen {
 Typically, your screen's trait would be a `View` or `Header`, but it can be anything
 that consistently identifies your screen.
 
-The `trait` is used by TABTestKit in [`NavigationContext`](#navigationcontext) to assert
+The `trait` is used by **TABTestKit** in [`NavigationContext`](#navigationcontext) to assert
 whether your screen is or isn't on-screen currently.
 
 #### Completable
@@ -1411,7 +1422,7 @@ just like [`Alert`](#alert).
 
 #### Element
 
-`Element` is the backbone of TABTestKit, and essentially replaces `XCUIElement`
+`Element` is the backbone of **TABTestKit**, and essentially replaces `XCUIElement`
 (more technically, `Element` wraps `XCUIElement`).
 
 Every `Element` must provide:
@@ -1423,7 +1434,7 @@ Every `Element` must provide:
 - The `label` of the element (i.e the accessibilityLabel of your view)
 - The `underlyingXCUIElement` that it represents.
 
-If you're creating your own `Element` type, TABTestKit figures most of this out
+If you're creating your own `Element` type, **TABTestKit** figures most of this out
 for you, so at minimum you only have to provide the ID and type:
 
 ```swift
@@ -1455,7 +1466,7 @@ button.await(not: .enabled, timeout: 10)
 
 If the element doesn't become the expected state within the timeout, the test will fail.
 
-If you're not using TABTestKit [contexts](#contexts), it is extremely advisable to
+If you're not using **TABTestKit** [contexts](#contexts), it is extremely advisable to
 use the functions provided by `Element`, rather than asserting values immediately.
 
 Not waiting for values and states to be true is one of the highest contributors to flaky and
@@ -1537,7 +1548,7 @@ do any extra work, default implementations will be provided automatically.
 
 ### Apps
 
-TABTestKit comes with some predefined apps, all of which inherit from `BaseApp` which
+**TABTestKit** comes with some predefined apps, all of which inherit from `BaseApp` which
 you are encouraged to subclass if you need to make any more apps.
 
 ### BaseApp
@@ -1590,7 +1601,7 @@ app, like Face ID permission prompts.
 
 ## Requirements
 
-TABTestKit has **no dependencies** and supports **iOS 10** and newer. 🎉
+**TABTestKit** has **no dependencies** and supports **iOS 10** and newer. 🎉
 
 ## Installation
 
@@ -1598,11 +1609,11 @@ TABTestKit has **no dependencies** and supports **iOS 10** and newer. 🎉
 
 #### Latest
 
-To use the latest version of TABTestKit just add this to your `Podfile` and
+To use the latest version of **TABTestKit** just add this to your `Podfile` and
 run `pod update` or `pod install` in Terminal:
 
 ```ruby
-pod 'TABTestKit'
+pod '**TABTestKit**'
 ```
 
 #### Development
@@ -1610,15 +1621,15 @@ pod 'TABTestKit'
 To use the version under development you can target the `develop` branch specifically:
 
 ```ruby
-pod 'TABTestKit', :git => 'https://github.com/theappbusiness/TABTestKit.git', :branch => 'develop'
+pod '**TABTestKit**', :git => 'https://github.com/theappbusiness/**TABTestKit**.git', :branch => 'develop'
 ```
 
 #### Subspecs
 
-There's 1 subspec available: `Biometrics`. This means you can get a subset of `TABTestKit`'s functionality.
+There's 1 subspec available: `Biometrics`. This means you can get a subset of `**TABTestKit**`'s functionality.
 
 ```ruby
-pod 'TABTestKit/Biometrics'
+pod '**TABTestKit**/Biometrics'
 ```
 
 ## Contributing
@@ -1633,4 +1644,4 @@ Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire
 
 ## License
 
-TABTestKit is available under the MIT license. See the LICENSE file for more info.
+**TABTestKit** is available under the MIT license. See the LICENSE file for more info.
