@@ -1452,6 +1452,59 @@ that it can provide the number of cells it contains, and can also vend a [`Cell`
 Additionally, any [`Element`](#element) that conforms to `CellContaining` doesn't have to
 do any extra work, default implementations will be provided automatically.
 
+### Apps
+
+TABTestKit comes with some predefined apps, all of which inherit from `BaseApp` which
+you are encouraged to subclass if you need to make any more apps.
+
+### BaseApp
+
+This is the base app class that all the predefined apps inherit from.
+
+Inheriting from `BaseApp` means that you get enhanced waits for the app to be in
+the correct state before continuing, and also means you get an extra function to
+background the app, that Apple doesn't provide with `XCUIApplication`.
+
+Additionally, `BaseApp` (and anything that inherits from it) conforms to the [`Element`](#element)
+protocol, which means any app (including [`SystemPreferences`](#systempreferences))
+can be set as the parent element for elements.
+
+### App
+
+`App` inherits from [`BaseApp`](#baseapp) and is what you should use to reference
+your app in tests, and to do so you must use the shared instance:
+
+```swift
+App.shared
+```
+
+You can use `App` as the parent for any [`Element`](#element), to ensure that you're matching
+elements within your app.
+
+### SystemPreferences
+
+`SystemPreferences` inherits from [`BaseApp`](#baseapp) and represents the system
+Preferences app.
+
+You can use `SystemPreferences` as the parent for any [`Element`](#element), to allow you to
+interact with elements within the system Preferences (yes really!).
+
+### Safari
+
+`Safari` inherits from [`BaseApp`](#baseapp) and represents the Safari app.
+
+You can use `Safari` as the parent for any [`Element`](#element), to allow you to
+interact with elements within Safari.
+
+### Springboard
+
+`Springboard` inherits from [`BaseApp`](#baseapp) and is a very special app,
+because it essentially represents the OS.
+
+You can use `Springboard` as the parent for any [`Element`](#element),
+including [`Alert`](#alert), which means you can interact with any alert which is displayed by the OS over your
+app, like Face ID permission prompts.
+
 ## Requirements
 
 TABTestKit has **no dependencies** and supports **iOS 10** and newer. 🎉
