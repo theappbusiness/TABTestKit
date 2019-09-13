@@ -23,7 +23,7 @@
 		C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D69F2327CD52001AB082 /* SheetContext.swift */; };
 		C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */; };
 		C326D6AF2327ECE2001AB082 /* XCUIDevice+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6AE2327ECE2001AB082 /* XCUIDevice+frame.swift */; };
-		C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* ViewController.swift */; };
+		C36FD68D2326663200D7CED6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* View.swift */; };
 		C36FD6902326663200D7CED6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68C2326663200D7CED6 /* Button.swift */; };
 		C36FD6942326664900D7CED6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6922326664900D7CED6 /* Step.swift */; };
 		C36FD6952326664900D7CED6 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6932326664900D7CED6 /* Scenario.swift */; };
@@ -116,7 +116,7 @@
 		C326D6AE2327ECE2001AB082 /* XCUIDevice+frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIDevice+frame.swift"; sourceTree = "<group>"; };
 		C326D6B02327F08E001AB082 /* ValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C36FD6892326663200D7CED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C36FD6892326663200D7CED6 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
 		C36FD68B2326663200D7CED6 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		C36FD68C2326663200D7CED6 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -294,14 +294,14 @@
 			isa = PBXGroup;
 			children = (
 				C36FD6C42326763400D7CED6 /* Attributes.swift */,
-				C36FD6892326663200D7CED6 /* ViewController.swift */,
+				C36FD6892326663200D7CED6 /* View.swift */,
 				C36FD6B1232673A800D7CED6 /* Header.swift */,
 				C36FD6B3232673C600D7CED6 /* Label.swift */,
 				C36FD68C2326663200D7CED6 /* Button.swift */,
 				C36FD6B5232673D300D7CED6 /* ScrollView.swift */,
+				C36FD6B7232673E000D7CED6 /* Table.swift */,
 				C36FD6B9232673F000D7CED6 /* CollectionView.swift */,
 				C3AC13852328DAD3002A0F54 /* Cell.swift */,
-				C36FD6B7232673E000D7CED6 /* Table.swift */,
 				C36FD6BB2326740A00D7CED6 /* TextField.swift */,
 				C30B01392326AB1800A9EB87 /* SecureTextField.swift */,
 				C36FD6BD2326741700D7CED6 /* TextView.swift */,
@@ -547,7 +547,7 @@
 				C36FD6BE2326741700D7CED6 /* TextView.swift in Sources */,
 				C3DE8E53232A740C007E583B /* WebView.swift in Sources */,
 				C3DE8E422328ED7B007E583B /* SystemSettingsGeneralScreen.swift in Sources */,
-				C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */,
+				C36FD68D2326663200D7CED6 /* View.swift in Sources */,
 				C36FD6A02326676C00D7CED6 /* NavigationContext.swift in Sources */,
 				C36FD6BA232673F000D7CED6 /* CollectionView.swift in Sources */,
 				C326D6AF2327ECE2001AB082 /* XCUIDevice+frame.swift in Sources */,
