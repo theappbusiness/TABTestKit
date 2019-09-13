@@ -38,20 +38,11 @@ public extension NavigationContext {
 		element.await(not: .exists)
 	}
 	
-	/// Asserts that an element has a value that matches the expected value.
-	///
-	/// - Parameters:
-	///   - value: The value to assert.
-	///   - element: The element that has the value to assert against.
-	func see<ElementType: Element & ValueRepresentable>(_ value: ElementType.Value, in element: ElementType) {
-		see(element)
-		XCTAssertEqual(value, element.value)
-	}
-	
 	/// Completes one or more things that knows how to complete itself.
 	///
 	/// - Parameter completableThings: One or more Completable things. Typically, this would be a Screen that conforms to Completable.
 	func complete(_ completableThings: Completable...) {
+		guard !completableThings.isEmpty else { XCTFatalFail("You must provide at least one Completable thing to complete!") }
 		completableThings.forEach {
 			$0.await()
 			$0.complete()
@@ -62,6 +53,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Completable.
 	func dismiss(_ dismissableThings: Dismissable...) {
+		guard !dismissableThings.isEmpty else { XCTFatalFail("You must provide at least one Dismissable thing to complete!") }
 		dismissableThings.forEach {
 			$0.await()
 			$0.dismiss()

@@ -378,9 +378,9 @@
 		C3DE8E3D2328ED7B007E583B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */,
-				C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */,
 				C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */,
+				C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */,
+				C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */,
 			);
 			name = Screens;
 			path = TABTestKit/Classes/Screens;

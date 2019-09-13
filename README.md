@@ -935,9 +935,105 @@ Since `WebView` conforms to `Scrollable`, you can scroll it:
 webView.scroll(.left)
 ```
 
+### Predefined Screens
+
+TABTestKit comes with some helpful predefined screens that you can use in your tests.
+
+#### SystemSettingsRootScreen
+
+The root of the system Settings app. You can use this to navigate
+to [`SystemSettingsGeneralScreen`](#SystemSettingsGeneralScreen):
+
+```swift
+systemPreferencesRootScreen.generalCell.tap()
+```
+
+> **NOTE:** You don't have to create an instance of `SystemSettingsRootScreen`
+or other predefined screens, since they have already been created and are globally
+available anywhere in your tests.
+
+#### SystemSettingsGeneralScreen
+
+The General screen in system Settings. You can use this to
+navigate to [`SystemPreferencesResetScreen`](#SystemPreferencesResetScreen):
+
+```swift
+systemSettingsGeneralScreen.resetCell.tap()
+```
+
+#### SystemPreferencesResetScreen
+
+The Reset screen in system Settings. You can use this to reset privacy and
+permissions prompts, like Face ID permissions:
+
+```switch
+systemPreferencesResetScreen.resetCell.tap()
+confirmResetSheet.actionButton(withID: "Reset Warnings").tap()
+```
+
+### Contexts
+
+Contexts are a way to share reusable code between test cases without having to
+either make all functions globally available, or without having to have complicated
+inheritances.
+
+A context is just a protocol with pre-implemented functions, so whenever a test case
+conforms to it all those functions become available.
+
+TABTestKit comes with many predefined contexts, which `TABTestCase` already conforms
+to, so by subclassing TABTestCase, you'll automatically have access to a wealth of
+helper functions that work beautifully with [steps and secenarios](#steps-and-scenarios), and [`Element`](#element) and other protocols
+
+Most of the time, you won't even have to write any extra functions yourself, making it
+ridiculously fast for you to get automation for your project running.
+
+#### NavigationContext
+
+`NavigationContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`NavigationContext` provides helper functions for navigating through the app:
+
+#### Asserting whether screens are visible
+
+Using `NavigationContext`, you can assert whether any [`Screen`](#screen) is visible:
+
+```swift
+see(myScreen)
+doNotSee(myScreen)
+```
+
+#### Asserting whether elements are visible
+
+Using `NavigationContext`, you can assert whether any [`Element`](#element) is visible:
+
+```swift
+see(myScreen.button)
+doNotSee(myScreen.button)
+```
+
+#### Completing and Dismissing
+
+Using `NavigationContext`, you can complete and dismiss anything that conforms
+to [`Completable`](#completable) and [`Dismissable`](#dismissable)
+
+```swift
+complete(myScreen)
+dismiss(myScreen)
+
+dismiss(myScreen.alert)
+```
+
+You can also pass any number of `Completable` or `Dismissable` things into the function, which makes it possible for you to build up a flow through the app really
+easily:
+
+```swift
+complete(nameScreen, birthDateScren, usernameScreen)
+```
+
 ## Requirements
 
-TABTestKit has no dependencies and supports iOS 10 and newer. 🎉
+TABTestKit has **no dependencies** and supports **iOS 10** and newer. 🎉
 
 ## Installation
 
@@ -960,7 +1056,7 @@ To use the version under development you can target the `develop` branch specifi
 pod 'TABTestKit' # TODO: Target branch
 ```
 
-### Subspecs
+#### Subspecs
 
 There's 1 subspec available: `Biometrics`. This means you can get a subset of `TABTestKit`'s functionality.
 
