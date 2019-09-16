@@ -10,6 +10,9 @@
 **TABTestKit** is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
 which helps reduce flakiness and lowers the barrier to entry for most people.
 
+**TABTestKit** also makes it possible to reliably automate iOS [biometrics](#biometrics) for
+the first time ever.
+
 ```swift
 func test_login() {
   Scenario("Register for the app") {
@@ -94,6 +97,7 @@ func test_login() {
     - [`SystemPreferences`](#systempreferences)
     - [`Safari`](#safari)
     - [`Springboard`](#springboard)
+- [Installation](#installation)
 
 ## Quick start
 
@@ -154,16 +158,16 @@ and [Steps](#steps), as well as leverage [`Element`s](#elements) and [Contexts](
 ## Why?
 
 **TABTestKit** enables you to write **very little code** to automate the behaviours
-in your app, as well as being **extremely human readable** by leveraging powerful
-Swift features.
+in your app, as well as making your tests **extremely human readable** by
+leveraging powerful Swift features.
 
 This means the barrier to entry for Swift automation is
-essentially removed.
+hugely reduced, allowing more people on your team contribute to tests.
 
 Additionally, **TABTestKit** makes a habit to _wait_ for things, rather than asserting
 immediately, which **massively reduces flakiness in your tests**.
 
-Unlike XCTest, where every XCUIElement can be tapped, adjusted, typed into or scrolled,
+Unlike XCTest, where every `XCUIElement` can be tapped, adjusted, typed into or scrolled,
 regardless of whether it's adjustable etc, **TABTestKit** has specific elements that
 represent common UIKit and AppKit elements, like [`Button`](#button), [`Slider`](#slider)
 and [`ScrollView`](#scrollview).
@@ -171,13 +175,13 @@ and [`ScrollView`](#scrollview).
 **TABTestKit** comes with most common elements out the box, but is also **completely customisable**,
 either by [creating your own custom elements](#creating-your-own-elements), or by [extending existing elements](#extending-existing-elements).
 
-The framework is intended to make it so easy to write automation, but also make
-it difficult to write bad, flaky automation, or make mistakes.
+The framework is intended to make it as quick as possible to write automation,
+but also make it difficult to write bad, flaky automation, or make mistakes.
 
 For example, **TABTestKit** introduces the concept of `parent` elements, so that you're
 always trying to reference the correct element within the appropriate parent.
 This becomes really important when matching buttons by their labels, where you could
-have multiple buttons on screen with the same text (i.e. on the screen and in an alert, like `"OK"`).
+have multiple views with the same text (i.e. on the screen and in an alert, like `"OK"`).
 
 **TABTestKit** also provides a BDD-style approach to writing tests, which mean you
 can write [Steps](#steps), grouped inside [Scenarios](#scenarios), which means
@@ -192,7 +196,8 @@ automation with essentially no custom code.
 
 ## Usage
 
-There are several components to **TABTestKit**, which you can pick and choose to use.
+There are several components to **TABTestKit**, which you can pick and choose
+to use (although we think you should use all of it 😁).
 
 ### TABTestCase
 
@@ -219,14 +224,14 @@ mock server's responses for each running instance.
 > **NOTE:** you can query the UUID in your app at any time using `ProcessInfo.process.environment["TABTestKit.UUID"]`
 
 `TABTestCase` automatically launches and terminates your app at the start and end
-of each test. You can delay the launch or termination to provide extra setup (like
-resetting a mock server), by overriding `preLaunchSetup` or `preTerminationTearDown`:
+of each test. You can delay the launch or termination to provide extra setup or
+teardown (like resetting a mock server), by overriding `preLaunchSetup` or `preTerminationTearDown`:
 
 ```swift
 class MyTestCase: TABTestCase {
 
   override func preLaunchSetup(_ launch: @escaping () -> Void) {
-    // Some pre-launc setup code
+    // Some pre-launch setup code
     launch()
   }
 
@@ -246,8 +251,8 @@ need to force the tests to wait until the task is complete, by using `XCTWaiter`
 A huge part in making your tests human readable and they're approachable by everyone,
 is to write them as [Steps](#steps) and [Scenarios](#scenarios).
 
-Steps & Scenarios are a core part of what makes **TABTestKit** so great, and since
-the framework is so flexible, you can choose to just use Steps & Scenarios without
+Steps and Scenarios are a core part of what makes **TABTestKit** unique, and since
+the framework is so flexible, you can choose to just use Steps and Scenarios without
 the rest of **TABTestKit**, if you prefer.
 
 #### Steps
@@ -289,11 +294,15 @@ automatically by the step at the right time.
 
 What's really nice, is that you can **pass a function by reference**, which essentially
 means you can drop the `()` for step functions that have no parameters, which makes your
-code read even more like a regular sentence.
+code read even more like a regular sentence:
+
+```swift
+When(I: logIn)) // Instead of When(I: logIn()))
+```
 
 #### Scenarios
 
-Scenarios wrap groups of steps into logical groups, with a description, so that
+Scenarios wrap steps into logical groups, with a description, so that
 you can skim read your test functions to find the area of code you're looking for:
 
 ```swift
@@ -314,18 +323,21 @@ func test_serverErrorLoggingIn() {
 
 ### Biometrics
 
-**TABTestKit** makes it possible and very easy to automate iOS biometrics in the simulator.
+Another exclusive feature of **TABTestKit** is that it makes it possible (and very
+easy!) to automation iOS biometrics in the simulator.
 
-You can enable or disable device biometrics:
+
+#### Enabling and disabling device biometrics
 
 ```swift
 Biometrics.enrolled()
 Biometrics.unenrolled()
 ```
 
-> **NOTE:** The term "enrolment" comes from the Simulator menu options to enable or disable biometrics.
+> **NOTE:** The term "enrolment" comes from the Simulator menu options to
+enable or disable biometrics.
 
-You can also simulate a successful or unsuccessful authentication:
+#### Simulating successful or failed biometric authentication
 
 ```swift
 Biometrics.successfulAuthentication()
@@ -357,9 +369,9 @@ struct ProfileScreen: Screen {
 }
 ```
 
-A Screen has one required property for you to implement, which is its trait. A
-trait any [Element](#elements) that consistently identifies the screen, and is used to `await`
-for it to appear on-screen during tests when using [contexts](#contexts).
+A `Screen` has one required property for you to implement, which is its `trait`. A
+`trait` can be any [Element](#elements) that consistently, and uniquely,
+identifies the screen, and is used to `await` for it to appear on-screen during tests when using [contexts](#contexts).
 
 #### Elements
 
@@ -392,7 +404,7 @@ profileScreen.await() // Makes sure the screen is visible before going any furth
 profileScreen.logOutButton.tap() // You can't call tap on an element that isn't `Tappable`, but `Button` is!
 ```
 
-All elements conform to the `Element` protocol which ensures that every element
+All elements conform to the [`Element`](#element) protocol, which ensures that every element
 has a parent element (defaults to the `App`), underlying `type`, `index` (defaults to `0`),
 and has an optional ID.
 
@@ -1613,7 +1625,7 @@ To use the latest version of **TABTestKit** just add this to your `Podfile` and
 run `pod update` or `pod install` in Terminal:
 
 ```ruby
-pod '**TABTestKit**'
+pod 'TABTestKit'
 ```
 
 #### Development
@@ -1621,16 +1633,43 @@ pod '**TABTestKit**'
 To use the version under development you can target the `develop` branch specifically:
 
 ```ruby
-pod '**TABTestKit**', :git => 'https://github.com/theappbusiness/**TABTestKit**.git', :branch => 'develop'
+pod 'TABTestKit', :git => 'https://github.com/theappbusiness/TABTestKit.git', :branch => 'develop'
 ```
 
 #### Subspecs
 
-There's 1 subspec available: `Biometrics`. This means you can get a subset of `**TABTestKit**`'s functionality.
+There are a number of Cocoapod subspecs available. This means you can get a
+subset of `**TABTestKit**`'s functionality if, for example, you only want to
+use the biometrics automation capabilities of the framework.
+
+##### Biometrics Subspec
+
+Use this subspec to just install the biometric automation capabilities of **TABTestKit**:
 
 ```ruby
-pod '**TABTestKit**/Biometrics'
+pod 'TABTestKit/Biometrics'
 ```
+
+##### BDD Subspec
+
+Use this subspec to just install the BDD steps and scenarios capabilities of **TABTestKit**:
+
+```ruby
+pod 'TABTestKit/BDD'
+```
+
+##### XCUIExtensions Subspec
+
+Use this subspec to just install the XCTest/XCUI extensions **TABTestKit** uses:
+
+```ruby
+pod 'TABTestKit/XCUIExtensions'
+```
+
+### Swift Package Manager
+
+**TABTestKit** does not yet support SPM, please feel free to open a PR to add
+support if your project needs it!
 
 ## Contributing
 
@@ -1641,6 +1680,7 @@ Guidelines for contributing can be found [here](CONTRIBUTING.md).
 Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
 Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
 Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire
+Suyash Srijan, suyash.srijan@theappbuisness.com, https://github.com/theblixguy
 
 ## License
 
