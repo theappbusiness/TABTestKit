@@ -51,9 +51,9 @@ public extension NavigationContext {
 	
 	/// Dismisses one or more things that knows how to complete itself.
 	///
-	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Completable.
+	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Dismissable.
 	func dismiss(_ dismissableThings: Dismissable...) {
-		guard !dismissableThings.isEmpty else { XCTFatalFail("You must provide at least one Dismissable thing to complete!") }
+		guard !dismissableThings.isEmpty else { XCTFatalFail("You must provide at least one Dismissable thing to dismizs!") }
 		dismissableThings.forEach {
 			$0.await()
 			$0.dismiss()
