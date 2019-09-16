@@ -1,5 +1,5 @@
 //
-//  SystemSettingsResetScreen.swift
+//  SystemPreferencesResetScreen.swift
 //  TABTestKit
 //
 //  Created by Kane Cheshire on 10/09/2019.

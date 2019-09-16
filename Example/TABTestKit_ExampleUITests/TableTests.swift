@@ -27,8 +27,8 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Scrolling to more elements") {
       Given(I: tap(tableSelectionScreen.backButton))
-      And(I: scroll(tableScreen, .downwards, until: tableScreen.section1Header, .visible))
-      And(I: scroll(tableScreen, .downwards, until: tableScreen.lastCell, .visible))
+      And(I: scroll(tableScreen, .downwards, until: tableScreen.section1Header, is: .visible))
+      And(I: scroll(tableScreen, .downwards, until: tableScreen.lastCell, is: .visible))
       When(I: tap(tableScreen.lastCell))
       Then(I: see(tableSelectionScreen))
       And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))

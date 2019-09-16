@@ -18,6 +18,10 @@ public extension InteractionContext {
 		element.type(text)
 	}
 	
+	func delete(_ numberOfCharacters: Int, charactersFrom element: Editable) {
+		element.delete(numberOfCharacters: numberOfCharacters)
+	}
+	
 	func state(of element: Element, is states: ElementAttributes.State...) {
 		states.forEach { element.await($0) }
 	}
@@ -26,7 +30,7 @@ public extension InteractionContext {
 		states.forEach { element.await(not: $0) }
 	}
 	
-	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, _ state: ElementAttributes.State, maxTries: Int = 10) {
+	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, is state: ElementAttributes.State, maxTries: Int = 10) {
 		var numberOfTries = 0
 		repeat {
 			guard !otherElement.determine(state, timeout: 1) else { return }

@@ -23,7 +23,8 @@
 		C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D69F2327CD52001AB082 /* SheetContext.swift */; };
 		C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */; };
 		C326D6AF2327ECE2001AB082 /* XCUIDevice+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6AE2327ECE2001AB082 /* XCUIDevice+frame.swift */; };
-		C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* ViewController.swift */; };
+		C3590CAE232BD4AC006EE1C2 /* Adjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3590CAC232BD4A8006EE1C2 /* Adjustable.swift */; };
+		C36FD68D2326663200D7CED6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6892326663200D7CED6 /* View.swift */; };
 		C36FD6902326663200D7CED6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68C2326663200D7CED6 /* Button.swift */; };
 		C36FD6942326664900D7CED6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6922326664900D7CED6 /* Step.swift */; };
 		C36FD6952326664900D7CED6 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6932326664900D7CED6 /* Scenario.swift */; };
@@ -57,9 +58,9 @@
 		C3DE8E3A2328ED34007E583B /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD68A2326663200D7CED6 /* Tappable.swift */; };
 		C3DE8E3B2328ED34007E583B /* CellContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30B01442326B4A900A9EB87 /* CellContaining.swift */; };
 		C3DE8E3C2328ED34007E583B /* ValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6B02327F08E001AB082 /* ValueRepresentable.swift */; };
-		C3DE8E412328ED7B007E583B /* SystemSettingsResetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */; };
-		C3DE8E422328ED7B007E583B /* SystemSettingsGeneralScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */; };
-		C3DE8E432328ED7B007E583B /* SystemSettingsRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */; };
+		C3DE8E412328ED7B007E583B /* SystemPreferencesResetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3E2328ED7B007E583B /* SystemPreferencesResetScreen.swift */; };
+		C3DE8E422328ED7B007E583B /* SystemPreferencesGeneralScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E3F2328ED7B007E583B /* SystemPreferencesGeneralScreen.swift */; };
+		C3DE8E432328ED7B007E583B /* systemPreferencesRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E402328ED7B007E583B /* systemPreferencesRootScreen.swift */; };
 		C3DE8E51232A5FDA007E583B /* XCTFatalFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E50232A5FDA007E583B /* XCTFatalFail.swift */; };
 		C3DE8E53232A740C007E583B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E52232A740C007E583B /* WebView.swift */; };
 		C3DE8E55232A7499007E583B /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E54232A7499007E583B /* SegmentedControl.swift */; };
@@ -116,7 +117,8 @@
 		C326D6AE2327ECE2001AB082 /* XCUIDevice+frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIDevice+frame.swift"; sourceTree = "<group>"; };
 		C326D6B02327F08E001AB082 /* ValueRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
 		C3401E5FD6A0604F2EA62FFA760732D8 /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C36FD6892326663200D7CED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3590CAC232BD4A8006EE1C2 /* Adjustable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjustable.swift; sourceTree = "<group>"; };
+		C36FD6892326663200D7CED6 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		C36FD68A2326663200D7CED6 /* Tappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
 		C36FD68B2326663200D7CED6 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		C36FD68C2326663200D7CED6 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -148,9 +150,9 @@
 		C3DE8E282328E9AF007E583B /* Completable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
 		C3DE8E292328E9AF007E583B /* Dismissable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 		C3DE8E2A2328E9AF007E583B /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsResetScreen.swift; sourceTree = "<group>"; };
-		C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsGeneralScreen.swift; sourceTree = "<group>"; };
-		C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettingsRootScreen.swift; sourceTree = "<group>"; };
+		C3DE8E3E2328ED7B007E583B /* SystemPreferencesResetScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesResetScreen.swift; sourceTree = "<group>"; };
+		C3DE8E3F2328ED7B007E583B /* SystemPreferencesGeneralScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesGeneralScreen.swift; sourceTree = "<group>"; };
+		C3DE8E402328ED7B007E583B /* systemPreferencesRootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = systemPreferencesRootScreen.swift; sourceTree = "<group>"; };
 		C3DE8E50232A5FDA007E583B /* XCTFatalFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTFatalFail.swift; sourceTree = "<group>"; };
 		C3DE8E52232A740C007E583B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		C3DE8E54232A7499007E583B /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -294,14 +296,14 @@
 			isa = PBXGroup;
 			children = (
 				C36FD6C42326763400D7CED6 /* Attributes.swift */,
-				C36FD6892326663200D7CED6 /* ViewController.swift */,
+				C36FD6892326663200D7CED6 /* View.swift */,
 				C36FD6B1232673A800D7CED6 /* Header.swift */,
 				C36FD6B3232673C600D7CED6 /* Label.swift */,
 				C36FD68C2326663200D7CED6 /* Button.swift */,
 				C36FD6B5232673D300D7CED6 /* ScrollView.swift */,
+				C36FD6B7232673E000D7CED6 /* Table.swift */,
 				C36FD6B9232673F000D7CED6 /* CollectionView.swift */,
 				C3AC13852328DAD3002A0F54 /* Cell.swift */,
-				C36FD6B7232673E000D7CED6 /* Table.swift */,
 				C36FD6BB2326740A00D7CED6 /* TextField.swift */,
 				C30B01392326AB1800A9EB87 /* SecureTextField.swift */,
 				C36FD6BD2326741700D7CED6 /* TextView.swift */,
@@ -309,12 +311,12 @@
 				C36FD6C12326743D00D7CED6 /* TabBar.swift */,
 				C30B013E2326AF0B00A9EB87 /* Alert.swift */,
 				C326D6912327C5E1001AB082 /* Sheet.swift */,
-				C3DE8E52232A740C007E583B /* WebView.swift */,
-				C3DE8E54232A7499007E583B /* SegmentedControl.swift */,
+				C3DE8E5A232A7529007E583B /* Switch.swift */,
 				C3DE8E56232A74E6007E583B /* Slider.swift */,
 				C3DE8E58232A7509007E583B /* Stepper.swift */,
-				C3DE8E5A232A7529007E583B /* Switch.swift */,
+				C3DE8E54232A7499007E583B /* SegmentedControl.swift */,
 				C3DE8E5C232A753F007E583B /* PageIndicator.swift */,
+				C3DE8E52232A740C007E583B /* WebView.swift */,
 			);
 			name = Elements;
 			path = TABTestKit/Classes/Elements;
@@ -336,9 +338,9 @@
 				C36FD69E2326676C00D7CED6 /* NavigationContext.swift */,
 				C36FD69F2326676C00D7CED6 /* InteractionContext.swift */,
 				C36FD6C823267BA700D7CED6 /* AppContext.swift */,
-				C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */,
 				C30B01402326AF7A00A9EB87 /* AlertContext.swift */,
 				C326D69F2327CD52001AB082 /* SheetContext.swift */,
+				C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */,
 				C326D6A12327CDCC001AB082 /* SystemPreferencesContext.swift */,
 			);
 			name = Contexts;
@@ -361,15 +363,16 @@
 		C3DE8E272328E9AF007E583B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				C3DE8E2A2328E9AF007E583B /* Screen.swift */,
 				C3DE8E282328E9AF007E583B /* Completable.swift */,
 				C3DE8E292328E9AF007E583B /* Dismissable.swift */,
-				C3DE8E2A2328E9AF007E583B /* Screen.swift */,
 				C36FD68B2326663200D7CED6 /* Element.swift */,
+				C36FD68A2326663200D7CED6 /* Tappable.swift */,
 				C36FD6AF2326730A00D7CED6 /* Editable.swift */,
 				C36FD6C62326790400D7CED6 /* Scrollable.swift */,
-				C36FD68A2326663200D7CED6 /* Tappable.swift */,
-				C30B01442326B4A900A9EB87 /* CellContaining.swift */,
 				C326D6B02327F08E001AB082 /* ValueRepresentable.swift */,
+				C3590CAC232BD4A8006EE1C2 /* Adjustable.swift */,
+				C30B01442326B4A900A9EB87 /* CellContaining.swift */,
 			);
 			name = Protocols;
 			path = TABTestKit/Classes/Protocols;
@@ -378,9 +381,9 @@
 		C3DE8E3D2328ED7B007E583B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				C3DE8E3E2328ED7B007E583B /* SystemSettingsResetScreen.swift */,
-				C3DE8E3F2328ED7B007E583B /* SystemSettingsGeneralScreen.swift */,
-				C3DE8E402328ED7B007E583B /* SystemSettingsRootScreen.swift */,
+				C3DE8E402328ED7B007E583B /* systemPreferencesRootScreen.swift */,
+				C3DE8E3F2328ED7B007E583B /* SystemPreferencesGeneralScreen.swift */,
+				C3DE8E3E2328ED7B007E583B /* SystemPreferencesResetScreen.swift */,
 			);
 			name = Screens;
 			path = TABTestKit/Classes/Screens;
@@ -536,7 +539,7 @@
 				C36FD6B2232673A800D7CED6 /* Header.swift in Sources */,
 				C36FD6C923267BA700D7CED6 /* AppContext.swift in Sources */,
 				C36FD6B6232673D300D7CED6 /* ScrollView.swift in Sources */,
-				C3DE8E432328ED7B007E583B /* SystemSettingsRootScreen.swift in Sources */,
+				C3DE8E432328ED7B007E583B /* systemPreferencesRootScreen.swift in Sources */,
 				C30B013D2326AD1F00A9EB87 /* XCUIElement+isVisible.swift in Sources */,
 				C3DE8E51232A5FDA007E583B /* XCTFatalFail.swift in Sources */,
 				C326D6A22327CDCC001AB082 /* SystemPreferencesContext.swift in Sources */,
@@ -546,8 +549,8 @@
 				C36FD6D7232680B700D7CED6 /* Safari.swift in Sources */,
 				C36FD6BE2326741700D7CED6 /* TextView.swift in Sources */,
 				C3DE8E53232A740C007E583B /* WebView.swift in Sources */,
-				C3DE8E422328ED7B007E583B /* SystemSettingsGeneralScreen.swift in Sources */,
-				C36FD68D2326663200D7CED6 /* ViewController.swift in Sources */,
+				C3DE8E422328ED7B007E583B /* SystemPreferencesGeneralScreen.swift in Sources */,
+				C36FD68D2326663200D7CED6 /* View.swift in Sources */,
 				C36FD6A02326676C00D7CED6 /* NavigationContext.swift in Sources */,
 				C36FD6BA232673F000D7CED6 /* CollectionView.swift in Sources */,
 				C326D6AF2327ECE2001AB082 /* XCUIDevice+frame.swift in Sources */,
@@ -578,11 +581,12 @@
 				C326D6A02327CD52001AB082 /* SheetContext.swift in Sources */,
 				F785827A6F363207A87B0DDF8B435B10 /* TABTestKit-dummy.m in Sources */,
 				C3DE8E362328ED34007E583B /* Screen.swift in Sources */,
-				C3DE8E412328ED7B007E583B /* SystemSettingsResetScreen.swift in Sources */,
+				C3DE8E412328ED7B007E583B /* SystemPreferencesResetScreen.swift in Sources */,
 				C36FD6D9232680B700D7CED6 /* App.swift in Sources */,
 				C36FD6B8232673E000D7CED6 /* Table.swift in Sources */,
 				C36FD6BC2326740A00D7CED6 /* TextField.swift in Sources */,
 				86FC9769E428EB5072CF0ED3BFA7AAED /* TABTestCase.swift in Sources */,
+				C3590CAE232BD4AC006EE1C2 /* Adjustable.swift in Sources */,
 				C3DE8E55232A7499007E583B /* SegmentedControl.swift in Sources */,
 				C3DE8E3C2328ED34007E583B /* ValueRepresentable.swift in Sources */,
 				C36FD6902326663200D7CED6 /* Button.swift in Sources */,

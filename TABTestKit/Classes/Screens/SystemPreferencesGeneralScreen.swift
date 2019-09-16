@@ -1,5 +1,5 @@
 //
-//  SystemSettingsGeneralScreen.swift
+//  SystemPreferencesGeneralScreen.swift
 //  TABTestKit
 //
 //  Created by Kane Cheshire on 10/09/2019.

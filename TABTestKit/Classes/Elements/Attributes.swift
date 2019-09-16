@@ -16,7 +16,7 @@ public enum ElementAttributes {
 		case hittable
 		case visible
 		case selected
-		case enabled
+		case enabled // TODO: hasKeyboardFocus
 		
 	}
 
