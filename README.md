@@ -2,10 +2,10 @@
 
 # TABTestKit
 
-[![Build Status](https://travis-ci.org/theappbusiness/**TABTestKit**.svg?branch=master)](https://travis-ci.org/theappbusiness/**TABTestKit**)
-[![Version](https://img.shields.io/cocoapods/v/**TABTestKit**.svg?style=flat)](http://cocoapods.org/pods/**TABTestKit**)
-[![License](https://img.shields.io/cocoapods/l/**TABTestKit**.svg?style=flat)](http://cocoapods.org/pods/**TABTestKit**)
-[![Platform](https://img.shields.io/cocoapods/p/**TABTestKit**.svg?style=flat)](http://cocoapods.org/pods/**TABTestKit**)
+[![Build Status](https://travis-ci.org/theappbusiness/TABTestKit.svg?branch=develop)](https://travis-ci.org/theappbusiness/TABTestKit)
+[![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
+[![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
+[![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
 **TABTestKit** is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
 which helps reduce flakiness and lowers the barrier to entry for most people.
@@ -37,8 +37,8 @@ func test_login() {
 - [Usage](#usage)
   - [`TABTestCase`](#tabtestcase)
   - [Steps & Scenarios](#steps-and-scenarios)
-    - [`Step`s](#steps)
-    - [`Scenario`s](#scenarios)
+    - [`Steps`](#steps)
+    - [`Scenarios`](#scenarios)
   - [Biometrics](#biometrics)
   - [Screens & Elements](#screens--elements)
     - [Screens](#screens)
