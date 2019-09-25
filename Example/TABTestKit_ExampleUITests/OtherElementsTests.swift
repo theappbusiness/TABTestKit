@@ -85,6 +85,13 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
       Given(I: see(otherElementsScreen.pageIndicator))
       Then(the: value(of: otherElementsScreen.pageIndicator, is: "page 1 of 3"))
     }
+    
+    Scenario("Seeing and interacting with the picker") {
+      Given(I: see(otherElementsScreen.picker))
+      And(the: value(of: otherElementsScreen.picker.wheel(0), is: "Hello"))
+      When(I: adjust(otherElementsScreen.picker.wheel(0), to: "World"))
+      Then(the: value(of: otherElementsScreen.picker.wheel(0), is: "World"))
+    }
   }
   
 }

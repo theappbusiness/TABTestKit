@@ -66,6 +66,7 @@ func test_login() {
       - [`Slider`](#slider)
       - [`Stepper`](#stepper)
       - [`SegmentedControl`](#segmentedcontrol)
+      - [`Picker`](#picker)
       - [`PageIndicator`](#pageindicator)
       - [`WebView`](#webview)
     - [Predefined Screens](#predefined-screens)
@@ -1019,6 +1020,35 @@ referencing the correct button on screen:
 
 ```swift
 segmentedControl.button(withID: "Segment 2").tap()
+```
+
+#### Picker
+
+`Picker` represents a picker in the app:
+
+```swift
+let picker = Picker(id: "MyPicker")
+```
+
+You don't interact with the picker directly, instead you interact with the wheels
+inside the picker. To interact with a wheel, first ask the picker for it:
+
+```swift
+let wheel = picker.wheel(0)
+```
+
+Since a `Picker`'s `Wheel` conforms to [`ValueRepresentable`](#valuerepresentable),
+you can get the string value:
+
+```swift
+XCTAssertEqual(wheel.value, "The value")
+```
+
+Since a `Picker`'s `Wheel` also conforms to [`Adjustable`](#adjustable), you can
+adjust the value to another `String`:
+
+```swift
+wheel.adjust(to: "New value")
 ```
 
 #### PageIndicator

@@ -47,6 +47,7 @@
 		C36FD6D9232680B700D7CED6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6D5232680B700D7CED6 /* App.swift */; };
 		C36FD6DD2326852A00D7CED6 /* Springboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6DC2326852A00D7CED6 /* Springboard.swift */; };
 		C36FD6DF232685AF00D7CED6 /* BiometricsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */; };
+		C3A91977233BD9C8003D2789 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A91975233BD9B2003D2789 /* Picker.swift */; };
 		C3AC13872328DADC002A0F54 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC13852328DAD3002A0F54 /* Cell.swift */; };
 		C3B1BC3E2322B00E00CBBA7C /* XCUIElement+wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */; };
 		C3DE8E342328ED34007E583B /* Completable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DE8E282328E9AF007E583B /* Completable.swift */; };
@@ -145,6 +146,7 @@
 		C36FD6D5232680B700D7CED6 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		C36FD6DC2326852A00D7CED6 /* Springboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
 		C36FD6DE232685AF00D7CED6 /* BiometricsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsContext.swift; sourceTree = "<group>"; };
+		C3A91975233BD9B2003D2789 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		C3AC13852328DAD3002A0F54 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		C3B1BC3D2322B00E00CBBA7C /* XCUIElement+wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+wait.swift"; sourceTree = "<group>"; };
 		C3DE8E282328E9AF007E583B /* Completable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				C3DE8E56232A74E6007E583B /* Slider.swift */,
 				C3DE8E58232A7509007E583B /* Stepper.swift */,
 				C3DE8E54232A7499007E583B /* SegmentedControl.swift */,
+				C3A91975233BD9B2003D2789 /* Picker.swift */,
 				C3DE8E5C232A753F007E583B /* PageIndicator.swift */,
 				C3DE8E52232A740C007E583B /* WebView.swift */,
 			);
@@ -585,6 +588,7 @@
 				C36FD6D9232680B700D7CED6 /* App.swift in Sources */,
 				C36FD6B8232673E000D7CED6 /* Table.swift in Sources */,
 				C36FD6BC2326740A00D7CED6 /* TextField.swift in Sources */,
+				C3A91977233BD9C8003D2789 /* Picker.swift in Sources */,
 				86FC9769E428EB5072CF0ED3BFA7AAED /* TABTestCase.swift in Sources */,
 				C3590CAE232BD4AC006EE1C2 /* Adjustable.swift in Sources */,
 				C3DE8E55232A7499007E583B /* SegmentedControl.swift in Sources */,

@@ -22,5 +22,6 @@ struct OtherElementsScreen: Screen {
   let toggle = Switch(id: "ExampleSwitch")
   let stepper = Stepper(id: "ExampleStepper")
   let pageIndicator = PageIndicator(id: "ExamplePageControl")
+  let picker = Picker(id: "ExamplePicker")
   
 }

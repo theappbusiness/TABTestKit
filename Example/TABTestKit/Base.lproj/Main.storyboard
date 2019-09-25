@@ -151,10 +151,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfG-gN-IGv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="393.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="625.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Ik-w7v">
-                                                <rect key="frame" x="32" y="0.0" width="311" height="393.5"/>
+                                                <rect key="frame" x="32" y="0.0" width="311" height="625.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-u4-09J">
                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
@@ -223,6 +223,9 @@
                                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </pageControl>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufc-9Z-WSb">
+                                                        <rect key="frame" x="0.0" y="409.5" width="311" height="216"/>
+                                                    </pickerView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -258,6 +261,7 @@
                         <outlet property="button" destination="qtX-qz-K6y" id="uki-Ua-0gn"/>
                         <outlet property="label" destination="T3E-u4-09J" id="XIT-Qw-tLK"/>
                         <outlet property="pageControl" destination="RGo-Lu-9y4" id="ohR-nj-Qg5"/>
+                        <outlet property="picker" destination="ufc-9Z-WSb" id="D8y-He-x13"/>
                         <outlet property="secureTextField" destination="vtL-Iw-IH2" id="QH7-WW-H3W"/>
                         <outlet property="segmentedControl" destination="Lbh-uE-7oV" id="flT-QD-Vld"/>
                         <outlet property="segmentedControlContainerView" destination="kY2-0d-g5B" id="DtH-Ty-FaR"/>
