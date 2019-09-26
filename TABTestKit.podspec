@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TABTestKit'
-  s.version          = '0.5.0'
-  s.summary          = 'Base to work off of for XCUI.'
+  s.version          = '0.6.0'
+  s.summary          = 'Strongly typed Swift wrapper around XCTest / XCUI, enabling you to write BDD-style, human readable automation tests, without writing much code at all.'
   s.homepage         = 'https://github.com/theappbusiness/TABTestKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = { 'zacoid55' => 'zac@theappbusiness.com',
@@ -14,5 +14,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Biometrics' do |b|
     b.source_files = 'TABTestKit/Classes/Biometrics/**/*'
+  end
+  s.subspec 'BDD' do |b|
+    b.source_files = 'TABTestKit/Classes/BDD/**/*'
+  end
+  s.subspec 'XCUIExtensions' do |b|
+    b.source_files = 'TABTestKit/Classes/Extensions/**/*'
   end
 end

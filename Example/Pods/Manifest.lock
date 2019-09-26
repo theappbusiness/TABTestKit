@@ -1,7 +1,11 @@
 PODS:
-  - TABTestKit (0.5.0):
-    - TABTestKit/Biometrics (= 0.5.0)
-  - TABTestKit/Biometrics (0.5.0)
+  - TABTestKit (0.6.0):
+    - TABTestKit/BDD (= 0.6.0)
+    - TABTestKit/Biometrics (= 0.6.0)
+    - TABTestKit/XCUIExtensions (= 0.6.0)
+  - TABTestKit/BDD (0.6.0)
+  - TABTestKit/Biometrics (0.6.0)
+  - TABTestKit/XCUIExtensions (0.6.0)
 
 DEPENDENCIES:
   - TABTestKit (from `../`)
@@ -11,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TABTestKit: a5f7f55733973c2a743751a60490bae89693f523
+  TABTestKit: 1b9135eca8cb5c50a6ffb215655b63f04810a3fa
 
 PODFILE CHECKSUM: 2287bc227af6697b9a9273b1974b8f98749ae630
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5
