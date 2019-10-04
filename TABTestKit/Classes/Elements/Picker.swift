@@ -56,7 +56,6 @@ public extension Picker {
 		public func adjust(to newValue: String) {
 			guard newValue != value else { XCTFatalFail("Picker is already in state \(newValue)") }
 			underlyingXCUIElement.adjust(toPickerWheelValue: newValue)
-			XCTAssert(underlyingXCUIElement.wait(for: newValue == value, timeout: 1))
 		}
 		
 	}
