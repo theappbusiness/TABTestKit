@@ -48,7 +48,7 @@ public extension Picker {
 		public let type: XCUIElement.ElementType = .pickerWheel
 		public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 		
-		init(index: Int, picker: Picker) {
+		public init(index: Int, picker: Picker) {
 			self.index = index
 			self.parent = picker
 		}
