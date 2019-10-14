@@ -106,6 +106,8 @@ public extension Element {
 				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isSelected, timeout: timeout) else { return false }
 			case .enabled:
 				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isEnabled, timeout: timeout) else { return false }
+			case .hasKeyboardFocus:
+				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.hasKeyboardFocus, timeout: timeout) else { return false }
 			}
 		}
 		return true
@@ -135,6 +137,8 @@ public extension Element {
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isSelected, timeout: timeout) else { return false }
 			case .enabled:
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isEnabled, timeout: timeout) else { return false }
+			case .hasKeyboardFocus:
+				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.hasKeyboardFocus, timeout: timeout) else { return false }
 			}
 		}
 		return true

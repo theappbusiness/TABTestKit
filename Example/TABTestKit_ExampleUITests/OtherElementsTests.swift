@@ -42,14 +42,18 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing and interacting with the text field") {
       Given(I: see(otherElementsScreen.textField))
+      And(the: state(of: otherElementsScreen.textField, isNot: .hasKeyboardFocus))
       Then(I: tap(otherElementsScreen.textField))
+      And(the: state(of: otherElementsScreen.textField, is: .hasKeyboardFocus))
       And(I: type("Hello world", into: otherElementsScreen.textField))
       And(the: value(of: otherElementsScreen.textField, is: "Hello world"))
     }
     
     Scenario("Seeing and interacting with the secure text field") {
       Given(I: see(otherElementsScreen.secureTextField))
+      And(the: state(of: otherElementsScreen.secureTextField, isNot: .hasKeyboardFocus))
       Then(I: tap(otherElementsScreen.secureTextField))
+      And(the: state(of: otherElementsScreen.secureTextField, is: .hasKeyboardFocus))
       And(I: type("Password!", into: otherElementsScreen.secureTextField))
       And(the: value(of: otherElementsScreen.secureTextField, is: "•••••••••"))
     }
