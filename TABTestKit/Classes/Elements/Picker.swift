@@ -48,7 +48,7 @@ public extension Picker {
 		public let type: XCUIElement.ElementType = .pickerWheel
 		public var value: String { return underlyingXCUIElement.value as? String ?? "" }
 		
-		init(index: Int, picker: Picker) {
+		public init(index: Int, picker: Picker) {
 			self.index = index
 			self.parent = picker
 		}
@@ -56,7 +56,6 @@ public extension Picker {
 		public func adjust(to newValue: String) {
 			guard newValue != value else { XCTFatalFail("Picker is already in state \(newValue)") }
 			underlyingXCUIElement.adjust(toPickerWheelValue: newValue)
-			XCTAssert(underlyingXCUIElement.wait(for: newValue == value, timeout: 1))
 		}
 		
 	}
