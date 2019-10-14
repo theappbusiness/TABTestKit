@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_TABTestKit_ExampleUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_TABTestKit_ExampleUITestsVersionString[];
+FOUNDATION_EXPORT double ShowTimeVersionNumber;
+FOUNDATION_EXPORT const unsigned char ShowTimeVersionString[];
 

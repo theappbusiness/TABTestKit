@@ -15,6 +15,7 @@ public enum ElementAttributes {
 		case exists
 		case hittable
 		case visible
+		case visibleIn(Element)
 		case selected
 		case enabled // TODO: hasKeyboardFocus
 		
@@ -26,6 +27,7 @@ public enum ElementAttributes {
 		case downwards
 		case left
 		case right
+		case from(from: CGVector, to: CGVector)
 		
 	}
 	

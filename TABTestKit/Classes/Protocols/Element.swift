@@ -100,6 +100,8 @@ public extension Element {
 				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isHittable, timeout: timeout) else { return false }
 			case .visible:
 				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible(in: parent.underlyingXCUIElement), timeout: timeout) else { return false }
+			case .visibleIn(let element):
+				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isVisible(in: element.underlyingXCUIElement), timeout: timeout) else { return false }
 			case .selected:
 				guard underlyingXCUIElement.wait(for: underlyingXCUIElement.isSelected, timeout: timeout) else { return false }
 			case .enabled:
@@ -127,6 +129,8 @@ public extension Element {
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isHittable, timeout: timeout) else { return false }
 			case .visible:
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible(in: parent.underlyingXCUIElement), timeout: timeout) else { return false }
+			case .visibleIn(let element):
+				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isVisible(in: element.underlyingXCUIElement), timeout: timeout) else { return false }
 			case .selected:
 				guard underlyingXCUIElement.wait(for: !underlyingXCUIElement.isSelected, timeout: timeout) else { return false }
 			case .enabled:
