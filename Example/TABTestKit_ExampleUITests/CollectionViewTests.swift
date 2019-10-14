@@ -27,6 +27,12 @@ final class CollectionViewTests: TABTestCase, SystemPreferencesContext {
       When(I: scroll(collectionViewScreen, .from(.middle, to: .top), until: collectionViewScreen.lastCell, is: .exists, .visibleIn(collectionViewScreen.trait)))
       Then(the: state(of: collectionViewScreen.firstCell, isNot: .exists))
     }
+    
+    Scenario("Scrolling until the last cell is hidden") {
+      Given(the: state(of: collectionViewScreen.firstCell, is: .visible))
+      When(I: scroll(collectionViewScreen, .from(.middle, to: .bottom), until: collectionViewScreen.lastCell, isNot: .exists))
+      Then(the: state(of: collectionViewScreen.firstCell, is: .exists, .visibleIn(collectionViewScreen.trait)))
+    }
   }
   
 }
