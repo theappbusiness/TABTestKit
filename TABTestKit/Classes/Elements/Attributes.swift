@@ -28,7 +28,7 @@ public enum ElementAttributes {
 		case downwards
 		case left
 		case right
-		case from(from: CGVector, to: CGVector)
+		case from(CGVector, to: CGVector)
 		
 	}
 	
