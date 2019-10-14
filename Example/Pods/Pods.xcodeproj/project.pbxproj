@@ -18,7 +18,7 @@
 		1E083305AD390E0847F2B21AD2796701 /* SystemPreferencesContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C696C78C11A8264C3A4BDF39A5ADC /* SystemPreferencesContext.swift */; };
 		267805C828A9D1D94D9CACAE5C603CDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
 		27CB0A5EB157C02C3FDFCC594331324E /* ShowTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F154F0F048A7079A6F7F298FABF6912 /* ShowTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2820CCE931E307C17AD076E02DB4D005 /* CGVector+Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A41E412873C298D197EB00951DFB4 /* CGVector+Locations.swift */; };
+		2820CCE931E307C17AD076E02DB4D005 /* NormalizedCoordinate+Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A41E412873C298D197EB00951DFB4 /* NormalizedCoordinate+Locations.swift */; };
 		2BF9DFB0ED5EC1C4CBD40EA1424D8BC3 /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302D9A205FECEBDA9C66C8D2415B3F3 /* Scrollable.swift */; };
 		2EE99C7D84D72ED9F64F66E1B04F6116 /* systemPreferencesRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94251D0C4B34C9864F3ADCC5788197B /* systemPreferencesRootScreen.swift */; };
 		354CAA4E908A5F5617937510E3938601 /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF9D88E3CA020BDF49C64CB1455E8F5 /* Dismissable.swift */; };
@@ -118,14 +118,14 @@
 		17AE207B2FD67E1096C542744391C322 /* Pods-TABTestKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		1CB830EB632DA8DED42D4E33C4E59DD9 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		22C5C8451F348449247CEC2F7DA5E66A /* ShowTime-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ShowTime-Info.plist"; sourceTree = "<group>"; };
-		246C5312AD287517A78640A4FAF48421 /* ShowTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ShowTime.framework; path = ShowTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		246C5312AD287517A78640A4FAF48421 /* ShowTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShowTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28061D8B4A5060F09E692D4BC586713B /* Pods-TABTestKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TABTestKit_Example-dummy.m"; sourceTree = "<group>"; };
 		28EDCFCE25D2A4F423A9984A8257675E /* SystemPreferencesGeneralScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemPreferencesGeneralScreen.swift; sourceTree = "<group>"; };
 		2C061463250766C9C05995AB8EE63E66 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2CC54A7E2B83991F551D587C076E0E78 /* Springboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
 		2D46D0108AA6E5F7D1C9AC15DFFEAF34 /* Biometrics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Biometrics.h; sourceTree = "<group>"; };
 		2DBBDC125764D1A1EE4F868DD45A3B1C /* ScrollableScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollableScreen.swift; sourceTree = "<group>"; };
-		2E97F8EAABEDB0295C8BBA3ADB4A81C2 /* Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E97F8EAABEDB0295C8BBA3ADB4A81C2 /* Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA2B2AF292D8A97A27AAE72C7BE2CD3 /* ShowTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
 		31F6FE3DCCBF09CDE51853DA838D6AA2 /* Label.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		3A234D6F74471D41BA981C34227C56A4 /* Tappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
@@ -140,12 +140,12 @@
 		4CC300106C5B7C2C7133939964F002E8 /* TextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		4E60DD183121BEFA333CA877446D99B8 /* SheetContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SheetContext.swift; sourceTree = "<group>"; };
 		5139216F8CBB8B8A4302DD0C42FE0D19 /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
-		516836C45DBE97859AF1DD3AC2CD4B01 /* Pods_TABTestKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Example.framework; path = "Pods-TABTestKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		516836C45DBE97859AF1DD3AC2CD4B01 /* Pods_TABTestKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		549B858328CB2EF8360076242052506E /* Pods-TABTestKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TABTestKit_Example.modulemap"; sourceTree = "<group>"; };
 		5B31EA07D6D93C871FD9315577322A24 /* XCUIDevice+frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "XCUIDevice+frame.swift"; sourceTree = "<group>"; };
-		5BAA0E36B90780DE86A202B56E75C512 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5BAA0E36B90780DE86A202B56E75C512 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5C66DB5C53C8770BC00008A6926D09F0 /* Biometrics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Biometrics.m; sourceTree = "<group>"; };
-		5C817F0E0208382B131E5FFB430F8A17 /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TABTestKit.framework; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C817F0E0208382B131E5FFB430F8A17 /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC2DFC5C8B6D8380E3B64154DCADA11 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		5DFCE9176A55633289747D0A5C3C1530 /* TABTestKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TABTestKit.xcconfig; sourceTree = "<group>"; };
 		5E3C32899F623D97F42789F760EBDBCE /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		8481F12D9D787EC70B104AB108BEE5BB /* InteractionContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InteractionContext.swift; sourceTree = "<group>"; };
 		8652DDB5C51525227B7C7C8D0E464ACC /* Screen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		892A716B42B769F504B0119584AF7DCC /* Editable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
-		91A713E141A0AE4C4CB209428AB9FCBD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		91A713E141A0AE4C4CB209428AB9FCBD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		91B1EB1FAB79CE231C85712DE4D31CC0 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		91DBBBA9074878E125BDF4729DFF0238 /* SegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		942491B9B780CAA7D98EA48DD8348871 /* BaseApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseApp.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		9A180BA48581D986843345513124F339 /* Switch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		9AE6D97F4B3049149B591574F15F6523 /* Scenario.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		9D19318697025FDC8CAA6724809E230D /* Sheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FEFF9CD73B2D6723ED60BBDD46577CD /* Pods-TABTestKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		A3F9B3AEE6873539F9B3FD0F64E7DB43 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AA5A91B6C5F22C4053315ACCBEB93BB5 /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
@@ -196,10 +196,10 @@
 		C836E04E0871D7C960060EBBB6A44C7F /* Slider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		CBA3199C63C53E992A3F26F5ADCBB639 /* Pods-TABTestKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Example-Info.plist"; sourceTree = "<group>"; };
 		CDF92AAC324385EF0A2309953A6E88B0 /* Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		D27A41E412873C298D197EB00951DFB4 /* CGVector+Locations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGVector+Locations.swift"; sourceTree = "<group>"; };
+		D27A41E412873C298D197EB00951DFB4 /* NormalizedCoordinate+Locations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NormalizedCoordinate+Locations.swift"; sourceTree = "<group>"; };
 		D3233A450DBBE182300E313DA919CE02 /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		D3A9FE99C2C9A693D20C41958493223D /* Stepper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
-		D4B5A8D376D2E8390D50A6517B31F5AB /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D4B5A8D376D2E8390D50A6517B31F5AB /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D779C99F3DDA9287A4F19779069D1806 /* XCUIElement+hasKeyboardFocus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "XCUIElement+hasKeyboardFocus.swift"; sourceTree = "<group>"; };
 		D91697A4C924A43E928391A7C6572D54 /* Completable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
 		DD14334364AC631CA7ED5C4E547A42D5 /* CellContaining.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellContaining.swift; sourceTree = "<group>"; };
@@ -392,7 +392,6 @@
 				2EA2B2AF292D8A97A27AAE72C7BE2CD3 /* ShowTime.swift */,
 				0186B7411BA582987910732F105ABB53 /* Support Files */,
 			);
-			name = ShowTime;
 			path = ShowTime;
 			sourceTree = "<group>";
 		};
@@ -467,7 +466,7 @@
 		C009E6417B4E5BDF39856F399BC3111D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D27A41E412873C298D197EB00951DFB4 /* CGVector+Locations.swift */,
+				D27A41E412873C298D197EB00951DFB4 /* NormalizedCoordinate+Locations.swift */,
 				4464E10C03EEA924D2A0044FD0063131 /* XCTFatalFail.swift */,
 				5B31EA07D6D93C871FD9315577322A24 /* XCUIDevice+frame.swift */,
 				D779C99F3DDA9287A4F19779069D1806 /* XCUIElement+hasKeyboardFocus.swift */,
@@ -732,7 +731,7 @@
 				BFCFED22364D8E0D39480BC6F629FCC7 /* Button.swift in Sources */,
 				B7DB8E3F704126E46BBA74486EAA7C93 /* Cell.swift in Sources */,
 				9CEB4FE53086955700E25AF127F7F157 /* CellContaining.swift in Sources */,
-				2820CCE931E307C17AD076E02DB4D005 /* CGVector+Locations.swift in Sources */,
+				2820CCE931E307C17AD076E02DB4D005 /* NormalizedCoordinate+Locations.swift in Sources */,
 				7C0B0ECA56A9C1E7C04BE1CD8E3DD503 /* CollectionView.swift in Sources */,
 				AD3692419CD6F3BE56D94E188B55F067 /* Completable.swift in Sources */,
 				354CAA4E908A5F5617937510E3938601 /* Dismissable.swift in Sources */,
@@ -1114,8 +1113,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

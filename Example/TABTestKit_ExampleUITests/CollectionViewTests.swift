@@ -24,7 +24,7 @@ final class CollectionViewTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Scrolling until the first cell is hidden") {
       Given(the: state(of: collectionViewScreen.firstCell, is: .visible))
-      When(I: scroll(collectionViewScreen, .from(.topThird, to: .top), until: collectionViewScreen.lastCell, is: .exists, .visibleIn(collectionViewScreen.trait)))
+      When(I: scroll(collectionViewScreen, .from(.middle, to: .top), until: collectionViewScreen.lastCell, is: .exists, .visibleIn(collectionViewScreen.trait)))
       Then(the: state(of: collectionViewScreen.firstCell, isNot: .exists))
     }
   }
