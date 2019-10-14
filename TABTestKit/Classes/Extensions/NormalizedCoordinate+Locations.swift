@@ -7,7 +7,7 @@
 
 import XCTest
 
-public extension ElementAttributes.Direction.NormalizedCoordinate {
+public extension CGVector {
 	
 	/// The middle of the element:
 	///  _________
@@ -17,7 +17,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let middle = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.5, dy: 0.5)
+	static let middle = CGVector(dx: 0.5, dy: 0.5)
 	
 	/// The top of the element:
 	///  _________
@@ -27,7 +27,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let top = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.5, dy: 0)
+	static let top = CGVector(dx: 0.5, dy: 0)
 	
 	/// The bottom of the element:
 	///  _________
@@ -37,7 +37,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |    *    |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let bottom = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.5, dy: 1)
+	static let bottom = CGVector(dx: 0.5, dy: 1)
 	
 	/// The left of the element:
 	///  _________
@@ -47,7 +47,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let left = ElementAttributes.Direction.NormalizedCoordinate(dx: 0, dy: 0.5)
+	static let left = CGVector(dx: 0, dy: 0.5)
 	
 	/// The right of the element:
 	///  _________
@@ -57,7 +57,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let right = ElementAttributes.Direction.NormalizedCoordinate(dx: 1, dy: 0.5)
+	static let right = CGVector(dx: 1, dy: 0.5)
 	
 	/// The top left of the element:
 	///  _________
@@ -67,7 +67,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let topLeft = ElementAttributes.Direction.NormalizedCoordinate(dx: 0, dy: 0)
+	static let topLeft = CGVector(dx: 0, dy: 0)
 	
 	/// The top right of the element:
 	///  _________
@@ -77,7 +77,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let topRight = ElementAttributes.Direction.NormalizedCoordinate(dx: 1, dy: 0)
+	static let topRight = CGVector(dx: 1, dy: 0)
 	
 	/// The bottom left of the element:
 	///  _________
@@ -87,7 +87,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |*        |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let bottomLeft = ElementAttributes.Direction.NormalizedCoordinate(dx: 0, dy: 1)
+	static let bottomLeft = CGVector(dx: 0, dy: 1)
 	
 	/// The bottom right of the element:
 	///  _________
@@ -97,7 +97,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |        *|
 	///  ‾‾‾‾‾‾‾‾‾
-	static let bottomRight = ElementAttributes.Direction.NormalizedCoordinate(dx: 1, dy: 1)
+	static let bottomRight = CGVector(dx: 1, dy: 1)
 	
 	/// The top third of the element:
 	///  _________
@@ -107,7 +107,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let topThird = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.5, dy: 0.33)
+	static let topThird = CGVector(dx: 0.5, dy: 0.33)
 	
 	/// The left third of the element:
 	///  _________
@@ -117,7 +117,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let leftThird = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.33, dy: 0.5)
+	static let leftThird = CGVector(dx: 0.33, dy: 0.5)
 	
 	/// The bottom third of the element:
 	///  _________
@@ -127,7 +127,7 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |    *    |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let bottomThird = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.5, dy: 0.66)
+	static let bottomThird = CGVector(dx: 0.5, dy: 0.66)
 	
 	/// The right third of the element:
 	///  _________
@@ -137,6 +137,6 @@ public extension ElementAttributes.Direction.NormalizedCoordinate {
 	/// |         |
 	/// |         |
 	///  ‾‾‾‾‾‾‾‾‾
-	static let rightThird = ElementAttributes.Direction.NormalizedCoordinate(dx: 0.66, dy: 0.5)
+	static let rightThird = CGVector(dx: 0.66, dy: 0.5)
 	
 }
