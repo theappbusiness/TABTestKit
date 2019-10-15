@@ -30,7 +30,10 @@ public protocol Element {
 	/// The label value of the element. This corresponds to the accessibilityLabel.
 	var label: String { get }
 	
-	/// The underlying XCUIElement that this element represents. You should rarely need to access this.
+	/// Represents the frame of the element, within the screen.
+	var frameInScreen: CGRect { get }
+	
+	/// The underlying XCUIElement that this element represents. You should rarely need to access or override this, but you can if you need to.
 	var underlyingXCUIElement: XCUIElement { get }
 	
 }
@@ -42,6 +45,8 @@ public extension Element {
 	var index: Int { return 0 }
 	
 	var label: String { return underlyingXCUIElement.label }
+	
+	var frameInScreen: CGRect { return underlyingXCUIElement.frame }
 	
 	var underlyingXCUIElement: XCUIElement {
 		return parent.underlyingXCUIElement.descendants(matching: type).matching(type, identifier: id).element(boundBy: index)

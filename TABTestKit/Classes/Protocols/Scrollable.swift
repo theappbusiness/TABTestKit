@@ -23,18 +23,23 @@ public extension Element where Self: Scrollable {
 		await(.exists, .hittable)
 		switch direction {
 		case .upwards:
-			underlyingXCUIElement.swipeDown()
+			scroll(from: .topThird, to: .middle)
 		case .downwards:
-			underlyingXCUIElement.swipeUp()
+			let from: CGVector = keyboard.underlyingXCUIElement.exists ? keyboard.topCoordinate.offset(dx: 0, dy: -0.01) : .middle
+			scroll(from: from, to: .topThird)
 		case .left:
-			underlyingXCUIElement.swipeRight()
+			scroll(from: .leftThird, to: .middle)
 		case .right:
-			underlyingXCUIElement.swipeLeft()
+			scroll(from: .rightThird, to: .middle)
 		case .from(let from, let to):
-			let fromCoordinate = underlyingXCUIElement.coordinate(withNormalizedOffset: from)
-			let toCoordinate = underlyingXCUIElement.coordinate(withNormalizedOffset: to)
-			fromCoordinate.press(forDuration: 0, thenDragTo: toCoordinate)
+			scroll(from: from, to: to)
 		}
+	}
+	
+	private func scroll(from: CGVector, to: CGVector) {
+		let fromCoordinate = underlyingXCUIElement.coordinate(withNormalizedOffset: from)
+		let toCoordinate = underlyingXCUIElement.coordinate(withNormalizedOffset: to)
+		fromCoordinate.press(forDuration: 0, thenDragTo: toCoordinate)
 	}
 	
 }
