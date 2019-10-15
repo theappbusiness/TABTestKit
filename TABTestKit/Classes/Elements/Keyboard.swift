@@ -49,6 +49,9 @@ public struct Keyboard: Element {
 	public init(parent: Element = App.shared) { self.parent = parent }
 	
 	/// Returns a key with the specified id, with the keyboard as the parent.
+	/// Since not all keys in the software keyboard are represented with the underlying
+	/// XCUIElement.ElementType of `.key` (which is annoying!), you can specify if
+	/// the key is actually represented as a `.button`.
 	///
 	/// - Parameter id: The id of the key to retrieve.
 	/// - Returns: A `Key`, with this keyboard as the parent.
