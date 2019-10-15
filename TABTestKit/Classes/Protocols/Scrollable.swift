@@ -23,13 +23,17 @@ public extension Element where Self: Scrollable {
 		await(.exists, .hittable)
 		switch direction {
 		case .upwards:
-			underlyingXCUIElement.swipeDown() // TODO: Better scrolling to account for keyboards
+			underlyingXCUIElement.swipeDown()
 		case .downwards:
 			underlyingXCUIElement.swipeUp()
 		case .left:
 			underlyingXCUIElement.swipeRight()
 		case .right:
 			underlyingXCUIElement.swipeLeft()
+		case .from(let from, let to):
+			let fromCoordinate = underlyingXCUIElement.coordinate(withNormalizedOffset: from)
+			let toCoordinate = underlyingXCUIElement.coordinate(withNormalizedOffset: to)
+			fromCoordinate.press(forDuration: 0, thenDragTo: toCoordinate)
 		}
 	}
 	

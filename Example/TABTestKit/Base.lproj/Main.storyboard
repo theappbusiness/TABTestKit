@@ -90,7 +90,7 @@
         <!--Collection-->
         <scene sceneID="cCb-ed-mZg">
             <objects>
-                <collectionViewController id="yYA-sF-bFc" sceneMemberID="viewController">
+                <collectionViewController id="yYA-sF-bFc" customClass="CollectionViewController" customModule="TABTestKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4AF-gD-60q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

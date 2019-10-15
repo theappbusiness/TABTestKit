@@ -1,5 +1,12 @@
-target 'TABTestKit_ExampleUITests' do
-    use_frameworks!
-    pod 'TABTestKit', :path => '../'
-    platform :ios, '10.0'
+use_frameworks!
+platform :ios, '10.0'
+
+target 'TABTestKit_Example' do
+	
+	pod 'ShowTime'
+	
+	target 'TABTestKit_ExampleUITests' do
+		inherit! :complete
+		pod 'TABTestKit', :path => '../'
+	end
 end
