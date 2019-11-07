@@ -58,6 +58,7 @@ func test_login() {
       - [`TextField`](#textfield)
       - [`SecureTextField`](#securetextfield)
       - [`TextView`](#textview)
+      - [`Keyboard`](#keyboard)
       - [`NavBar`](#navbar)
       - [`TabBar`](#tabbar)
       - [`Alert`](#alert)
@@ -79,6 +80,7 @@ func test_login() {
     - [`AppContext`](#appcontext)
     - [`AlertContext`](#alertcontext)
     - [`SheetContext`](#sheetcontext)
+    - [`KeyboardContext`](#keyboardcontext)
     - [`BiometricsContext`](#biometricscontext)
     - [`SystemPreferencesContext`](#systempreferencescontext)
   - [Protocols](#protocols)
@@ -802,6 +804,53 @@ And since `TextView` also conforms to [`Scrollable`](#scrollable), you can scrol
 textView.scroll(.downwards)
 ```
 
+#### Keyboard
+
+`Keyboard` represents the software keyboard in the app. Since there is typically
+only one software keyboard on screen at any time, there is a global instance available
+you can use anywhere in your tests called `keyboard`.
+
+This is useful for a number of things, like checking if the keyboard is visible:
+
+```swift
+keyboard.await(.visible)
+```
+
+Checking if the current softare keyboard is the expected type:
+
+```swift
+XCTAssertEqual(keyboard.keyboardType, .regular)
+XCTAssertEqual(keyboard.keyboardType, .emailAddress)
+```
+
+Or even using it to make sure you avoid the keyboard while scrolling:
+
+```swift
+let scrollView = ScrollView()
+scrollView.scroll(.from(keyboard.topCoordinate, to: .top))
+```
+
+You can also use the `Keyboard` element to vend you keys which automatically
+have the keyboard set as the parent:
+
+```swift
+let aKey = keyboard.key("a")
+```
+
+Since `Keyboard.Key`s conforms to `Tappable` you can tap them:
+
+```swift
+aKey.tap()
+```
+
+And you can use them with [`InteractionContext`](#interactioncontext):
+
+```swift
+Given(I: tap(aKey))
+```
+
+Additionally, you can use `Keyboard` with [`KeyboardContext`](#keyboardcontext).
+
 #### NavBar
 
 `NavBar` represents a navigation bar in your app:
@@ -1329,6 +1378,19 @@ which means your test cases can already use the functions in it.
 tap("Delete", in: myScreen.sheet)
 
 Given(I: tap("Delete", in: myScreen.sheet))
+```
+
+#### KeyboardContext
+
+`KeyboardContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`KeyboardContext` provides helper functions for interacting with the `Keyboard.:
+
+```swift
+keyboard(isType: .twitter)
+
+Given(the: keyboard(isType: .twitter))
 ```
 
 #### BiometricsContext
