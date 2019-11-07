@@ -69,6 +69,7 @@
 		BE70D5C4274AC83FD497265E19F46DFB /* NavigationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96375AE8CD034B906412F249806BB34E /* NavigationContext.swift */; };
 		BFCFED22364D8E0D39480BC6F629FCC7 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C32899F623D97F42789F760EBDBCE /* Button.swift */; };
 		C2D83A28D1342238A108BBBA99FC49D9 /* Adjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093331FEB85A37EE754A0C4755C4BA1 /* Adjustable.swift */; };
+		C3E04D6823744CB5002C25A1 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E04D6623744C3C002C25A1 /* Array+Safe.swift */; };
 		C98CCE0FA0DE2808CC479BD5F6A8173D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
 		CAED7ECF1F3C604E171310EDA8EC7281 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A91B6C5F22C4053315ACCBEB93BB5 /* ScrollView.swift */; };
 		CC27294E99B2DA787B50D431CF96AC28 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8A533568DE876550E118B6E248A15 /* Element.swift */; };
@@ -191,6 +192,7 @@
 		B829008ECE07E7B285940C8DD6CDB603 /* TABTestKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-umbrella.h"; sourceTree = "<group>"; };
 		C354231844F21D916AF8E0D9E0F587FF /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests.modulemap"; sourceTree = "<group>"; };
 		C37F0D004BCDF88B8A58E387ECDC50F3 /* Biometrics-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Biometrics-Bridging-Header.h"; sourceTree = "<group>"; };
+		C3E04D6623744C3C002C25A1 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		C546C36CF327860323111AA10DBB2ED5 /* TABTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TABTestCase.swift; path = TABTestKit/Classes/TABTestCase.swift; sourceTree = "<group>"; };
 		C6AFBB671D10E6AEF0786D8E3E16BDE4 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		C836E04E0871D7C960060EBBB6A44C7F /* Slider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				D779C99F3DDA9287A4F19779069D1806 /* XCUIElement+hasKeyboardFocus.swift */,
 				7D8EBAC50FBA342ECA841CC305C7C751 /* XCUIElement+isVisible.swift */,
 				F6B5D5313E5532C5A1F88BCA8E4C53EE /* XCUIElement+wait.swift */,
+				C3E04D6623744C3C002C25A1 /* Array+Safe.swift */,
 			);
 			name = Extensions;
 			path = TABTestKit/Classes/Extensions;
@@ -662,6 +665,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					97F19241BD426C32C1C3FAF09F17AA80 = {
+						LastSwiftMigration = 1120;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -771,6 +779,7 @@
 				B656FD5651A4194EAF9C73F26B21B02D /* Tappable.swift in Sources */,
 				7C91CCDEE4142A8643D8F1F722D44000 /* TextField.swift in Sources */,
 				064D98A1A7952444DB3C4C9794D4354C /* TextView.swift in Sources */,
+				C3E04D6823744CB5002C25A1 /* Array+Safe.swift in Sources */,
 				39B544EDFBBC410344F8039D2066A483 /* ValueRepresentable.swift in Sources */,
 				CE21DA1DB1FD225CE864D7DA5F8D8306 /* View.swift in Sources */,
 				A0BBCF2869ED102BA734EFD556EB9259 /* WebView.swift in Sources */,
@@ -1124,6 +1133,7 @@
 			baseConfigurationReference = 14146CA31421B9CAE5A93C48F6E9FFAF /* Pods-TABTestKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1147,6 +1157,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1190,6 +1202,7 @@
 			baseConfigurationReference = AFD57256DAD4C8414BD38FD34982C7B0 /* Pods-TABTestKit_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1213,6 +1226,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
