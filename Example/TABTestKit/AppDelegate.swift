@@ -15,11 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    disableHardwareKeyboardSupport()
+    forceSoftwareKeyboard()
     return true
   }
   
-  private func disableHardwareKeyboardSupport() {
+  private func forceSoftwareKeyboard() {
     #if targetEnvironment(simulator)
     let setHardwareLayout = NSSelectorFromString("setHardwareLayout:")
     UITextInputMode.activeInputModes.forEach { inputMode in
