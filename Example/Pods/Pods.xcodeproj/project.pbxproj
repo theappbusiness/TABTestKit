@@ -70,6 +70,7 @@
 		BFCFED22364D8E0D39480BC6F629FCC7 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C32899F623D97F42789F760EBDBCE /* Button.swift */; };
 		C2D83A28D1342238A108BBBA99FC49D9 /* Adjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093331FEB85A37EE754A0C4755C4BA1 /* Adjustable.swift */; };
 		C3E04D6823744CB5002C25A1 /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E04D6623744C3C002C25A1 /* Array+Safe.swift */; };
+		C3E04D6B23744F6F002C25A1 /* Element+defaultUnderlyingXCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E04D6923744F37002C25A1 /* Element+defaultUnderlyingXCUIElement.swift */; };
 		C98CCE0FA0DE2808CC479BD5F6A8173D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
 		CAED7ECF1F3C604E171310EDA8EC7281 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A91B6C5F22C4053315ACCBEB93BB5 /* ScrollView.swift */; };
 		CC27294E99B2DA787B50D431CF96AC28 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD8A533568DE876550E118B6E248A15 /* Element.swift */; };
@@ -193,6 +194,7 @@
 		C354231844F21D916AF8E0D9E0F587FF /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests.modulemap"; sourceTree = "<group>"; };
 		C37F0D004BCDF88B8A58E387ECDC50F3 /* Biometrics-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Biometrics-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3E04D6623744C3C002C25A1 /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
+		C3E04D6923744F37002C25A1 /* Element+defaultUnderlyingXCUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Element+defaultUnderlyingXCUIElement.swift"; sourceTree = "<group>"; };
 		C546C36CF327860323111AA10DBB2ED5 /* TABTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TABTestCase.swift; path = TABTestKit/Classes/TABTestCase.swift; sourceTree = "<group>"; };
 		C6AFBB671D10E6AEF0786D8E3E16BDE4 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		C836E04E0871D7C960060EBBB6A44C7F /* Slider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				7D8EBAC50FBA342ECA841CC305C7C751 /* XCUIElement+isVisible.swift */,
 				F6B5D5313E5532C5A1F88BCA8E4C53EE /* XCUIElement+wait.swift */,
 				C3E04D6623744C3C002C25A1 /* Array+Safe.swift */,
+				C3E04D6923744F37002C25A1 /* Element+defaultUnderlyingXCUIElement.swift */,
 			);
 			name = Extensions;
 			path = TABTestKit/Classes/Extensions;
@@ -742,6 +745,7 @@
 				2820CCE931E307C17AD076E02DB4D005 /* NormalizedCoordinate+Locations.swift in Sources */,
 				7C0B0ECA56A9C1E7C04BE1CD8E3DD503 /* CollectionView.swift in Sources */,
 				AD3692419CD6F3BE56D94E188B55F067 /* Completable.swift in Sources */,
+				C3E04D6B23744F6F002C25A1 /* Element+defaultUnderlyingXCUIElement.swift in Sources */,
 				354CAA4E908A5F5617937510E3938601 /* Dismissable.swift in Sources */,
 				99710618339FB5B863A7B0135A906130 /* Editable.swift in Sources */,
 				CC27294E99B2DA787B50D431CF96AC28 /* Element.swift in Sources */,

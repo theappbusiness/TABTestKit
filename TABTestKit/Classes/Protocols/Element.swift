@@ -47,14 +47,6 @@ public extension Element {
 	
 }
 
-extension Element {
-	
-	var defaultUnderlyingXCUIElement: XCUIElement {
-		return parent.underlyingXCUIElement.descendants(matching: type).matching(type, identifier: id).element(boundBy: index)
-	}
-	
-}
-
 public extension Element {
 	
 	/// Awaits for the provided states to be true with a max timeout.
