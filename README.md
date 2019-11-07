@@ -83,6 +83,7 @@ func test_login() {
     - [`SystemPreferencesContext`](#systempreferencescontext)
   - [Protocols](#protocols)
     - [`Screen`](#screen)
+    - [`ScrollableScreen`](#scrollablescreen)
     - [`Completable`](#completable)
     - [`Dismissable`](#dismissable)
     - [`Element`](#element)
@@ -551,7 +552,7 @@ Like [`Header`](#header) you can use either the `Label`'s text or a custom ID
 as the identifier.
 
 For **TABTestKit** and XCTest to be able to find your `Label`, your UIKit view
-must have the staticText trait set:
+must have the `.staticText` trait set:
 
 ```swift
 let myLabel = UILabel()
@@ -578,8 +579,8 @@ Since `Button` conforms to `Tappable`, you can tap it:
 button.tap()
 ```
 
-For **TABTestKit** and XCTest to be able to find your `Label`, your UIKit view
-must have the staticText trait set:
+For **TABTestKit** and XCTest to be able to find your `Button`, your UIKit view
+must have the `.button` trait set:
 
 ```swift
 let myButton = UIButton()
@@ -620,13 +621,13 @@ let table = Table(id: "MyTable")
 Like [`ScrollView`](#scrollview), since it's common for there to only be one
 table view on screen at once, you don't need to provide an ID to create one.
 
-Since `Table` conforms to `Scrollable`, you can scroll it:
+Since `Table` conforms to [`Scrollable`](#scrollable), you can scroll it:
 
 ```swift
 table.scroll(.upwards)
 ```
 
-Since `Table` also conforms to `CellContaining`, you can retrieve the number of
+Since `Table` also conforms to [`CellContaining`](#cellcontaining), you can retrieve the number of
 cells:
 
 ```swift
@@ -657,13 +658,13 @@ Like [`ScrollView`](#scrollview) and [`Table`](#table), since it's common for
 there to only be one collection view on screen at once,
 you don't need to provide an ID to create one.
 
-Since `CollectionView` conforms to `Scrollable`, you can scroll it:
+Since `CollectionView` conforms to [`Scrollable`](#scrollable), you can scroll it:
 
 ```swift
 collectionView.scroll(.left)
 ```
 
-Since `CollectionView` also conforms to `CellContaining`, you can retrieve the number of
+Since `CollectionView` also conforms to [`CellContaining`](#cellcontaining), you can retrieve the number of
 cells:
 
 ```swift
@@ -1240,10 +1241,27 @@ Anything that conforms to [`Scrollable`](#scrollable) can be scrolled
 using `InteractionContext` until some element is in a particular state:
 
 ```swift
-scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .visible)
+scroll(myScreen.scrollView, .downwards, until: myScreen.textField, is: .visible)
 
-Given(I: scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .visible))
+Given(I: scroll(myScreen.scrollView, .downwards, until: myScreen.textField, is: .visible))
 ```
+
+You can also scroll until an element is multiple states. This is especially useful
+when scrolling views that re-use their rows (like tables and collections) where
+the last cell might not exist, so you can scroll until it exists, before scrolling
+until it's visible:
+
+```swift
+scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .exists, .visible)
+```
+
+In addition to scrolling until an element is in some state (or states), you can
+also scroll until an element is _not_ in some state (or states):
+
+```swift
+scroll(myScreen.tableView, .downwards, until: myScreen.firstCell, isNot: .visible)
+```
+
 
 ##### Asserting and adjusting values
 
@@ -1423,6 +1441,29 @@ that consistently identifies your screen.
 The `trait` is used by **TABTestKit** in [`NavigationContext`](#navigationcontext) to assert
 whether your screen is or isn't on-screen currently.
 
+#### ScrollableScreen
+
+`ScrollableScreen` is similar to [`Screen`](#screen), but to conform to it you
+must set a `trait` that is an [`Element`](#element) that also conforms to [`Scrollable`](#scrollable):
+
+```swift
+struct MyScrollableScreen: ScrollableScreen {
+
+  let trait = ScrollView() // Since ScrollView conforms to `Scrollable` it can be used as the trait.
+
+}
+```
+
+By conforming to `ScrollableScreen`, your screen will automatically be `Scrollable`,
+and you can use it to scroll directly or pass it into [`InteractionContext`](#interactioncontext) functions that take a `Scrollable` argument:
+
+```swift
+
+collectionViewScreen.scroll(.downwards)
+
+Given(I: scroll(myScrollableScreen, .downwards, until: myScrollableScreen.textField, is: .visible))
+```
+
 #### Completable
 
 Generally, you would make your screens conform to `Completable`:
@@ -1536,7 +1577,7 @@ do any extra work, default implementations will be provided automatically.
 
 #### Scrollable
 
-Anything that conforms to `Editable`, (like [`ScrollView`](#scrollview)), is
+Anything that conforms to `Scrollable`, (like [`ScrollView`](#scrollview)), is
 declaring it can be scrolled.
 
 `Scrollable` works really well with [`InteractionContext`](#interactioncontext),
@@ -1584,6 +1625,12 @@ adjust/change the value.
 
 Anything that conforms to `CellContaining`, (like [`Table`](#table)) is declaring
 that it can provide the number of cells it contains, and can also vend a [`Cell`](#cell).
+
+> **NOTE:** It's important to understand that due to the way tables and collection
+views work to re-use views means that XCUI won't necessarily have the same count
+of cells compared to the total number of rows or items in the table or collection.
+Thus, finding the "last" cell by index isn't reliable, and instead you should use
+an identifier in the cell to identify it as the last cell, i.e. using the indexPath.
 
 Additionally, any [`Element`](#element) that conforms to `CellContaining` doesn't have to
 do any extra work, default implementations will be provided automatically.
