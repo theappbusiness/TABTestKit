@@ -20,4 +20,15 @@ public extension XCUIElement {
 		return value(forKey: "hasKeyboardFocus") as? Bool ?? false
 	}
 	
+	/// Determines the underlying UIAccessibilityTraits of the view that
+	/// this element represents.
+	///
+	/// NOTE: This uses a private API so is fragile, but is required to
+	/// find UILabels with header traits in iOS 13, since Apple have made
+	/// it impossible any other way.
+	var underlyingAccessibilityTraits: UIAccessibilityTraits {
+		guard let rawValue = value(forKey: "traits") as? UInt64 else { return [] }
+		return UIAccessibilityTraits(rawValue: rawValue)
+	}
+	
 }

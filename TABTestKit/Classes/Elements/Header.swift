@@ -26,4 +26,14 @@ public struct Header: Element, ValueRepresentable {
 		self.parent = parent
 	}
 	
+	public var underlyingXCUIElement: XCUIElement {
+		if #available(iOS 13.0, *) {
+			let allElementsMatchingID = parent.underlyingXCUIElement.descendants(matching: .any).matching(.any, identifier: id)
+			let allHeaders = allElementsMatchingID.allElementsBoundByAccessibilityElement.filter { $0.underlyingAccessibilityTraits.contains(.header) }
+			return allHeaders.indices.contains(index) ? allHeaders[index] : defaultUnderlyingXCUIElement
+		} else {
+			return defaultUnderlyingXCUIElement
+		}
+	}
+	
 }

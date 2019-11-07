@@ -43,7 +43,13 @@ public extension Element {
 	
 	var label: String { return underlyingXCUIElement.label }
 	
-	var underlyingXCUIElement: XCUIElement {
+	var underlyingXCUIElement: XCUIElement { return defaultUnderlyingXCUIElement }
+	
+}
+
+extension Element {
+	
+	var defaultUnderlyingXCUIElement: XCUIElement {
 		return parent.underlyingXCUIElement.descendants(matching: type).matching(type, identifier: id).element(boundBy: index)
 	}
 	
