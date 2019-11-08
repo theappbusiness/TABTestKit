@@ -117,10 +117,8 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing and interacting with the slider") {
       Given(I: see(otherElementsScreen.slider))
-      Then(I: adjust(otherElementsScreen.slider, to: 1))
-      And(the: value(of: otherElementsScreen.slider, is: 1))
-      And(I: adjust(otherElementsScreen.slider, to: 0))
-      And(the: value(of: otherElementsScreen.slider, is: 0))
+      When(I: adjust(otherElementsScreen.slider, to: 1))
+      Then(I: adjust(otherElementsScreen.slider, to: 0))
     }
     
     Scenario("Seeing and interacting with the switch") {

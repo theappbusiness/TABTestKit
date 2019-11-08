@@ -9,6 +9,7 @@
 - Added `CGVector` helper constants for representing various positions in the element's space, like `.middle`, `.topLeft`, `.bottomThird`. These can be used on their own, or with the new `Direction` case mentioned above.
 - Updated the docs for `CellContaining` to be clearer about how it works with cell reuse.
 - Added a new `ScrollableScreen` protocol, which is a special protocol you can make your screen structs conform to instead of `Screen`. To conform to `ScrollableScreen`, your `trait` _must_ be any element that is also `Scrollable` (like `ScrollView` or `Table`). By doing that, you automatically get scrolling behaviour on the screen so you can pass the screen instance in directly to `InteractionContext` when scrolling.
+- Added a workaround for iOS 13, where `UILabel`s with the `.header` accessibility trait are always seen as `.staticText` by `XCUI` regardless.
 - Added new `Keyboard` element, which can be used anywhere that `Element` can, and more usefully be used to assert to right keyboard type is shown on-screen. You can also use `Keyboard` to find the `topCoordinate` of it to avoid it while scrolling or performing gestures.
 - Since there can only be one software keyboard shown on-screen at one time, an instance is globally available in your tests.
 - Added new `KeyboardContext` which `TABTestCase` already conforms to.

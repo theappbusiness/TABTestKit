@@ -42,9 +42,11 @@ public struct Keyboard: Element {
 	/// The top coordinate (as a CGVector/NormalizedCoordinate) of the keyboard, in relation to the screen.
 	/// You could use this to make sure that you avoid the keyboard when scrolling, for example.
 	public var topCoordinate: CGVector {
-		let y = (frameInScreen.minY / XCUIDevice.shared.frame.maxY)
-		return CGVector(dx: 0.5, dy: y)
+		predictionBar.determine(.exists) ? predictionBar.topCoordinate : defaultTopCoordinate
 	}
+	
+	/// Returns the predication bar element. This is useful for knowing if the prediction bar is showing or not, and to find the top coordinate of it.
+	public var predictionBar: PredicationBar { return PredicationBar(parent: parent) }
 	
 	public init(parent: Element = App.shared) { self.parent = parent }
 	
@@ -87,14 +89,40 @@ public extension Keyboard {
 		
 	}
 	
+	/// Represents the prediction bar above the keyboard.
+	/// Rather annoyingly, the prediction bar isn't a child of any keyboard,
+	/// just a different window that also contains the keyboard.
+	/// Because of this, the `parent` element should _not_ be a `Keyboard`.
+	struct PredicationBar: Element {
+		
+		public let id: String? = "Typing Predictions"
+		public let type: XCUIElement.ElementType = .other
+		public let parent: Element
+		
+		init(parent: Element = App.shared) {
+			self.parent = parent
+		}
+		
+	}
+	
 }
 
 public extension Keyboard {
 	
 	var decimal: Key { return key(".") }
 	var a: Key { return key("a") }
-	var moreNumbers: Key { return key("more, numbers") }
-	var moreLetters: Key { return key("more, letters") }
+	var moreNumbers: Key {
+		if #available(iOS 13.0, *) {
+			return key("numbers")
+		}
+		return key("more, numbers")
+	}
+	var moreLetters: Key {
+		if #available(iOS 13.0, *) {
+			return key("letters")
+		}
+		return key("more, letters")
+	}
 	var phonePadShift: Key { return key("Shift") }
 	var space: Key { return key("space") }
 	var at: Key { return key("@") }

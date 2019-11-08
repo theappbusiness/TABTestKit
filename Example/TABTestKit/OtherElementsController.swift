@@ -12,6 +12,7 @@ import UIKit
 
 final class OtherElementsController: UIViewController {
   
+  @IBOutlet private var scrollView: UIScrollView!
   @IBOutlet private var label: UILabel!
   @IBOutlet private var button: UIButton!
   @IBOutlet private var segmentedControlContainerView: UIView!
@@ -34,6 +35,7 @@ final class OtherElementsController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    scrollView.accessibilityIdentifier = "MyScrollView"
     segmentedControlContainerView.accessibilityIdentifier = "ExampleSegmentedControl"
     textField.accessibilityIdentifier = "ExampleTextField"
     numberPadTextField.accessibilityIdentifier = "NumberPadTextField"

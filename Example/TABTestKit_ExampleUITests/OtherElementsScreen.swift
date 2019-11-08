@@ -13,7 +13,7 @@ let otherElementsScreen = OtherElementsScreen()
 struct OtherElementsScreen: Screen {
   
   let trait = Header(id: "Other elements")
-  let scrollView = ScrollView()
+  let scrollView = ScrollView(id: "MyScrollView") // In iOS 13, XCUI matches a hidden scroll view when the keyboard is showing :(
   let label = Label(id: "Example label")
   let button = Button(id: "Example button")
   let segmentedControl = SegmentedControl(parent: View(id: "ExampleSegmentedControl"))
