@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
     b.source_files = 'TABTestKit/Classes/BDD/**/*'
   end
   
-  s.pod_target_xcconfig = { ‘ENABLE_BITCODE’ => ‘NO’ }
+  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end
