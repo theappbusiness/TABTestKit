@@ -16,7 +16,7 @@ public extension XCUIElement {
 	/// - Parameter otherElement: The element to check if the frames intersect.
 	/// - Returns: true if the frames of both elements intersect.
 	func isVisible(in otherElement: XCUIElement) -> Bool {
-		guard exists else { return false }
+		guard exists && otherElement.exists else { return false }
 		return otherElement.frame.intersects(frame)
 	}
 	

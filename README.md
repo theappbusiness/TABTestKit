@@ -58,6 +58,7 @@ func test_login() {
       - [`TextField`](#textfield)
       - [`SecureTextField`](#securetextfield)
       - [`TextView`](#textview)
+      - [`Keyboard`](#keyboard)
       - [`NavBar`](#navbar)
       - [`TabBar`](#tabbar)
       - [`Alert`](#alert)
@@ -79,10 +80,12 @@ func test_login() {
     - [`AppContext`](#appcontext)
     - [`AlertContext`](#alertcontext)
     - [`SheetContext`](#sheetcontext)
+    - [`KeyboardContext`](#keyboardcontext)
     - [`BiometricsContext`](#biometricscontext)
     - [`SystemPreferencesContext`](#systempreferencescontext)
   - [Protocols](#protocols)
     - [`Screen`](#screen)
+    - [`ScrollableScreen`](#scrollablescreen)
     - [`Completable`](#completable)
     - [`Dismissable`](#dismissable)
     - [`Element`](#element)
@@ -551,7 +554,7 @@ Like [`Header`](#header) you can use either the `Label`'s text or a custom ID
 as the identifier.
 
 For **TABTestKit** and XCTest to be able to find your `Label`, your UIKit view
-must have the staticText trait set:
+must have the `.staticText` trait set:
 
 ```swift
 let myLabel = UILabel()
@@ -578,8 +581,8 @@ Since `Button` conforms to `Tappable`, you can tap it:
 button.tap()
 ```
 
-For **TABTestKit** and XCTest to be able to find your `Label`, your UIKit view
-must have the staticText trait set:
+For **TABTestKit** and XCTest to be able to find your `Button`, your UIKit view
+must have the `.button` trait set:
 
 ```swift
 let myButton = UIButton()
@@ -620,13 +623,13 @@ let table = Table(id: "MyTable")
 Like [`ScrollView`](#scrollview), since it's common for there to only be one
 table view on screen at once, you don't need to provide an ID to create one.
 
-Since `Table` conforms to `Scrollable`, you can scroll it:
+Since `Table` conforms to [`Scrollable`](#scrollable), you can scroll it:
 
 ```swift
 table.scroll(.upwards)
 ```
 
-Since `Table` also conforms to `CellContaining`, you can retrieve the number of
+Since `Table` also conforms to [`CellContaining`](#cellcontaining), you can retrieve the number of
 cells:
 
 ```swift
@@ -657,13 +660,13 @@ Like [`ScrollView`](#scrollview) and [`Table`](#table), since it's common for
 there to only be one collection view on screen at once,
 you don't need to provide an ID to create one.
 
-Since `CollectionView` conforms to `Scrollable`, you can scroll it:
+Since `CollectionView` conforms to [`Scrollable`](#scrollable), you can scroll it:
 
 ```swift
 collectionView.scroll(.left)
 ```
 
-Since `CollectionView` also conforms to `CellContaining`, you can retrieve the number of
+Since `CollectionView` also conforms to [`CellContaining`](#cellcontaining), you can retrieve the number of
 cells:
 
 ```swift
@@ -801,6 +804,53 @@ And since `TextView` also conforms to [`Scrollable`](#scrollable), you can scrol
 ```swift
 textView.scroll(.downwards)
 ```
+
+#### Keyboard
+
+`Keyboard` represents the software keyboard in the app. Since there is typically
+only one software keyboard on screen at any time, there is a global instance available
+you can use anywhere in your tests called `keyboard`.
+
+This is useful for a number of things, like checking if the keyboard is visible:
+
+```swift
+keyboard.await(.visible)
+```
+
+Checking if the current softare keyboard is the expected type:
+
+```swift
+XCTAssertEqual(keyboard.keyboardType, .regular)
+XCTAssertEqual(keyboard.keyboardType, .emailAddress)
+```
+
+Or even using it to make sure you avoid the keyboard while scrolling:
+
+```swift
+let scrollView = ScrollView()
+scrollView.scroll(.from(keyboard.topCoordinate, to: .top))
+```
+
+You can also use the `Keyboard` element to vend you keys which automatically
+have the keyboard set as the parent:
+
+```swift
+let aKey = keyboard.key("a")
+```
+
+Since `Keyboard.Key`s conforms to `Tappable` you can tap them:
+
+```swift
+aKey.tap()
+```
+
+And you can use them with [`InteractionContext`](#interactioncontext):
+
+```swift
+Given(I: tap(aKey))
+```
+
+Additionally, you can use `Keyboard` with [`KeyboardContext`](#keyboardcontext).
 
 #### NavBar
 
@@ -1240,10 +1290,27 @@ Anything that conforms to [`Scrollable`](#scrollable) can be scrolled
 using `InteractionContext` until some element is in a particular state:
 
 ```swift
-scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .visible)
+scroll(myScreen.scrollView, .downwards, until: myScreen.textField, is: .visible)
 
-Given(I: scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .visible))
+Given(I: scroll(myScreen.scrollView, .downwards, until: myScreen.textField, is: .visible))
 ```
+
+You can also scroll until an element is multiple states. This is especially useful
+when scrolling views that re-use their rows (like tables and collections) where
+the last cell might not exist, so you can scroll until it exists, before scrolling
+until it's visible:
+
+```swift
+scroll(myScreen.tableView, .downwards, until: myScreen.lastCell, is: .exists, .visible)
+```
+
+In addition to scrolling until an element is in some state (or states), you can
+also scroll until an element is _not_ in some state (or states):
+
+```swift
+scroll(myScreen.tableView, .downwards, until: myScreen.firstCell, isNot: .visible)
+```
+
 
 ##### Asserting and adjusting values
 
@@ -1329,6 +1396,19 @@ which means your test cases can already use the functions in it.
 tap("Delete", in: myScreen.sheet)
 
 Given(I: tap("Delete", in: myScreen.sheet))
+```
+
+#### KeyboardContext
+
+`KeyboardContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`KeyboardContext` provides helper functions for interacting with the `Keyboard.:
+
+```swift
+keyboard(isType: .twitter)
+
+Given(the: keyboard(isType: .twitter))
 ```
 
 #### BiometricsContext
@@ -1422,6 +1502,29 @@ that consistently identifies your screen.
 
 The `trait` is used by **TABTestKit** in [`NavigationContext`](#navigationcontext) to assert
 whether your screen is or isn't on-screen currently.
+
+#### ScrollableScreen
+
+`ScrollableScreen` is similar to [`Screen`](#screen), but to conform to it you
+must set a `trait` that is an [`Element`](#element) that also conforms to [`Scrollable`](#scrollable):
+
+```swift
+struct MyScrollableScreen: ScrollableScreen {
+
+  let trait = ScrollView() // Since ScrollView conforms to `Scrollable` it can be used as the trait.
+
+}
+```
+
+By conforming to `ScrollableScreen`, your screen will automatically be `Scrollable`,
+and you can use it to scroll directly or pass it into [`InteractionContext`](#interactioncontext) functions that take a `Scrollable` argument:
+
+```swift
+
+collectionViewScreen.scroll(.downwards)
+
+Given(I: scroll(myScrollableScreen, .downwards, until: myScrollableScreen.textField, is: .visible))
+```
 
 #### Completable
 
@@ -1536,7 +1639,7 @@ do any extra work, default implementations will be provided automatically.
 
 #### Scrollable
 
-Anything that conforms to `Editable`, (like [`ScrollView`](#scrollview)), is
+Anything that conforms to `Scrollable`, (like [`ScrollView`](#scrollview)), is
 declaring it can be scrolled.
 
 `Scrollable` works really well with [`InteractionContext`](#interactioncontext),
@@ -1584,6 +1687,12 @@ adjust/change the value.
 
 Anything that conforms to `CellContaining`, (like [`Table`](#table)) is declaring
 that it can provide the number of cells it contains, and can also vend a [`Cell`](#cell).
+
+> **NOTE:** It's important to understand that due to the way tables and collection
+views work to re-use views means that XCUI won't necessarily have the same count
+of cells compared to the total number of rows or items in the table or collection.
+Thus, finding the "last" cell by index isn't reliable, and instead you should use
+an identifier in the cell to identify it as the last cell, i.e. using the indexPath.
 
 Additionally, any [`Element`](#element) that conforms to `CellContaining` doesn't have to
 do any extra work, default implementations will be provided automatically.

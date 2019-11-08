@@ -12,6 +12,9 @@ import XCTest
 public protocol CellContaining {
 	
 	/// The number of cells matching the provided ID that the container holds.
+	/// Note that this doesn't necessarily represent the total amount of cells that the
+	/// element holds, and will only return the number of currently dequeued cells
+	/// which will change based on screen size.
 	///
 	/// - Parameter id: The id to match.
 	func numberOfCells(matchingID id: String?) -> Int

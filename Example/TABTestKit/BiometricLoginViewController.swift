@@ -26,10 +26,12 @@ final class BiometricLoginViewController: UIViewController {
     let canUseBiometrics = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: .init(nilLiteral: ()))
     if canUseBiometrics {
       context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Log in", reply: { [weak self] wasSuccessful, error in
-        if wasSuccessful {
-          self?.handleSuccessfulLogin()
-        } else {
-          self?.handleBiometricsFailed()
+        DispatchQueue.main.async {
+          if wasSuccessful {
+            self?.handleSuccessfulLogin()
+          } else {
+            self?.handleBiometricsFailed()
+          }
         }
       })
     } else {

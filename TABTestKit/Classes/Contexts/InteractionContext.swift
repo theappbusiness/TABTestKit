@@ -30,14 +30,28 @@ public extension InteractionContext {
 		states.forEach { element.await(not: $0) }
 	}
 	
-	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, is state: ElementAttributes.State, maxTries: Int = 10) {
-		var numberOfTries = 0
-		repeat {
-			guard !otherElement.determine(state, timeout: 1) else { return }
-			numberOfTries += 1
-			element.scroll(direction)
-		} while numberOfTries <= maxTries
-		XCTFail("Ran of out tries waiting for element to become \(state)")
+	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, is states: ElementAttributes.State..., maxTries: Int = 10) {
+		states.forEach { state in
+			var numberOfTries = 0
+			repeat {
+				guard !otherElement.determine(state, timeout: 1) else { return }
+				numberOfTries += 1
+				element.scroll(direction)
+			} while numberOfTries <= maxTries
+			XCTFail("Ran of out tries waiting for element to become \(state)")
+		}
+	}
+	
+	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, isNot states: ElementAttributes.State..., maxTries: Int = 10) {
+		states.forEach { state in
+			var numberOfTries = 0
+			repeat {
+				guard !otherElement.determine(not: state, timeout: 1) else { return }
+				numberOfTries += 1
+				element.scroll(direction)
+			} while numberOfTries <= maxTries
+			XCTFail("Ran of out tries waiting for element to become not \(state)")
+		}
 	}
 	
 	func value<ElementWithValue: Element & ValueRepresentable>(of element: ElementWithValue, is expectedValue: ElementWithValue.Value) {
