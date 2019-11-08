@@ -42,7 +42,7 @@ public struct Keyboard: Element {
 	/// The top coordinate (as a CGVector/NormalizedCoordinate) of the keyboard, in relation to the screen.
 	/// You could use this to make sure that you avoid the keyboard when scrolling, for example.
 	public var topCoordinate: CGVector {
-		predictionBar.determine(.exists) ? predictionBar.topCoordinate : defaultTopCoordinate
+		return predictionBar.determine(.exists) ? predictionBar.topCoordinate : defaultTopCoordinate
 	}
 	
 	/// Returns the predication bar element. This is useful for knowing if the prediction bar is showing or not, and to find the top coordinate of it.
