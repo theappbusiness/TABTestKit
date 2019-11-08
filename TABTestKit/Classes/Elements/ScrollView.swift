@@ -11,11 +11,13 @@ import XCTest
 public struct ScrollView: Element, Scrollable {
 	
 	public let id: String?
+	public let index: Int
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .scrollView
 	
-	public init(id: String? = nil, parent: Element = App.shared) {
+	public init(id: String? = nil, index: Int = 0, parent: Element = App.shared) {
 		self.id = id
+		self.index = index
 		self.parent = parent
 	}
 	
