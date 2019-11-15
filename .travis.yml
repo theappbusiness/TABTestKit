@@ -1,6 +1,6 @@
 os:
   - osx
- language: swift
+language: swift
 
 jobs:
    include:
