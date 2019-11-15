@@ -12,6 +12,6 @@ jobs:
 
      - stage: test
        name: test on xcode 11.1 iOS 13.1
-       osx_image: xcode11.1
+       osx_image: xcode11.2
        script:
-           - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk iphonesimulator13.1 -destination "OS=13.1,name=iPhone 11 Pro" | xcpretty
+           - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk iphonesimulator13.2 -destination "OS=13.2,name=iPhone 11 Pro" | xcpretty
