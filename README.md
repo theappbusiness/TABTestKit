@@ -4,9 +4,9 @@
 
 [![Build Status](https://travis-ci.org/theappbusiness/TABTestKit.svg?branch=develop)](https://travis-ci.org/theappbusiness/TABTestKit)
 [![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 **TABTestKit** is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
 which helps reduce flakiness and lowers the barrier to entry for most people.
@@ -1810,11 +1810,15 @@ pod 'TABTestKit/XCUIExtensions'
 
 #### Latest
 
-To use the latest version of **TABTestKit** just add this to your `Cartfile` and run `carthage boostrap` or `carthage update` in Terminal
+To use the latest version of **TABTestKit** just add this to your `Cartfile.private` and run `carthage boostrap` or `carthage update` in Terminal
 
 ```
 github "TABTestKit"
 ```
+
+If this is your first time using Carthage in the project, you'll need to go through some additional steps as explained [over at Carthage](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application).
+
+> NOTE: At this time, Carthage does not provide a way to build only specific repository submodules. All submodules and their dependencies will be built with the above command. However, you don't need to copy frameworks you aren't using into your project.
 
 #### Development
 
@@ -1823,7 +1827,6 @@ To use the version under development you can target the `develop` branch specifi
 ```
 github "TABTestKit" "develop"
 ```
-
 
 ### Swift Package Manager
 
