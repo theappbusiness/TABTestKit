@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Biometrics
 
 public protocol BiometricsContext {}
 public extension BiometricsContext {

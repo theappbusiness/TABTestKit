@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /// Serves as the namespace for Element, since you can't nest enums in a protocol.
 public enum ElementAttributes {
