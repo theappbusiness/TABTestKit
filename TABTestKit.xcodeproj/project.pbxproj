@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95A9037823980E1800B11232 /* BDD.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D472112397C96B002BEFCA /* BDD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95A9037A23980EBE00B11232 /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D4715D2397C8C1002BEFCA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95D471C22397C8C1002BEFCA /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4716B2397C8C1002BEFCA /* SheetContext.swift */; };
 		95D471C32397C8C1002BEFCA /* BiometricsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4716C2397C8C1002BEFCA /* BiometricsContext.swift */; };
 		95D471C42397C8C1002BEFCA /* NavigationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4716D2397C8C1002BEFCA /* NavigationContext.swift */; };
@@ -69,7 +71,6 @@
 		95D472032397C8C1002BEFCA /* ValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471B92397C8C1002BEFCA /* ValueRepresentable.swift */; };
 		95D472042397C8C1002BEFCA /* TABTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471BA2397C8C1002BEFCA /* TABTestCase.swift */; };
 		95D472082397C90D002BEFCA /* TABTestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D472062397C90D002BEFCA /* TABTestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95D472242397C97C002BEFCA /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D4715D2397C8C1002BEFCA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95D472252397C97C002BEFCA /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95D472262397C97C002BEFCA /* Biometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D471662397C8C1002BEFCA /* Biometrics.m */; };
 		95D472272397C985002BEFCA /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A52397C8C1002BEFCA /* Step.swift */; };
@@ -169,10 +170,7 @@
 		95D472072397C90D002BEFCA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D4720F2397C96B002BEFCA /* BDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D472112397C96B002BEFCA /* BDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDD.h; sourceTree = "<group>"; };
-		95D472122397C96B002BEFCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D4721C2397C973002BEFCA /* Biometrics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Biometrics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95D4721E2397C973002BEFCA /* Biometrics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Biometrics.h; sourceTree = "<group>"; };
-		95D4721F2397C973002BEFCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D4722A2397CB1E002BEFCA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -210,8 +208,6 @@
 			children = (
 				95D4715B2397C8C1002BEFCA /* Classes */,
 				95D472052397C90D002BEFCA /* Supporting Files */,
-				95D472102397C96B002BEFCA /* BDD */,
-				95D4721D2397C973002BEFCA /* Biometrics */,
 				95D471472397C1A9002BEFCA /* Products */,
 				95D472292397CB1E002BEFCA /* Frameworks */,
 			);
@@ -369,28 +365,11 @@
 			isa = PBXGroup;
 			children = (
 				95D472062397C90D002BEFCA /* TABTestKit.h */,
+				95D472112397C96B002BEFCA /* BDD.h */,
 				95D472072397C90D002BEFCA /* Info.plist */,
 			);
 			name = "Supporting Files";
 			path = "TABTestKit/Supporting Files";
-			sourceTree = "<group>";
-		};
-		95D472102397C96B002BEFCA /* BDD */ = {
-			isa = PBXGroup;
-			children = (
-				95D472112397C96B002BEFCA /* BDD.h */,
-				95D472122397C96B002BEFCA /* Info.plist */,
-			);
-			path = BDD;
-			sourceTree = "<group>";
-		};
-		95D4721D2397C973002BEFCA /* Biometrics */ = {
-			isa = PBXGroup;
-			children = (
-				95D4721E2397C973002BEFCA /* Biometrics.h */,
-				95D4721F2397C973002BEFCA /* Info.plist */,
-			);
-			path = Biometrics;
 			sourceTree = "<group>";
 		};
 		95D472292397CB1E002BEFCA /* Frameworks */ = {
@@ -416,6 +395,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A9037823980E1800B11232 /* BDD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +403,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A9037A23980EBE00B11232 /* Biometrics.h in Headers */,
 				95D472252397C97C002BEFCA /* Biometrics-Bridging-Header.h in Headers */,
-				95D472242397C97C002BEFCA /* Biometrics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,7 +827,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = BDD/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -878,7 +858,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = BDD/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -908,7 +888,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Biometrics/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -938,7 +918,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Biometrics/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
