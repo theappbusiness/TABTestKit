@@ -75,13 +75,9 @@
 		95D472272397C985002BEFCA /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A52397C8C1002BEFCA /* Step.swift */; };
 		95D472282397C985002BEFCA /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A72397C8C1002BEFCA /* Scenario.swift */; };
 		95D4722B2397CB1E002BEFCA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; };
-		95D4722C2397CB1E002BEFCA /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95D4722E2397CBEB002BEFCA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; };
-		95D4722F2397CBEB002BEFCA /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95D472312397CBEF002BEFCA /* BDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4720F2397C96B002BEFCA /* BDD.framework */; };
-		95D472322397CBEF002BEFCA /* BDD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4720F2397C96B002BEFCA /* BDD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95D472352397CBF2002BEFCA /* Biometrics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4721C2397C973002BEFCA /* Biometrics.framework */; };
-		95D472362397CBF2002BEFCA /* Biometrics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4721C2397C973002BEFCA /* Biometrics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,33 +96,6 @@
 			remoteInfo = Biometrics;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		95D4722D2397CB1E002BEFCA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				95D4722C2397CB1E002BEFCA /* XCTest.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D472302397CBEB002BEFCA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				95D472362397CBF2002BEFCA /* Biometrics.framework in Embed Frameworks */,
-				95D4722F2397CBEB002BEFCA /* XCTest.framework in Embed Frameworks */,
-				95D472322397CBEF002BEFCA /* BDD.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		95D471462397C1A9002BEFCA /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -470,7 +439,6 @@
 				95D471422397C1A9002BEFCA /* Sources */,
 				95D471432397C1A9002BEFCA /* Frameworks */,
 				95D471442397C1A9002BEFCA /* Resources */,
-				95D472302397CBEB002BEFCA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,7 +459,6 @@
 				95D4720B2397C96B002BEFCA /* Sources */,
 				95D4720C2397C96B002BEFCA /* Frameworks */,
 				95D4720D2397C96B002BEFCA /* Resources */,
-				95D4722D2397CB1E002BEFCA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
