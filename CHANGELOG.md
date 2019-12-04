@@ -4,6 +4,10 @@
 
 ---
 
+## 1.1.1
+
+- Added support for `Carthage`, which allows project to use TABTestKit using `Carthage` as their dependency manager.
+
 ## 1.1.0
 
 ### New features

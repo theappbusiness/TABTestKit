@@ -1810,7 +1810,7 @@ pod 'TABTestKit/XCUIExtensions'
 
 #### Latest
 
-To use the latest version of **TABTestKit** just add this to your `Cartfile.private` and run `carthage boostrap` or `carthage update` in Terminal
+To use the latest version of **TABTestKit** just add this to your `Cartfile.private` and run `carthage bootstrap` or `carthage update` in Terminal
 
 ```
 github "TABTestKit"
