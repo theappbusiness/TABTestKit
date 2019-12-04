@@ -6,6 +6,7 @@
 [![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 **TABTestKit** is an extremely human readable, strongly typed wrapper around XCUI/XCTest for iOS automation,
 which helps reduce flakiness and lowers the barrier to entry for most people.
@@ -1805,6 +1806,25 @@ Use this subspec to just install the XCTest/XCUI extensions **TABTestKit** uses:
 pod 'TABTestKit/XCUIExtensions'
 ```
 
+### Carthage
+
+#### Latest
+
+To use the latest version of **TABTestKit** just add this to your `Cartfile` and run `carthage boostrap` or `carthage update` in Terminal
+
+```
+github "TABTestKit"
+```
+
+#### Development
+
+To use the version under development you can target the `develop` branch specifically:
+
+```
+github "TABTestKit" "develop"
+```
+
+
 ### Swift Package Manager
 
 **TABTestKit** does not yet support SPM, please feel free to open a PR to add
@@ -1818,7 +1838,7 @@ Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
 Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
-Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire
+Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire  
 Suyash Srijan, suyash.srijan@theappbuisness.com, https://github.com/theblixguy
 
 ## License
