@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if !COCOAPODS
 import Biometrics
+#endif
 
 public protocol BiometricsContext {}
 public extension BiometricsContext {
