@@ -10,7 +10,6 @@ import XCTest
 /// Represents a datepicker.
 /// To interact with the wheels you must first
 /// ask the picker for one of it's wheels, by index.
-
 public struct DatePicker: Element {
 	
 	public let id: String?
