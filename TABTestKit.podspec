@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TABTestKit'
-  s.version          = '1.1.1'
+  s.version          = '1.1.0'
   s.summary          = 'Strongly typed Swift wrapper around XCTest / XCUI, enabling you to write BDD-style automation tests, without writing much code at all.'
   s.homepage         = 'https://github.com/theappbusiness/TABTestKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

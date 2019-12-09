@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95A9037823980E1800B11232 /* BDD.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D472112397C96B002BEFCA /* BDD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95A9037A23980EBE00B11232 /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D4715D2397C8C1002BEFCA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95D471C22397C8C1002BEFCA /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4716B2397C8C1002BEFCA /* SheetContext.swift */; };
 		95D471C32397C8C1002BEFCA /* BiometricsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4716C2397C8C1002BEFCA /* BiometricsContext.swift */; };
 		95D471C42397C8C1002BEFCA /* NavigationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4716D2397C8C1002BEFCA /* NavigationContext.swift */; };
@@ -71,32 +69,13 @@
 		95D472032397C8C1002BEFCA /* ValueRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471B92397C8C1002BEFCA /* ValueRepresentable.swift */; };
 		95D472042397C8C1002BEFCA /* TABTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471BA2397C8C1002BEFCA /* TABTestCase.swift */; };
 		95D472082397C90D002BEFCA /* TABTestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D472062397C90D002BEFCA /* TABTestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95D472252397C97C002BEFCA /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95D472262397C97C002BEFCA /* Biometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D471662397C8C1002BEFCA /* Biometrics.m */; };
-		95D472272397C985002BEFCA /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A52397C8C1002BEFCA /* Step.swift */; };
-		95D472282397C985002BEFCA /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A72397C8C1002BEFCA /* Scenario.swift */; };
-		95D4722B2397CB1E002BEFCA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; };
 		95D4722E2397CBEB002BEFCA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; };
-		95D472312397CBEF002BEFCA /* BDD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4720F2397C96B002BEFCA /* BDD.framework */; };
-		95D472352397CBF2002BEFCA /* Biometrics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4721C2397C973002BEFCA /* Biometrics.framework */; };
+		95EB8E54239E4BE5007336E8 /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95EB8E55239E4BE8007336E8 /* Biometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D471662397C8C1002BEFCA /* Biometrics.m */; };
+		95EB8E56239E4BFD007336E8 /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D4715D2397C8C1002BEFCA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95EB8E57239E4CC4007336E8 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A52397C8C1002BEFCA /* Step.swift */; };
+		95EB8E58239E4CC7007336E8 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A72397C8C1002BEFCA /* Scenario.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		95D472332397CBEF002BEFCA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95D4713D2397C1A9002BEFCA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95D4720E2397C96B002BEFCA;
-			remoteInfo = BDD;
-		};
-		95D472372397CBF2002BEFCA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95D4713D2397C1A9002BEFCA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95D4721B2397C973002BEFCA;
-			remoteInfo = Biometrics;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		95D471462397C1A9002BEFCA /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,9 +147,6 @@
 		95D471BA2397C8C1002BEFCA /* TABTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TABTestCase.swift; sourceTree = "<group>"; };
 		95D472062397C90D002BEFCA /* TABTestKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABTestKit.h; sourceTree = "<group>"; };
 		95D472072397C90D002BEFCA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95D4720F2397C96B002BEFCA /* BDD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BDD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95D472112397C96B002BEFCA /* BDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDD.h; sourceTree = "<group>"; };
-		95D4721C2397C973002BEFCA /* Biometrics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Biometrics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D4722A2397CB1E002BEFCA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -179,24 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D472352397CBF2002BEFCA /* Biometrics.framework in Frameworks */,
 				95D4722E2397CBEB002BEFCA /* XCTest.framework in Frameworks */,
-				95D472312397CBEF002BEFCA /* BDD.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D4720C2397C96B002BEFCA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95D4722B2397CB1E002BEFCA /* XCTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D472192397C973002BEFCA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				95D471462397C1A9002BEFCA /* TABTestKit.framework */,
-				95D4720F2397C96B002BEFCA /* BDD.framework */,
-				95D4721C2397C973002BEFCA /* Biometrics.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -365,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				95D472062397C90D002BEFCA /* TABTestKit.h */,
-				95D472112397C96B002BEFCA /* BDD.h */,
 				95D472072397C90D002BEFCA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -387,24 +343,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95EB8E56239E4BFD007336E8 /* Biometrics.h in Headers */,
+				95EB8E54239E4BE5007336E8 /* Biometrics-Bridging-Header.h in Headers */,
 				95D472082397C90D002BEFCA /* TABTestKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D4720A2397C96B002BEFCA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95A9037823980E1800B11232 /* BDD.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D472172397C973002BEFCA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95A9037A23980EBE00B11232 /* Biometrics.h in Headers */,
-				95D472252397C97C002BEFCA /* Biometrics-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,48 +364,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				95D472342397CBEF002BEFCA /* PBXTargetDependency */,
-				95D472382397CBF2002BEFCA /* PBXTargetDependency */,
 			);
 			name = TABTestKit;
 			productName = TABTestKit;
 			productReference = 95D471462397C1A9002BEFCA /* TABTestKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		95D4720E2397C96B002BEFCA /* BDD */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95D472142397C96B002BEFCA /* Build configuration list for PBXNativeTarget "BDD" */;
-			buildPhases = (
-				95D4720A2397C96B002BEFCA /* Headers */,
-				95D4720B2397C96B002BEFCA /* Sources */,
-				95D4720C2397C96B002BEFCA /* Frameworks */,
-				95D4720D2397C96B002BEFCA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BDD;
-			productName = BDD;
-			productReference = 95D4720F2397C96B002BEFCA /* BDD.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		95D4721B2397C973002BEFCA /* Biometrics */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95D472212397C973002BEFCA /* Build configuration list for PBXNativeTarget "Biometrics" */;
-			buildPhases = (
-				95D472172397C973002BEFCA /* Headers */,
-				95D472182397C973002BEFCA /* Sources */,
-				95D472192397C973002BEFCA /* Frameworks */,
-				95D4721A2397C973002BEFCA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Biometrics;
-			productName = Biometrics;
-			productReference = 95D4721C2397C973002BEFCA /* Biometrics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -477,12 +380,6 @@
 				ORGANIZATIONNAME = "The App Business";
 				TargetAttributes = {
 					95D471452397C1A9002BEFCA = {
-						CreatedOnToolsVersion = 11.2.1;
-					};
-					95D4720E2397C96B002BEFCA = {
-						CreatedOnToolsVersion = 11.2.1;
-					};
-					95D4721B2397C973002BEFCA = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
@@ -501,28 +398,12 @@
 			projectRoot = "";
 			targets = (
 				95D471452397C1A9002BEFCA /* TABTestKit */,
-				95D4720E2397C96B002BEFCA /* BDD */,
-				95D4721B2397C973002BEFCA /* Biometrics */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		95D471442397C1A9002BEFCA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D4720D2397C96B002BEFCA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D4721A2397C973002BEFCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -565,6 +446,7 @@
 				95D472022397C8C1002BEFCA /* ScrollableScreen.swift in Sources */,
 				95D471FE2397C8C1002BEFCA /* Adjustable.swift in Sources */,
 				95D471E12397C8C1002BEFCA /* Table.swift in Sources */,
+				95EB8E58239E4CC7007336E8 /* Scenario.swift in Sources */,
 				95D472042397C8C1002BEFCA /* TABTestCase.swift in Sources */,
 				95D472012397C8C1002BEFCA /* CellContaining.swift in Sources */,
 				95D471FF2397C8C1002BEFCA /* Editable.swift in Sources */,
@@ -574,6 +456,7 @@
 				95D472002397C8C1002BEFCA /* Screen.swift in Sources */,
 				95D471EC2397C8C1002BEFCA /* SecureTextField.swift in Sources */,
 				95D471FA2397C8C1002BEFCA /* Tappable.swift in Sources */,
+				95EB8E57239E4CC4007336E8 /* Step.swift in Sources */,
 				95D471EE2397C8C1002BEFCA /* Button.swift in Sources */,
 				95D471E72397C8C1002BEFCA /* NavBar.swift in Sources */,
 				95D471CD2397C8C1002BEFCA /* XCUIDevice+frame.swift in Sources */,
@@ -596,41 +479,12 @@
 				95D471E02397C8C1002BEFCA /* SegmentedControl.swift in Sources */,
 				95D471C52397C8C1002BEFCA /* InteractionContext.swift in Sources */,
 				95D471E42397C8C1002BEFCA /* Switch.swift in Sources */,
+				95EB8E55239E4BE8007336E8 /* Biometrics.m in Sources */,
 				95D471FD2397C8C1002BEFCA /* Element.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95D4720B2397C96B002BEFCA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95D472272397C985002BEFCA /* Step.swift in Sources */,
-				95D472282397C985002BEFCA /* Scenario.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D472182397C973002BEFCA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95D472262397C97C002BEFCA /* Biometrics.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		95D472342397CBEF002BEFCA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95D4720E2397C96B002BEFCA /* BDD */;
-			targetProxy = 95D472332397CBEF002BEFCA /* PBXContainerItemProxy */;
-		};
-		95D472382397CBF2002BEFCA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95D4721B2397C973002BEFCA /* Biometrics */;
-			targetProxy = 95D472372397CBF2002BEFCA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		95D4714C2397C1A9002BEFCA /* Debug */ = {
@@ -779,6 +633,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -810,128 +665,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		95D472152397C96B002BEFCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.theappbusiness.BDD;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		95D472162397C96B002BEFCA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.theappbusiness.BDD;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		95D472222397C973002BEFCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.theappbusiness.Biometrics;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		95D472232397C973002BEFCA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/TABTestKit/Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.theappbusiness.Biometrics;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -954,24 +688,6 @@
 			buildConfigurations = (
 				95D4714F2397C1A9002BEFCA /* Debug */,
 				95D471502397C1A9002BEFCA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95D472142397C96B002BEFCA /* Build configuration list for PBXNativeTarget "BDD" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95D472152397C96B002BEFCA /* Debug */,
-				95D472162397C96B002BEFCA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95D472212397C973002BEFCA /* Build configuration list for PBXNativeTarget "Biometrics" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95D472222397C973002BEFCA /* Debug */,
-				95D472232397C973002BEFCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
