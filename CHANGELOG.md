@@ -2,6 +2,8 @@
 
 ## Pending
 
+- Added new `ActivitySheet` to represent the `UIActivityViewController` sheet.
+
 ---
 
 ## 1.1.0
