@@ -56,6 +56,11 @@ final class OtherElementsController: UIViewController {
     picker.delegate = self
   }
   
+  @IBAction private func buttonTapped() {
+    let sheet = UIActivityViewController(activityItems: ["hello"], applicationActivities: nil)
+    present(sheet, animated: true)
+  }
+  
 }
 
 extension OtherElementsController: UIPickerViewDataSource & UIPickerViewDelegate {
