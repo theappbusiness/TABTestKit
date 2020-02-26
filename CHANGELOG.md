@@ -2,6 +2,8 @@
 
 ## Pending
 
+- Clears launch arguments and launch environment values as part of tearDown, ready for the next test.
+
 ---
 
 ## 1.1.0
