@@ -3,6 +3,7 @@
 ## Pending
 
 - Clears launch arguments and launch environment values as part of tearDown, ready for the next test.
+- Added new `ActivitySheet` to represent the `UIActivityViewController` sheet.
 - Renames `func keyboard(isType type: Keyboard.KeyboardType)` to `func keyboardIsType(_ type: Keyboard.KeyboardType)` to avoid conflict with `public let keyboard = Keyboard()` within `KeyboardContext`.
 
 ---

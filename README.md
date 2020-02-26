@@ -63,6 +63,7 @@ func test_login() {
       - [`TabBar`](#tabbar)
       - [`Alert`](#alert)
       - [`Sheet`](#sheet)
+      - [`ActivitySheet`](#activitysheet)
       - [`Switch`](#switch)
       - [`Slider`](#slider)
       - [`Stepper`](#stepper)
@@ -946,6 +947,21 @@ sheet.dismiss()
 
 > **NOTE:** `Sheet` uses the `dismissButtonID` to dismiss itself, which is
 `"Cancel"` by default.
+
+#### Activity Sheet
+
+`ActivitySheet` represents a `UIActivityViewController` (share sheet) in the app.
+
+```swift
+let shareSheet = ActivitySheet()
+let shareSheet = ActivitySheet(parent: Safari())
+```
+
+Since `ActivitySheet` conforms to `Dismissable` you can use it directly with [`NavigationContext`](#navigationcontext):
+
+```swift
+Given(I: dismiss(shareSheet))
+```
 
 #### Switch
 
