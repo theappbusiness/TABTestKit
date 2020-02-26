@@ -1403,12 +1403,12 @@ Given(I: tap("Delete", in: myScreen.sheet))
 `KeyboardContext` is a predefined context that `TABTestCase` already conforms to,
 which means your test cases can already use the functions in it.
 
-`KeyboardContext` provides helper functions for interacting with the `Keyboard.:
+`KeyboardContext` provides helper functions for interacting with the `Keyboard`.:
 
 ```swift
-keyboard(isType: .twitter)
+keyboardIsType(.twitter)
 
-Given(the: keyboard(isType: .twitter))
+Given(the: keyboardIsType(.twitter))
 ```
 
 #### BiometricsContext
