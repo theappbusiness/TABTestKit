@@ -32,6 +32,7 @@ struct OtherElementsScreen: Screen {
   let stepper = Stepper(id: "ExampleStepper")
   let pageIndicator = PageIndicator(id: "ExamplePageControl")
   let picker = Picker(id: "ExamplePicker")
+  let shareSheet = ActivitySheet()
   
 }
 

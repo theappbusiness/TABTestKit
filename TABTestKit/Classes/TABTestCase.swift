@@ -42,9 +42,12 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	}
 	
 	/// Provides the tear down for the application and each XCTestCase.
-	/// As part of tearDown, preTerminationTearDown will be called.
+	/// As part of tearDown, preTerminationTearDown will be called after
+	/// clearing the `App.shared` `launchEnvironment` and `launchArguments`.
 	/// Override preTerminationTearDown to provide custom pretermination tear down behaviour.
 	open override func tearDown() {
+		App.shared.launchEnvironment.removeAll()
+		App.shared.launchArguments.removeAll()
 		preTerminationTearDown {
 			App.shared.terminate()
 		}

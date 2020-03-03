@@ -163,6 +163,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtX-qz-K6y">
                                                         <rect key="frame" x="0.0" y="36.5" width="311" height="30"/>
                                                         <state key="normal" title="Example button"/>
+                                                        <connections>
+                                                            <action selector="buttonTapped" destination="jT9-QJ-sAL" eventType="touchUpInside" id="hhd-Ly-GM8"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="kY2-0d-g5B">
                                                         <rect key="frame" x="0.0" y="82.5" width="311" height="31"/>
