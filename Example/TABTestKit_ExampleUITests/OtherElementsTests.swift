@@ -25,9 +25,17 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing the label and button") {
       Given(I: see(otherElementsScreen))
-      Then(I: see(otherElementsScreen.label))
+      And(I: see(otherElementsScreen.label))
       And(I: see(otherElementsScreen.button))
-      And(I: tap(otherElementsScreen.button))
+      When(I: tap(otherElementsScreen.button))
+      Then(I: see(otherElementsScreen.shareSheet))
+    }
+    
+    Scenario("Dismissing the share sheet") {
+      Given(I: see(otherElementsScreen.shareSheet))
+      When(I: dismiss(otherElementsScreen.shareSheet))
+      Then(I: doNotSee(otherElementsScreen.shareSheet))
+      And(I: see(otherElementsScreen))
     }
     
     Scenario("Seeing and interacting with the segmented control") {
