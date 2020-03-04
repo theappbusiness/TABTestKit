@@ -1406,9 +1406,9 @@ which means your test cases can already use the functions in it.
 `KeyboardContext` provides helper functions for interacting with the `Keyboard`.:
 
 ```swift
-keyboardIsType(.twitter)
+keyboardType(is: .twitter)
 
-Given(the: keyboardIsType(.twitter))
+Given(the: keyboardType(is: .twitter))
 ```
 
 #### BiometricsContext

@@ -3,7 +3,7 @@
 ## Pending
 
 - Clears launch arguments and launch environment values as part of tearDown, ready for the next test.
-- Renames `func keyboard(isType type: Keyboard.KeyboardType)` to `func keyboardIsType(_ type: Keyboard.KeyboardType)` to avoid conflict with `public let keyboard = Keyboard()` within `KeyboardContext`.
+- Renames `func keyboard(isType type: Keyboard.KeyboardType)` to `func keyboardType(is type: Keyboard.KeyboardType)` to avoid conflict with `public let keyboard = Keyboard()` within `KeyboardContext`.
 
 ---
 
