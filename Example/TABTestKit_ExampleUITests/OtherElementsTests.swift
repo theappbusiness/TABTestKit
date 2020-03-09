@@ -25,9 +25,17 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing the label and button") {
       Given(I: see(otherElementsScreen))
-      Then(I: see(otherElementsScreen.label))
+      And(I: see(otherElementsScreen.label))
       And(I: see(otherElementsScreen.button))
-      And(I: tap(otherElementsScreen.button))
+      When(I: tap(otherElementsScreen.button))
+      Then(I: see(otherElementsScreen.shareSheet))
+    }
+    
+    Scenario("Dismissing the share sheet") {
+      Given(I: see(otherElementsScreen.shareSheet))
+      When(I: dismiss(otherElementsScreen.shareSheet))
+      Then(I: doNotSee(otherElementsScreen.shareSheet))
+      And(I: see(otherElementsScreen))
     }
     
     Scenario("Seeing and interacting with the segmented control") {
@@ -47,63 +55,63 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
       And(the: state(of: otherElementsScreen.textField, is: .hasKeyboardFocus))
       And(I: type("Hello world", into: otherElementsScreen.textField))
       And(the: value(of: otherElementsScreen.textField, is: "Hello world"))
-      And(the: keyboard(isType: .regular))
+      And(the: keyboardType(is: .regular))
     }
     
     Scenario("Number pad keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.numberPadTextField, is: .hittable))
       When(I: tap(otherElementsScreen.numberPadTextField))
       Then(the: state(of: otherElementsScreen.numberPadTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .numberPad))
+      And(the: keyboardType(is: .numberPad))
     }
     
     Scenario("Decimal pad keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.decimalPadTextField, is: .hittable))
       When(I: tap(otherElementsScreen.decimalPadTextField))
       Then(the: state(of: otherElementsScreen.decimalPadTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .decimalPad))
+      And(the: keyboardType(is: .decimalPad))
     }
     
     Scenario("Email address keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.emailAddressTextField, is: .hittable))
       When(I: tap(otherElementsScreen.emailAddressTextField))
       Then(the: state(of: otherElementsScreen.emailAddressTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .emailAddress))
+      And(the: keyboardType(is: .emailAddress))
     }
     
     Scenario("Numbers and punctuation keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.numbersAndPunctuationTextField, is: .hittable))
       When(I: tap(otherElementsScreen.numbersAndPunctuationTextField))
       Then(the: state(of: otherElementsScreen.numbersAndPunctuationTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .numbersAndPunctuation))
+      And(the: keyboardType(is: .numbersAndPunctuation))
     }
     
     Scenario("Phone pad keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.phonePadTextField, is: .hittable))
       When(I: tap(otherElementsScreen.phonePadTextField))
       Then(the: state(of: otherElementsScreen.phonePadTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .phonePad))
+      And(the: keyboardType(is: .phonePad))
     }
     
     Scenario("Twitter keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.twitterTextField, is: .hittable))
       When(I: tap(otherElementsScreen.twitterTextField))
       Then(the: state(of: otherElementsScreen.twitterTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .twitter))
+      And(the: keyboardType(is: .twitter))
     }
     
     Scenario("URL keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.urlTextField, is: .hittable))
       When(I: tap(otherElementsScreen.urlTextField))
       Then(the: state(of: otherElementsScreen.urlTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .url))
+      And(the: keyboardType(is: .url))
     }
     
     Scenario("Web search keyboard type") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.webSearchTextField, is: .hittable))
       When(I: tap(otherElementsScreen.webSearchTextField))
       Then(the: state(of: otherElementsScreen.webSearchTextField, is: .hasKeyboardFocus))
-      And(the: keyboard(isType: .webSearch))
+      And(the: keyboardType(is: .webSearch))
     }
     
     Scenario("Seeing and interacting with the secure text field") {

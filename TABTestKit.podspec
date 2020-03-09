@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TABTestKit'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Strongly typed Swift wrapper around XCTest / XCUI, enabling you to write BDD-style automation tests, without writing much code at all.'
   s.homepage         = 'https://github.com/theappbusiness/TABTestKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.subspec 'BDD' do |b|
     b.source_files = 'TABTestKit/Classes/BDD/**/*'
   end
-  
+
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end

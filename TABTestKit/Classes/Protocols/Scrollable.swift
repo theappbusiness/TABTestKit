@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics.CGGeometry
 
 /// Represents a type that can be scrolled.
 /// Any Element that conforms to Scrollable will get this behaviour for free.

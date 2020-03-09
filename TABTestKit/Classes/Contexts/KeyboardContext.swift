@@ -11,7 +11,7 @@ import XCTest
 public protocol KeyboardContext {}
 public extension KeyboardContext {
 	
-	func keyboard(isType type: Keyboard.KeyboardType) {
+	func keyboardType(is type: Keyboard.KeyboardType) {
 		XCTAssertEqual(type, TABTestKit.keyboard.keyboardType)
 	}
 	

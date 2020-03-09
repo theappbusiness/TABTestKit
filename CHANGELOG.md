@@ -4,6 +4,18 @@
 
 ---
 
+## 1.2.0
+
+### New features
+
+- Clears launch arguments and launch environment values as part of tearDown, ready for the next test.
+- Added new `ActivitySheet` to represent the `UIActivityViewController` sheet.
+- Added support for `Carthage`, which allows project to use TABTestKit using `Carthage` as their dependency manager.
+
+### Fixed
+
+- Renames `func keyboard(isType type: Keyboard.KeyboardType)` to `func keyboardType(is type: Keyboard.KeyboardType)` to avoid conflict with `public let keyboard = Keyboard()` within `KeyboardContext`.
+
 ## 1.1.0
 
 ### New features

@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/theappbusiness/TABTestKit.svg?branch=develop)](https://travis-ci.org/theappbusiness/TABTestKit)
 [![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
@@ -63,6 +64,7 @@ func test_login() {
       - [`TabBar`](#tabbar)
       - [`Alert`](#alert)
       - [`Sheet`](#sheet)
+      - [`ActivitySheet`](#activitysheet)
       - [`Switch`](#switch)
       - [`Slider`](#slider)
       - [`Stepper`](#stepper)
@@ -947,6 +949,21 @@ sheet.dismiss()
 > **NOTE:** `Sheet` uses the `dismissButtonID` to dismiss itself, which is
 `"Cancel"` by default.
 
+#### Activity Sheet
+
+`ActivitySheet` represents a `UIActivityViewController` (share sheet) in the app.
+
+```swift
+let shareSheet = ActivitySheet()
+let shareSheet = ActivitySheet(parent: Safari())
+```
+
+Since `ActivitySheet` conforms to `Dismissable` you can use it directly with [`NavigationContext`](#navigationcontext):
+
+```swift
+Given(I: dismiss(shareSheet))
+```
+
 #### Switch
 
 `Switch` represents a switch (sometimes called a toggle) in the app:
@@ -1403,12 +1420,12 @@ Given(I: tap("Delete", in: myScreen.sheet))
 `KeyboardContext` is a predefined context that `TABTestCase` already conforms to,
 which means your test cases can already use the functions in it.
 
-`KeyboardContext` provides helper functions for interacting with the `Keyboard.:
+`KeyboardContext` provides helper functions for interacting with the `Keyboard`.:
 
 ```swift
-keyboard(isType: .twitter)
+keyboardType(is: .twitter)
 
-Given(the: keyboard(isType: .twitter))
+Given(the: keyboardType(is: .twitter))
 ```
 
 #### BiometricsContext
@@ -1805,6 +1822,28 @@ Use this subspec to just install the XCTest/XCUI extensions **TABTestKit** uses:
 pod 'TABTestKit/XCUIExtensions'
 ```
 
+### Carthage
+
+#### Latest
+
+To use the latest version of **TABTestKit** just add this to your `Cartfile.private` and run `carthage bootstrap` or `carthage update` in Terminal
+
+```
+github "TABTestKit"
+```
+
+If this is your first time using Carthage in the project, you'll need to go through some additional steps as explained [over at Carthage](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application).
+
+> NOTE: At this time, Carthage does not provide a way to build only specific repository submodules. `TABTestKit`, `BDD` and `Biometrics` will be combined into one single framework.
+
+#### Development
+
+To use the version under development you can target the `develop` branch specifically:
+
+```
+github "TABTestKit" "develop"
+```
+
 ### Swift Package Manager
 
 **TABTestKit** does not yet support SPM, please feel free to open a PR to add
@@ -1818,7 +1857,7 @@ Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
 Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
-Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire
+Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire  
 Suyash Srijan, suyash.srijan@theappbuisness.com, https://github.com/theblixguy
 
 ## License
