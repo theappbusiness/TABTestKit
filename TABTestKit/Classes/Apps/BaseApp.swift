@@ -24,7 +24,11 @@ open class BaseApp: XCUIApplication {
 	/// "Backgrounds" the app, waiting for the state to be suspended before continuing.
 	open func background() {
 		XCUIDevice.shared.press(.home)
-		XCTAssert(wait(for: .runningBackgroundSuspended, timeout: 10))
+		if #available(iOS 13.0, *) {
+			XCTAssert(wait(for: .runningBackground, timeout: 10))
+		} else {
+			XCTAssert(wait(for: .runningBackgroundSuspended, timeout: 10))
+		}
 	}
 	
 	/// Activates/foregrounds the app, waiting for the state to be running before continuing.
