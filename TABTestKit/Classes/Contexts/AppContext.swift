@@ -23,7 +23,7 @@ public extension AppContext {
 	}
 	
 	func launchTheApp(clean: Bool) {
-		clean ? App.shared.launch(clean: true): App.shared.activate() // Quicker! Doesn't re-install the app, but still launches.
+		App.shared.launch(clean: clean)
 	}
 	
 	func relaunchTheApp() {
