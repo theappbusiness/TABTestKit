@@ -2,10 +2,12 @@
 
 ## Pending
 
+---
+
+## 1.2.1
+
 - Properly clears launch argument indicating that the app should be launched clean when calling `launchTheApp(clean:)` in `AppContext`. (issue #74)
 - Fixes an issue when calling `background()` on `BaseApp` on iOS 13 since it never reaches the `runningBackgroundSuspended` state. This is likely a bug in iOS 13 simulators/XCUI but this is fixed by just waiting for `runningBackground` for iOS 13+. (issue #64)
-
----
 
 ## 1.2.0
 
