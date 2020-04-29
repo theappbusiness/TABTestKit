@@ -29,69 +29,73 @@ public struct Step {
 	public let line: UInt
 	/// The test function this step is in.
 	public let function: StaticString
+	/// The file this step is defined in.
+	public let file: StaticString
 	
 	// MARK: - Standard init, i.e. Given(somethingHappens)
 	
 	@discardableResult
-	public init(_ handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	public init(_ handler: () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	@discardableResult
-	public init(_ handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	public init(_ handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	// MARK: - "I" init, i.e. Given(I: doSomething)
 	
 	@discardableResult
-	public init(I handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	public init(I handler: () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	@discardableResult
-	public init(I handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	public init(I handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	// MARK: - "the" init, i.e. Given(the: thingIsTrue)
 	
 	@discardableResult
-	public init(the handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	public init(the handler: () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	@discardableResult
-	public init(the handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	public init(the handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	// MARK: - "a" init, i.e. Given(a: serverErrorIsReturned)
 	
 	@discardableResult
-	init(a handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	init(a handler: @autoclosure () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 	@discardableResult
-	init(a handler: () -> Void, line: UInt = #line, function: StaticString = #function) {
-		self.init(handler: handler, line: line, function: function)
+	init(a handler: () -> Void, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(handler: handler, line: line, function: function, file: file)
 	}
 	
 }
 
 private extension Step {
 	
-	init(handler: () -> Void, line: UInt, function: StaticString) {
+	init(handler: () -> Void, line: UInt, function: StaticString, file: StaticString) {
 		self.line = line
 		self.function = function
+		self.file = file
 		Step.current = self
 		handler()
 	}
 	
-	init(handler: @autoclosure () -> Void, line: UInt, function: StaticString) {
+	init(handler: @autoclosure () -> Void, line: UInt, function: StaticString, file: StaticString) {
 		self.line = line
 		self.function = function
+		self.file = file
 		Step.current = self
 		handler()
 	}
