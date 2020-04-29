@@ -2,6 +2,8 @@
 
 ## Pending
 
+- Better failure reports. Specifically, the most recently executed Step's file / line is used to report a failure (if one exists). This means that the red error banner now shows on the correct line in the correct file, and should report better failures on CI rather than just "assert true failed in Element.swift" etc. (issue #80)
+
 ---
 
 ## 1.2.1
