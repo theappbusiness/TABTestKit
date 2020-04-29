@@ -131,7 +131,7 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing and interacting with the switch") {
       Given(I: see(otherElementsScreen.toggle))
-      And(the: value(of: otherElementsScreen.toggle, is: .off))
+      And(the: value(of: otherElementsScreen.toggle, is: .on))
       Then(I: adjust(otherElementsScreen.toggle, to: .off))
       And(the: value(of: otherElementsScreen.toggle, is: .off))
     }
