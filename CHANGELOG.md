@@ -4,7 +4,15 @@
 
 ---
 
+## 1.3.0
+
+- Better failure reports. Specifically, the most recently executed Step's file / line is used to report a failure (if one exists). This means that the red error banner now shows on the correct line in the correct file, and should report better failures on CI rather than just "assert true failed in Element.swift" etc. (issue #80)
+
+---
+
 ## 1.2.1
+
+### Fixed
 
 - Properly clears launch argument indicating that the app should be launched clean when calling `launchTheApp(clean:)` in `AppContext`. (issue #74)
 - Fixes an issue when calling `background()` on `BaseApp` on iOS 13 since it never reaches the `runningBackgroundSuspended` state. This is likely a bug in iOS 13 simulators/XCUI but this is fixed by just waiting for `runningBackground` for iOS 13+. (issue #64)

@@ -1,17 +1,17 @@
 PODS:
-  - ShowTime (2.5.0)
-  - TABTestKit (1.2.0):
-    - TABTestKit/BDD (= 1.2.0)
-    - TABTestKit/Biometrics (= 1.2.0)
-  - TABTestKit/BDD (1.2.0)
-  - TABTestKit/Biometrics (1.2.0)
+  - ShowTime (2.5.1)
+  - TABTestKit (1.2.1):
+    - TABTestKit/BDD (= 1.2.1)
+    - TABTestKit/Biometrics (= 1.2.1)
+  - TABTestKit/BDD (1.2.1)
+  - TABTestKit/Biometrics (1.2.1)
 
 DEPENDENCIES:
   - ShowTime
   - TABTestKit (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - ShowTime
 
 EXTERNAL SOURCES:
@@ -19,8 +19,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ShowTime: 7821a8fc33629f34dbd970e0b55f34126f6d9750
-  TABTestKit: fd7beb2b5816d88d29c6ecb5af11ae47c3246e6e
+  ShowTime: 0d7ad97e415e3228f0e966e025087ea4175f3361
+  TABTestKit: 0e6828faebd9ee6fac09b992c9af7a78d20c8df4
 
 PODFILE CHECKSUM: cff5520fee18bc1ac482104a6673ae29b40d9690
 

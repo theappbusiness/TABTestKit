@@ -78,6 +78,8 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		// You can find this attachment in the .xcresult bundle (usually Derived Data).
 		let attachment = createFailureAttachment(description: description, filePath: filePath, lineNumber: lineNumber)
 		add(attachment)
+		let filePath = Step.current?.filePath ?? filePath
+		let lineNumber = Step.current?.lineNumber ?? lineNumber
 		super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
 	}
 	
@@ -86,7 +88,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		Full failure info (scenarios and steps may be in a different file to the actual failure):
 		
 		Failed scenario: \(Scenario.current?.description ?? "No scenario")
-		Failed step: \(name) on line \(Step.current?.line ?? 0)
+		Failed step: \(name) on line \(Step.current?.line ?? 0) in file \(Step.current?.file ?? "unknown")
 		
 		Actual file that failed: \(filePath)
 		Actual line that failed: \(lineNumber)
@@ -98,4 +100,13 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		return attachment
 	}
 	
+}
+
+private extension Step {
+	var filePath: String {
+		return "\(file)"
+	}
+	var lineNumber: Int {
+		return Int(line)
+	}
 }
