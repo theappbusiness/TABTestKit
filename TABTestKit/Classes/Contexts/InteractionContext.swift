@@ -13,6 +13,18 @@ public extension InteractionContext {
 	func tap(_ element: Tappable) {
 		element.tap()
 	}
+
+	func doubleTap(_ element: Tappable) {
+		element.doubleTap()
+	}
+
+	func twoFingerTap(_ element: Tappable) {
+		element.twoFingerTap()
+	}
+
+	func longPress(_ element: Tappable, duration: TimeInterval = 0.5) {
+		element.longPress(duration: duration)
+	}
 	
 	func type(_ text: String, into element: Editable) {
 		element.type(text)

@@ -1264,8 +1264,14 @@ Anything that conforms to `Tappable` can be tapped using `InteractionContext`:
 tap(myScreen.button)
 tap(myScreen.textField)
 
+doubleTap(myScreen.imageView)
+twoFingerTap(myScreen.someView)
+longPress(myScreen.cell)
+
 Given(I: tap(myScreen.button))
-Given(I: tap(myScreen.textField))
+Given(I: doubleTap(myScreen.imageView))
+Given(I: twoFingerTap(myScreen.someView))
+Given(I: longPress(myScreen.cell))
 ```
 
 ##### Typing into elements
@@ -1637,9 +1643,9 @@ frustrating automation tests.
 #### Tappable
 
 Anything that conforms to `Tappable` (like [`Button`](#button)), is declaring it
-can be tapped.
+can be tapped, this includes single, double and two finger taps, as well as long pressing.
 
-`Tappable` works really well wit [`InteractionContext`](#interactioncontext).
+`Tappable` works really well with [`InteractionContext`](#interactioncontext).
 
 Additionally, any [`Element`](#element) that conforms to `Tappable` doesn't have
 to do any extra work, default implementations will be provided automatically.
