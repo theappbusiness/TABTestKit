@@ -12,7 +12,8 @@ public protocol KeyboardContext {}
 public extension KeyboardContext {
 	
 	func keyboardType(is type: Keyboard.KeyboardType) {
-		XCTAssertEqual(type, TABTestKit.keyboard.keyboardType)
+		let actual = keyboard.keyboardType
+		XCTAssertEqual(type, actual, "Actual keyboard type (\(actual)) does not match expected keyboard type (\(type))")
 	}
 	
 }

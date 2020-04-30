@@ -38,7 +38,7 @@ public extension InteractionContext {
 				numberOfTries += 1
 				element.scroll(direction)
 			} while numberOfTries <= maxTries
-			XCTFail("Ran of out tries waiting for element to become \(state)")
+			XCTFail("Ran of out tries (\(maxTries)) waiting for element to become \(state)")
 		}
 	}
 	
@@ -50,7 +50,7 @@ public extension InteractionContext {
 				numberOfTries += 1
 				element.scroll(direction)
 			} while numberOfTries <= maxTries
-			XCTFail("Ran of out tries waiting for element to become not \(state)")
+			XCTFail("Ran of out tries (\(maxTries)) waiting for element to become not \(state)")
 		}
 	}
 	

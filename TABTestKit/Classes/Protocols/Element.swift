@@ -65,11 +65,11 @@ public extension Element {
 	/// You can provide multiple states, like `await(.exists, .hittable)`
 	///
 	/// - Parameter states: The states to wait for.
-	/// - Parameter timeout: The timout. Defaults to 30 seconds.
+	/// - Parameter timeout: The timeout. Defaults to 30 seconds.
 	func await(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) {
 		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
 		states.forEach { state in
-			XCTAssertTrue(determine(state, timeout: timeout))
+			XCTAssertTrue(determine(state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
 		}
 	}
 	
@@ -84,7 +84,7 @@ public extension Element {
 	func await(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
 		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
 		states.forEach { state in
-			XCTAssertTrue(determine(not: state, timeout: timeout))
+			XCTAssertTrue(determine(not: state, timeout: timeout), "Failed awaiting element to not be \(state) with timeout \(timeout)")
 		}
 	}
 	
