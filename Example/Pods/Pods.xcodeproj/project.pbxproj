@@ -24,12 +24,12 @@
 		24ED9217067D3E2949D7CBEC6002F057 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5CDF39CC5E03DD2A78BBF1868A35 /* CollectionView.swift */; };
 		25CFAF4F7498DBF90A9CBE5A4A859D7F /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F09AA576A017AA5887F716093A75F /* Scrollable.swift */; };
 		267805C828A9D1D94D9CACAE5C603CDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
-		27CB0A5EB157C02C3FDFCC594331324E /* ShowTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B88FD8FB77D1350EAF5791D96CD7D75 /* ShowTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27CB0A5EB157C02C3FDFCC594331324E /* ShowTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69152FFA4489AC24B45BCE5208B3B41A /* ShowTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A411C58F872C8C44DA40F3E8C526574 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050E802DF87843496AE0298C8E6E6894 /* SegmentedControl.swift */; };
 		2F1D4014C8AA76E6B20DBB58E1385982 /* BiometricsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD294FCD424E21252667BB25F0B5DFD /* BiometricsContext.swift */; };
 		3091E023C8EDD74A1B4BACCA8A991B88 /* Adjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7A14E94735032FA9D267600F45456 /* Adjustable.swift */; };
 		357D852032838CCAF1BAA11C478BDA2C /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950E7DD2D565EE520DFCE34EC1A7D6A2 /* Scenario.swift */; };
-		3BAACB923E748E95FB43377CCECA0277 /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889086CC01FD8F2532CBA362837EBC2 /* ShowTime.swift */; };
+		3C892CB7517172243FF2DA110515208C /* ShowTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F094F44DD0301CC76E1365673D3FCF9C /* ShowTime-dummy.m */; };
 		3D53EE53A9983C943A862D0383369B25 /* Pods-TABTestKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FEFF9CD73B2D6723ED60BBDD46577CD /* Pods-TABTestKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E66A422EE50C8F437227A51C69D4680 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7808B25C4838FA8F8CE79153F15B34D7 /* NavBar.swift */; };
 		44C110A04CD21BAE331D1F5CC2ED369A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D965B1028764BF95DC4ADE6CC9125 /* Alert.swift */; };
@@ -53,7 +53,6 @@
 		813774AD4B01D88060F5A3BA9C31D117 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA4C101B00A975C2505867D27701E0 /* Step.swift */; };
 		813D0E82BF97298B69B9A5004474664B /* XCTFatalFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE65D8B4681A9D1BB2CE760736C9932 /* XCTFatalFail.swift */; };
 		84E3BE493C6D7C786A6A53AE0C3FCBA9 /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = EEA8CB911C664DEC0D973AA6A2545177 /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8821EB088D8B0427003A1653D503147A /* ShowTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC8BF80FFD66229E6DD416417E398C /* ShowTime-dummy.m */; };
 		8B286852CCE7AF9B4A574916ABB36D68 /* Biometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8BFF9D50FEAEBC351CAB08019E6D37 /* Biometrics.m */; };
 		8C45FA34C3F5F90D4E4BA7AE8BBECA6F /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031B4DE43D67D51609BE60B382093FCA /* Keyboard.swift */; };
 		902B05EFE72F3F9C0469133B69E608E3 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A76A10852B80A487D65909EF6A8A0A /* PageIndicator.swift */; };
@@ -65,6 +64,7 @@
 		AEC7BCCB4C1F42BBEA90EF064C35C8DF /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C22C24A5ADF8FF9FABB1E75924DDB4 /* Array+Safe.swift */; };
 		B5157743E5E1B5A56B1A03A4D1EB821D /* XCUIElement+isVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A846D7540CD6C49B7D443F083836A1 /* XCUIElement+isVisible.swift */; };
 		B5AB54340065183E2A7BC8F765FB056C /* CellContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ECAB472DD95FFA096E502BE813F24A /* CellContaining.swift */; };
+		BA42C86F6872AC87ADF7110F65920109 /* ShowTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF2F2B8E583A5D847949453BAC20C6B /* ShowTime.swift */; };
 		BB225F68696F2418AD3FB78182986059 /* InteractionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4854AFCF6EFB5728D2906D01A91E8 /* InteractionContext.swift */; };
 		BE44EBD008C9CDBA889CCA773AD049B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
 		C1522B54174DCE00FD871C072C5FE1C6 /* XCUIDevice+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279513BCCF627B9691875426F559F488 /* XCUIDevice+frame.swift */; };
@@ -147,7 +147,6 @@
 		4384FCF2BD784A97A4A9D441315A0DB9 /* Springboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Springboard.swift; sourceTree = "<group>"; };
 		4BE65D8B4681A9D1BB2CE760736C9932 /* XCTFatalFail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = XCTFatalFail.swift; sourceTree = "<group>"; };
 		516836C45DBE97859AF1DD3AC2CD4B01 /* Pods_TABTestKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TABTestKit_Example.framework; path = "Pods-TABTestKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52AC8BF80FFD66229E6DD416417E398C /* ShowTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ShowTime-dummy.m"; sourceTree = "<group>"; };
 		549B858328CB2EF8360076242052506E /* Pods-TABTestKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TABTestKit_Example.modulemap"; sourceTree = "<group>"; };
 		577668BAFF017BF9C56A37DA9D8B3F3E /* ScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		5B6F09AA576A017AA5887F716093A75F /* Scrollable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
@@ -157,7 +156,7 @@
 		63EF5857804B0B54C7E4D18592064A58 /* Picker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		65B4854AFCF6EFB5728D2906D01A91E8 /* InteractionContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InteractionContext.swift; sourceTree = "<group>"; };
 		68E07ED4E98854029672AFEE4247B131 /* Tappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
-		6903FAEF275774D3317A659DDB3084ED /* ShowTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ShowTime.release.xcconfig; sourceTree = "<group>"; };
+		69152FFA4489AC24B45BCE5208B3B41A /* ShowTime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ShowTime-umbrella.h"; sourceTree = "<group>"; };
 		69AD092E6A91D199CC4B108331F36DA5 /* Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		6D92BBC7A22A9E8E8E2FA39E3997303A /* NormalizedCoordinate+Locations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NormalizedCoordinate+Locations.swift"; sourceTree = "<group>"; };
 		6E27AED458501104AD425F966C85FC9F /* TABTestKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TABTestKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -169,7 +168,6 @@
 		76E38B402D005A8731E76AA7B2D6FE03 /* SheetContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SheetContext.swift; sourceTree = "<group>"; };
 		7808B25C4838FA8F8CE79153F15B34D7 /* NavBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		788DDCAA164D7EE56342B88F96491208 /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
-		7AA42AD0FD4155C9C733C68EE22FBC5A /* ShowTime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ShowTime.modulemap; sourceTree = "<group>"; };
 		7C7FFE88DEAA1AF1B80AD63ECFE75C5B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		7DD6716D5C973671221E266BF4EA685E /* XCUIElement+hasKeyboardFocus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "XCUIElement+hasKeyboardFocus.swift"; sourceTree = "<group>"; };
 		800D965B1028764BF95DC4ADE6CC9125 /* Alert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 		8C8D3AF5E91D7B83C78AD8D30B108A61 /* Table.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		8DA373D249EA5C2515F1BCDC50C17253 /* CGVector+Offset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGVector+Offset.swift"; sourceTree = "<group>"; };
 		918A527F30EE6F7119E72C4E379B9725 /* Completable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Completable.swift; sourceTree = "<group>"; };
-		91A2FFF13B5A1579D8A7AFB6D7BC85FD /* ShowTime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ShowTime-prefix.pch"; sourceTree = "<group>"; };
 		91B1EB1FAB79CE231C85712DE4D31CC0 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		91D7A14E94735032FA9D267600F45456 /* Adjustable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Adjustable.swift; sourceTree = "<group>"; };
 		950E7DD2D565EE520DFCE34EC1A7D6A2 /* Scenario.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
@@ -188,14 +185,15 @@
 		9856B4127EA4A3DEA7BB3C3DEA48CBDA /* WebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		992A1E8A4F1EB43930FABAEF7D789437 /* XCUIElement+wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "XCUIElement+wait.swift"; sourceTree = "<group>"; };
 		99E06D4FF45A3B2605A88BF7D8DDC1C9 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-dummy.m"; sourceTree = "<group>"; };
-		9B88FD8FB77D1350EAF5791D96CD7D75 /* ShowTime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ShowTime-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FEFF9CD73B2D6723ED60BBDD46577CD /* Pods-TABTestKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TABTestKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		A127829CD9E05F37DAE46AEBDB38BD32 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		A1DD17F13EE4338CB0C1F14BDA4DDB38 /* Editable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
 		A3F9B3AEE6873539F9B3FD0F64E7DB43 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A9EDE6AEE1F9DC1D0AA9983CD6CA9B0D /* ShowTime-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ShowTime-Info.plist"; sourceTree = "<group>"; };
+		AA47AB426A72CF612E6CDF50B0E91C8F /* ShowTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ShowTime.debug.xcconfig; sourceTree = "<group>"; };
+		AA9FC38AC03409CABA3E4DD246E3CF1C /* ShowTime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ShowTime-prefix.pch"; sourceTree = "<group>"; };
 		AB4E151C064820753E3685012C75D924 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests-Info.plist"; sourceTree = "<group>"; };
+		ADB4763ABC911105EE431BA516439FE1 /* ShowTime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ShowTime.modulemap; sourceTree = "<group>"; };
 		AFD57256DAD4C8414BD38FD34982C7B0 /* Pods-TABTestKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B0FA4C101B00A975C2505867D27701E0 /* Step.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		B5ECAB472DD95FFA096E502BE813F24A /* CellContaining.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellContaining.swift; sourceTree = "<group>"; };
@@ -214,16 +212,18 @@
 		D28D77B63D202DB8321A06BF58DBB7CB /* Safari.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Safari.swift; sourceTree = "<group>"; };
 		D4BFAFF7FD46F7D40E2BC70C033E9FB5 /* TABTestKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TABTestKit-dummy.m"; sourceTree = "<group>"; };
 		D6A846D7540CD6C49B7D443F083836A1 /* XCUIElement+isVisible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "XCUIElement+isVisible.swift"; sourceTree = "<group>"; };
-		D889086CC01FD8F2532CBA362837EBC2 /* ShowTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShowTime.swift; sourceTree = "<group>"; };
 		D9F4E0B95D999589413CB46F3EE1FFF0 /* SystemPreferencesResetScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemPreferencesResetScreen.swift; sourceTree = "<group>"; };
+		DF441583F13AEDF6DF852C5354F264E1 /* ShowTime-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ShowTime-Info.plist"; sourceTree = "<group>"; };
 		E1A76A10852B80A487D65909EF6A8A0A /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		E3DFD912F5057A7DA1A3FAF38ECFBA52 /* AppContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		E8FC29191B3472554846E705BA3E749E /* TABTestKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TABTestKit.modulemap; sourceTree = "<group>"; };
 		EA695F610193350BF915FD91CF462251 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		EAF2F2B8E583A5D847949453BAC20C6B /* ShowTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShowTime.swift; path = Sources/ShowTime/ShowTime.swift; sourceTree = "<group>"; };
 		EC7677F7A126781D8591BE7C185D48F7 /* Pods-TABTestKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TABTestKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		EEA8CB911C664DEC0D973AA6A2545177 /* Biometrics-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Biometrics-Bridging-Header.h"; sourceTree = "<group>"; };
 		EF771F348458BD0D29251266E02E686C /* SystemPreferencesContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemPreferencesContext.swift; sourceTree = "<group>"; };
-		F544FDA0BB5FE3D9A36851DE3511DABC /* ShowTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ShowTime.debug.xcconfig; sourceTree = "<group>"; };
+		F094F44DD0301CC76E1365673D3FCF9C /* ShowTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ShowTime-dummy.m"; sourceTree = "<group>"; };
+		FD03AA75DD58014781A38E023C12CD42 /* ShowTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ShowTime.release.xcconfig; sourceTree = "<group>"; };
 		FDC54A8EC562A73143E238094E80179D /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -273,6 +273,16 @@
 			);
 			name = Screens;
 			path = TABTestKit/Classes/Screens;
+			sourceTree = "<group>";
+		};
+		0EAD851B593C7D383A5B9F66278D5202 /* ShowTime */ = {
+			isa = PBXGroup;
+			children = (
+				EAF2F2B8E583A5D847949453BAC20C6B /* ShowTime.swift */,
+				3AD53452E6F9B27B718A63F5668EEEAC /* Support Files */,
+			);
+			name = ShowTime;
+			path = ShowTime;
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -339,16 +349,16 @@
 			path = "Target Support Files/Pods-TABTestKit_Example";
 			sourceTree = "<group>";
 		};
-		36A9A44F867EFF84C39CA95CD68648F9 /* Support Files */ = {
+		3AD53452E6F9B27B718A63F5668EEEAC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7AA42AD0FD4155C9C733C68EE22FBC5A /* ShowTime.modulemap */,
-				52AC8BF80FFD66229E6DD416417E398C /* ShowTime-dummy.m */,
-				A9EDE6AEE1F9DC1D0AA9983CD6CA9B0D /* ShowTime-Info.plist */,
-				91A2FFF13B5A1579D8A7AFB6D7BC85FD /* ShowTime-prefix.pch */,
-				9B88FD8FB77D1350EAF5791D96CD7D75 /* ShowTime-umbrella.h */,
-				F544FDA0BB5FE3D9A36851DE3511DABC /* ShowTime.debug.xcconfig */,
-				6903FAEF275774D3317A659DDB3084ED /* ShowTime.release.xcconfig */,
+				ADB4763ABC911105EE431BA516439FE1 /* ShowTime.modulemap */,
+				F094F44DD0301CC76E1365673D3FCF9C /* ShowTime-dummy.m */,
+				DF441583F13AEDF6DF852C5354F264E1 /* ShowTime-Info.plist */,
+				AA9FC38AC03409CABA3E4DD246E3CF1C /* ShowTime-prefix.pch */,
+				69152FFA4489AC24B45BCE5208B3B41A /* ShowTime-umbrella.h */,
+				AA47AB426A72CF612E6CDF50B0E91C8F /* ShowTime.debug.xcconfig */,
+				FD03AA75DD58014781A38E023C12CD42 /* ShowTime.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ShowTime";
@@ -399,7 +409,7 @@
 		7F9009F1182E3BDED6F366005188C8B5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C532B4974C2BCC5A483389E5BA8466CA /* ShowTime */,
+				0EAD851B593C7D383A5B9F66278D5202 /* ShowTime */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -432,16 +442,6 @@
 			);
 			name = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests";
 			path = "Target Support Files/Pods-TABTestKit_Example-TABTestKit_ExampleUITests";
-			sourceTree = "<group>";
-		};
-		C532B4974C2BCC5A483389E5BA8466CA /* ShowTime */ = {
-			isa = PBXGroup;
-			children = (
-				D889086CC01FD8F2532CBA362837EBC2 /* ShowTime.swift */,
-				36A9A44F867EFF84C39CA95CD68648F9 /* Support Files */,
-			);
-			name = ShowTime;
-			path = ShowTime;
 			sourceTree = "<group>";
 		};
 		C59EA540FD0196E605574923381C488A /* Protocols */ = {
@@ -646,7 +646,7 @@
 			buildConfigurationList = 13338E6A92763276D7E744F0BE126971 /* Build configuration list for PBXNativeTarget "ShowTime" */;
 			buildPhases = (
 				CCCD40A3CF98074BF1895442469F632F /* Headers */,
-				F3EFCCB3C1AE195157628019EC33351E /* Sources */,
+				A3D1DBE0B97482C7D9E971A0A69C18FE /* Sources */,
 				03E1BC428CDBAFFCB7A23DC27272A29B /* Frameworks */,
 				031CA665B29B23A9412E394FBC39639C /* Resources */,
 			);
@@ -828,12 +828,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3EFCCB3C1AE195157628019EC33351E /* Sources */ = {
+		A3D1DBE0B97482C7D9E971A0A69C18FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8821EB088D8B0427003A1653D503147A /* ShowTime-dummy.m in Sources */,
-				3BAACB923E748E95FB43377CCECA0277 /* ShowTime.swift in Sources */,
+				3C892CB7517172243FF2DA110515208C /* ShowTime-dummy.m in Sources */,
+				BA42C86F6872AC87ADF7110F65920109 /* ShowTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1029,7 +1029,7 @@
 		};
 		A74D95592E825E0A9FAFB1A2FD4EA183 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6903FAEF275774D3317A659DDB3084ED /* ShowTime.release.xcconfig */;
+			baseConfigurationReference = FD03AA75DD58014781A38E023C12CD42 /* ShowTime.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1155,7 +1155,7 @@
 		};
 		D638E423895A2C1C466433CCA95C495B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F544FDA0BB5FE3D9A36851DE3511DABC /* ShowTime.debug.xcconfig */;
+			baseConfigurationReference = AA47AB426A72CF612E6CDF50B0E91C8F /* ShowTime.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

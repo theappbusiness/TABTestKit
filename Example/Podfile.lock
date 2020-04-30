@@ -1,10 +1,10 @@
 PODS:
-  - ShowTime (2.5.1)
-  - TABTestKit (1.2.1):
-    - TABTestKit/BDD (= 1.2.1)
-    - TABTestKit/Biometrics (= 1.2.1)
-  - TABTestKit/BDD (1.2.1)
-  - TABTestKit/Biometrics (1.2.1)
+  - ShowTime (2.5.2)
+  - TABTestKit (1.4.0):
+    - TABTestKit/BDD (= 1.4.0)
+    - TABTestKit/Biometrics (= 1.4.0)
+  - TABTestKit/BDD (1.4.0)
+  - TABTestKit/Biometrics (1.4.0)
 
 DEPENDENCIES:
   - ShowTime
@@ -19,8 +19,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ShowTime: 0d7ad97e415e3228f0e966e025087ea4175f3361
-  TABTestKit: 0e6828faebd9ee6fac09b992c9af7a78d20c8df4
+  ShowTime: 5cb2c5314da2983cec44f27123a15473cf29306f
+  TABTestKit: 7124b5d2d3b1c17191f0d35e6c4d84d99d6c7916
 
 PODFILE CHECKSUM: cff5520fee18bc1ac482104a6673ae29b40d9690
 
