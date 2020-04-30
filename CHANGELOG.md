@@ -2,6 +2,10 @@
 
 ## Pending
 
+---
+
+## 1.4.0
+
 - Improved error messaging with XCTAssert* calls. The main offender was when waiting for an element to be in a specific state and it would just show an error of `XCTAssertTrue failed`. (issue #80)
 
 ---
