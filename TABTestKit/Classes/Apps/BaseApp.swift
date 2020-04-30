@@ -18,29 +18,29 @@ open class BaseApp: XCUIApplication {
 	/// Launches the app, waiting for the state to be running before continuing.
 	override open func launch() {
 		super.launch()
-		XCTAssert(wait(for: .runningForeground, timeout: 60))
+		XCTAssertTrue(wait(for: .runningForeground, timeout: 60), "Failed waiting for app to become .runningForeground")
 	}
 	
 	/// "Backgrounds" the app, waiting for the state to be suspended before continuing.
 	open func background() {
 		XCUIDevice.shared.press(.home)
-		if #available(iOS 13.0, *) {
-			XCTAssert(wait(for: .runningBackground, timeout: 10))
+		if #available(iOS 13.0, *) { // https://github.com/theappbusiness/TABTestKit/issues/67
+			XCTAssertTrue(wait(for: .runningBackground, timeout: 10), "Failed waiting for app to become .runningBackground")
 		} else {
-			XCTAssert(wait(for: .runningBackgroundSuspended, timeout: 10))
+			XCTAssertTrue(wait(for: .runningBackgroundSuspended, timeout: 10), "Failed waiting for app to become .runningBackgroundSuspended")
 		}
 	}
 	
 	/// Activates/foregrounds the app, waiting for the state to be running before continuing.
 	override open func activate() {
 		super.activate()
-		XCTAssert(wait(for: .runningForeground, timeout: 10))
+		XCTAssertTrue(wait(for: .runningForeground, timeout: 10), "Failed waiting for app to become .runningForeground")
 	}
 	
 	/// Terminates the app, waiting for the state to be not running before continuing.
 	override open func terminate() {
 		super.terminate()
-		XCTAssert(wait(for: .notRunning, timeout: 10))
+		XCTAssertTrue(wait(for: .notRunning, timeout: 10), "Failed waiting for app to become .notRunning")
 	}
 	
 }

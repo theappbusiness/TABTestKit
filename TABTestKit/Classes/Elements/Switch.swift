@@ -31,7 +31,7 @@ public struct Switch: Element, ValueRepresentable, Adjustable, Tappable {
 	public func adjust(to newValue: State) {
 		guard newValue != value else { XCTFatalFail("Switch is already in state \(newValue)") }
 		tap()
-		XCTAssert(underlyingXCUIElement.wait(for: newValue == value, timeout: 1))
+		XCTAssert(underlyingXCUIElement.wait(for: newValue == value, timeout: 1), "Failed waiting for Switch to have state \(newValue)")
 	}
 	
 }

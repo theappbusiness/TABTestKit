@@ -4,6 +4,12 @@
 
 ---
 
+## 1.4.0
+
+- Improved error messaging with XCTAssert* calls. The main offender was when waiting for an element to be in a specific state and it would just show an error of `XCTAssertTrue failed`. (issue #80)
+
+---
+
 ## 1.3.0
 
 - Better failure reports. Specifically, the most recently executed Step's file / line is used to report a failure (if one exists). This means that the red error banner now shows on the correct line in the correct file, and should report better failures on CI rather than just "assert true failed in Element.swift" etc. (issue #80)
