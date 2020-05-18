@@ -12,7 +12,7 @@
 which helps reduce flakiness and lowers the barrier to entry for most people.
 
 **TABTestKit** also makes it possible to reliably automate iOS [biometrics](#biometrics) for
-the first time ever.
+the first time ever, as well as automate [deep linking into your app](#opening-urls-and-deep-linking), with no external dependencies!
 
 ```swift
 func test_login() {
