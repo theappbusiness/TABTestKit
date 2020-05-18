@@ -2,9 +2,10 @@
 
 ## Pending
 
-- Added support for deep linking by adding a new function to NavigationContext which allows you to pass any `URL` to open, including regular HTTPS or app-specific URLs. (issue #94)
+- Added support for deep linking by adding a new function to `NavigationContext` which allows you to pass any `URL` to open, including regular HTTPS or app-specific URLs. (issue #94)
 - Added globally available instance of `Springboard` meaning you no longer need to create one every time you want to use `Springboard` as a parent element. (issue #93)
 - Added `Icon` element which can be used to represent home screen icons (and anything else that XCUI sees as an `.icon` type). (issue #95)
+- Added support for waiting for the app to be in a particular state in `AppContext` (useful for deep linking)
 
 ---
 
