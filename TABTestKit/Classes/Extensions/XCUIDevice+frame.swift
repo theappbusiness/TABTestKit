@@ -16,7 +16,7 @@ public extension XCUIDevice {
 	/// Note that this does not necessarily represent the frame of your app, since iPad apps
 	/// can be in split-screen or slide-over etc.
 	var frame: CGRect {
-		return Springboard().windows.firstMatch.frame
+		return springboard.windows.firstMatch.frame
 	}
 	
 }
