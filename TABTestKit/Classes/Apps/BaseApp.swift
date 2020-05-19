@@ -14,12 +14,17 @@ import XCTest
 /// Additionally, BaseApp conforms to Element, so any subclasses can be used as parent elements
 /// of any other Element.
 open class BaseApp: XCUIApplication {
-	
-	/// Launches the app, waiting for the state to be running before continuing.
-	override open func launch() {
-		super.launch()
-		XCTAssertTrue(wait(for: .runningForeground, timeout: 60), "Failed waiting for app to become .runningForeground")
-	}
+
+    /// The cached name of the app (derived from the label), which allows you to access the name even if the app is terminated.
+    /// The name is cached after the app is launched.
+    public private(set) var name = ""
+
+    /// Launches the app, waiting for the state to be running before continuing.
+    override open func launch() {
+        super.launch()
+        XCTAssertTrue(wait(for: .runningForeground, timeout: 60), "Failed waiting for app to become .runningForeground")
+        name = label
+    }
 	
 	/// "Backgrounds" the app, waiting for the state to be suspended before continuing.
 	open func background() {
