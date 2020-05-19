@@ -27,9 +27,9 @@ public extension AppContext {
 		App.shared.launch(clean: clean)
 	}
 
-  func waitForApp(toBe state: XCUIApplication.State, timeout: TimeInterval = 10) {
-    XCTAssertTrue(App.shared.wait(for: App.shared.state == state, timeout: timeout), "App did not have the right state before the timeout. Expected \(state.rawValue), got \(App.shared.state.rawValue)")
-  }
+    func waitForApp(toBe state: XCUIApplication.State, timeout: TimeInterval = 10) {
+        XCTAssertTrue(App.shared.wait(for: App.shared.state == state, timeout: timeout), "App did not have the right state before the timeout. Expected \(state.rawValue), got \(App.shared.state.rawValue)")
+    }
 	
 	func relaunchTheApp() {
 		backgroundTheApp()
