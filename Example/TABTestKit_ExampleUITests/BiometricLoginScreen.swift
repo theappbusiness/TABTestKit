@@ -38,8 +38,8 @@ extension BiometricLoginScreen: Completable {
 extension Alert {
   
   // The style of apostrophe is actually important in "Don’t Allow", rather than "Don't Allow" which will fail!
-  static let faceIDPermission = Alert(id: "Do you want to allow “TABTestKit_Example” to use Face ID?", parent: Springboard(), dismissButtonID: "Don’t Allow")
-  static let faceNotRecognized = Alert(id: nil, parent: Springboard(), dismissButtonID: "Cancel")
+  static let faceIDPermission = Alert(id: "Do you want to allow “TABTestKit_Example” to use Face ID?", parent: springboard, dismissButtonID: "Don’t Allow")
+  static let faceNotRecognized = Alert(id: nil, parent: springboard, dismissButtonID: "Cancel")
   static let biometricsUnavailable = Alert(id: "Login failed", dismissButtonID: "OK") // TODO: Assert message? Since both have the same title
   static let biometricsFailed = Alert(id: "Login failed", dismissButtonID: "OK")
   

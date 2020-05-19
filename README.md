@@ -12,7 +12,7 @@
 which helps reduce flakiness and lowers the barrier to entry for most people.
 
 **TABTestKit** also makes it possible to reliably automate iOS [biometrics](#biometrics) for
-the first time ever.
+the first time ever, as well as automate [deep linking into your app](#opening-urls-and-deep-linking), with no external dependencies!
 
 ```swift
 func test_login() {
@@ -1146,6 +1146,11 @@ Since `WebView` conforms to `Scrollable`, you can scroll it:
 webView.scroll(.left)
 ```
 
+#### Icon
+
+`Icon` typically represents an app icon on the Home Screen, but can represent
+anything that XCUI sees as an icon.
+
 ### Predefined Screens
 
 **TABTestKit** comes with some helpful predefined screens that you can use in your tests.
@@ -1248,6 +1253,30 @@ easily:
 ```swift
 complete(nameScreen, birthDateScreen, usernameScreen)
 ```
+
+##### Opening URLs and deep linking
+
+Using `NavigationContext` in **TABTestKit** you can automate and test deep linking in your apps, as well as opening websites in Safari:
+
+```swift
+let deepLink = URL(string: "my-app://deep-link")!
+open(deepLink)
+
+let appleSite = URL(string: "https://apple.com")!
+open(appleSite)
+
+Given(I: open(deepLink))
+Given(I: open(appleSite))
+```
+
+It's important to note that to do this, **TABTestKit** launches the test runner itself, and uses the test runner to open the URL.
+
+Although **TABTestKit** will navigate to the Home Screen and find the test runner app to launch it, it is your responsibility
+to decide whether to leave your app in the current state before opening the URL, or whether to terminate the app first.
+
+This leaves you free to test how your app handles deep linking from multiple states.
+
+You can use [`AppContext`](#appcontext) to terminate your app in a step.
 
 #### InteractionContext
 

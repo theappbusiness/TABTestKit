@@ -22,6 +22,7 @@
 		C326D6AA2327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A92327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift */; };
 		C326D6AC2327E847001AB082 /* TableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6AB2327E847001AB082 /* TableTests.swift */; };
 		C326D6AD2327E8F7001AB082 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326D6A32327D994001AB082 /* TableController.swift */; };
+		C342580D2472A9F900B8E35C /* DeepLinkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C342580C2472A9F900B8E35C /* DeepLinkingTests.swift */; };
 		C368AF2F235095CC0015803A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368AF2E235095CC0015803A /* CollectionViewController.swift */; };
 		C368AF312350987D0015803A /* CollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368AF302350987D0015803A /* CollectionViewTests.swift */; };
 		C368AF33235098E70015803A /* CollectionViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368AF32235098E70015803A /* CollectionViewScreen.swift */; };
@@ -74,6 +75,7 @@
 		C326D6A72327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLogin_PermissionDeniedTests.swift; sourceTree = "<group>"; };
 		C326D6A92327DFCC001AB082 /* BiometricLogin_AuthenticationFailureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricLogin_AuthenticationFailureTests.swift; sourceTree = "<group>"; };
 		C326D6AB2327E847001AB082 /* TableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTests.swift; sourceTree = "<group>"; };
+		C342580C2472A9F900B8E35C /* DeepLinkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkingTests.swift; sourceTree = "<group>"; };
 		C368AF2E235095CC0015803A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C368AF302350987D0015803A /* CollectionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTests.swift; sourceTree = "<group>"; };
 		C368AF32235098E70015803A /* CollectionViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScreen.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				C326D6AB2327E847001AB082 /* TableTests.swift */,
 				C368AF302350987D0015803A /* CollectionViewTests.swift */,
 				C3DE8E4D23293D4B007E583B /* OtherElementsTests.swift */,
+				C342580C2472A9F900B8E35C /* DeepLinkingTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C326D6A62327DAA7001AB082 /* TableScreen.swift in Sources */,
+				C342580D2472A9F900B8E35C /* DeepLinkingTests.swift in Sources */,
 				C3DE8E4E23293D4B007E583B /* OtherElementsTests.swift in Sources */,
 				C3DE8E4C232920F4007E583B /* OtherElementsScreen.swift in Sources */,
 				C326D66623278E2E001AB082 /* BiometricLoginScreen.swift in Sources */,
