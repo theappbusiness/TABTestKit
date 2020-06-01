@@ -5,6 +5,8 @@ language: swift
 before_install: 
   - brew update
   - brew install carthage
+  - brew install cocoapods
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk iphonesimulator12.4 -destination "OS=12.4,name=iPhone Xs" | xcpretty
 - carthage build --archive
+- pod lib lint
