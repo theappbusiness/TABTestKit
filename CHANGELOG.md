@@ -2,6 +2,10 @@
 
 ## Pending
 
+- Fixes an issue when building Carthage framework failed due to a missing file in TABTestKit carthage project.
+- Adds a step script for building carthage framework in Travis CI. This should report to CI if the TABTestKit can be build as a Carthage framework.
+- Adds a step script for linting cocoapods project in Travis CI. This should report to CI if the TABTestKit can be safe to be published as Cocoapods framework.
+
 ---
 
 ## 1.5.0
