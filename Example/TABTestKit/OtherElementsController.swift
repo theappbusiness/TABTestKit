@@ -31,6 +31,7 @@ final class OtherElementsController: UIViewController {
   @IBOutlet private var toggle: UISwitch!
   @IBOutlet private var stepper: UIStepper!
   @IBOutlet private var pageControl: UIPageControl!
+  @IBOutlet private var image: UIImageView!
   @IBOutlet private var picker: UIPickerView!
   
   override func viewDidLoad() {
@@ -51,6 +52,7 @@ final class OtherElementsController: UIViewController {
     toggle.accessibilityIdentifier = "ExampleSwitch"
     stepper.accessibilityIdentifier = "ExampleStepper"
     pageControl.accessibilityIdentifier = "ExamplePageControl"
+    image.accessibilityIdentifier = "ExampleImage"
     picker.accessibilityIdentifier = "ExamplePicker"
     picker.dataSource = self
     picker.delegate = self

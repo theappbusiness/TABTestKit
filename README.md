@@ -72,6 +72,7 @@ func test_login() {
       - [`Picker`](#picker)
       - [`PageIndicator`](#pageindicator)
       - [`WebView`](#webview)
+      - [`Image`](#image)
     - [Predefined Screens](#predefined-screens)
       - [`systemPreferencesRootScreen`](#systempreferencesrootscreen)
       - [`systemPreferencesGeneralScreen`](#systempreferencesgeneralscreen)
@@ -1144,6 +1145,20 @@ Since `WebView` conforms to `Scrollable`, you can scroll it:
 
 ```swift
 webView.scroll(.left)
+```
+
+#### Image
+
+`Image` represents an image or imageView in the app:
+
+```swift
+let image = Image(id: "ExampleImage")
+```
+
+Since `Image` conforms to `ValueRepresentable`, you can get the label (string) value:
+
+```swift
+XCTAssertEqual(image.value, "image of random object")
 ```
 
 #### Icon
