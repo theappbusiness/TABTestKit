@@ -12,9 +12,9 @@ public struct Image: Element, ValueRepresentable {
 
     public let id: String?
     public let index: Int
-	public let parent: Element
-	public let type: XCUIElement.ElementType = .image
-	public var value: String? { return underlyingXCUIElement.label }
+    public let parent: Element
+    public let type: XCUIElement.ElementType = .image
+    public var value: String? { return underlyingXCUIElement.label }
 
     public init(id: String? = nil, index: Int = 0, parent: Element = App.shared) {
         self.id = id
