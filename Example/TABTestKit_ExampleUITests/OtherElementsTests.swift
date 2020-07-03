@@ -153,6 +153,12 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
       Then(the: value(of: otherElementsScreen.pageIndicator, is: "page 1 of 3"))
     }
     
+    Scenario("Seeing the image") {
+      Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.picker, is: .visible))
+      When(I: see(otherElementsScreen.image))
+      Then(the: value(of: otherElementsScreen.image, is: "Ottoman"))
+    }
+    
     Scenario("Seeing and interacting with the picker") {
       Given(I: see(otherElementsScreen.picker))
       And(the: value(of: otherElementsScreen.picker.wheel(0), is: "Hello"))
