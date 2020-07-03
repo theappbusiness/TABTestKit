@@ -155,7 +155,7 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     Scenario("Seeing the image") {
       Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.picker, is: .visible))
-      Given(I: see(otherElementsScreen.image))
+      When(I: see(otherElementsScreen.image))
       Then(the: value(of: otherElementsScreen.image, is: "Ottoman"))
     }
     
