@@ -2,16 +2,16 @@
 
 ## Pending
 
-- Fixes an issue when building Carthage framework failed due to a missing file in TABTestKit carthage project.
-- Adds a step script for building carthage framework in Travis CI. This should report to CI if the TABTestKit can be build as a Carthage framework.
-- Adds a step script for linting cocoapods project in Travis CI. This should report to CI if the TABTestKit can be safe to be published as Cocoapods framework.
-
 ---
 
 ## 1.6.0
 
 - Added `Image` element which can be used to represent images (and anything else that XCUI sees as a `.image` type). (issue #100)
 - Added Brewfile for better dependency control
+- Fixes an issue when building Carthage framework failed due to a missing file in TABTestKit carthage project.
+- Adds a step script for building carthage framework in Travis CI. This should report to CI if the TABTestKit can be build as a Carthage framework.
+- Adds a step script for linting cocoapods project in Travis CI. This should report to CI if the TABTestKit can be safe to be published as Cocoapods framework.
+
 
 ---
 
