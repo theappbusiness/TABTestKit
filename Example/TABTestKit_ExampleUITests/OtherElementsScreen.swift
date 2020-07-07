@@ -31,6 +31,7 @@ struct OtherElementsScreen: Screen {
   let toggle = Switch(id: "ExampleSwitch")
   let stepper = Stepper(id: "ExampleStepper")
   let pageIndicator = PageIndicator(id: "ExamplePageControl")
+  let image = Image(id: "ExampleImage")
   let picker = Picker(id: "ExamplePicker")
   let shareSheet = ActivitySheet()
   
