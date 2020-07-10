@@ -15,8 +15,6 @@ final class PageTests: TABTestCase {
             Given(I: complete(biometricLoginScreen))
             And(I: see(tabBarScreen))
             When(I: tap(tabBarScreen.pageTabBarButton))
-            sleep(1)
-            print(App.shared.debugDescription)
             Then(I: see(pageScreen))
         }
         
