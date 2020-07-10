@@ -23,5 +23,8 @@ struct TabBarScreen: Screen {
   var otherTabBarButton: Button {
     return tabBar.button(withID: "Other")
   }
+  var pageTabBarButton: Button {
+    return tabBar.button(withID: "Page")
+  }
   
 }
