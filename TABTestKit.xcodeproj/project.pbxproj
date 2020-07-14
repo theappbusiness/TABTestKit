@@ -265,6 +265,7 @@
 				95D471892397C8C1002BEFCA /* CollectionView.swift */,
 				95D4718F2397C8C1002BEFCA /* Header.swift */,
 				957289A62481452C00DBC55D /* Icon.swift */,
+				70D1C4DC24BDEFE70047A2EB /* Image.swift */,
 				95D471992397C8C1002BEFCA /* Keyboard.swift */,
 				95D471842397C8C1002BEFCA /* Label.swift */,
 				95D471932397C8C1002BEFCA /* NavBar.swift */,
@@ -283,7 +284,6 @@
 				95D471942397C8C1002BEFCA /* TextView.swift */,
 				95D471862397C8C1002BEFCA /* View.swift */,
 				95D471922397C8C1002BEFCA /* WebView.swift */,
-				70D1C4DC24BDEFE70047A2EB /* Image.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
