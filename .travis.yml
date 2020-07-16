@@ -6,16 +6,16 @@ os:
 matrix:
   include:
     - osx_image: xcode10.3
-      env: IPHONE_SIMULATOR_SDK='iphonesimulator12.4' OS_VERSION='12.4'
+      env: IPHONE_SIMULATOR_SDK='iphonesimulator12.4' OS_VERSION='12.4' IPHONE_NAME='iPhone Xs'
     - osx_image: xcode11.5
-      env: IPHONE_SIMULATOR_SDK='iphonesimulator13.5' OS_VERSION='13.5'
+      env: IPHONE_SIMULATOR_SDK='iphonesimulator13.5' OS_VERSION='13.5' IPHONE_NAME='iPhone 11'
 
 addons:
   homebrew:
     brewfile: true
-    update: true
+    update: false
 
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk $IPHONE_SIMULATOR_SDK -destination "OS=$OS_VERSION,name=iPhone Xs" | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit_ExampleUITests -sdk $IPHONE_SIMULATOR_SDK -destination "OS=$OS_VERSION,name=$IPHONE_NAME" | xcpretty
 - carthage build --archive
 - pod lib lint
