@@ -4,6 +4,15 @@
 
 ---
 
+## 1.6.1
+
+### Fixed
+
+- `Image.swift` wasn't added to the main framework meaning it wouldn't work for Carthage
+- Build issue with brew on Travis' 12.4 image
+
+---
+
 ## 1.6.0
 
 - Added `Image` element which can be used to represent images (and anything else that XCUI sees as a `.image` type). (issue #100)
@@ -11,7 +20,6 @@
 - Fixes an issue when building Carthage framework failed due to a missing file in TABTestKit carthage project.
 - Adds a step script for building carthage framework in Travis CI. This should report to CI if the TABTestKit can be build as a Carthage framework.
 - Adds a step script for linting cocoapods project in Travis CI. This should report to CI if the TABTestKit can be safe to be published as Cocoapods framework.
-
 
 ---
 
