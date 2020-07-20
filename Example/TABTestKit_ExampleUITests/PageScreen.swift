@@ -14,7 +14,7 @@ struct PageScreen: Screen {
   
     var trait: View { return view }
     let view = View(id: "PageView")
-    var scrollView: ScrollView { ScrollView(parent: view) }
-    var pageIndicator: PageIndicator { PageIndicator(parent: view) }
+    var scrollView: ScrollView { return ScrollView(parent: view) }
+    var pageIndicator: PageIndicator { return PageIndicator(parent: view) }
 
 }
