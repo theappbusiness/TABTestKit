@@ -17,6 +17,7 @@ final class PageTests: TABTestCase {
         guard #available(iOS 13, *) else {
             return
         }
+        
         Scenario("Navigate to page view") {
             Given(I: complete(biometricLoginScreen))
             And(I: see(tabBarScreen))
@@ -24,14 +25,9 @@ final class PageTests: TABTestCase {
             Then(I: see(pageScreen))
         }
         
-        // TODO: Replace with 'scroll until value of X is Y' as part of https://github.com/theappbusiness/TABTestKit/issues/72
         Scenario("Scroll page view") {
             Given(I: see(pageScreen))
-            When(I: pageScreen.scrollView.scroll(.right))
-            And(I: pageScreen.scrollView.scroll(.right))
-            And(I: pageScreen.scrollView.scroll(.right))
-            And(I: pageScreen.scrollView.scroll(.right))
-            And(I: pageScreen.scrollView.scroll(.right))
+            When(I: scroll(pageScreen.scrollView, .right, until: pageScreen.pageIndicator, valueIs: "page 6 of 6"))
             Then(the: value(of: pageScreen.pageIndicator, is: "page 6 of 6"))
         }
     }
