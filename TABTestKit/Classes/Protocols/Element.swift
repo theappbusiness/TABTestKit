@@ -48,8 +48,8 @@ public extension Element {
 	var index: Int { return 0 }
 	
 	var label: String { return underlyingXCUIElement.label }
-    
-    var value: String? {return underlyingXCUIElement.value as? String}
+	
+	var value: String? {return underlyingXCUIElement.value as? String}
 	
 	var frameInScreen: CGRect { return underlyingXCUIElement.frame }
 	
