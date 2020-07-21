@@ -37,6 +37,10 @@ public extension AppContext {
 		launchTheApp(clean: false)
 	}
 	
+	func amBackToTABTestKitExampleApp() {
+		XCTAssertEqual(App.shared.name, "TABTestKit_Example")
+	}
+	
 	func openSafari() { // TODO: Move to Safari context
 		Safari().activate()
 	}
