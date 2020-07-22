@@ -49,6 +49,8 @@ public extension Element {
 	
 	var label: String { return underlyingXCUIElement.label }
 	
+	var value: String? { return underlyingXCUIElement.value as? String }
+	
 	var frameInScreen: CGRect { return underlyingXCUIElement.frame }
 	
 	var topCoordinate: CGVector { return defaultTopCoordinate }
