@@ -7,8 +7,8 @@ matrix:
   include:
     - osx_image: xcode10.3
       env: IPHONE_SIMULATOR_SDK='iphonesimulator12.4' OS_VERSION='12.4' IPHONE_NAME='iPhone Xs'
-    - osx_image: xcode11.5
-      env: IPHONE_SIMULATOR_SDK='iphonesimulator13.5' OS_VERSION='13.5' IPHONE_NAME='iPhone 11'
+    - osx_image: xcode11.6
+      env: IPHONE_SIMULATOR_SDK='iphonesimulator13.6' OS_VERSION='13.6' IPHONE_NAME='iPhone 11 Pro'
 
 
 addons:
