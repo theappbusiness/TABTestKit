@@ -53,6 +53,16 @@ public extension InteractionContext {
 			XCTFail("Ran of out tries (\(maxTries)) waiting for element to become not \(state)")
 		}
 	}
+    
+    func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, valueIs value: String, maxTries: Int = 10) {
+            var numberOfTries = 0
+            repeat {
+                guard !(otherElement.value == value) else { return }
+                numberOfTries += 1
+                element.scroll(direction)
+            } while numberOfTries <= maxTries
+            XCTFail("Ran of out tries (\(maxTries)) waiting for element to become \(value)")
+    }
 	
 	func value<ElementWithValue: Element & ValueRepresentable>(of element: ElementWithValue, is expectedValue: ElementWithValue.Value) {
 		XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.value == expectedValue), "Element did not have the right value before timing out! Expected: \(expectedValue), actual: \(element.value)")

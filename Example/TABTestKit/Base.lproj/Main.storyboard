@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEl-fI-I9x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEl-fI-I9x">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +22,12 @@
                         <segue destination="CZc-fh-uXm" kind="relationship" relationship="viewControllers" id="M6Y-7w-ha8"/>
                         <segue destination="3uD-U6-zpv" kind="presentation" identifier="BiometricLoginViewController" modalPresentationStyle="fullScreen" id="1Wd-wC-qnx"/>
                         <segue destination="EeR-CP-KFI" kind="relationship" relationship="viewControllers" id="J8z-aD-RBA"/>
+                        <segue destination="2OA-Nv-LiK" kind="relationship" relationship="viewControllers" id="Gz7-rf-bxg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lab-gg-Ww4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-652"/>
+            <point key="canvasLocation" x="-212" y="585"/>
         </scene>
         <!--Table-->
         <scene sceneID="anu-hn-M2Y">
@@ -136,6 +137,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qD-RO-mUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1121" y="876"/>
+        </scene>
+        <!--Page-->
+        <scene sceneID="c0y-gk-Doa">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ugK-Fe-gyT" customClass="PageController" customModule="TABTestKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Page" id="wto-5H-nHP"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6J-sR-xU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="1573"/>
         </scene>
         <!--Other elements-->
         <scene sceneID="3aC-WN-Fc9">
@@ -404,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FK-ee-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="137"/>
+            <point key="canvasLocation" x="-212" y="1441"/>
         </scene>
         <!--Collection-->
         <scene sceneID="9Px-jB-nTh">
@@ -424,6 +435,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Et-tq-h0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1120.8" y="137.18140929535232"/>
+        </scene>
+        <!--Page-->
+        <scene sceneID="AdW-ZX-mv4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2OA-Nv-LiK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Page" id="NjX-TZ-cBr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tmb-VQ-1f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ugK-Fe-gyT" kind="relationship" relationship="rootViewController" id="PsZ-n0-WV8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AE-8a-pgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="1573"/>
         </scene>
     </scenes>
 </document>
