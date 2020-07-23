@@ -1,4 +1,4 @@
-![The App Business](Assets/logo.png)
+![TABTestKit - Kin + Carta Create](Assets/logo.png)
 
 # TABTestKit
 
@@ -1899,9 +1899,9 @@ Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 ## Authors
 
-Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
-Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
-Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire  
+Neil Horton, neil.horton@kinandcarta.com, https://github.com/neil3079  
+Zachary Borrelli, zac.borrelli@kinandcarta.com, https://github.com/zacoid55  
+Kane Cheshire, kane.cheshire@kinandcarta.com, https://github.com/kanecheshire  
 Suyash Srijan, suyash.srijan@theappbuisness.com, https://github.com/theblixguy
 
 ## License
