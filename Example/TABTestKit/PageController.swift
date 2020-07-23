@@ -3,7 +3,7 @@
 //  TABTestKit_Example
 //
 //  Created by Ben Gilroy on 10/07/2020.
-//  Copyright © 2020 The App Business LTD. All rights reserved.
+//  Copyright © 2020 Kin + Carta. All rights reserved.
 //
 
 import UIKit
