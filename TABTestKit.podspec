@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = { 'zacoid55' => 'zac.borrelli@kinandcarta.com',
                          'KaneCheshire' => 'kane.cheshire@kinandcarta.com',
-                         'theblixguy' => 'suyash.srijan@theappbusiness.com',
+                         'theblixguy' => 'suyash.srijan@kinandcarta.com',
                          'neil3079' => 'neil.horton@kinandcarta.com' }
   s.source           = { :git => 'https://github.com/theappbusiness/TABTestKit.git', :tag => s.version.to_s }
   s.ios.deployment_target = '12.4'
