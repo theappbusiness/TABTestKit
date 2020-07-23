@@ -31,6 +31,7 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
       And(I: scroll(tableScreen, .downwards, until: tableScreen.lastCell, is: .visible))
       When(I: tap(tableScreen.lastCell))
       Then(I: see(tableSelectionScreen))
+      And(the: label(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
       And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
     }
   }
