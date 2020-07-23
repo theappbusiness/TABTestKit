@@ -68,6 +68,10 @@ public extension InteractionContext {
 		XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.value == expectedValue), "Element did not have the right value before timing out! Expected: \(expectedValue), actual: \(element.value)")
 	}
 	
+	func label(of element: Element, is expectedLabel: String) {
+	  XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.label == expectedLabel), "Element did not have the right label before timing out! Expected: \(expectedLabel), actual: \(element.label)")
+	}
+	
 	func adjust<AdjustableElement: Adjustable>(_ element: AdjustableElement, to newValue: AdjustableElement.Value) {
 		element.adjust(to: newValue)
 	}
