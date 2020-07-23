@@ -3,7 +3,7 @@
 //  TABTestKit
 //
 //  Created by Roger Tan on 04/12/2019.
-//  Copyright © 2019 The App Business. All rights reserved.
+//  Copyright © 2019 Kin + Carta. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
