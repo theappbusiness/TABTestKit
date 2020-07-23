@@ -20,7 +20,7 @@ public typealias And = Step
 /// i.e: Given(I: logIn) instead of Given(I: logIn())
 ///
 /// Do not use this Step type directly, instead use one of the typealiases above, like Given, When, Then or And.
-/// To learn more about how to use a Step read this article: https://edit.theappbusiness.com/swifty-gherkins-part-1-28abba7dfd8
+/// To learn more about how to use a Step read this article: https://medium.com/kinandcartacreated/swifty-gherkins-part-1-28abba7dfd8
 public struct Step {
 	
 	/// A reference to the most recently created Step, useful if you want to find out what step failed.

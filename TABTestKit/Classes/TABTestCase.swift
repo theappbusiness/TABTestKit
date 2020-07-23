@@ -5,7 +5,7 @@
 //  The MIT License (MIT)
 //
 //  Created by Zachary Borrelli on 14/09/2017.
-//  Copyright © 2017 The App Business LTD. All rights reserved.
+//  Copyright © 2017 Kin + Carta. All rights reserved.
 //
 
 import XCTest
