@@ -2,6 +2,8 @@
 
 ## Pending
 
+- Configured Travis to build and test on multiple Xcodes
+
 ---
 
 ## 1.6.1
