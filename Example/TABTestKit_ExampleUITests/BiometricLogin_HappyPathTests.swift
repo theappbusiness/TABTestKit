@@ -27,7 +27,7 @@ final class BiometricLogin_HappyPathTests: TABTestCase, SystemPreferencesContext
     Scenario("Relaunching the app") {
       Given(I: doNotSee(biometricLoginScreen))
       When(I: relaunchTheApp)
-      Then(I: amBackToTABTestKitExampleApp)
+      Then(I: goBackToTABTestKitExampleApp)
       And(I: see(biometricLoginScreen))
     }
   }

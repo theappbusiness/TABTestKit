@@ -37,7 +37,7 @@ public extension AppContext {
 		launchTheApp(clean: false)
 	}
 	
-	func amBackToTABTestKitExampleApp() {
+	func goBackToTABTestKitExampleApp() {
 		XCTAssertEqual(App.shared.name, "TABTestKit_Example")
 	}
 	
