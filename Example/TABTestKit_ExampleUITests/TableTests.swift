@@ -23,9 +23,9 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
     }
     
     Scenario("Refreshing the table screen") {
-        Given(I: see(tableScreen))
-        When(I: refresh(tableScreen))
-        Then(the: state(of: tableScreen.section0Header, is: .visible))
+      Given(I: see(tableScreen))
+      When(I: refresh(tableScreen))
+      Then(the: state(of: tableScreen.section0Header, is: .visible))
     }
     
     Scenario("Tapping on a cell in the first section and seeing the detail screen") {
