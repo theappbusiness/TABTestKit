@@ -10,12 +10,16 @@ import TABTestKit
 
 var collectionViewScreen = CollectionViewScreen()
 
-struct CollectionViewScreen: ScrollableScreen, Refreshable {
+struct CollectionViewScreen: ScrollableScreen {
   
   let trait = CollectionView()
   lazy var firstCell = trait.cell(matchingID: "CollectionCell 0")
   lazy var lastCell = trait.cell(matchingID: "CollectionCell 49")
   
+}
+
+extension CollectionViewScreen: Refreshable {
+    
     func refresh() {
         trait.scroll(.upwards)// Pull the table down to refresh
     }
