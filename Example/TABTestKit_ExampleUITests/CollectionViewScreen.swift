@@ -20,7 +20,8 @@ struct CollectionViewScreen: ScrollableScreen {
 
 extension CollectionViewScreen: Refreshable {
     
-    func refresh() {
-        trait.scroll(.upwards)// Pull the table down to refresh
-    }
+  func refresh() {
+    // Pull the collection view down to refresh
+    trait.scroll(.upwards)
+  }
 }

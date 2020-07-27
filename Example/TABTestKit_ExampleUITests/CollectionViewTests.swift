@@ -22,7 +22,7 @@ final class CollectionViewTests: TABTestCase, SystemPreferencesContext {
       Then(I: see(collectionViewScreen))
     }
     
-    Scenario("Refreshing collectionViewScreen") {
+    Scenario("Refreshing the collection view screen") {
       Given(I: see(collectionViewScreen))
       When(I: refresh(collectionViewScreen))
       Then(the: state(of: collectionViewScreen.firstCell, is: .visible))

@@ -26,12 +26,16 @@ struct TableScreen: Screen {
   
 }
 
-extension TableScreen: Scrollable {
+extension TableScreen: Scrollable, Refreshable {
   
   func scroll(_ direction: ElementAttributes.Direction) {
     table.scroll(direction)
   }
-  
+    
+  func refresh() {
+    // Pull the table down to refresh
+    table.scroll(.upwards)
+  }
 }
 
 
