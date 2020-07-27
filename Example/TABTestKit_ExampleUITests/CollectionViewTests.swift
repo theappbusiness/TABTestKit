@@ -25,7 +25,7 @@ final class CollectionViewTests: TABTestCase, SystemPreferencesContext {
     Scenario("Refreshing collectionViewScreen") {
       Given(I: see(collectionViewScreen))
       When(I: refresh(collectionViewScreen))
-      Then(I: see(collectionViewScreen))
+      Then(the: state(of: collectionViewScreen.firstCell, is: .visible))
     }
     
     Scenario("Scrolling until the first cell is hidden") {
