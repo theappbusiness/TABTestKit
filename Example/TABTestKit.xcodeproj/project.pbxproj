@@ -307,7 +307,6 @@
 					};
 					70FEA77B1F6AC29400633C5C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = PR289YX2Y5;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
@@ -650,7 +649,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = PR289YX2Y5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TABTestKit_ExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theappbusiness.TABTestKit-ExampleUITests";
@@ -670,7 +669,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				DEVELOPMENT_TEAM = PR289YX2Y5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TABTestKit_ExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.theappbusiness.TABTestKit-ExampleUITests";
