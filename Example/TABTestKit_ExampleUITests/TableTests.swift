@@ -16,10 +16,20 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
   }
   
   func test_table() {
+    Scenario("Logging in with biometrics and landing on table screen") {
+      Given(I: see(biometricLoginScreen))
+      When(I: complete(biometricLoginScreen))
+      Then(I: see(tableScreen))
+    }
+    
+    Scenario("Refreshing the table screen") {
+      Given(I: see(tableScreen))
+      When(I: refresh(tableScreen))
+      Then(the: state(of: tableScreen.section0Header, is: .visible))
+    }
+
     Scenario("Tapping on a cell in the first section and seeing the detail screen") {
-      Given(I: complete(biometricLoginScreen))
-      When(I: see(tableScreen))
-      And(I: see(tableScreen.section0Header))
+      Given(I: see(tableScreen.section0Header))
       When(I: tap(tableScreen.table.cell(index: 0)))
       Then(I: see(tableSelectionScreen))
       And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 0 section 0"))
