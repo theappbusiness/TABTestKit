@@ -72,4 +72,7 @@ public extension InteractionContext {
 		element.adjust(to: newValue)
 	}
 	
+	func refresh(_ refreshableThing: Refreshable) {
+		refreshableThing.refresh()
+	}
 }

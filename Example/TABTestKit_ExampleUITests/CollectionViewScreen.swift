@@ -17,3 +17,11 @@ struct CollectionViewScreen: ScrollableScreen {
   lazy var lastCell = trait.cell(matchingID: "CollectionCell 49")
   
 }
+
+extension CollectionViewScreen: Refreshable {
+    
+    func refresh() {
+        // Pull the collection view down to refresh
+        trait.scroll(.upwards)
+    }
+}
