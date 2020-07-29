@@ -20,6 +20,7 @@ final class CollectionViewTests: TABTestCase, SystemPreferencesContext {
       Given(I: complete(biometricLoginScreen))
       When(I: tap(tabBarScreen.collectionTabBarButton))
       Then(I: see(collectionViewScreen))
+      And(the: label(of: collectionViewScreen.header, is: "Collection"))
     }
     
     Scenario("Scrolling until the first cell is hidden") {

@@ -13,6 +13,7 @@ var collectionViewScreen = CollectionViewScreen()
 struct CollectionViewScreen: ScrollableScreen {
   
   let trait = CollectionView()
+  let header = Header(id: "Collection")
   lazy var firstCell = trait.cell(matchingID: "CollectionCell 0")
   lazy var lastCell = trait.cell(matchingID: "CollectionCell 49")
   
