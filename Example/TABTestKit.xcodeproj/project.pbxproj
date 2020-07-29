@@ -307,6 +307,7 @@
 					};
 					70FEA77B1F6AC29400633C5C = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = PR289YX2Y5;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
