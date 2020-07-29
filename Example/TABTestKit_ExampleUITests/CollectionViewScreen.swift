@@ -7,6 +7,7 @@
 //
 
 import TABTestKit
+import XCTest
 
 var collectionViewScreen = CollectionViewScreen()
 
@@ -18,9 +19,10 @@ struct CollectionViewScreen: ScrollableScreen {
   
 }
 
-extension CollectionViewScreen: Refreshable {
+extension CollectionViewScreen: Refreshable, InteractionContext {
     
   func refresh() {
+    scroll(trait, .upwards, until: trait.cell(matchingID: "CollectionCell 0"), is: .visible)
     // Pull the collection view down to refresh
     trait.scroll(.upwards)
   }
