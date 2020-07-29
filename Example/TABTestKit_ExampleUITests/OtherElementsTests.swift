@@ -21,6 +21,7 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
       And(I: see(tabBarScreen))
       When(I: tap(tabBarScreen.otherTabBarButton))
       Then(I: see(otherElementsScreen))
+      And(the: label(of: otherElementsScreen.trait, is: "Other elements"))
     }
     
     Scenario("Seeing the label and button") {
