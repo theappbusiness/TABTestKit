@@ -18,7 +18,7 @@ addons:
 
 script:
   # Ensure SPM builds
-  - set -o pipefail && xcodebuild -workspace .swiftpm/xcode/package.xcworkspace -scheme TABTestKit -sdk iphonesimulator13.6 | xcpretty
+  - set -o pipefail && xcodebuild -workspace .swiftpm/xcode/package.xcworkspace -scheme TABTestKit -sdk $IPHONE_SIMULATOR_SDK | xcpretty
   # Ensure Carthage builds
   - carthage build --archive
   # Ensure Cocoapods builds
