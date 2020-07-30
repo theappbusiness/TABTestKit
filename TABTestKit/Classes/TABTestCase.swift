@@ -9,6 +9,9 @@
 //
 
 import XCTest
+#if canImport(Biometrics)
+import Biometrics
+#endif
 
 /// The default contexts that TABTestCase conforms to, to provide lots of helpful functions to make it highly possible
 /// you don't have to write any extra test functions for your tests.
