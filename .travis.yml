@@ -17,6 +17,11 @@ addons:
     update: false
 
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -sdk $IPHONE_SIMULATOR_SDK -destination "OS=$OS_VERSION,name=$IPHONE_NAME" | xcpretty
-- carthage build --archive
-- pod lib lint
+  # Ensure SPM builds
+  - set -o pipefail && xcodebuild -workspace .swiftpm/xcode/package.xcworkspace -scheme TABTestKit -sdk iphonesimulator13.6 | xcpretty
+  # Ensure Carthage builds
+  - carthage build --archive
+  # Ensure Cocoapods builds
+  - pod lib lint
+  # Ensure tests pass
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -sdk $IPHONE_SIMULATOR_SDK -destination "OS=$OS_VERSION,name=$IPHONE_NAME" | xcpretty
