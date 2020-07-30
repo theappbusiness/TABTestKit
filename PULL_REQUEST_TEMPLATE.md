@@ -1,0 +1,2 @@
+- [ ] Run `pod install` to ensure that the latest changes are in the Example project. Without this, Carthage might not see the latest changes.
+- [ ] Added and updated tests where possible.
