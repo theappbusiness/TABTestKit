@@ -17,7 +17,7 @@ addons:
     update: false
 
 script:
-  # Ensure SPM builds. SPM is only supported for Xcode 11 and newer, so we'll ignore this step if trying to build for iOS 12 (Xcode 11)
+  # Ensure SPM builds. SPM is only supported for Xcode 11 and newer, so we'll ignore this step if trying to build for iOS 12 (Xcode 10)
   - if [ $OS_VERSION != '12.4' ]; then set -o pipefail && xcodebuild -workspace package.xcworkspace -scheme TABTestKit -sdk $IPHONE_SIMULATOR_SDK | xcpretty; fi
   # Ensure Carthage builds
   - carthage build --archive
