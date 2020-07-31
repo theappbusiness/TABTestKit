@@ -333,6 +333,9 @@ func test_serverErrorLoggingIn() {
 Another exclusive feature of **TABTestKit** is that it makes it possible (and very
 easy!) to automation iOS biometrics in the simulator.
 
+> **NOTE:** If you're using Swift Package Manager, you'll need to `import` the `Biometrics` module to use the `Biometrics` class directly.
+> Until issue [118](https://github.com/theappbusiness/TABTestKit/issues/118) is closed
+
 
 #### Enabling and disabling device biometrics
 
@@ -1817,6 +1820,16 @@ app, like Face ID permission prompts.
 
 ## Installation
 
+
+### Swift Package Manager
+
+You can add **TABTestKit** as a remote Swift Package dependency in Xcode 11 or newer.
+
+Due to the way SPM requires mixed-langage packages to be built, if you want to use the
+`Biometrics` class, you'll need to `import Biometrics` until we expose it in Swift (issue [#118](https://github.com/theappbusiness/TABTestKit/issues/118)).
+
+You don't need to `import Biometrics` if you're just using the helper functions in `BiometricsContext`.
+
 ### Cocoapods
 
 #### Latest
@@ -1887,11 +1900,6 @@ To use the version under development you can target the `develop` branch specifi
 ```
 github "TABTestKit" "develop"
 ```
-
-### Swift Package Manager
-
-**TABTestKit** does not yet support SPM, please feel free to open a PR to add
-support if your project needs it!
 
 ## Contributing
 
