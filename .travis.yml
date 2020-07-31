@@ -3,15 +3,16 @@ language: swift
 os:
   - osx
 
+env:
+  - IOS_12_VERSION='12.4' # The specific version to use for iOS 12
+  - IOS_12_SIMULATOR_SDK='iphonesimulator$IOS_12_VERSION'
+
 matrix:
   include:
     - osx_image: xcode10.3
-      env: IPHONE_SIMULATOR_SDK='iphonesimulator12.4' OS_VERSION='12.4' IPHONE_NAME='iPhone Xs'
+      env: IPHONE_SIMULATOR_SDK=$IOS_12_SIMULATOR_SDK OS_VERSION='$IOS_12_VERSION' IPHONE_NAME='iPhone Xs'
     - osx_image: xcode11.6
       env: IPHONE_SIMULATOR_SDK='iphonesimulator13.6' OS_VERSION='13.6' IPHONE_NAME='iPhone 11 Pro'
-      script:
-        # Ensure SPM builds
-        - set -o pipefail && xcodebuild -workspace package.xcworkspace -scheme TABTestKit -sdk $IPHONE_SIMULATOR_SDK | xcpretty
 
 
 addons:
@@ -20,9 +21,11 @@ addons:
     update: false
 
 script:
+  # Ensure SPM builds. SPM is only supported for Xcode 11 and newer, so we'll ignore this step if trying to build for iOS 12 (Xcode 11)
+  - if [ $IPHONE_SIMULATOR_SDK != $IOS_12_SIMULATOR_SDK ]; then set -o pipefail && xcodebuild -workspace package.xcworkspace -scheme TABTestKit -sdk $IPHONE_SIMULATOR_SDK | xcpretty; fi
   # Ensure Carthage builds
   - carthage build --archive
   # Ensure Cocoapods builds
-  - pod lib lint
+  - pod lib lint --verbose
   # Ensure tests pass
   - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -sdk $IPHONE_SIMULATOR_SDK -destination "OS=$OS_VERSION,name=$IPHONE_NAME" | xcpretty
