@@ -9,6 +9,9 @@ matrix:
       env: IPHONE_SIMULATOR_SDK='iphonesimulator12.4' OS_VERSION='12.4' IPHONE_NAME='iPhone Xs'
     - osx_image: xcode11.6
       env: IPHONE_SIMULATOR_SDK='iphonesimulator13.6' OS_VERSION='13.6' IPHONE_NAME='iPhone 11 Pro'
+      script:
+        # Ensure SPM builds
+        - set -o pipefail && xcodebuild -workspace package.xcworkspace -scheme TABTestKit -sdk $IPHONE_SIMULATOR_SDK | xcpretty
 
 
 addons:
@@ -17,8 +20,6 @@ addons:
     update: false
 
 script:
-  # Ensure SPM builds
-  - set -o pipefail && xcodebuild -workspace package.xcworkspace -scheme TABTestKit -sdk $IPHONE_SIMULATOR_SDK | xcpretty
   # Ensure Carthage builds
   - carthage build --archive
   # Ensure Cocoapods builds
