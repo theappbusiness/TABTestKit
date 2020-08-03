@@ -53,15 +53,15 @@ public extension InteractionContext {
 			XCTFail("Ran of out tries (\(maxTries)) waiting for element to become not \(state)")
 		}
 	}
-    
+	
 	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, valueIs value: String, maxTries: Int = 10) {
-			var numberOfTries = 0
-			repeat {
-				guard !(otherElement.value == value) else { return }
-				numberOfTries += 1
-				element.scroll(direction)
-			} while numberOfTries <= maxTries
-			XCTFail("Ran of out tries (\(maxTries)) waiting for element to become \(value)")
+        var numberOfTries = 0
+        repeat {
+            guard !(otherElement.value == value) else { return }
+            numberOfTries += 1
+            element.scroll(direction)
+        } while numberOfTries <= maxTries
+        XCTFail("Ran of out tries (\(maxTries)) waiting for element to become \(value)")
 	}
 	
 	func value<ElementWithValue: Element & ValueRepresentable>(of element: ElementWithValue, is expectedValue: ElementWithValue.Value) {
@@ -69,11 +69,15 @@ public extension InteractionContext {
 	}
 	
 	func label(of element: Element, is expectedLabel: String) {
-	        XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.label == expectedLabel), "Element did not have the right label before timing out! Expected: \(expectedLabel), actual: \(element.label)")
+        XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.label == expectedLabel), "Element did not have the right label before timing out! Expected: \(expectedLabel), actual: \(element.label)")
 	}
 	
 	func adjust<AdjustableElement: Adjustable>(_ element: AdjustableElement, to newValue: AdjustableElement.Value) {
 		element.adjust(to: newValue)
+	}
+	
+	func refresh(_ refreshableThing: Refreshable) {
+        refreshableThing.refresh()
 	}
 	
 }

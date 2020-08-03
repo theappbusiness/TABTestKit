@@ -11,10 +11,10 @@ import TABTestKit
 let pageScreen = PageScreen()
 
 struct PageScreen: Screen {
-  
+    
     var trait: View { return view }
     let view = View(id: "PageView")
     var scrollView: ScrollView { return ScrollView(parent: view) }
     var pageIndicator: PageIndicator { return PageIndicator(parent: view) }
-
+    
 }
