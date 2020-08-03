@@ -11,25 +11,25 @@ import TABTestKit
 // NOTE: Parallel UI tests are best optimised if you only have one test function per test case.
 
 final class BiometricLogin_HappyPathTests: TABTestCase, SystemPreferencesContext { // TODO: Enable parallel tests
-  
-  override func preLaunchSetup(_ launch: @escaping () -> Void) {
-    resetAllPrivacyPrompts()
-    launch()
-  }
-  
-  func test_happyPath() {
-    Scenario("Logging in with biometrics") {
-      Given(I: see(biometricLoginScreen))
-      When(I: complete(biometricLoginScreen))
-      Then(I: doNotSee(biometricLoginScreen))
+    
+    override func preLaunchSetup(_ launch: @escaping () -> Void) {
+        resetAllPrivacyPrompts()
+        launch()
     }
     
-    Scenario("Relaunching the app") {
-      Given(I: doNotSee(biometricLoginScreen))
-      When(I: relaunchTheApp)
-      Then(I: goBackToTABTestKitExampleApp)
-      And(I: see(biometricLoginScreen))
+    func test_happyPath() {
+        Scenario("Logging in with biometrics") {
+            Given(I: see(biometricLoginScreen))
+            When(I: complete(biometricLoginScreen))
+            Then(I: doNotSee(biometricLoginScreen))
+        }
+        
+        Scenario("Relaunching the app") {
+            Given(I: doNotSee(biometricLoginScreen))
+            When(I: relaunchTheApp)
+            Then(I: goBackToTABTestKitExampleApp)
+            And(I: see(biometricLoginScreen))
+        }
     }
-  }
-  
+    
 }
