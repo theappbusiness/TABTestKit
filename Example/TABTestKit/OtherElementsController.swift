@@ -3,7 +3,7 @@
 //  TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 11/09/2019.
-//  Copyright © 2019 The App Business LTD. All rights reserved.
+//  Copyright © 2019 Kin + Carta. All rights reserved.
 //
 
 import UIKit
@@ -31,6 +31,7 @@ final class OtherElementsController: UIViewController {
   @IBOutlet private var toggle: UISwitch!
   @IBOutlet private var stepper: UIStepper!
   @IBOutlet private var pageControl: UIPageControl!
+  @IBOutlet private var imageView: UIImageView!
   @IBOutlet private var picker: UIPickerView!
   
   override func viewDidLoad() {
@@ -51,6 +52,9 @@ final class OtherElementsController: UIViewController {
     toggle.accessibilityIdentifier = "ExampleSwitch"
     stepper.accessibilityIdentifier = "ExampleStepper"
     pageControl.accessibilityIdentifier = "ExamplePageControl"
+    imageView.image = UIImage(named: "ottoman")
+    imageView.accessibilityLabel = "Ottoman"
+    imageView.accessibilityIdentifier = "ExampleImage"
     picker.accessibilityIdentifier = "ExamplePicker"
     picker.dataSource = self
     picker.delegate = self

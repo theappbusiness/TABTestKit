@@ -3,7 +3,7 @@
 //  TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 11/09/2019.
-//  Copyright © 2019 The App Business LTD. All rights reserved.
+//  Copyright © 2019 Kin + Carta. All rights reserved.
 //
 
 import TABTestKit
@@ -21,6 +21,7 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
       And(I: see(tabBarScreen))
       When(I: tap(tabBarScreen.otherTabBarButton))
       Then(I: see(otherElementsScreen))
+      And(the: label(of: otherElementsScreen.trait, is: "Other elements"))
     }
     
     Scenario("Seeing the label and button") {
@@ -151,6 +152,12 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     Scenario("Seeing and interacting with the page indicator") {
       Given(I: see(otherElementsScreen.pageIndicator))
       Then(the: value(of: otherElementsScreen.pageIndicator, is: "page 1 of 3"))
+    }
+    
+    Scenario("Seeing the image") {
+      Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.picker, is: .visible))
+      When(I: see(otherElementsScreen.image))
+      Then(the: value(of: otherElementsScreen.image, is: "Ottoman"))
     }
     
     Scenario("Seeing and interacting with the picker") {

@@ -3,7 +3,7 @@
 //  TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 11/10/2019.
-//  Copyright © 2019 The App Business LTD. All rights reserved.
+//  Copyright © 2019 Kin + Carta. All rights reserved.
 //
 
 import TABTestKit
@@ -20,6 +20,7 @@ final class CollectionViewTests: TABTestCase, SystemPreferencesContext {
       Given(I: complete(biometricLoginScreen))
       When(I: tap(tabBarScreen.collectionTabBarButton))
       Then(I: see(collectionViewScreen))
+      And(the: label(of: collectionViewScreen.header, is: "Collection"))
     }
     
     Scenario("Scrolling until the first cell is hidden") {

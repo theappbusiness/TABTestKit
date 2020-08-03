@@ -3,6 +3,35 @@
 ## Pending
 
 - Added support for double tapping, long pressing and two finger tapping, with default implementations for any Elements that conform to Tappable. (issue #88)
+- Configured Travis to build and test on multiple Xcodes
+
+---
+
+## 1.6.1
+
+### Fixed
+
+- `Image.swift` wasn't added to the main framework meaning it wouldn't work for Carthage
+- Build issue with brew on Travis' 12.4 image
+
+---
+
+## 1.6.0
+
+- Added `Image` element which can be used to represent images (and anything else that XCUI sees as a `.image` type). (issue #100)
+- Added Brewfile for better dependency control
+- Fixes an issue when building Carthage framework failed due to a missing file in TABTestKit carthage project.
+- Adds a step script for building carthage framework in Travis CI. This should report to CI if the TABTestKit can be build as a Carthage framework.
+- Adds a step script for linting cocoapods project in Travis CI. This should report to CI if the TABTestKit can be safe to be published as Cocoapods framework.
+
+---
+
+## 1.5.0
+
+- Added support for deep linking by adding a new function to `NavigationContext` which allows you to pass any `URL` to open, including regular HTTPS or app-specific URLs. (issue #94)
+- Added globally available instance of `Springboard` meaning you no longer need to create one every time you want to use `Springboard` as a parent element. (issue #93)
+- Added `Icon` element which can be used to represent home screen icons (and anything else that XCUI sees as an `.icon` type). (issue #95)
+- Added support for waiting for the app to be in a particular state in `AppContext` (useful for deep linking)
 
 ---
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEl-fI-I9x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEl-fI-I9x">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +22,12 @@
                         <segue destination="CZc-fh-uXm" kind="relationship" relationship="viewControllers" id="M6Y-7w-ha8"/>
                         <segue destination="3uD-U6-zpv" kind="presentation" identifier="BiometricLoginViewController" modalPresentationStyle="fullScreen" id="1Wd-wC-qnx"/>
                         <segue destination="EeR-CP-KFI" kind="relationship" relationship="viewControllers" id="J8z-aD-RBA"/>
+                        <segue destination="2OA-Nv-LiK" kind="relationship" relationship="viewControllers" id="Gz7-rf-bxg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lab-gg-Ww4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-652"/>
+            <point key="canvasLocation" x="-212" y="585"/>
         </scene>
         <!--Table-->
         <scene sceneID="anu-hn-M2Y">
@@ -137,6 +138,16 @@
             </objects>
             <point key="canvasLocation" x="1121" y="876"/>
         </scene>
+        <!--Page-->
+        <scene sceneID="c0y-gk-Doa">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ugK-Fe-gyT" customClass="PageController" customModule="TABTestKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Page" id="wto-5H-nHP"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6J-sR-xU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="1573"/>
+        </scene>
         <!--Other elements-->
         <scene sceneID="3aC-WN-Fc9">
             <objects>
@@ -145,14 +156,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOH-Wp-wlz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LOH-Wp-wlz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfG-gN-IGv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1039.5"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QfG-gN-IGv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1075.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Ik-w7v">
-                                                <rect key="frame" x="32" y="0.0" width="311" height="1039.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Ik-w7v">
+                                                <rect key="frame" x="32" y="8" width="311" height="1105.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-u4-09J">
                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
@@ -262,8 +273,15 @@
                                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </pageControl>
-                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufc-9Z-WSb">
-                                                        <rect key="frame" x="0.0" y="823.5" width="311" height="216"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qez-OB-CWf">
+                                                        <rect key="frame" x="0.0" y="823.5" width="311" height="50"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <bool key="isElement" value="YES"/>
+                                                        </accessibility>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                    </imageView>
+                                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufc-9Z-WSb">
+                                                        <rect key="frame" x="0.0" y="889.5" width="311" height="216"/>
                                                     </pickerView>
                                                 </subviews>
                                             </stackView>
@@ -300,6 +318,7 @@
                         <outlet property="button" destination="qtX-qz-K6y" id="uki-Ua-0gn"/>
                         <outlet property="decimalPadTextField" destination="61Z-cm-ZHi" id="erp-Pq-mkz"/>
                         <outlet property="emailAddressTextField" destination="5fw-xl-ecR" id="8yG-pC-ARd"/>
+                        <outlet property="imageView" destination="Qez-OB-CWf" id="3ih-0H-8Kj"/>
                         <outlet property="label" destination="T3E-u4-09J" id="XIT-Qw-tLK"/>
                         <outlet property="numberPadTextField" destination="bDy-WJ-8HC" id="kKJ-mR-HGy"/>
                         <outlet property="numbersAndPunctuationTextField" destination="R96-dd-z2I" id="P7z-aD-qnW"/>
@@ -396,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FK-ee-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="137"/>
+            <point key="canvasLocation" x="-212" y="1441"/>
         </scene>
         <!--Collection-->
         <scene sceneID="9Px-jB-nTh">
@@ -416,6 +435,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Et-tq-h0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1120.8" y="137.18140929535232"/>
+        </scene>
+        <!--Page-->
+        <scene sceneID="AdW-ZX-mv4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2OA-Nv-LiK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Page" id="NjX-TZ-cBr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tmb-VQ-1f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ugK-Fe-gyT" kind="relationship" relationship="rootViewController" id="PsZ-n0-WV8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AE-8a-pgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="1573"/>
         </scene>
     </scenes>
 </document>

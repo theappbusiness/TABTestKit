@@ -3,7 +3,7 @@
 //  TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 11/09/2019.
-//  Copyright © 2019 The App Business LTD. All rights reserved.
+//  Copyright © 2019 Kin + Carta. All rights reserved.
 //
 
 import TABTestKit
@@ -31,6 +31,7 @@ struct OtherElementsScreen: Screen {
   let toggle = Switch(id: "ExampleSwitch")
   let stepper = Stepper(id: "ExampleStepper")
   let pageIndicator = PageIndicator(id: "ExamplePageControl")
+  let image = Image(id: "ExampleImage")
   let picker = Picker(id: "ExamplePicker")
   let shareSheet = ActivitySheet()
   

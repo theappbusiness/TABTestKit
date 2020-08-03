@@ -1,4 +1,4 @@
-![The App Business](Assets/logo.png)
+![TABTestKit - Kin + Carta Create](Assets/logo.png)
 
 # TABTestKit
 
@@ -12,7 +12,7 @@
 which helps reduce flakiness and lowers the barrier to entry for most people.
 
 **TABTestKit** also makes it possible to reliably automate iOS [biometrics](#biometrics) for
-the first time ever.
+the first time ever, as well as automate [deep linking into your app](#opening-urls-and-deep-linking), with no external dependencies!
 
 ```swift
 func test_login() {
@@ -72,6 +72,7 @@ func test_login() {
       - [`Picker`](#picker)
       - [`PageIndicator`](#pageindicator)
       - [`WebView`](#webview)
+      - [`Image`](#image)
     - [Predefined Screens](#predefined-screens)
       - [`systemPreferencesRootScreen`](#systempreferencesrootscreen)
       - [`systemPreferencesGeneralScreen`](#systempreferencesgeneralscreen)
@@ -331,6 +332,9 @@ func test_serverErrorLoggingIn() {
 
 Another exclusive feature of **TABTestKit** is that it makes it possible (and very
 easy!) to automation iOS biometrics in the simulator.
+
+> **NOTE:** If you're using Swift Package Manager, you'll need to `import` the `Biometrics` module to use the `Biometrics` class directly.
+> Until issue [118](https://github.com/theappbusiness/TABTestKit/issues/118) is closed
 
 
 #### Enabling and disabling device biometrics
@@ -1146,6 +1150,25 @@ Since `WebView` conforms to `Scrollable`, you can scroll it:
 webView.scroll(.left)
 ```
 
+#### Image
+
+`Image` represents an image or imageView in the app:
+
+```swift
+let image = Image(id: "ExampleImage")
+```
+
+Since `Image` conforms to `ValueRepresentable`, you can get the label (string) value:
+
+```swift
+XCTAssertEqual(image.value, "image of random object")
+```
+
+#### Icon
+
+`Icon` typically represents an app icon on the Home Screen, but can represent
+anything that XCUI sees as an icon.
+
 ### Predefined Screens
 
 **TABTestKit** comes with some helpful predefined screens that you can use in your tests.
@@ -1248,6 +1271,30 @@ easily:
 ```swift
 complete(nameScreen, birthDateScreen, usernameScreen)
 ```
+
+##### Opening URLs and deep linking
+
+Using `NavigationContext` in **TABTestKit** you can automate and test deep linking in your apps, as well as opening websites in Safari:
+
+```swift
+let deepLink = URL(string: "my-app://deep-link")!
+open(deepLink)
+
+let appleSite = URL(string: "https://apple.com")!
+open(appleSite)
+
+Given(I: open(deepLink))
+Given(I: open(appleSite))
+```
+
+It's important to note that to do this, **TABTestKit** launches the test runner itself, and uses the test runner to open the URL.
+
+Although **TABTestKit** will navigate to the Home Screen and find the test runner app to launch it, it is your responsibility
+to decide whether to leave your app in the current state before opening the URL, or whether to terminate the app first.
+
+This leaves you free to test how your app handles deep linking from multiple states.
+
+You can use [`AppContext`](#appcontext) to terminate your app in a step.
 
 #### InteractionContext
 
@@ -1779,6 +1826,16 @@ app, like Face ID permission prompts.
 
 ## Installation
 
+
+### Swift Package Manager
+
+You can add **TABTestKit** as a remote Swift Package dependency in Xcode 11 or newer.
+
+Due to the way SPM requires mixed-langage packages to be built, if you want to use the
+`Biometrics` class, you'll need to `import Biometrics` until we expose it in Swift (issue [#118](https://github.com/theappbusiness/TABTestKit/issues/118)).
+
+You don't need to `import Biometrics` if you're just using the helper functions in `BiometricsContext`.
+
 ### Cocoapods
 
 #### Latest
@@ -1850,21 +1907,16 @@ To use the version under development you can target the `develop` branch specifi
 github "TABTestKit" "develop"
 ```
 
-### Swift Package Manager
-
-**TABTestKit** does not yet support SPM, please feel free to open a PR to add
-support if your project needs it!
-
 ## Contributing
 
 Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 ## Authors
 
-Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
-Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
-Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire  
-Suyash Srijan, suyash.srijan@theappbuisness.com, https://github.com/theblixguy
+Neil Horton, neil.horton@kinandcarta.com, https://github.com/neil3079  
+Zachary Borrelli, zac.borrelli@kinandcarta.com, https://github.com/zacoid55  
+Kane Cheshire, kane.cheshire@kinandcarta.com, https://github.com/kanecheshire  
+Suyash Srijan, suyash.srijan@kinandcarta.com, https://github.com/theblixguy
 
 ## License
 

@@ -3,7 +3,7 @@
 //  TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 10/09/2019.
-//  Copyright © 2019 The App Business LTD. All rights reserved.
+//  Copyright © 2019 Kin + Carta. All rights reserved.
 //
 
 import TABTestKit
@@ -22,6 +22,13 @@ final class BiometricLogin_HappyPathTests: TABTestCase, SystemPreferencesContext
       Given(I: see(biometricLoginScreen))
       When(I: complete(biometricLoginScreen))
       Then(I: doNotSee(biometricLoginScreen))
+    }
+    
+    Scenario("Relaunching the app") {
+      Given(I: doNotSee(biometricLoginScreen))
+      When(I: relaunchTheApp)
+      Then(I: goBackToTABTestKitExampleApp)
+      And(I: see(biometricLoginScreen))
     }
   }
   
