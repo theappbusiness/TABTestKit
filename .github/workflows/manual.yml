@@ -12,4 +12,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run tests on Xcode 11
-        run: ./.github/actions/run_tests.yml
+        run: ./.github/workflows/run_tests.yml
