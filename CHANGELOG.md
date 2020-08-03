@@ -3,6 +3,7 @@
 ## Pending
 
 - Configured Travis to build and test on multiple Xcodes
+-  Added a `Refreshable` protocol so for each element/screen that conforms to protocol `refresh` function can be defined 
 
 ---
 
