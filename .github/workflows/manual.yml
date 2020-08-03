@@ -10,9 +10,11 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-      - name: Set Xcode
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Set Xcode version
         run: sudo xcode-select -switch /Applications/Xcode_11.6.app
-      - name: Run tests
+      - name: Build for testing
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
-      - name: Test iPhone 11
+      - name: Test on iPhone 11
         run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1'
