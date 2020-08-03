@@ -12,7 +12,6 @@ import Foundation
 /// and then perform whatever needs to be performed for a "happy path" for that screen.
 public protocol Refreshable {
 	
-	func refresh()
+    func refresh()
 	
 }
-
