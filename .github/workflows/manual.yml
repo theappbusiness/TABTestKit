@@ -5,11 +5,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_tests:
+  test_xcode10_ios12:
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Run tests on Xcode 11
-        run: ./.github/workflows/run_tests.yml
+      - name: Set Xcode version
+        run: sudo xcode-select -switch /Applications/Xcode_10.3.app
+      - name: Build for testing
+        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.4'
+      - name: Test on iPhone Xs
+        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.4'
+
+  test_xcode11_ios13:
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Set Xcode version
+        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
+      - name: Build for testing
+        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
+      - name: Test on iPhone 11
+        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
