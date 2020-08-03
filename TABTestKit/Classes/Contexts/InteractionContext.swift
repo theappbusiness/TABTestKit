@@ -77,7 +77,7 @@ public extension InteractionContext {
 	}
 	
 	func refresh(_ refreshableThing: Refreshable) {
-		refreshableThing.refresh()
+        refreshableThing.refresh()
 	}
 	
 }
