@@ -8,16 +8,13 @@ on:
 jobs:
   run_tests:
     runs-on: macOS-latest
-    env:
-      XCODE_VERSION: 11.6
-      IOS_VERSION: 13.6
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Set Xcode version
-        run: sudo xcode-select -switch /Applications/Xcode_$XCODE_VERSION.app
+        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Build for testing
-        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=$IOS_VERSION'
+        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
       - name: Test on iPhone 11
-        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=$IOS_VERSION'
+        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
