@@ -1,5 +1,4 @@
-
-name: Manual workflow
+name: Run tests on Xcode
 
 on:
   workflow_dispatch:
