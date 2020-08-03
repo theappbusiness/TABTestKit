@@ -1,0 +1,5 @@
+- [ ] When adding files, make sure they're added to the right target. If you're adding new files that should be bundled up with Cocoapods etc, they need to be added to the `TABTestKit` target, not `Pods-TABTestKit_Example` etc.
+- [ ] Run `pod install` to ensure that the latest changes are in the Example project. Without this, Carthage might not see the latest changes.
+- [ ] Added and updated tests where possible.
+- [ ] Updated the CHANGELOG. For any changes pending a release, add to the Pending section. For releases, move everything pending to the release section.
+- [ ] Updated the README. Add info for any new features, update existing info for anything that's changed or needs extra info.

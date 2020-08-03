@@ -5,7 +5,7 @@
 //  Created by Kane Cheshire on 15/10/2019.
 //
 
-import UIKit
+import CoreGraphics
 
 public extension CGVector {
 	

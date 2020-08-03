@@ -12,8 +12,6 @@
 
 #import "Biometrics-Bridging-Header.h"
 #import "Biometrics.h"
-#import "Biometrics-Bridging-Header.h"
-#import "Biometrics.h"
 
 FOUNDATION_EXPORT double TABTestKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char TABTestKitVersionString[];
