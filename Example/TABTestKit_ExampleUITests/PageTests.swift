@@ -9,7 +9,7 @@
 import TABTestKit
 
 final class PageTests: TABTestCase {
-
+    
     func test() {
         // This test will fail on iOS 12 as the scroll view in UIPageViewController
         // does not have the accessibility trait of scroll view. This has been fixed
@@ -31,5 +31,5 @@ final class PageTests: TABTestCase {
             Then(the: value(of: pageScreen.pageIndicator, is: "page 6 of 6"))
         }
     }
-
+    
 }

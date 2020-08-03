@@ -4,6 +4,7 @@
 
 - Added support for double tapping, long pressing and two finger tapping, with default implementations for any Elements that conform to Tappable. (issue #88)
 - Configured Travis to build and test on multiple Xcodes
+-  Added a `Refreshable` protocol so for each element/screen that conforms to protocol `refresh` function can be defined 
 
 ---
 
