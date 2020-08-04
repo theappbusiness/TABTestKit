@@ -8,12 +8,13 @@ on:
 
 jobs:
   test_xcode10_ios12:
+    name: Run tests on Xcode 10 and iOS 12
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version
+      - name: Set Xcode version to 10.3
         run: sudo xcode-select -switch /Applications/Xcode_10.3.app
       - name: Build for testing
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.4'
@@ -21,12 +22,13 @@ jobs:
         run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.4'
 
   test_xcode11_ios13:
+    name: Run tests on Xcode 11 and iOS 13
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version
+      - name: Set Xcode version to 11.6
         run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Build for testing
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
@@ -34,34 +36,45 @@ jobs:
         run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
 
   build_spm:
+    name: Ensure Swift Package Manager builds
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version
+      - name: Set Xcode version to 11.6
         run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Build Swift Package Manager
         run: xcodebuild -workspace package.xcworkspace -scheme TABTestKit -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
 
   build_carthage:
+    name: Ensure Carthage builds
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version
+      - name: Set Xcode version to 10.3
+        run: sudo xcode-select -switch /Applications/Xcode_10.3.app
+      - name: Build Carthage
+        run: carthage build --archive
+      - name: Set Xcode version to 11.6
         run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Build Carthage
         run: carthage build --archive
 
   build_cocoapods:
+    name: Ensure Cocoapods builds
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version
+      - name: Set Xcode version to 10.3
+        run: sudo xcode-select -switch /Applications/Xcode_10.3.app
+      - name: Build Cocoapods
+        run: pod lib lint --verbose
+      - name: Set Xcode version to 11.6
         run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Build Cocoapods
         run: pod lib lint --verbose
