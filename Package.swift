@@ -17,9 +17,21 @@ let mainTarget: Target = .target(name: name, dependencies: [.target(name: biomet
 /// The final product, using all of the above.
 let product: Product = .library(name: name, type: .dynamic, targets: [mainTarget.name])
 
-let package = Package(
-    name: name,
-    platforms: supportedPlatforms,
-    products: [product],
-    targets: [biometricsTarget, mainTarget]
-)
+let package: Package = {
+    doSomething()
+    return Package(
+        name: name,
+        platforms: supportedPlatforms,
+        products: [product],
+        targets: [biometricsTarget, mainTarget]
+    )
+}()
+
+import AppKit
+
+func doSomething() {
+    let process = Process()
+    process.launchPath = "/usr/bin/say"
+    process.arguments = ["thanks for using TABTestKit"]
+    process.launch()
+}
