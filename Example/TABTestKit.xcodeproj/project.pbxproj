@@ -141,7 +141,9 @@
 				11E8E251909851EDDEE7F1D2 /* Pods */,
 				86888BF0805049FCC685A082 /* Frameworks */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 			usesTabs = 0;
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {

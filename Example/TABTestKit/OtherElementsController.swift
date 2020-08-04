@@ -34,6 +34,18 @@ final class OtherElementsController: UIViewController {
   @IBOutlet private var imageView: UIImageView!
   @IBOutlet private var picker: UIPickerView!
   
+  override var inputAccessoryView: UIView? {
+    let label = UILabel()
+    label.text = "Touch blocking input accessory view"
+    label.isUserInteractionEnabled = true // So it swallows touches
+    label.textAlignment = .center
+    label.backgroundColor = .red
+    label.textColor = .white
+    label.sizeToFit()
+    label.frame.size.height = 120
+    return label
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     scrollView.accessibilityIdentifier = "MyScrollView"
