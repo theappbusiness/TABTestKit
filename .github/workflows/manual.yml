@@ -1,8 +1,10 @@
 
-name: Manual workflow
+name: TABTestKit CI
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [ '*' ]
 
 jobs:
   test_xcode10_ios12:
