@@ -70,6 +70,7 @@ func test_login() {
       - [`Stepper`](#stepper)
       - [`SegmentedControl`](#segmentedcontrol)
       - [`Picker`](#picker)
+      - [`DatePicker`](#datePicker)
       - [`PageIndicator`](#pageindicator)
       - [`WebView`](#webview)
       - [`Image`](#image)
@@ -1116,6 +1117,35 @@ XCTAssertEqual(wheel.value, "The value")
 ```
 
 Since a `Picker`'s `Wheel` also conforms to [`Adjustable`](#adjustable), you can
+adjust the value to another `String`:
+
+```swift
+wheel.adjust(to: "New value")
+```
+
+#### DatePicker
+
+`DatePicker` represents a date picker in the app:
+
+```swift
+let datePicker = DatePicker(id: "MyPicker")
+```
+
+For iOS 13 and under. You don't interact with the picker directly, instead you interact with the wheels
+inside the picker. To interact with a wheel, first ask the picker for it:
+
+```swift
+let wheel = datePicker.wheel(0)
+```
+
+Since a `DatePicker`'s `Wheel` conforms to [`ValueRepresentable`](#valuerepresentable),
+you can get the string value:
+
+```swift
+XCTAssertEqual(wheel.value, "The value")
+```
+
+Since a `DatePicker`'s `Wheel` also conforms to [`Adjustable`](#adjustable), you can
 adjust the value to another `String`:
 
 ```swift
