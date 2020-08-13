@@ -78,6 +78,7 @@ final class OtherElementsController: UIViewController {
 extension OtherElementsController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
+    return true
   }
 }
 
