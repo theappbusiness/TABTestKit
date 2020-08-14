@@ -13,13 +13,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Set Xcode version to 10.3
         run: sudo xcode-select -switch /Applications/Xcode_10.3.app
       - name: Build for testing
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.4'
       - name: Test on iPhone Xs
         run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.4'
+      - name: Archive tests results
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test-TABTestKit-Xcode10-iOS12.xcresult
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
 
   test_xcode11_ios13:
     name: Run tests on Xcode 11 and iOS 13
@@ -27,13 +33,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Set Xcode version to 11.6
         run: sudo xcode-select -switch /Applications/Xcode_11.6.app
       - name: Build for testing
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
       - name: Test on iPhone 11
         run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
+      - name: Archive tests results
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test-TABTestKit-Xcode11-iOS13.xcresult
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
 
   build_spm:
     name: Ensure Swift Package Manager builds
