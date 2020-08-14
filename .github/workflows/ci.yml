@@ -5,8 +5,7 @@ on:
   workflow_dispatch: # This allows you to manually run the workflow from GitHub's web UI
   pull_request:
     branches: [ '*' ] # This means this workflow will run when any PR is created or any changes are pushed to a PR, on any branch
-  push:
-    branches: ['*']
+
 jobs:
   test_xcode10_ios12:
     name: Run tests on Xcode 10 and iOS 12
