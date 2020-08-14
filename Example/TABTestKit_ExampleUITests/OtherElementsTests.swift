@@ -125,7 +125,8 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
         }
         
         Scenario("Seeing and interacting with the slider") {
-            Given(I: see(otherElementsScreen.slider))
+            Given(I: tap(keyboard.key("return", isActuallyButton: true)))
+            And(I: see(otherElementsScreen.slider))
             When(I: adjust(otherElementsScreen.slider, to: 1))
             Then(I: adjust(otherElementsScreen.slider, to: 0))
         }
@@ -165,6 +166,94 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
             And(the: value(of: otherElementsScreen.picker.wheel(0), is: "Hello"))
             When(I: adjust(otherElementsScreen.picker.wheel(0), to: "World"))
             Then(the: value(of: otherElementsScreen.picker.wheel(0), is: "World"))
+        }
+        
+        Scenario("Seeing and interacting with the time picker") {
+            Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.timePicker, is: .visible))
+            And(I: see(otherElementsScreen.timePicker))
+            And(the: value(of: otherElementsScreen.timePicker.wheel(0), is: "9 o’clock"))
+            When(I: adjust(otherElementsScreen.timePicker.wheel(0), to: "10"))
+            Then(the: value(of: otherElementsScreen.timePicker.wheel(0), is: "10 o’clock"))
+        }
+        
+        Scenario("Interacting with the time picker for minutes") {
+            Given(I: see(otherElementsScreen.timePicker))
+            And(the: value(of: otherElementsScreen.timePicker.wheel(1), is: "41 minutes"))
+            When(I: adjust(otherElementsScreen.timePicker.wheel(1), to: "42"))
+            Then(the: value(of: otherElementsScreen.timePicker.wheel(1), is: "42 minutes"))
+        }
+        
+        Scenario("Interacting with the time picker for period") {
+            Given(I: see(otherElementsScreen.timePicker))
+            And(the: value(of: otherElementsScreen.timePicker.wheel(2), is: "AM"))
+            When(I: adjust(otherElementsScreen.timePicker.wheel(2), to: "PM"))
+            Then(the: value(of: otherElementsScreen.timePicker.wheel(2), is: "PM"))
+        }
+        
+        Scenario("Seeing and interacting with the date picker") {
+            Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.datePicker, is: .visible))
+            And(I: see(otherElementsScreen.datePicker))
+            And(the: value(of: otherElementsScreen.datePicker.wheel(0), is: "January"))
+            When(I: adjust(otherElementsScreen.datePicker.wheel(0), to: "February"))
+            Then(the: value(of: otherElementsScreen.datePicker.wheel(0), is: "February"))
+        }
+        
+        Scenario("Interacting with the date picker for day") {
+            Given(I: see(otherElementsScreen.datePicker))
+            And(the: value(of: otherElementsScreen.datePicker.wheel(1), is: "9"))
+            When(I: adjust(otherElementsScreen.datePicker.wheel(1), to: "10"))
+            Then(the: value(of: otherElementsScreen.datePicker.wheel(1), is: "10"))
+        }
+        
+        Scenario("Interacting with the date picker for year") {
+            Given(I: see(otherElementsScreen.datePicker))
+            And(the: value(of: otherElementsScreen.datePicker.wheel(2), is: "2007"))
+            When(I: adjust(otherElementsScreen.datePicker.wheel(2), to: "2020"))
+            Then(the: value(of: otherElementsScreen.datePicker.wheel(2), is: "2020"))
+        }
+        
+        Scenario("Seeing and interacting with the date time picker") {
+            Given(I: scroll(otherElementsScreen, .downwards, until: otherElementsScreen.dateTimePicker, is: .visible))
+            And(I: see(otherElementsScreen.datePicker))
+            And(the: value(of: otherElementsScreen.dateTimePicker.wheel(0), is: "Tue, Jan 9"))
+            When(I: adjust(otherElementsScreen.dateTimePicker.wheel(0), to: "Jan 10"))
+            Then(the: value(of: otherElementsScreen.dateTimePicker.wheel(0), is: "Wed, Jan 10"))
+        }
+        
+        Scenario("Interacting with the date time picker for hour") {
+            Given(I: see(otherElementsScreen.dateTimePicker))
+            And(the: value(of: otherElementsScreen.dateTimePicker.wheel(1), is: "9 o’clock"))
+            When(I: adjust(otherElementsScreen.dateTimePicker.wheel(1), to: "10"))
+            Then(the: value(of: otherElementsScreen.dateTimePicker.wheel(1), is: "10 o’clock"))
+        }
+        
+        Scenario("Interacting with the date time picker for minute") {
+            Given(I: see(otherElementsScreen.dateTimePicker))
+            And(the: value(of: otherElementsScreen.dateTimePicker.wheel(2), is: "41 minutes"))
+            When(I: adjust(otherElementsScreen.dateTimePicker.wheel(2), to: "42"))
+            Then(the: value(of: otherElementsScreen.dateTimePicker.wheel(2), is: "42 minutes"))
+        }
+        
+        Scenario("Interacting with the date time picker for period") {
+            Given(I: see(otherElementsScreen.dateTimePicker))
+            And(the: value(of: otherElementsScreen.dateTimePicker.wheel(3), is: "AM"))
+            When(I: adjust(otherElementsScreen.dateTimePicker.wheel(3), to: "PM"))
+            Then(the: value(of: otherElementsScreen.dateTimePicker.wheel(3), is: "PM"))
+        }
+
+        Scenario("Seeing and interacting with the count down timer picker") {
+            Given(I: scroll(otherElementsScreen, .from(CGVector(dx: 0.95, dy: 0.8), to: CGVector(dx: 0.95, dy: 0.3)), until: otherElementsScreen.countdownTimerPicker, is: .visible)) // We need to scroll down on the edge of the screen, otherwise it will scroll one of the picker.
+            And(I: see(otherElementsScreen.countdownTimerPicker))
+            And(the: value(of: otherElementsScreen.countdownTimerPicker.wheel(0), is: "0 hours"))
+            When(I: adjust(otherElementsScreen.countdownTimerPicker.wheel(0), to: "1"))
+            Then(the: value(of: otherElementsScreen.countdownTimerPicker.wheel(0), is: "1 hour"))
+        }
+        
+        Scenario("Interacting with the date time picker for hour") {
+            Given(I: see(otherElementsScreen.countdownTimerPicker))
+            And(the: value(of: otherElementsScreen.countdownTimerPicker.wheel(1), is: "1 min"))
+            When(I: adjust(otherElementsScreen.countdownTimerPicker.wheel(1), to: "59"))
+            Then(the: value(of: otherElementsScreen.countdownTimerPicker.wheel(1), is: "59 min"))
         }
     }
     

@@ -33,7 +33,11 @@ final class OtherElementsController: UIViewController {
   @IBOutlet private var pageControl: UIPageControl!
   @IBOutlet private var imageView: UIImageView!
   @IBOutlet private var picker: UIPickerView!
-  
+  @IBOutlet private var timePicker: UIDatePicker!
+  @IBOutlet private var datePicker: UIDatePicker!
+  @IBOutlet private var dateTimePicker: UIDatePicker!
+  @IBOutlet private var countDownTimerPicker: UIDatePicker!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     scrollView.accessibilityIdentifier = "MyScrollView"
@@ -58,6 +62,10 @@ final class OtherElementsController: UIViewController {
     picker.accessibilityIdentifier = "ExamplePicker"
     picker.dataSource = self
     picker.delegate = self
+    timePicker.accessibilityIdentifier = "ExampleTimePicker"
+    datePicker.accessibilityIdentifier = "ExampleDatePicker"
+    dateTimePicker.accessibilityIdentifier = "ExampleDateTimePicker"
+    countDownTimerPicker.accessibilityIdentifier = "ExampleCountDownTimerPicker"
   }
   
   @IBAction private func buttonTapped() {
@@ -65,6 +73,13 @@ final class OtherElementsController: UIViewController {
     present(sheet, animated: true)
   }
   
+}
+
+extension OtherElementsController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
 }
 
 extension OtherElementsController: UIPickerViewDataSource & UIPickerViewDelegate {
