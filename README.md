@@ -2,9 +2,10 @@
 
 # TABTestKit
 
-[![Build Status](https://travis-ci.org/theappbusiness/TABTestKit.svg?branch=develop)](https://travis-ci.org/theappbusiness/TABTestKit)
+[![TABTestKit CI](https://github.com/theappbusiness/TABTestKit/workflows/TABTestKit%20CI/badge.svg)](https://github.com/theappbusiness/TABTestKit/actions)
 [![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
