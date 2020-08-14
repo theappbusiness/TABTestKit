@@ -33,6 +33,10 @@ struct OtherElementsScreen: Screen {
     let pageIndicator = PageIndicator(id: "ExamplePageControl")
     let image = Image(id: "ExampleImage")
     let picker = Picker(id: "ExamplePicker")
+    let timePicker = DatePicker(id: "ExampleTimePicker")
+    let datePicker = DatePicker(id: "ExampleDatePicker")
+    let dateTimePicker = DatePicker(id: "ExampleDateTimePicker")
+    let countdownTimerPicker = DatePicker(id: "ExampleCountDownTimerPicker")
     let shareSheet = ActivitySheet()
     
 }
