@@ -5,10 +5,13 @@
 //  The MIT License (MIT)
 //
 //  Created by Zachary Borrelli on 14/09/2017.
-//  Copyright © 2017 The App Business LTD. All rights reserved.
+//  Copyright © 2017 Kin + Carta. All rights reserved.
 //
 
 import XCTest
+#if canImport(Biometrics)
+import Biometrics
+#endif
 
 /// The default contexts that TABTestCase conforms to, to provide lots of helpful functions to make it highly possible
 /// you don't have to write any extra test functions for your tests.

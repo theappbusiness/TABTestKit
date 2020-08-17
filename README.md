@@ -1,10 +1,11 @@
-![The App Business](Assets/logo.png)
+![TABTestKit - Kin + Carta Create](Assets/logo.png)
 
 # TABTestKit
 
-[![Build Status](https://travis-ci.org/theappbusiness/TABTestKit.svg?branch=develop)](https://travis-ci.org/theappbusiness/TABTestKit)
+[![TABTestKit CI](https://github.com/theappbusiness/TABTestKit/workflows/TABTestKit%20CI/badge.svg)](https://github.com/theappbusiness/TABTestKit/actions)
 [![Version](https://img.shields.io/cocoapods/v/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/cocoapods/l/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 [![Platform](https://img.shields.io/cocoapods/p/TABTestKit.svg?style=flat)](http://cocoapods.org/pods/TABTestKit)
 
@@ -70,6 +71,7 @@ func test_login() {
       - [`Stepper`](#stepper)
       - [`SegmentedControl`](#segmentedcontrol)
       - [`Picker`](#picker)
+      - [`DatePicker`](#datePicker)
       - [`PageIndicator`](#pageindicator)
       - [`WebView`](#webview)
       - [`Image`](#image)
@@ -332,6 +334,9 @@ func test_serverErrorLoggingIn() {
 
 Another exclusive feature of **TABTestKit** is that it makes it possible (and very
 easy!) to automation iOS biometrics in the simulator.
+
+> **NOTE:** If you're using Swift Package Manager, you'll need to `import` the `Biometrics` module to use the `Biometrics` class directly.
+> Until issue [118](https://github.com/theappbusiness/TABTestKit/issues/118) is closed
 
 
 #### Enabling and disabling device biometrics
@@ -1119,6 +1124,35 @@ adjust the value to another `String`:
 wheel.adjust(to: "New value")
 ```
 
+#### DatePicker
+
+`DatePicker` represents a date picker in the app:
+
+```swift
+let datePicker = DatePicker(id: "MyPicker")
+```
+
+For iOS 13 and under. You don't interact with the picker directly, instead you interact with the wheels
+inside the picker. To interact with a wheel, first ask the picker for it:
+
+```swift
+let wheel = datePicker.wheel(0)
+```
+
+Since a `DatePicker`'s `Wheel` conforms to [`ValueRepresentable`](#valuerepresentable),
+you can get the string value:
+
+```swift
+XCTAssertEqual(wheel.value, "The value")
+```
+
+Since a `DatePicker`'s `Wheel` also conforms to [`Adjustable`](#adjustable), you can
+adjust the value to another `String`:
+
+```swift
+wheel.adjust(to: "New value")
+```
+
 #### PageIndicator
 
 `PageIndicator` represents a page control or page indicator in the app:
@@ -1308,8 +1342,14 @@ Anything that conforms to `Tappable` can be tapped using `InteractionContext`:
 tap(myScreen.button)
 tap(myScreen.textField)
 
+doubleTap(myScreen.imageView)
+twoFingerTap(myScreen.someView)
+longPress(myScreen.cell)
+
 Given(I: tap(myScreen.button))
-Given(I: tap(myScreen.textField))
+Given(I: doubleTap(myScreen.imageView))
+Given(I: twoFingerTap(myScreen.someView))
+Given(I: longPress(myScreen.cell))
 ```
 
 ##### Typing into elements
@@ -1681,9 +1721,9 @@ frustrating automation tests.
 #### Tappable
 
 Anything that conforms to `Tappable` (like [`Button`](#button)), is declaring it
-can be tapped.
+can be tapped, this includes single, double and two finger taps, as well as long pressing.
 
-`Tappable` works really well wit [`InteractionContext`](#interactioncontext).
+`Tappable` works really well with [`InteractionContext`](#interactioncontext).
 
 Additionally, any [`Element`](#element) that conforms to `Tappable` doesn't have
 to do any extra work, default implementations will be provided automatically.
@@ -1817,6 +1857,16 @@ app, like Face ID permission prompts.
 
 ## Installation
 
+
+### Swift Package Manager
+
+You can add **TABTestKit** as a remote Swift Package dependency in Xcode 11 or newer.
+
+Due to the way SPM requires mixed-langage packages to be built, if you want to use the
+`Biometrics` class, you'll need to `import Biometrics` until we expose it in Swift (issue [#118](https://github.com/theappbusiness/TABTestKit/issues/118)).
+
+You don't need to `import Biometrics` if you're just using the helper functions in `BiometricsContext`.
+
 ### Cocoapods
 
 #### Latest
@@ -1888,21 +1938,16 @@ To use the version under development you can target the `develop` branch specifi
 github "TABTestKit" "develop"
 ```
 
-### Swift Package Manager
-
-**TABTestKit** does not yet support SPM, please feel free to open a PR to add
-support if your project needs it!
-
 ## Contributing
 
 Guidelines for contributing can be found [here](CONTRIBUTING.md).
 
 ## Authors
 
-Neil Horton, neil@theappbusiness.com, https://github.com/neil3079  
-Zachary Borrelli, zac@theappbusiness.com, https://github.com/zacoid55  
-Kane Cheshire, kane.cheshire@theappbusiness.com, https://github.com/kanecheshire  
-Suyash Srijan, suyash.srijan@theappbuisness.com, https://github.com/theblixguy
+Neil Horton, neil.horton@kinandcarta.com, https://github.com/neil3079  
+Zachary Borrelli, zac.borrelli@kinandcarta.com, https://github.com/zacoid55  
+Kane Cheshire, kane.cheshire@kinandcarta.com, https://github.com/kanecheshire  
+Suyash Srijan, suyash.srijan@kinandcarta.com, https://github.com/theblixguy
 
 ## License
 

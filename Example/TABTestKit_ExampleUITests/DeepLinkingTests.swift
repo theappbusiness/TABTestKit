@@ -3,13 +3,13 @@
 //  TABTestKit_ExampleUITests
 //
 //  Created by Kane Cheshire on 18/05/2020.
-//  Copyright © 2020 The App Business LTD. All rights reserved.
+//  Copyright © 2020 Kin + Carta. All rights reserved.
 //
 
 import TABTestKit
 
 final class DeepLinkingTests: TABTestCase {
-
+    
     func test() {
         Scenario("Deep linking from current state") {
             Given(I: complete(biometricLoginScreen))
@@ -26,12 +26,12 @@ final class DeepLinkingTests: TABTestCase {
             And(I: see(biometricLoginScreen))
         }
     }
-
+    
 }
 
 
 extension URL {
-
+    
     static let deepLinkURL = URL(string: "my-amazing-app://deep-link")!
-
+    
 }

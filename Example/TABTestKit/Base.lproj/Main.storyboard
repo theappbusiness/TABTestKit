@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEl-fI-I9x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEl-fI-I9x">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +22,12 @@
                         <segue destination="CZc-fh-uXm" kind="relationship" relationship="viewControllers" id="M6Y-7w-ha8"/>
                         <segue destination="3uD-U6-zpv" kind="presentation" identifier="BiometricLoginViewController" modalPresentationStyle="fullScreen" id="1Wd-wC-qnx"/>
                         <segue destination="EeR-CP-KFI" kind="relationship" relationship="viewControllers" id="J8z-aD-RBA"/>
+                        <segue destination="2OA-Nv-LiK" kind="relationship" relationship="viewControllers" id="Gz7-rf-bxg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lab-gg-Ww4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-652"/>
+            <point key="canvasLocation" x="-212" y="585"/>
         </scene>
         <!--Table-->
         <scene sceneID="anu-hn-M2Y">
@@ -137,6 +138,16 @@
             </objects>
             <point key="canvasLocation" x="1121" y="876"/>
         </scene>
+        <!--Page-->
+        <scene sceneID="c0y-gk-Doa">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ugK-Fe-gyT" customClass="PageController" customModule="TABTestKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Page" id="wto-5H-nHP"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6J-sR-xU5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="1573"/>
+        </scene>
         <!--Other elements-->
         <scene sceneID="3aC-WN-Fc9">
             <objects>
@@ -152,7 +163,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1075.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Ik-w7v">
-                                                <rect key="frame" x="32" y="8" width="311" height="1105.5"/>
+                                                <rect key="frame" x="32" y="8" width="311" height="2033.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-u4-09J">
                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
@@ -236,6 +247,9 @@
                                                         <rect key="frame" x="0.0" y="579.5" width="311" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="jT9-QJ-sAL" id="dmw-QK-hwI"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iym-dm-QHe">
                                                         <rect key="frame" x="-2" y="629.5" width="315" height="31"/>
@@ -272,6 +286,27 @@
                                                     <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufc-9Z-WSb">
                                                         <rect key="frame" x="0.0" y="889.5" width="311" height="216"/>
                                                     </pickerView>
+                                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4as-Ma-a4Q">
+                                                        <rect key="frame" x="0.0" y="1121.5" width="311" height="216"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="619004460.29273796">
+                                                            <!--2020-08-13 09:41:00 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wph-qF-GtI">
+                                                        <rect key="frame" x="0.0" y="1353.5" width="311" height="216"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="190028460.60229194">
+                                                            <!--2007-01-09 09:41:00 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRz-H3-Gl2">
+                                                        <rect key="frame" x="0.0" y="1585.5" width="311" height="216"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="190028460.30715942">
+                                                            <!--2007-01-09 09:41:00 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-hZ-e5N">
+                                                        <rect key="frame" x="0.0" y="1817.5" width="311" height="216"/>
+                                                    </datePicker>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -305,6 +340,9 @@
                     <navigationItem key="navigationItem" title="Other elements" largeTitleDisplayMode="always" id="O65-53-ThR"/>
                     <connections>
                         <outlet property="button" destination="qtX-qz-K6y" id="uki-Ua-0gn"/>
+                        <outlet property="countDownTimerPicker" destination="2Aw-hZ-e5N" id="Zff-xn-KrB"/>
+                        <outlet property="datePicker" destination="wph-qF-GtI" id="gw9-Yw-OSC"/>
+                        <outlet property="dateTimePicker" destination="fRz-H3-Gl2" id="Vwa-gE-gbI"/>
                         <outlet property="decimalPadTextField" destination="61Z-cm-ZHi" id="erp-Pq-mkz"/>
                         <outlet property="emailAddressTextField" destination="5fw-xl-ecR" id="8yG-pC-ARd"/>
                         <outlet property="imageView" destination="Qez-OB-CWf" id="3ih-0H-8Kj"/>
@@ -321,6 +359,7 @@
                         <outlet property="slider" destination="iym-dm-QHe" id="NU5-AN-iJ9"/>
                         <outlet property="stepper" destination="QXt-TJ-bdf" id="A17-Li-ccK"/>
                         <outlet property="textField" destination="bRG-zE-qHL" id="PdM-On-Yda"/>
+                        <outlet property="timePicker" destination="4as-Ma-a4Q" id="ea2-Gl-csL"/>
                         <outlet property="toggle" destination="gl3-Sg-afe" id="WtL-Ho-YyF"/>
                         <outlet property="twitterTextField" destination="y4q-2w-08a" id="FVh-Tb-IlO"/>
                         <outlet property="urlTextField" destination="A4H-hn-Yns" id="hOL-8g-sui"/>
@@ -404,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FK-ee-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="137"/>
+            <point key="canvasLocation" x="-212" y="1441"/>
         </scene>
         <!--Collection-->
         <scene sceneID="9Px-jB-nTh">
@@ -424,6 +463,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Et-tq-h0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1120.8" y="137.18140929535232"/>
+        </scene>
+        <!--Page-->
+        <scene sceneID="AdW-ZX-mv4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2OA-Nv-LiK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Page" id="NjX-TZ-cBr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tmb-VQ-1f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ugK-Fe-gyT" kind="relationship" relationship="rootViewController" id="PsZ-n0-WV8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AE-8a-pgz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="1573"/>
         </scene>
     </scenes>
 </document>
