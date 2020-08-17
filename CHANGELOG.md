@@ -6,6 +6,7 @@
 - Added Swift Package Manager support
 - Added a `Refreshable` protocol so for each element/screen that conforms to protocol `refresh` function can be defined 
 - Added a `DatePicker` element. (issue #55)
+- Added the ability to access `value` directly from an element
 
 ---
 
