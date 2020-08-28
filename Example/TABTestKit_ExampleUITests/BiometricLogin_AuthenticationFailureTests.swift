@@ -8,7 +8,7 @@
 
 import TABTestKit
 
-final class BiometricLogin_AuthenticationFailureTests: TABTestCase, SystemPreferencesContext {
+final class BiometricLoginAuthenticationFailureTests: TABTestCase, SystemPreferencesContext {
 
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
         resetAllPrivacyPrompts()

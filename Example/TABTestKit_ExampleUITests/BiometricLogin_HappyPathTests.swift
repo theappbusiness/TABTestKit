@@ -10,7 +10,7 @@ import TABTestKit
 
 // NOTE: Parallel UI tests are best optimised if you only have one test function per test case.
 
-final class BiometricLogin_HappyPathTests: TABTestCase, SystemPreferencesContext { // TODO: Enable parallel tests
+final class BiometricLoginHappyPathTests: TABTestCase, SystemPreferencesContext { // TODO: Enable parallel tests
 
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
         resetAllPrivacyPrompts()
