@@ -11,9 +11,9 @@ import TABTestKit
 let tableSelectionScreen = TableSelectionScreen()
 
 struct TableSelectionScreen: Screen {
-    
+
     let trait = View(id: "TableSelection")
     let navBar = NavBar()
     let backButton = Button(id: "Table")
-    
+
 }

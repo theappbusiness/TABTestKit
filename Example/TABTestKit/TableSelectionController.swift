@@ -9,10 +9,10 @@
 import UIKit
 
 final class TableSelectionController: UIViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.accessibilityIdentifier = "TableSelection"
-  }
-  
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.accessibilityIdentifier = "TableSelection"
+    }
+
 }

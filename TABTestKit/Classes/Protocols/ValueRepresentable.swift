@@ -11,8 +11,8 @@ import Foundation
 /// The conforming type decides what that value is by setting
 /// the associated value.
 public protocol ValueRepresentable {
-	
+
 	associatedtype Value: Equatable
 	var value: Value { get }
-	
+
 }

@@ -13,7 +13,7 @@ extension Element {
 	var defaultUnderlyingXCUIElement: XCUIElement {
 		return parent.underlyingXCUIElement.descendants(matching: type).matching(type, identifier: id).element(boundBy: index)
 	}
-	
+
 	/// The default top coordinate.
 	var defaultTopCoordinate: CGVector {
 		return CGVector(dx: 0.5, dy: frameInScreen.minY / XCUIDevice.shared.frame.maxY)

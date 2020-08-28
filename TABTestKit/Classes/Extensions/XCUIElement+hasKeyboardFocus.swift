@@ -8,7 +8,7 @@
 import XCTest
 
 public extension XCUIElement {
-	
+
 	/// Determines whether the element has keyboard focus.
 	/// This uses KVC (Key-Value Coding) to ask the element
 	/// for its value for the key `hasKeyboardFocus`.
@@ -19,7 +19,7 @@ public extension XCUIElement {
 	var hasKeyboardFocus: Bool {
 		return value(forKey: "hasKeyboardFocus") as? Bool ?? false
 	}
-	
+
 	/// Determines the underlying UIAccessibilityTraits of the view that
 	/// this element represents.
 	///
@@ -30,5 +30,5 @@ public extension XCUIElement {
 		guard let rawValue = value(forKey: "traits") as? UInt64 else { return [] }
 		return UIAccessibilityTraits(rawValue: rawValue)
 	}
-	
+
 }

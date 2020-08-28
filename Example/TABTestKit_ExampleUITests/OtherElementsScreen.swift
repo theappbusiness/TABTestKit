@@ -11,7 +11,7 @@ import TABTestKit
 let otherElementsScreen = OtherElementsScreen()
 
 struct OtherElementsScreen: Screen {
-    
+
     let trait = Header(id: "Other elements")
     let scrollView = ScrollView(id: "MyScrollView") // In iOS 13, XCUI matches a hidden scroll view when the keyboard is showing :(
     let label = Label(id: "Example label")
@@ -38,13 +38,13 @@ struct OtherElementsScreen: Screen {
     let dateTimePicker = DatePicker(id: "ExampleDateTimePicker")
     let countdownTimerPicker = DatePicker(id: "ExampleCountDownTimerPicker")
     let shareSheet = ActivitySheet()
-    
+
 }
 
 extension OtherElementsScreen: Scrollable {
-    
+
     func scroll(_ direction: ElementAttributes.Direction) {
         scrollView.scroll(direction)
     }
-    
+
 }

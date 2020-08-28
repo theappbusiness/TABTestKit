@@ -11,7 +11,7 @@ import TABTestKit
 let tabBarScreen = TabBarScreen()
 
 struct TabBarScreen: Screen {
-    
+
     var trait: TabBar { return tabBar }
     let tabBar = TabBar()
     var tableTabBarButton: Button {
@@ -26,5 +26,5 @@ struct TabBarScreen: Screen {
     var pageTabBarButton: Button {
         return tabBar.button(withID: "Page")
     }
-    
+
 }

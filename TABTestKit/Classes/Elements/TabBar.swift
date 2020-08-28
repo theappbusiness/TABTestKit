@@ -12,11 +12,11 @@ import XCTest
 /// you don't need to provide an ID, but you can do so
 /// if you need to.
 public struct TabBar: Element {
-	
+
 	public let id: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .tabBar
-	
+
 	/// Creates a new TabBar.
 	/// Since most apps generally have just one tab bar,
 	/// you don't need to provide an ID, but you can do so
@@ -27,7 +27,7 @@ public struct TabBar: Element {
 		self.id = id
 		self.parent = parent
 	}
-	
+
 	/// "Vends" a button representing a tab.
 	/// Typically the ID is just the title of the button,
 	/// but if you've set a custom identifier or label on the buttons
@@ -39,5 +39,5 @@ public struct TabBar: Element {
 	public func button(withID buttonID: String) -> Button {
 		return Button(id: buttonID, parent: self)
 	}
-	
+
 }

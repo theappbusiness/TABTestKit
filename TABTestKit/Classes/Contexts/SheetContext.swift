@@ -9,9 +9,9 @@ import Foundation
 
 public protocol SheetContext {}
 public extension SheetContext {
-	
+
 	func tap(_ actionButtonID: String, in sheet: Sheet) {
 		sheet.actionButton(withID: actionButtonID).tap()
 	}
-	
+
 }

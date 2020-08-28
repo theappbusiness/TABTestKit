@@ -12,22 +12,21 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
-  
-  func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    forceSoftwareKeyboard()
-    return true
-  }
-  
-  private func forceSoftwareKeyboard() {
-    #if targetEnvironment(simulator)
-    let setHardwareLayout = NSSelectorFromString("setHardwareLayout:")
-    UITextInputMode.activeInputModes.forEach { inputMode in
-      guard inputMode.responds(to: setHardwareLayout) else { return }
-      inputMode.perform(setHardwareLayout, with: nil)
-    }
-    #endif
-  }
-  
-}
+    var window: UIWindow?
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        forceSoftwareKeyboard()
+        return true
+    }
+
+    private func forceSoftwareKeyboard() {
+        #if targetEnvironment(simulator)
+        let setHardwareLayout = NSSelectorFromString("setHardwareLayout:")
+        UITextInputMode.activeInputModes.forEach { inputMode in
+            guard inputMode.responds(to: setHardwareLayout) else { return }
+            inputMode.perform(setHardwareLayout, with: nil)
+        }
+        #endif
+    }
+
+}

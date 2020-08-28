@@ -9,7 +9,7 @@
 import TABTestKit
 
 final class DeepLinkingTests: TABTestCase {
-    
+
     func test() {
         Scenario("Deep linking from current state") {
             Given(I: complete(biometricLoginScreen))
@@ -26,12 +26,11 @@ final class DeepLinkingTests: TABTestCase {
             And(I: see(biometricLoginScreen))
         }
     }
-    
+
 }
 
-
 extension URL {
-    
+
     static let deepLinkURL = URL(string: "my-amazing-app://deep-link")!
-    
+
 }

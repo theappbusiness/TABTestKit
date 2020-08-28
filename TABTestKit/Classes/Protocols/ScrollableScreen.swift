@@ -15,9 +15,9 @@ import Foundation
 public protocol ScrollableScreen: Screen & Scrollable where Trait: Scrollable {}
 
 public extension Screen where Trait: Scrollable {
-	
+
 	func scroll(_ direction: ElementAttributes.Direction) {
 		trait.scroll(direction)
 	}
-	
+
 }

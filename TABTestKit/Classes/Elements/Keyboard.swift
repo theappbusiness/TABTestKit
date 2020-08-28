@@ -14,7 +14,7 @@ public let keyboard = Keyboard()
 /// Since the software keyboard can be shown in multiple different formats (numeric, twitter, url etc),
 /// you can use this element to assert that the keyboard is being shown in the expected way.
 public struct Keyboard: Element {
-	
+
 	public enum KeyboardType: CaseIterable {
 		case regular
 		case numberPad
@@ -26,11 +26,11 @@ public struct Keyboard: Element {
 		case url
 		case webSearch
 	}
-	
+
 	public let id: String? = nil
 	public let type: XCUIElement.ElementType = .keyboard
 	public let parent: Element
-	
+
 	/// The current keyboard type.
 	/// Attempting to access this before the keyboard is visible will fail the test.
 	public var keyboardType: KeyboardType {
@@ -38,18 +38,18 @@ public struct Keyboard: Element {
 		guard let type = KeyboardType.allCases.first(where: expectedKeysExist) else { XCTFatalFail("Unable to determine keyboard type") }
 		return type
 	}
-	
+
 	/// The top coordinate (as a CGVector/NormalizedCoordinate) of the keyboard, in relation to the screen.
 	/// You could use this to make sure that you avoid the keyboard when scrolling, for example.
 	public var topCoordinate: CGVector {
 		return predictionBar.determine(.exists) ? predictionBar.topCoordinate : defaultTopCoordinate
 	}
-	
+
 	/// Returns the predication bar element. This is useful for knowing if the prediction bar is showing or not, and to find the top coordinate of it.
 	public var predictionBar: PredicationBar { return PredicationBar(parent: parent) }
-	
+
 	public init(parent: Element = App.shared) { self.parent = parent }
-	
+
 	/// Returns a key with the specified id, with the keyboard as the parent.
 	/// Since not all keys in the software keyboard are represented with the underlying
 	/// XCUIElement.ElementType of `.key` (which is annoying!), you can specify if
@@ -60,18 +60,18 @@ public struct Keyboard: Element {
 	public func key(_ id: String, isActuallyButton: Bool = false) -> Key {
 		return Key(id: id, parent: self, isActuallyButton: isActuallyButton)
 	}
-	
+
 }
 
 public extension Keyboard {
-	
+
 	/// Represents a Key that the Keyboard contains.
 	struct Key: Element, Tappable {
-		
+
 		public let id: String?
 		public let type: XCUIElement.ElementType
 		public let parent: Element
-		
+
 		/// Creates a new Key instance, configured with an ID and a keyboard parent.
 		/// Since not all keys in the software keyboard are represented with the underlying
 		/// XCUIElement.ElementType of `.key` (which is annoying!), you can specify if
@@ -86,29 +86,29 @@ public extension Keyboard {
 			self.type = isActuallyButton ? .button : .key
 			self.parent = parent
 		}
-		
+
 	}
-	
+
 	/// Represents the prediction bar above the keyboard.
 	/// Rather annoyingly, the prediction bar isn't a child of any keyboard,
 	/// just a different window that also contains the keyboard.
 	/// Because of this, the `parent` element should _not_ be a `Keyboard`.
 	struct PredicationBar: Element {
-		
+
 		public let id: String? = "Typing Predictions"
 		public let type: XCUIElement.ElementType = .other
 		public let parent: Element
-		
+
 		init(parent: Element = App.shared) {
 			self.parent = parent
 		}
-		
+
 	}
-	
+
 }
 
 public extension Keyboard {
-	
+
 	var decimal: Key { return key(".") }
 	var a: Key { return key("a") }
 	var moreNumbers: Key {
@@ -131,11 +131,11 @@ public extension Keyboard {
 	var dotCom: Key { return key(".com") }
 	var forwardSlash: Key { return key("/") }
 	var exclamation: Key { return key("!") }
-	
+
 }
 
 private extension Keyboard {
-	
+
 	func validKeys(for keyboardType: KeyboardType) -> [Key] {
 		switch keyboardType {
 		case .regular: return [a, moreNumbers, space]
@@ -149,7 +149,7 @@ private extension Keyboard {
 		case .webSearch: return [a, moreNumbers, space, decimal]
 		}
 	}
-	
+
 	func invalidKeys(for keyboardType: KeyboardType) -> [Key] {
 		switch keyboardType {
 		case .regular: return [decimal, moreLetters, phonePadShift, at, hash, zero, dotCom, forwardSlash, exclamation]
@@ -163,11 +163,11 @@ private extension Keyboard {
 		case .webSearch: return [moreLetters, phonePadShift, at, hash, zero, dotCom, forwardSlash, exclamation]
 		}
 	}
-	
+
 	func expectedKeysExist(for keyboardType: KeyboardType) -> Bool {
-		for key in validKeys(for: keyboardType) where !key.underlyingXCUIElement.exists  { return false }
+		for key in validKeys(for: keyboardType) where !key.underlyingXCUIElement.exists { return false }
 		for key in invalidKeys(for: keyboardType) where key.underlyingXCUIElement.exists { return false }
 		return true
 	}
-	
+
 }

@@ -9,32 +9,32 @@
 import TABTestKit
 
 final class TableTests: TABTestCase, SystemPreferencesContext {
-    
+
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
         resetAllPrivacyPrompts()
         launch()
     }
-    
+
     func test_table() {
         Scenario("Logging in with biometrics and landing on table screen") {
             Given(I: see(biometricLoginScreen))
             When(I: complete(biometricLoginScreen))
             Then(I: see(tableScreen))
         }
-        
+
         Scenario("Refreshing the table screen") {
             Given(I: see(tableScreen))
             When(I: refresh(tableScreen))
             Then(the: state(of: tableScreen.section0Header, is: .visible))
         }
-        
+
         Scenario("Tapping on a cell in the first section and seeing the detail screen") {
             And(I: see(tableScreen.section0Header))
             When(I: tap(tableScreen.table.cell(index: 0)))
             Then(I: see(tableSelectionScreen))
             And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 0 section 0"))
         }
-        
+
         Scenario("Scrolling to more elements") {
             Given(I: tap(tableSelectionScreen.backButton))
             And(I: scroll(tableScreen, .downwards, until: tableScreen.section1Header, is: .visible))
@@ -45,5 +45,5 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
             And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
         }
     }
-    
+
 }

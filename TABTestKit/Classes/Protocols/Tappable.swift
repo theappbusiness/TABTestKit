@@ -15,13 +15,13 @@ public protocol Tappable {
 	func doubleTap()
 	func longPress(duration: TimeInterval)
 	func twoFingerTap()
-	
+
 }
 
 public extension Element where Self: Tappable {
 
 	func tap() {
-		await(.exists)
+        await(.exists)
 		underlyingXCUIElement.tap()
 	}
 
@@ -39,5 +39,5 @@ public extension Element where Self: Tappable {
 		await(.exists)
 		underlyingXCUIElement.press(forDuration: duration)
 	}
-	
+
 }

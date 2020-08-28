@@ -9,9 +9,9 @@ import XCTest
 
 /// Represents the System Preferences app.
 public final class SystemPreferences: BaseApp {
-	
+
 	public override init() {
 		super.init(bundleIdentifier: "com.apple.Preferences")
 	}
-	
+
 }

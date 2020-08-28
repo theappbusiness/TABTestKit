@@ -9,7 +9,7 @@ import Foundation
 
 public protocol SystemPreferencesContext {}
 public extension SystemPreferencesContext {
-	
+
 	func resetAllPrivacyPrompts() {
 		if SystemPreferences().state != .notRunning {
 			openSystemPreferences() // Turns out you can't terminate an app if it's not in the foreground, but we want to terminate it so that it can be reset back to the start, so we're weirdly activating it here before doing anything. Might be a bug.			
@@ -21,13 +21,13 @@ public extension SystemPreferencesContext {
 		systemPreferencesResetScreen.resetCell.tap()
 		systemPreferencesResetScreen.confirmResetSheet.actionButton(withID: "Reset Warnings").tap()
 	}
-	
+
 	func openSystemPreferences() {
 		SystemPreferences().activate()
 	}
-	
+
 	func terminateSystemPreferences() {
 		SystemPreferences().terminate()
 	}
-	
+
 }

@@ -31,7 +31,7 @@
 		95D471D32397C8C1002BEFCA /* Element+defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4717D2397C8C1002BEFCA /* Element+defaults.swift */; };
 		95D471D42397C8C1002BEFCA /* SystemPreferencesResetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4717F2397C8C1002BEFCA /* SystemPreferencesResetScreen.swift */; };
 		95D471D52397C8C1002BEFCA /* SystemPreferencesGeneralScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471802397C8C1002BEFCA /* SystemPreferencesGeneralScreen.swift */; };
-		95D471D62397C8C1002BEFCA /* systemPreferencesRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471812397C8C1002BEFCA /* systemPreferencesRootScreen.swift */; };
+		95D471D62397C8C1002BEFCA /* SystemPreferencesRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471812397C8C1002BEFCA /* SystemPreferencesRootScreen.swift */; };
 		95D471D72397C8C1002BEFCA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471832397C8C1002BEFCA /* TabBar.swift */; };
 		95D471D82397C8C1002BEFCA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471842397C8C1002BEFCA /* Label.swift */; };
 		95D471D92397C8C1002BEFCA /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471852397C8C1002BEFCA /* Sheet.swift */; };
@@ -111,7 +111,7 @@
 		95D4717D2397C8C1002BEFCA /* Element+defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Element+defaults.swift"; sourceTree = "<group>"; };
 		95D4717F2397C8C1002BEFCA /* SystemPreferencesResetScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesResetScreen.swift; sourceTree = "<group>"; };
 		95D471802397C8C1002BEFCA /* SystemPreferencesGeneralScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesGeneralScreen.swift; sourceTree = "<group>"; };
-		95D471812397C8C1002BEFCA /* systemPreferencesRootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = systemPreferencesRootScreen.swift; sourceTree = "<group>"; };
+		95D471812397C8C1002BEFCA /* SystemPreferencesRootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPreferencesRootScreen.swift; sourceTree = "<group>"; };
 		95D471832397C8C1002BEFCA /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		95D471842397C8C1002BEFCA /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		95D471852397C8C1002BEFCA /* Sheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			children = (
 				95D471802397C8C1002BEFCA /* SystemPreferencesGeneralScreen.swift */,
 				95D4717F2397C8C1002BEFCA /* SystemPreferencesResetScreen.swift */,
-				95D471812397C8C1002BEFCA /* systemPreferencesRootScreen.swift */,
+				95D471812397C8C1002BEFCA /* SystemPreferencesRootScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -484,7 +484,7 @@
 				95D471C22397C8C1002BEFCA /* SheetContext.swift in Sources */,
 				95D472032397C8C1002BEFCA /* ValueRepresentable.swift in Sources */,
 				95D471E22397C8C1002BEFCA /* ScrollView.swift in Sources */,
-				95D471D62397C8C1002BEFCA /* systemPreferencesRootScreen.swift in Sources */,
+				95D471D62397C8C1002BEFCA /* SystemPreferencesRootScreen.swift in Sources */,
 				95D471CC2397C8C1002BEFCA /* XCUIElement+hasKeyboardFocus.swift in Sources */,
 				95D471C42397C8C1002BEFCA /* NavigationContext.swift in Sources */,
 				95D471D72397C8C1002BEFCA /* TabBar.swift in Sources */,

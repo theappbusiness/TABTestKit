@@ -11,21 +11,21 @@ import XCTest
 /// To interact with the wheels you must first
 /// ask the picker for one of it's wheels, by index.
 public struct DatePicker: Element {
-    
+
     public let id: String?
     public let index: Int
     public let parent: Element
     public let type: XCUIElement.ElementType = .datePicker
-    
+
     /// Returns the number of wheels the picker contains.
     public var numberOfWheels: Int { return underlyingXCUIElement.pickerWheels.count }
-    
+
     public init(id: String, index: Int = 0, parent: Element = App.shared) {
         self.id = id
         self.index = index
         self.parent = parent
     }
-    
+
     /// Returns the wheel for the given index.
     ///
     /// - Parameter index: The index (starting at 0) of the wheel you want to retrieve.
@@ -33,7 +33,7 @@ public struct DatePicker: Element {
     public func wheel(_ index: Int) -> Wheel {
         return Wheel(index: index, picker: self)
     }
-    
+
 }
 
 public extension DatePicker {

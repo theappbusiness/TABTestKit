@@ -25,7 +25,7 @@ open class BaseApp: XCUIApplication {
         XCTAssertTrue(wait(for: .runningForeground, timeout: 60), "Failed waiting for app to become .runningForeground")
         name = label
     }
-	
+
 	/// "Backgrounds" the app, waiting for the state to be suspended before continuing.
 	open func background() {
 		XCUIDevice.shared.press(.home)
@@ -35,25 +35,25 @@ open class BaseApp: XCUIApplication {
 			XCTAssertTrue(wait(for: .runningBackgroundSuspended, timeout: 10), "Failed waiting for app to become .runningBackgroundSuspended")
 		}
 	}
-	
+
 	/// Activates/foregrounds the app, waiting for the state to be running before continuing.
 	override open func activate() {
 		super.activate()
 		XCTAssertTrue(wait(for: .runningForeground, timeout: 10), "Failed waiting for app to become .runningForeground")
-	}
-	
+    }
+
 	/// Terminates the app, waiting for the state to be not running before continuing.
 	override open func terminate() {
 		super.terminate()
 		XCTAssertTrue(wait(for: .notRunning, timeout: 10), "Failed waiting for app to become .notRunning")
 	}
-	
+
 }
 
 extension BaseApp: Element {
-	
+
 	public var id: String? { return nil }
 	public var type: XCUIElement.ElementType { return .application }
 	public var underlyingXCUIElement: XCUIElement { return self }
-	
+
 }

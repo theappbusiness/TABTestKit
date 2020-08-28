@@ -8,7 +8,7 @@
 import XCTest
 
 public extension XCUIElement {
-	
+
 	/// Determines whether this element is visible in another element.
 	///
 	/// This is determined by checking if the frames intersect, so might not
@@ -19,5 +19,5 @@ public extension XCUIElement {
 		guard exists && otherElement.exists else { return false }
 		return otherElement.frame.intersects(frame)
 	}
-	
+
 }

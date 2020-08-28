@@ -8,7 +8,7 @@
 import CoreGraphics
 
 public extension CGVector {
-	
+
 	/// Offsets the vector by the specified deltas.
 	///
 	///
@@ -18,5 +18,5 @@ public extension CGVector {
 	func offset(dx: CGFloat, dy: CGFloat) -> CGVector {
 		return CGVector(dx: self.dx + dx, dy: self.dy + dy)
 	}
-	
+
 }

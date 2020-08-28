@@ -31,7 +31,7 @@ public typealias DefaultContexts = InteractionContext & NavigationContext & AppC
 /// Finally, TABTestCase will help you by creating attachments when tests failed, with the last known Scenario and Step
 /// which are found in the xcresult bundle created as part of the test run (usually in Derived Data).
 open class TABTestCase: XCTestCase, DefaultContexts {
-	
+
 	/// Provides the setup for application that happens before each XCTestCase.
 	/// As part of setUp, preLaunchSetup will be called.
 	/// Override preLaunchSetup to provide custom prelaunch setup behaviour.
@@ -43,7 +43,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 			App.shared.launch(clean: true)
 		}
 	}
-	
+
 	/// Provides the tear down for the application and each XCTestCase.
 	/// As part of tearDown, preTerminationTearDown will be called after
 	/// clearing the `App.shared` `launchEnvironment` and `launchArguments`.
@@ -55,7 +55,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 			App.shared.terminate()
 		}
 	}
-	
+
 	/// Called automatically as part of setUp to allow you to provide your own prelaunch setup.
 	/// For example you could use this to reset a mock server's state or collected analytics.
 	/// By default this function does nothing except call the launch handler, so calling the super implementation
@@ -65,7 +65,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	open func preLaunchSetup(_ launch: @escaping () -> Void) {
 		launch()
 	}
-	
+
 	/// Called automatically as part of tearDown to allow you to provide your own preTermination tear down.
 	/// For example you could use this to unregister a custom UUID on a mock server.
 	/// By default this function does nothing except call the terminate handler, so calling the super implementation
@@ -75,7 +75,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	open func preTerminationTearDown(_ terminate: @escaping () -> Void) {
 		terminate()
 	}
-	
+
 	override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
 		// When using Steps and Scenarios it can be really hard to pinpoint where failed, so this attachment saves the info with the last known step and scenario (including the line that failed), to help you.
 		// You can find this attachment in the .xcresult bundle (usually Derived Data).
@@ -85,24 +85,24 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		let lineNumber = Step.current?.lineNumber ?? lineNumber
 		super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
 	}
-	
+
 	private func createFailureAttachment(description: String, filePath: String, lineNumber: Int) -> XCTAttachment {
 		let attachmentInfo = """
 		Full failure info (scenarios and steps may be in a different file to the actual failure):
-		
+
 		Failed scenario: \(Scenario.current?.description ?? "No scenario")
 		Failed step: \(name) on line \(Step.current?.line ?? 0) in file \(Step.current?.file ?? "unknown")
-		
+
 		Actual file that failed: \(filePath)
 		Actual line that failed: \(lineNumber)
-		
+
 		Description: \(description)
 		"""
 		let attachment = XCTAttachment(string: attachmentInfo)
 		attachment.name = "Failure at \(Date())"
 		return attachment
 	}
-	
+
 }
 
 private extension Step {

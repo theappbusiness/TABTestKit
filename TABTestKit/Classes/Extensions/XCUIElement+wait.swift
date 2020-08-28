@@ -8,7 +8,7 @@
 import XCTest
 
 public extension XCUIElement {
-	
+
 	/// Waits for some expression or value to be true.
 	/// Because the parameter takes an autoclosure, it means you can
 	/// pass in any single line expression that evaluates to a Bool.
@@ -31,5 +31,5 @@ public extension XCUIElement {
 		} while interval <= timeout
 		return false
 	}
-	
+
 }

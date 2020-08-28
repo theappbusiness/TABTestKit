@@ -8,12 +8,12 @@
 import XCTest
 
 public struct SegmentedControl: Element {
-	
+
 	public let id: String? = nil // Unfortunately you can't set an ID or label on a segmented control, so we'll just have to reference by index in the parent.
 	public let index: Int
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .segmentedControl
-	
+
 	/// Creates a new SegmentedControl.
 	/// Unfortunately it's not possibble to give UISegmentedControls an accessibilityLabel or identifier in code,
 	/// so you can only find segmented controls by index. Generally there's only one segmented control on a screen anyway,
@@ -28,12 +28,12 @@ public struct SegmentedControl: Element {
 		self.index = index
 		self.parent = parent
 	}
-	
+
 	/// Returns a button in the SegmentedControl with the provided ID.
 	///
 	/// - Parameter buttonID: The ID of the button to find.
 	public func button(withID buttonID: String) -> Button {
 		return Button(id: buttonID, parent: self)
 	}
-	
+
 }

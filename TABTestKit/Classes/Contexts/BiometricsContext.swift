@@ -12,21 +12,21 @@ import Biometrics
 
 public protocol BiometricsContext {}
 public extension BiometricsContext {
-	
+
 	func deviceBiometricsAreEnabled() {
 		Biometrics.enrolled()
 	}
-	
+
 	func deviceBiometricsAreDisabled() {
 		Biometrics.unenrolled()
 	}
-	
+
 	func successfullyAuthenticateBiometrics() {
 		Biometrics.successfulAuthentication()
 	}
-	
+
 	func failToAuthenticateBiometrics() {
 		Biometrics.unsuccessfulAuthentication()
 	}
-	
+
 }

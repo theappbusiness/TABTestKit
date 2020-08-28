@@ -9,35 +9,35 @@ import XCTest
 
 public protocol NavigationContext {}
 public extension NavigationContext {
-	
+
 	/// Asserts that a screen can be seen, by awaiting on its trait.
 	///
 	/// - Parameter screen: The screen to await.
 	func see<ScreenType: Screen>(_ screen: ScreenType) {
 		see(screen.trait)
 	}
-	
+
 	/// Asserts that a screen does not exist, by awaiting on its trait.
 	///
 	/// - Parameter screen: The screen to await.
 	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) {
 		doNotSee(screen.trait)
 	}
-	
+
 	/// Asserts that an element can be seen, by awaiting for it to exist and be visible.
 	///
 	/// - Parameter element: The element to await.
 	func see(_ element: Element) {
         element.await(.exists, .visible)
 	}
-	
+
 	/// Asserts that an element does not exist, by waiting for it to not exist.
 	///
 	/// - Parameter element: The element to await.
 	func doNotSee(_ element: Element) {
 		element.await(not: .exists)
 	}
-	
+
 	/// Completes one or more things that knows how to complete itself.
 	///
 	/// - Parameter completableThings: One or more Completable things. Typically, this would be a Screen that conforms to Completable.
@@ -48,7 +48,7 @@ public extension NavigationContext {
 			$0.complete()
 		}
 	}
-	
+
 	/// Dismisses one or more things that knows how to complete itself.
 	///
 	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Dismissable.
@@ -59,7 +59,7 @@ public extension NavigationContext {
 			$0.dismiss()
 		}
     }
-    
+
     /// Opens the specified URL from the test runner app.
     /// This means you can use this function for testing deep linking, as well as opening web urls in Safari.
     /// This function will first show the Home Screen if necessary, launch the test runner (after finding the correct
@@ -96,5 +96,5 @@ public extension NavigationContext {
             openAppConfirmationAlert.actionButton(withID: "Open").tap()
         }
     }
-    
+
 }
