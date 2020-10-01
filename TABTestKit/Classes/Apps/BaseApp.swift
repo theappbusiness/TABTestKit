@@ -29,9 +29,7 @@ open class BaseApp: XCUIApplication {
 	/// "Backgrounds" the app, waiting for the state to be suspended before continuing.
 	open func background() {
 		XCUIDevice.shared.press(.home)
-		// https://github.com/theappbusiness/TABTestKit/issues/67
-		// https://github.com/theappbusiness/TABTestKit/issues/135
-		let didEnterBackgroundState = wait(for: .runningBackground, timeout: 10) || wait(for: .runningBackgroundSuspended, timeout: 10)
+		let didEnterBackgroundState = waitForBackgroundState(timeout: 10)
 		XCTAssertTrue(didEnterBackgroundState, "Failed waiting for app to become either .runningBackground or .runningBackgroundSuspended")
 	}
 	
@@ -55,4 +53,22 @@ extension BaseApp: Element {
 	public var type: XCUIElement.ElementType { return .application }
 	public var underlyingXCUIElement: XCUIElement { return self }
 	
+}
+
+private extension BaseApp {
+
+	/// Waits for the application to enter one of the background states (either `.runningBackground` or `.runningBackgroundSuspended`).
+	/// This is a fix for both https://github.com/theappbusiness/TABTestKit/issues/67 and https://github.com/theappbusiness/TABTestKit/issues/135
+	///
+	/// - Parameter timeout: The time to wait before failing.
+	/// - Returns: `true` if the application enters one of the background states, `false` otherwise.
+	func waitForBackgroundState(timeout: TimeInterval) -> Bool {
+		var interval = 0.0
+		repeat {
+			let isInBackgroundState = wait(for: .runningBackground, timeout: 1) || wait(for: .runningBackgroundSuspended, timeout: 1)
+			guard !isInBackgroundState else { return true }
+			interval += 1
+		} while interval <= timeout
+		return false
+	}
 }
