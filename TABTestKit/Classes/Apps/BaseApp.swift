@@ -29,11 +29,9 @@ open class BaseApp: XCUIApplication {
 	/// "Backgrounds" the app, waiting for the state to be suspended before continuing.
 	open func background() {
 		XCUIDevice.shared.press(.home)
-		if #available(iOS 12.4, *) { // https://github.com/theappbusiness/TABTestKit/issues/67
-			XCTAssertTrue(wait(for: .runningBackground, timeout: 10), "Failed waiting for app to become .runningBackground")
-		} else {
-			XCTAssertTrue(wait(for: .runningBackgroundSuspended, timeout: 10), "Failed waiting for app to become .runningBackgroundSuspended")
-		}
+		// https://github.com/theappbusiness/TABTestKit/issues/67
+		// https://github.com/theappbusiness/TABTestKit/issues/135
+		XCTAssertTrue(wait(forEither: [.runningBackground, .runningBackgroundSuspended], timeout: 10), "Failed waiting for app to become either .runningBackground or .runningBackgroundSuspended")
 	}
 	
 	/// Activates/foregrounds the app, waiting for the state to be running before continuing.
