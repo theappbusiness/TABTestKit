@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2DEC7C4924D0822D00545C45 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC7C4824D0822D00545C45 /* Refreshable.swift */; };
 		70D1C4DD24BDEFE70047A2EB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1C4DC24BDEFE70047A2EB /* Image.swift */; };
-		91719D742525C750008E4171 /* XCUIApplication+wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91719D732525C750008E4171 /* XCUIApplication+wait.swift */; };
 		9536C80D2412A7D100D4B362 /* ActivitySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536C80C2412A7D100D4B362 /* ActivitySheet.swift */; };
 		957289A72481452C00DBC55D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957289A62481452C00DBC55D /* Icon.swift */; };
 		95AB580024E55DE200016595 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB57FF24E55DE200016595 /* DatePicker.swift */; };
@@ -86,7 +85,6 @@
 /* Begin PBXFileReference section */
 		2DEC7C4824D0822D00545C45 /* Refreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		70D1C4DC24BDEFE70047A2EB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		91719D732525C750008E4171 /* XCUIApplication+wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+wait.swift"; sourceTree = "<group>"; };
 		9536C80C2412A7D100D4B362 /* ActivitySheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySheet.swift; sourceTree = "<group>"; };
 		957289A62481452C00DBC55D /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		95AB57FF24E55DE200016595 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				95D471762397C8C1002BEFCA /* XCUIElement+hasKeyboardFocus.swift */,
 				95D471752397C8C1002BEFCA /* XCUIElement+isVisible.swift */,
 				95D471782397C8C1002BEFCA /* XCUIElement+wait.swift */,
-				91719D732525C750008E4171 /* XCUIApplication+wait.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,7 +450,6 @@
 				95D471C92397C8C1002BEFCA /* AlertContext.swift in Sources */,
 				95D471F92397C8C1002BEFCA /* Scrollable.swift in Sources */,
 				95D471ED2397C8C1002BEFCA /* Keyboard.swift in Sources */,
-				91719D742525C750008E4171 /* XCUIApplication+wait.swift in Sources */,
 				95D471FC2397C8C1002BEFCA /* Dismissable.swift in Sources */,
 				95D471F62397C8C1002BEFCA /* BaseApp.swift in Sources */,
 				95D471D22397C8C1002BEFCA /* XCTFatalFail.swift in Sources */,

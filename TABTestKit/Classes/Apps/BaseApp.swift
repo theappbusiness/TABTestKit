@@ -31,7 +31,8 @@ open class BaseApp: XCUIApplication {
 		XCUIDevice.shared.press(.home)
 		// https://github.com/theappbusiness/TABTestKit/issues/67
 		// https://github.com/theappbusiness/TABTestKit/issues/135
-		XCTAssertTrue(wait(forEither: [.runningBackground, .runningBackgroundSuspended], timeout: 10), "Failed waiting for app to become either .runningBackground or .runningBackgroundSuspended")
+		let didEnterBackgroundState = wait(for: .runningBackground, timeout: 10) || wait(for: .runningBackgroundSuspended, timeout: 10)
+		XCTAssertTrue(didEnterBackgroundState, "Failed waiting for app to become either .runningBackground or .runningBackgroundSuspended")
 	}
 	
 	/// Activates/foregrounds the app, waiting for the state to be running before continuing.
