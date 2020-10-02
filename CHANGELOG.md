@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Pending
+
+- Fixed an issue with entering background states on different OS versions. (issue #135)
+
+---
+
 ## 1.7.0
 
 - Added support for double tapping, long pressing and two finger tapping, with default implementations for any Elements that conform to Tappable. (issue #88)
