@@ -2,12 +2,17 @@
 
 ## Pending
 
+- Fixed an issue with entering background states on different OS versions. (issue #135)
+
+---
+
+## 1.7.0
+
 - Added support for double tapping, long pressing and two finger tapping, with default implementations for any Elements that conform to Tappable. (issue #88)
-- Configured Travis to build and test on multiple Xcodes
 - Added Swift Package Manager support
 - Added a `Refreshable` protocol so for each element/screen that conforms to protocol `refresh` function can be defined 
 - Added a `DatePicker` element. (issue #55)
-- Fixed an issue with entering background states on different OS versions. (issue #135)
+- Added the ability to access `value` directly from an element
 
 ---
 
