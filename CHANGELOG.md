@@ -1,6 +1,8 @@
 # CHANGELOG
 
-## Pending
+## 1.7.1
+
+### Fixed
 
 - Fixed an issue with entering background states on different OS versions. (issue #135)
 
