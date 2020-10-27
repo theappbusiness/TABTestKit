@@ -66,6 +66,11 @@ final class OtherElementsController: UIViewController {
     datePicker.accessibilityIdentifier = "ExampleDatePicker"
     dateTimePicker.accessibilityIdentifier = "ExampleDateTimePicker"
     countDownTimerPicker.accessibilityIdentifier = "ExampleCountDownTimerPicker"
+    [timePicker, datePicker, dateTimePicker, countDownTimerPicker]
+      .forEach {
+        NSTimeZone.resetSystemTimeZone()
+        $0?.timeZone = NSTimeZone(abbreviation: "UTC")! as TimeZone
+      }
   }
   
   @IBAction private func buttonTapped() {
