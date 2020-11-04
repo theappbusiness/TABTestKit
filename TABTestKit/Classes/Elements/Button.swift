@@ -16,7 +16,7 @@ public struct Button: Element, Tappable, ValueRepresentable {
 	public let type: XCUIElement.ElementType = .button
 	public var value: String { return underlyingXCUIElement.label }
 	
-	public init(id: String, index: Int = 0, parent: Element = App.shared) {
+	public init(id: String?, index: Int = 0, parent: Element = App.shared) {
 		self.id = id
 		self.index = index
 		self.parent = parent

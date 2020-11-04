@@ -21,5 +21,9 @@ public struct NavBar: Element {
 		self.id = id
 		self.parent = parent
 	}
+
+    public var backButton: Button {
+        return Button(id: nil, index: 0, parent: self)
+    }
 	
 }
