@@ -21,5 +21,11 @@ public struct NavBar: Element {
 		self.id = id
 		self.parent = parent
 	}
-	
+
+    /// - Parameter titled: The Title of the back button. Typically the title of the previous screen.
+    /// - Returns: A button representing a back button in the nav bar.
+    public func backButton(titled title: String = "Back") -> Button {
+        return Button(id: title, parent: self)
+      }
+
 }
