@@ -13,51 +13,59 @@ public extension NavigationContext {
 	/// Asserts that a screen can be seen, by awaiting on its trait.
 	///
 	/// - Parameter screen: The screen to await.
-	func see<ScreenType: Screen>(_ screen: ScreenType) {
+	func see<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
 		see(screen.trait)
 	}
 	
 	/// Asserts that a screen does not exist, by awaiting on its trait.
 	///
 	/// - Parameter screen: The screen to await.
-	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) {
+	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
 		doNotSee(screen.trait)
 	}
 	
 	/// Asserts that an element can be seen, by awaiting for it to exist and be visible.
 	///
 	/// - Parameter element: The element to await.
-	func see(_ element: Element) {
-        element.await(.exists, .visible)
+	func see(_ element: Element) -> StepAction {
+        StepAction {
+            element.await(.exists, .visible)
+        }
 	}
 	
 	/// Asserts that an element does not exist, by waiting for it to not exist.
 	///
 	/// - Parameter element: The element to await.
-	func doNotSee(_ element: Element) {
-		element.await(not: .exists)
+	func doNotSee(_ element: Element) -> StepAction {
+        StepAction {
+            element.await(not: .exists)
+        }
 	}
 	
 	/// Completes one or more things that knows how to complete itself.
 	///
 	/// - Parameter completableThings: One or more Completable things. Typically, this would be a Screen that conforms to Completable.
-	func complete(_ completableThings: Completable...) {
+	func complete(_ completableThings: Completable...) -> StepAction {
 		guard !completableThings.isEmpty else { XCTFatalFail("You must provide at least one Completable thing to complete!") }
-		completableThings.forEach {
-			$0.await()
-			$0.complete()
-		}
+        return StepAction {
+            completableThings.forEach {
+                $0.await()
+                $0.complete()
+            }
+        }
 	}
 	
 	/// Dismisses one or more things that knows how to complete itself.
 	///
 	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Dismissable.
-	func dismiss(_ dismissableThings: Dismissable...) {
+	func dismiss(_ dismissableThings: Dismissable...) -> StepAction {
 		guard !dismissableThings.isEmpty else { XCTFatalFail("You must provide at least one Dismissable thing to dismiss!") }
-		dismissableThings.forEach {
-			$0.await()
-			$0.dismiss()
-		}
+        return StepAction {
+            dismissableThings.forEach {
+                $0.await()
+                $0.dismiss()
+            }
+        }
     }
     
     /// Opens the specified URL from the test runner app.
@@ -78,22 +86,24 @@ public extension NavigationContext {
     /// Universal Links.
     ///
     /// - Parameter url: The URL to open.
-    func open(_ url: URL) {
-        springboard.activate()
-        if !Icon.testRunner.determine(.hittable, timeout: 1) {
-            XCUIDevice.shared.press(.home) // Ensure we're on the first page of the home screen
-            sleep(1)
-            while !Icon.testRunner.determine(.hittable, timeout: 1) {
-                springboard.swipeLeft()
+    func open(_ url: URL) -> StepAction {
+        StepAction {
+            springboard.activate()
+            if !Icon.testRunner.determine(.hittable, timeout: 1) {
+                XCUIDevice.shared.press(.home) // Ensure we're on the first page of the home screen
+                sleep(1)
+                while !Icon.testRunner.determine(.hittable, timeout: 1) {
+                    springboard.swipeLeft()
+                }
             }
-        }
-        Icon.testRunner.tap()
-        sleep(1)
-        UIApplication.shared.open(url)
-        let openAppConfirmationAlert = Alert(id: "“\(Bundle.main.appName)” wants to open “\(App.shared.name)”", parent: springboard)
-        if openAppConfirmationAlert.determine(.exists, timeout: 1) {
+            Icon.testRunner.tap()
             sleep(1)
-            openAppConfirmationAlert.actionButton(withID: "Open").tap()
+            UIApplication.shared.open(url)
+            let openAppConfirmationAlert = Alert(id: "“\(Bundle.main.appName)” wants to open “\(App.shared.name)”", parent: springboard)
+            if openAppConfirmationAlert.determine(.exists, timeout: 1) {
+                sleep(1)
+                openAppConfirmationAlert.actionButton(withID: "Open").tap()
+            }
         }
     }
     

@@ -10,8 +10,10 @@ import XCTest
 public protocol AlertContext {}
 public extension AlertContext {
 	
-	func tap(_ actionButtonID: String, in alert: Alert) {
-		alert.actionButton(withID: actionButtonID).tap()
+	func tap(_ actionButtonID: String, in alert: Alert) -> StepAction {
+        StepAction {
+            alert.actionButton(withID: actionButtonID).tap()
+        }
 	}
 	
 }

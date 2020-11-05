@@ -23,7 +23,7 @@ struct CollectionViewScreen: ScrollableScreen {
 extension CollectionViewScreen: Refreshable, InteractionContext {
     
     func refresh() {
-        scroll(trait, .upwards, until: trait.cell(matchingID: "CollectionCell 0"), is: .visible)
+        scroll(trait, .upwards, until: trait.cell(matchingID: "CollectionCell 0"), is: .visible).execute()
         // Pull the collection view down to refresh
         trait.scroll(.upwards)
     }

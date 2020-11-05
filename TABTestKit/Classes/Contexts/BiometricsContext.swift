@@ -13,20 +13,28 @@ import Biometrics
 public protocol BiometricsContext {}
 public extension BiometricsContext {
 	
-	func deviceBiometricsAreEnabled() {
-		Biometrics.enrolled()
+	func deviceBiometricsAreEnabled() -> StepAction {
+        StepAction {
+            Biometrics.enrolled()
+        }
 	}
 	
-	func deviceBiometricsAreDisabled() {
-		Biometrics.unenrolled()
+	func deviceBiometricsAreDisabled() -> StepAction {
+        StepAction {
+            Biometrics.unenrolled()
+        }
 	}
 	
-	func successfullyAuthenticateBiometrics() {
-		Biometrics.successfulAuthentication()
+	func successfullyAuthenticateBiometrics() -> StepAction {
+        StepAction {
+            Biometrics.successfulAuthentication()
+        }
 	}
 	
-	func failToAuthenticateBiometrics() {
-		Biometrics.unsuccessfulAuthentication()
+	func failToAuthenticateBiometrics() -> StepAction {
+        StepAction {
+            Biometrics.unsuccessfulAuthentication()
+        }
 	}
 	
 }
