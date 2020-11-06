@@ -14,13 +14,19 @@ import XCTest
 ///
 /// Typically, you'd just set a Header or ViewController as the trait,
 /// but it can be anything.
-public protocol Screen {
+public protocol Screen: CustomStringConvertible {
 
 	associatedtype Trait: Element
 	/// The trait of the screen. Typically a ViewController or Header.
 	/// By default, the traits are used to await a screen.
 	var trait: Trait { get }
+}
 
+extension Screen {
+
+    public var description: String {
+        String(describing: Swift.type(of: self))
+    }
 }
 
 public extension Screen {
@@ -28,5 +34,4 @@ public extension Screen {
 	func await() {
 		trait.await(.exists, .hittable, .visible)
 	}
-	
 }

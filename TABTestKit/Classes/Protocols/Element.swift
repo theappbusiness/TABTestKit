@@ -10,7 +10,7 @@ import XCTest
 /// Represents a UI element.
 /// Pretty much every element on-screen has (or should have) some sort of ID, except for nav bars and tab bars etc.
 /// Sometimes identifiers can just be the text of the element, for example a UILabel ID can just be the text.
-public protocol Element {
+public protocol Element: CustomStringConvertible {
 	
 	/// The ID of the element. This could be the accessibilityIdentifier or the text of a label.
 	/// An ID is not required, but it is recommended.
@@ -56,7 +56,24 @@ public extension Element {
 	var topCoordinate: CGVector { return defaultTopCoordinate }
 	
 	var underlyingXCUIElement: XCUIElement { return defaultUnderlyingXCUIElement }
-	
+}
+
+extension Element {
+    public var description: String {
+        let indexFormatter = NumberFormatter()
+        indexFormatter.numberStyle = .ordinal
+        indexFormatter.locale = Locale(identifier: "en_GB")
+
+        let indexString: String? = index > 0 ? indexFormatter.string(for: index) : nil
+
+        let name: String? = [label, value, id]
+            .compactMap { $0 }
+            .first(where: { !$0.isEmpty })
+
+        return [indexString, name, String(describing: Swift.type(of: self))]
+            .compactMap { $0 }
+            .joined(separator: " ")
+    }
 }
 
 public extension Element {

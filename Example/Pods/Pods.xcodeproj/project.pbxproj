@@ -88,6 +88,7 @@
 		EE2DE74B688C2BA2BCA8D8D56B3CDE42 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BE70296D811DC0C196F1952BE0179 /* View.swift */; };
 		F4BF8B887488C4B0900D5C36A2B48886 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AFC7AC121EDD585A794CBEF219ED8 /* TextView.swift */; };
 		F7A4CDA05AB92DA971CDBBDEDF78F974 /* SheetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656317B1689F8389F8D8A13FB0281F7E /* SheetContext.swift */; };
+		F809D6C225554A4900CF86E9 /* XCUIApplicationState+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809D6C125554A4900CF86E9 /* XCUIApplicationState+String.swift */; };
 		F8C8632658B840BA4531A5F8EEA2521E /* systemPreferencesRootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A6C582E6031CB7A125F0800F45055D /* systemPreferencesRootScreen.swift */; };
 		FA5FE4421DD144891167A9BBA2FC9DA5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D829733A2418052EC220B9F4AC655D5 /* Cell.swift */; };
 		FB1B39CE798DC9997F8C176503A4B5C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8B94E9D3B433157168D1EECCEC11CD /* Foundation.framework */; };
@@ -228,6 +229,7 @@
 		F094F44DD0301CC76E1365673D3FCF9C /* ShowTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ShowTime-dummy.m"; sourceTree = "<group>"; };
 		F09670B2248CA33BD5A05396463DC7DB /* TABTestKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TABTestKit-prefix.pch"; sourceTree = "<group>"; };
 		F2F0B07615633500EA51A42DA7490BC2 /* SystemPreferencesContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemPreferencesContext.swift; sourceTree = "<group>"; };
+		F809D6C125554A4900CF86E9 /* XCUIApplicationState+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplicationState+String.swift"; sourceTree = "<group>"; };
 		FA7DCD7F1B963A9EEA6DA99154E69718 /* TABTestKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TABTestKit-Info.plist"; sourceTree = "<group>"; };
 		FC125873B3EFEB103E5E93686ACCEA70 /* Adjustable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Adjustable.swift; sourceTree = "<group>"; };
 		FC46B20374B589B005A9908C70225CDF /* ValueRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ValueRepresentable.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				AABB82F79590AA2D0458F8674BFCB4FD /* XCUIElement+hasKeyboardFocus.swift */,
 				976E5B1537BAD0007743ADFE257F3ED9 /* XCUIElement+isVisible.swift */,
 				E1848ED8032296034A5B64A0616D8A8E /* XCUIElement+wait.swift */,
+				F809D6C125554A4900CF86E9 /* XCUIApplicationState+String.swift */,
 			);
 			name = Extensions;
 			path = TABTestKit/Classes/Extensions;
@@ -841,6 +844,7 @@
 				B5042D490C77BDC6BBF549D2197C7434 /* TABTestCase.swift in Sources */,
 				248E3015488597454E4DB64E1CBD9F33 /* TABTestKit-dummy.m in Sources */,
 				A8C378399954F4B3FF9A059EFDC6E0CA /* Tappable.swift in Sources */,
+				F809D6C225554A4900CF86E9 /* XCUIApplicationState+String.swift in Sources */,
 				8760E5691C6B92CAAC17935225A01921 /* StepAction.swift in Sources */,
 				2F7918BEF8541A66867040B87BD3C527 /* TextField.swift in Sources */,
 				F4BF8B887488C4B0900D5C36A2B48886 /* TextView.swift in Sources */,
