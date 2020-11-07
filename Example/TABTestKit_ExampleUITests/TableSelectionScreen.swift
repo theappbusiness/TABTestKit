@@ -14,6 +14,5 @@ struct TableSelectionScreen: Screen {
     
     let trait = View(id: "TableSelection")
     let navBar = NavBar()
-    let backButton = Button(id: "Table")
-    
+    let backButton = NavBar().backButton(titled: "Table")
 }
