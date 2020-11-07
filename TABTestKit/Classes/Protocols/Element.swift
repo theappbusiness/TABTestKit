@@ -17,6 +17,9 @@ public protocol Element: CustomStringConvertible {
 	/// You may however wish to just match the first navBar (for example), and since there's usually only one navBar in an
 	/// app, you don't really need to provide an ID for it.
 	var id: String? { get }
+
+    /// The name of the element. Used in the step description
+    var name: String { get }
 	
 	/// The parent element. By default the parent element is the app being tested.
 	var parent: Element { get }
@@ -42,6 +45,8 @@ public protocol Element: CustomStringConvertible {
 }
 
 public extension Element {
+
+    var name: String { return [id].compactMap { $0 }.joined(separator: " ") }
 	
 	var parent: Element { return App.shared }
 	
@@ -66,12 +71,9 @@ extension Element {
 
         let indexString: String? = index > 0 ? indexFormatter.string(for: index) : nil
 
-        let name: String? = [label, value, id]
-            .compactMap { $0 }
-            .first(where: { !$0.isEmpty })
-
         return [indexString, name, String(describing: Swift.type(of: self))]
             .compactMap { $0 }
+            .filter { !$0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty }
             .joined(separator: " ")
     }
 }

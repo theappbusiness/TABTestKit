@@ -14,21 +14,25 @@ public extension NavigationContext {
 	///
 	/// - Parameter screen: The screen to await.
 	func see<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
-		see(screen.trait)
+        StepAction(description: "see the \(screen.description)") {
+            screen.trait.await(.exists, .visible)
+        }
 	}
 	
 	/// Asserts that a screen does not exist, by awaiting on its trait.
 	///
 	/// - Parameter screen: The screen to await.
 	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
-		doNotSee(screen.trait)
+        StepAction(description: "do not see the \(screen.description)") {
+            screen.trait.await(not: .exists)
+        }
 	}
 	
 	/// Asserts that an element can be seen, by awaiting for it to exist and be visible.
 	///
 	/// - Parameter element: The element to await.
 	func see(_ element: Element) -> StepAction {
-        StepAction {
+        StepAction(description: "see the \(element.description)") {
             element.await(.exists, .visible)
         }
 	}
@@ -37,7 +41,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter element: The element to await.
 	func doNotSee(_ element: Element) -> StepAction {
-        StepAction {
+        StepAction(description: "do not see the \(element.description)") {
             element.await(not: .exists)
         }
 	}
@@ -45,9 +49,15 @@ public extension NavigationContext {
 	/// Completes one or more things that knows how to complete itself.
 	///
 	/// - Parameter completableThings: One or more Completable things. Typically, this would be a Screen that conforms to Completable.
-	func complete(_ completableThings: Completable...) -> StepAction {
+    func complete<CompletableWithDescription: Completable & CustomStringConvertible>(_ completableThings: CompletableWithDescription...) -> StepAction {
+        
 		guard !completableThings.isEmpty else { XCTFatalFail("You must provide at least one Completable thing to complete!") }
-        return StepAction {
+
+        let completableDescription = completableThings
+            .map(\.description)
+            .joined(separator: " and the ")
+
+        return StepAction(description: "complete the \(completableDescription)") {
             completableThings.forEach {
                 $0.await()
                 $0.complete()
@@ -58,9 +68,15 @@ public extension NavigationContext {
 	/// Dismisses one or more things that knows how to complete itself.
 	///
 	/// - Parameter dismissableThings: One or more Dismissable things. Typically, this would be a Screen that conforms to Dismissable.
-	func dismiss(_ dismissableThings: Dismissable...) -> StepAction {
+	func dismiss<DismissableWithDescription: Dismissable & CustomStringConvertible>(_ dismissableThings: DismissableWithDescription...) -> StepAction {
+
 		guard !dismissableThings.isEmpty else { XCTFatalFail("You must provide at least one Dismissable thing to dismiss!") }
-        return StepAction {
+
+        let dismissableDescription = dismissableThings
+            .map(\.description)
+            .joined(separator: " and the ")
+
+        return StepAction(description: "dismiss the \(dismissableDescription)") {
             dismissableThings.forEach {
                 $0.await()
                 $0.dismiss()
@@ -87,7 +103,8 @@ public extension NavigationContext {
     ///
     /// - Parameter url: The URL to open.
     func open(_ url: URL) -> StepAction {
-        StepAction {
+
+        StepAction(description: "open '\(url.absoluteString)'") {
             springboard.activate()
             if !Icon.testRunner.determine(.hittable, timeout: 1) {
                 XCUIDevice.shared.press(.home) // Ensure we're on the first page of the home screen

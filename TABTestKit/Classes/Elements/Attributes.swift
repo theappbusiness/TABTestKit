@@ -65,19 +65,37 @@ extension ElementAttributes.State: CustomStringConvertible {
         case .exists:
             return "exists"
         case .hittable:
-            return "hittable"
+            return "is hittable"
         case .visible:
-            return "visible"
+            return "is visible"
         case let .visibleIn(element):
-            return "visible in \(element.description)"
+            return "is visible in the \(element.description)"
         case .selected:
-            return "selected"
+            return "is selected"
         case .enabled:
-            return "enabled"
+            return "is enabled"
         case .hasKeyboardFocus:
             return "has keyboard focus"
         }
+    }
 
+    public var negativeDescription: String {
+        switch self {
+        case .exists:
+            return "does not exist"
+        case .hittable:
+            return "is not hittable"
+        case .visible:
+            return "is not visible"
+        case let .visibleIn(element):
+            return "is not visible in the \(element.description)"
+        case .selected:
+            return "is not selected"
+        case .enabled:
+            return "is not enabled"
+        case .hasKeyboardFocus:
+            return "has no keyboard focus"
+        }
     }
 }
 
@@ -93,7 +111,7 @@ extension ElementAttributes.Direction: CustomStringConvertible {
         case .right:
             return "right"
         case let .from(fromCoordinate, toCoordinate):
-            return "from \(fromCoordinate.dx)x\(fromCoordinate.dy) to \(toCoordinate.dx)x\(toCoordinate.dy)"
+            return "from \(fromCoordinate.description) to \(toCoordinate.description)"
 
         }
     }

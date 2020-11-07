@@ -11,7 +11,7 @@ public protocol SheetContext {}
 public extension SheetContext {
 	
 	func tap(_ actionButtonID: String, in sheet: Sheet) -> StepAction {
-        StepAction {
+        StepAction(description: "tap on the \(actionButtonID) button in the sheet") {
             sheet.actionButton(withID: actionButtonID).tap()
         }
 	}

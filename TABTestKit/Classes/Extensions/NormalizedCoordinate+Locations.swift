@@ -140,3 +140,38 @@ public extension CGVector {
 	static let rightThird = CGVector(dx: 0.66, dy: 0.5)
 	
 }
+
+extension CGVector: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .middle:
+            return "middle"
+        case .top:
+            return "top"
+        case .bottom:
+            return "bottom"
+        case .left:
+            return "left"
+        case .right:
+            return "right"
+        case .topLeft:
+            return "top left"
+        case .topRight:
+            return "top right"
+        case .bottomLeft:
+            return "bottom left"
+        case .bottomRight:
+            return "bottom right"
+        case .topThird:
+            return "top third"
+        case .leftThird:
+            return "left third"
+        case .bottomThird:
+            return "bottom third"
+        case .rightThird:
+            return "right third"
+        default:
+            return "[\(dx),\(dy)]"
+        }
+    }
+}

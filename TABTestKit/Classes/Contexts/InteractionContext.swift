@@ -10,56 +10,71 @@ import XCTest
 public protocol InteractionContext {}
 public extension InteractionContext {
 	
-	func tap(_ element: Tappable) -> StepAction {
-        StepAction {
+	func tap(_ element: Tappable & CustomStringConvertible) -> StepAction {
+        StepAction(description: "tap on the \(element.description)") {
             element.tap()
         }
 	}
 
-	func doubleTap(_ element: Tappable) -> StepAction {
-        StepAction {
+	func doubleTap(_ element: Tappable & CustomStringConvertible) -> StepAction {
+        StepAction(description: "double tap on the \(element.description)") {
             element.doubleTap()
         }
 	}
 
-	func twoFingerTap(_ element: Tappable) -> StepAction {
-        StepAction {
+	func twoFingerTap(_ element: Tappable & CustomStringConvertible) -> StepAction {
+        StepAction(description: "two finger tap on the \(element.description)") {
             element.twoFingerTap()
         }
 	}
 
-	func longPress(_ element: Tappable, duration: TimeInterval = 0.5) -> StepAction {
-        StepAction {
+	func longPress(_ element: Tappable & CustomStringConvertible, duration: TimeInterval = 0.5) -> StepAction {
+        StepAction(description: "long press on the \(element.description)") {
             element.longPress(duration: duration)
         }
 	}
 	
-	func type(_ text: String, into element: Editable) -> StepAction {
-        StepAction {
+	func type(_ text: String, into element: Editable & CustomStringConvertible) -> StepAction {
+            StepAction(description: "type '\(text)' into the \(element.description)") {
             element.type(text)
         }
 	}
 	
-	func delete(_ numberOfCharacters: Int, charactersFrom element: Editable) -> StepAction {
-        StepAction {
+	func delete(_ numberOfCharacters: Int, charactersFrom element: Editable & CustomStringConvertible) -> StepAction {
+        StepAction(description: "delete \(numberOfCharacters)  characters from the \(element.description)") {
             element.delete(numberOfCharacters: numberOfCharacters)
         }
 	}
 	
 	func state(of element: Element, is states: ElementAttributes.State...) -> StepAction {
-        StepAction {
+
+        let stateDescription = states
+            .map(\.description)
+            .joined(separator: " and ")
+
+        return StepAction(description: "state of the \(element) \(stateDescription)") {
             states.forEach { element.await($0) }
         }
 	}
 	
 	func state(of element: Element, isNot states: ElementAttributes.State...) -> StepAction {
-        StepAction {
+
+        let stateDescription = states
+            .map(\.negativeDescription)
+            .joined(separator: " or ")
+
+        return StepAction(description: "state of the \(element) \(stateDescription)") {
             states.forEach { element.await(not: $0) }
         }
 	}
 	
-	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, is states: ElementAttributes.State..., maxTries: Int = 10) -> StepAction {
-        StepAction {
+	func scroll(_ element: Scrollable & CustomStringConvertible, _ direction: ElementAttributes.Direction, until otherElement: Element, is states: ElementAttributes.State..., maxTries: Int = 10) -> StepAction {
+
+        let stateDescription = states
+            .map(\.description)
+            .joined(separator: " and ")
+
+        return StepAction(description: "scroll the \(element) \(direction) until the \(otherElement) \(stateDescription)") {
             states.forEach { state in
                 var numberOfTries = 0
                 repeat {
@@ -72,8 +87,13 @@ public extension InteractionContext {
         }
 	}
 	
-	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, isNot states: ElementAttributes.State..., maxTries: Int = 10) -> StepAction {
-        StepAction {
+	func scroll(_ element: Scrollable & CustomStringConvertible, _ direction: ElementAttributes.Direction, until otherElement: Element, isNot states: ElementAttributes.State..., maxTries: Int = 10) -> StepAction {
+
+        let stateDescription = states
+            .map(\.negativeDescription)
+            .joined(separator: " or ")
+
+        return StepAction(description: "scroll the \(element) \(direction) until the \(otherElement) \(stateDescription)") {
             states.forEach { state in
                 var numberOfTries = 0
                 repeat {
@@ -86,8 +106,8 @@ public extension InteractionContext {
         }
 	}
 	
-	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, valueIs value: String, maxTries: Int = 10) -> StepAction {
-        StepAction {
+	func scroll(_ element: Scrollable & CustomStringConvertible, _ direction: ElementAttributes.Direction, until otherElement: Element, valueIs value: String, maxTries: Int = 10) -> StepAction {
+        StepAction(description: "scroll the \(element) \(direction) until the \(otherElement)'s value is '\(value)'") {
             var numberOfTries = 0
             repeat {
                 guard !(otherElement.value == value) else { return }
@@ -99,25 +119,25 @@ public extension InteractionContext {
 	}
 	
 	func value<ElementWithValue: Element & ValueRepresentable>(of element: ElementWithValue, is expectedValue: ElementWithValue.Value) -> StepAction {
-        StepAction {
+        StepAction(description: "value of the \(element) is '\(expectedValue)'") {
             XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.value == expectedValue), "Element did not have the right value before timing out! Expected: \(expectedValue), actual: \(element.value)")
         }
 	}
 	
 	func label(of element: Element, is expectedLabel: String) -> StepAction {
-        StepAction {
+        StepAction(description: "label of the \(element) is '\(expectedLabel)'") {
             XCTAssertTrue(element.underlyingXCUIElement.wait(for: element.label == expectedLabel), "Element did not have the right label before timing out! Expected: \(expectedLabel), actual: \(element.label)")
         }
 	}
 	
-	func adjust<AdjustableElement: Adjustable>(_ element: AdjustableElement, to newValue: AdjustableElement.Value) -> StepAction {
-        StepAction {
+	func adjust<AdjustableElement: Adjustable & CustomStringConvertible>(_ element: AdjustableElement, to newValue: AdjustableElement.Value) -> StepAction {
+        StepAction(description: "adjust the \(element) to '\(newValue)'") {
             element.adjust(to: newValue)
         }
 	}
 	
-	func refresh(_ refreshableThing: Refreshable) -> StepAction {
-        StepAction {
+	func refresh(_ refreshableThing: Refreshable & CustomStringConvertible) -> StepAction {
+        StepAction(description: "refresh the \(refreshableThing)") {
             refreshableThing.refresh()
         }
 	}
