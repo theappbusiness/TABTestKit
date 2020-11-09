@@ -23,7 +23,7 @@ public struct Given: Step {
         self.function = function
         self.file = file
         self.description = description
-        TABTestCase.current?.step = self
+        TABTestCase.currentStep = self
         XCTContext.runActivity(named: description) { _ in
 
             TABTestCase.current?.createScreenshotIfNeeded(for: .beforeStep)
