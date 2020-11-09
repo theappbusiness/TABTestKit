@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.8.0
+## Pending
 -  Add back button support to NavBar. (issue #51)
 
 ## 1.7.1

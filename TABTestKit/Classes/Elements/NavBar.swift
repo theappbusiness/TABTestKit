@@ -26,6 +26,5 @@ public struct NavBar: Element {
     /// - Returns: A button representing a back button in the nav bar.
     public func backButton(titled title: String = "Back") -> Button {
         return Button(id: title, parent: self)
-      }
-
+    }
 }
