@@ -32,8 +32,26 @@ public typealias DefaultContexts = InteractionContext & NavigationContext & AppC
 /// which are found in the xcresult bundle created as part of the test run (usually in Derived Data).
 open class TABTestCase: XCTestCase, DefaultContexts {
 
+    public struct ScreenshotOption: OptionSet {
+        public let rawValue: Int
+
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
+
+        public static let onFailure = ScreenshotOption(rawValue: 1 << 0)
+        public static let beforeStep = ScreenshotOption(rawValue: 1 << 1)
+        public static let afterStep = ScreenshotOption(rawValue: 1 << 2)
+        public static let none: ScreenshotOption = []
+        public static let all: ScreenshotOption = [.onFailure, .beforeStep, .afterStep]
+    }
+
     /// A reference to the most recently created TABTestCase.
     public static var current: TABTestCase?
+
+    public private(set) var screenshotOption: ScreenshotOption = .none
+    public private(set) var screenshotQuality: XCTAttachment.ImageQuality = .medium
+    public private(set) var screenshotLifetime: XCTAttachment.Lifetime = .deleteOnSuccess
 
     open override func invokeTest() {
         TABTestCase.current = self
@@ -83,6 +101,22 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	open func preTerminationTearDown(_ terminate: @escaping () -> Void) {
 		terminate()
 	}
+
+    /// Changes the screenshot behavior
+    public func setScreenshots(option: ScreenshotOption, quality: XCTAttachment.ImageQuality = .medium, lifetime: XCTAttachment.Lifetime = .deleteOnSuccess) {
+        screenshotOption = option
+        screenshotQuality = quality
+        screenshotLifetime = lifetime
+    }
+
+    public func createScreenshotIfNeeded(for option: ScreenshotOption ) {
+        guard screenshotOption.contains(option) else { return }
+
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot, quality: screenshotQuality)
+        attachment.lifetime = screenshotLifetime
+        add(attachment)
+    }
 	
 	override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
 		// When using Steps and Scenarios it can be really hard to pinpoint where failed, so this attachment saves the info with the last known step and scenario (including the line that failed), to help you.
@@ -90,9 +124,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		let attachment = createFailureAttachment(description: description, filePath: filePath, lineNumber: lineNumber)
 		add(attachment)
 
-        if App.shared.screenshotOption.contains(.onFailure) {
-            attachScreenshot()
-        }
+        createScreenshotIfNeeded(for: .onFailure)
         
 		let filePath = Step.current?.filePath ?? filePath
 		let lineNumber = Step.current?.lineNumber ?? lineNumber

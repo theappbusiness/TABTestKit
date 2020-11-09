@@ -42,15 +42,11 @@ open class Step {
         Step.current = self
         XCTContext.runActivity(named: description) { _ in
 
-            if App.shared.screenshotOption.contains(.beforeStep) {
-                TABTestCase.current?.attachScreenshot()
-            }
+            TABTestCase.current?.createScreenshotIfNeeded(for: .beforeStep)
 
             handler()
 
-            if App.shared.screenshotOption.contains(.afterStep) {
-                TABTestCase.current?.attachScreenshot()
-            }
+            TABTestCase.current?.createScreenshotIfNeeded(for: .afterStep)
         }
     }
 
