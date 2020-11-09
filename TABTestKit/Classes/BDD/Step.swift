@@ -9,6 +9,11 @@
 
 import XCTest
 
+open class Given: Step {}
+open class When: Step {}
+open class Then: Step {}
+open class And: Step {}
+
 /// Defines an executable step to be used in tests.
 ///
 /// Steps that are initialised with a function that doesn't take arguments can omit the parenthesis,
@@ -20,9 +25,7 @@ open class Step {
 	
 	/// A reference to the most recently created Step, useful if you want to find out what step failed.
 	public static var current: Step?
-	/// The test case this step is executed in.
-    public let testCase: XCTestCase
-    /// The line in a test function this step is in.
+	/// The line in a test function this step is in.
 	public let line: UInt
 	/// The test function this step is in.
 	public let function: StaticString
@@ -31,25 +34,80 @@ open class Step {
     /// The description of this step.
     public let description: String
 
-    init(handler: () -> Void, testCase: XCTestCase, description: String, line: UInt, function: StaticString, file: StaticString) {
-        self.testCase = testCase
+    init(handler: () -> Void, description: String, line: UInt, function: StaticString, file: StaticString) {
         self.line = line
         self.function = function
         self.file = file
         self.description = description
         Step.current = self
-
         XCTContext.runActivity(named: description) { _ in
 
             if App.shared.screenshotOption.contains(.beforeStep) {
-                testCase.attachScreenshot()
+                TABTestCase.current?.attachScreenshot()
             }
 
             handler()
 
             if App.shared.screenshotOption.contains(.afterStep) {
-                testCase.attachScreenshot()
+                TABTestCase.current?.attachScreenshot()
             }
         }
     }
+
+	// MARK: - Standard init, i.e. Given(somethingHappens)
+	
+	@discardableResult
+	public convenience init(_ action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+        self.init(action(), line: line, function: function, file: file)
+	}
+	
+	@discardableResult
+	public convenience init(_ action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+        let description = [String(describing: Swift.type(of: self)), action.description]
+            .joined(separator: " ")
+        self.init(handler: action.execute, description: description, line: line, function: function, file: file)
+	}
+	
+	// MARK: - "I" init, i.e. Given(I: doSomething)
+	
+	@discardableResult
+	public convenience init(I action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(I: action(), line: line, function: function, file: file)
+	}
+	
+	@discardableResult
+	public convenience init(I action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+        let description = [String(describing: Swift.type(of: self)), "I", action.description]
+            .joined(separator: " ")
+		self.init(handler: action.execute, description: description, line: line, function: function, file: file)
+	}
+	
+	// MARK: - "the" init, i.e. Given(the: thingIsTrue)
+	
+	@discardableResult
+	public convenience init(the action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+		self.init(the: action(), line: line, function: function, file: file)
+	}
+	
+	@discardableResult
+	public convenience init(the action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+        let description = [String(describing: Swift.type(of: self)), "the", action.description]
+            .joined(separator: " ")
+		self.init(handler: action.execute, description: description, line: line, function: function, file: file)
+	}
+	
+	// MARK: - "a" init, i.e. Given(a: serverErrorIsReturned)
+
+    @discardableResult
+    convenience init(a action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+        self.init(a: action(), line: line, function: function, file: file)
+    }
+
+	@discardableResult
+    convenience init(a action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
+        let description = [String(describing: Swift.type(of: self)), "a", action.description]
+            .joined(separator: " ")
+		self.init(handler: action.execute, description: description, line: line, function: function, file: file)
+	}
+	
 }

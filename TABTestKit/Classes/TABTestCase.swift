@@ -31,6 +31,14 @@ public typealias DefaultContexts = InteractionContext & NavigationContext & AppC
 /// Finally, TABTestCase will help you by creating attachments when tests failed, with the last known Scenario and Step
 /// which are found in the xcresult bundle created as part of the test run (usually in Derived Data).
 open class TABTestCase: XCTestCase, DefaultContexts {
+
+    /// A reference to the most recently created TABTestCase.
+    public static var current: TABTestCase?
+
+    open override func invokeTest() {
+        TABTestCase.current = self
+        super.invokeTest()
+    }
 	
 	/// Provides the setup for application that happens before each XCTestCase.
 	/// As part of setUp, preLaunchSetup will be called.
