@@ -73,8 +73,7 @@ extension Element {
 
         return [indexString, name, String(describing: Swift.type(of: self))]
             .compactMap { $0 }
-            .filter { !$0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty }
-            .joined(separator: " ")
+            .humanReadableString
     }
 }
 
