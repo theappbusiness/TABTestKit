@@ -48,6 +48,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 
     /// A reference to the most recently created TABTestCase.
     public static var current: TABTestCase?
+    public var step: Step?
 
     public private(set) var screenshotOption: ScreenshotOption = .none
     public private(set) var screenshotQuality: XCTAttachment.ImageQuality = .medium
@@ -126,8 +127,8 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 
         createScreenshotIfNeeded(for: .onFailure)
         
-		let filePath = Step.current?.filePath ?? filePath
-		let lineNumber = Step.current?.lineNumber ?? lineNumber
+		let filePath = step?.filePath ?? filePath
+		let lineNumber = step?.lineNumber ?? lineNumber
 		super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
 	}
 	
@@ -136,7 +137,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		Full failure info (scenarios and steps may be in a different file to the actual failure):
 		
 		Failed scenario: \(Scenario.current?.description ?? "No scenario")
-		Failed step: \(name) on line \(Step.current?.line ?? 0) in file \(Step.current?.file ?? "unknown")
+		Failed step: \(name) on line \(step?.line ?? 0) in file \(step?.file ?? "unknown")
 		
 		Actual file that failed: \(filePath)
 		Actual line that failed: \(lineNumber)
