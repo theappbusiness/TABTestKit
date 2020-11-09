@@ -14,25 +14,25 @@ public protocol BiometricsContext {}
 public extension BiometricsContext {
 	
 	func deviceBiometricsAreEnabled() -> StepAction {
-        StepAction(description: "device biometrics are enabled") {
+        return StepAction(description: "device biometrics are enabled") {
             Biometrics.enrolled()
         }
 	}
 	
 	func deviceBiometricsAreDisabled() -> StepAction {
-        StepAction(description: "device biometrics are disabled") {
+        return StepAction(description: "device biometrics are disabled") {
             Biometrics.unenrolled()
         }
 	}
 	
 	func successfullyAuthenticateBiometrics() -> StepAction {
-        StepAction(description: "successfully authenticate biometrics") {
+        return StepAction(description: "successfully authenticate biometrics") {
             Biometrics.successfulAuthentication()
         }
 	}
 	
 	func failToAuthenticateBiometrics() -> StepAction {
-        StepAction(description: "fail to authenticate biometrics") {
+        return StepAction(description: "fail to authenticate biometrics") {
             Biometrics.unsuccessfulAuthentication()
         }
 	}

@@ -15,7 +15,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Given(_ action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Given(action(), line: line, function: function, file: file)
+        return Given(action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -29,7 +29,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Given(I action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Given(I: action(), line: line, function: function, file: file)
+        return Given(I: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -43,7 +43,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Given(the action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Given(the: action(), line: line, function: function, file: file)
+        return Given(the: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -57,7 +57,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Given(a action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Given(a: action(), line: line, function: function, file: file)
+        return Given(a: action(), line: line, function: function, file: file)
     }
 
     @discardableResult

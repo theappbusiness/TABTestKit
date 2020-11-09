@@ -11,7 +11,7 @@ public protocol SystemPreferencesContext {}
 public extension SystemPreferencesContext {
 	
 	func resetAllPrivacyPrompts() -> StepAction {
-        StepAction(description: "reset all privacy prompts") {
+        return StepAction(description: "reset all privacy prompts") {
             if SystemPreferences().state != .notRunning {
                 openSystemPreferences().execute() // Turns out you can't terminate an app if it's not in the foreground, but we want to terminate it so that it can be reset back to the start, so we're weirdly activating it here before doing anything. Might be a bug.
             }
@@ -25,13 +25,13 @@ public extension SystemPreferencesContext {
 	}
 	
 	func openSystemPreferences() -> StepAction {
-        StepAction(description: "open system preferences") {
+        return StepAction(description: "open system preferences") {
             SystemPreferences().activate()
         }
 	}
 	
 	func terminateSystemPreferences() -> StepAction{
-        StepAction(description: "terminate system preferences") {
+        return StepAction(description: "terminate system preferences") {
             SystemPreferences().terminate()
         }
 	}

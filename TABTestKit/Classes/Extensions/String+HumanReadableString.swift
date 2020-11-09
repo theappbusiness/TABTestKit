@@ -48,7 +48,7 @@ extension String {
 
 extension Sequence where Element == String {
     public var humanReadableString: String {
-        map(\.humanReadableString)
+        map { $0.humanReadableString }
             .filter { !$0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty }
             .joined(separator: " ")
     }

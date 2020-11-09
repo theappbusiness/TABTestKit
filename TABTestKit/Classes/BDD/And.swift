@@ -15,7 +15,7 @@ extension XCTestCase {
 
     @discardableResult
     public func And(_ action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        And(action(), line: line, function: function, file: file)
+        return And(action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -29,7 +29,7 @@ extension XCTestCase {
 
     @discardableResult
     public func And(I action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        And(I: action(), line: line, function: function, file: file)
+        return And(I: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -43,7 +43,7 @@ extension XCTestCase {
 
     @discardableResult
     public func And(the action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        And(the: action(), line: line, function: function, file: file)
+        return And(the: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -57,7 +57,7 @@ extension XCTestCase {
 
     @discardableResult
     public func And(a action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        And(a: action(), line: line, function: function, file: file)
+        return And(a: action(), line: line, function: function, file: file)
     }
 
     @discardableResult

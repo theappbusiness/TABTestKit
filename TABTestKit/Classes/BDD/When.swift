@@ -15,7 +15,7 @@ extension XCTestCase {
 
     @discardableResult
     public func When(_ action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        When(action(), line: line, function: function, file: file)
+        return When(action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -29,7 +29,7 @@ extension XCTestCase {
 
     @discardableResult
     public func When(I action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        When(I: action(), line: line, function: function, file: file)
+        return When(I: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -43,7 +43,7 @@ extension XCTestCase {
 
     @discardableResult
     public func When(the action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        When(the: action(), line: line, function: function, file: file)
+        return When(the: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -57,7 +57,7 @@ extension XCTestCase {
 
     @discardableResult
     public func When(a action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        When(a: action(), line: line, function: function, file: file)
+        return When(a: action(), line: line, function: function, file: file)
     }
 
     @discardableResult

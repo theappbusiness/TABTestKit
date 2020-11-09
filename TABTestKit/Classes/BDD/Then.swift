@@ -15,7 +15,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Then(_ action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Then(action(), line: line, function: function, file: file)
+        return Then(action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -29,7 +29,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Then(I action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Then(I: action(), line: line, function: function, file: file)
+        return Then(I: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -43,7 +43,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Then(the action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Then(the: action(), line: line, function: function, file: file)
+        return Then(the: action(), line: line, function: function, file: file)
     }
 
     @discardableResult
@@ -57,7 +57,7 @@ extension XCTestCase {
 
     @discardableResult
     public func Then(a action: () -> StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) -> Step {
-        Then(a: action(), line: line, function: function, file: file)
+        return Then(a: action(), line: line, function: function, file: file)
     }
 
     @discardableResult

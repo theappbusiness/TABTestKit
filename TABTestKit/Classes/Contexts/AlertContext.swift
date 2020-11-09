@@ -11,7 +11,7 @@ public protocol AlertContext {}
 public extension AlertContext {
 	
 	func tap(_ actionButtonID: String, in alert: Alert) -> StepAction {
-        StepAction(description: "tap on the \(actionButtonID) button in the alert") {
+        return StepAction(description: "tap on the \(actionButtonID) button in the alert") {
             alert.actionButton(withID: actionButtonID).tap()
         }
 	}

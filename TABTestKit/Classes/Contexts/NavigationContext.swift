@@ -14,7 +14,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter screen: The screen to await.
 	func see<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
-        StepAction(description: "see the \(screen.description)") {
+        return StepAction(description: "see the \(screen.description)") {
             screen.trait.await(.exists, .visible)
         }
 	}
@@ -23,7 +23,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter screen: The screen to await.
 	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
-        StepAction(description: "do not see the \(screen.description)") {
+        return StepAction(description: "do not see the \(screen.description)") {
             screen.trait.await(not: .exists)
         }
 	}
@@ -32,7 +32,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter element: The element to await.
 	func see(_ element: Element) -> StepAction {
-        StepAction(description: "see the \(element.description)") {
+        return StepAction(description: "see the \(element.description)") {
             element.await(.exists, .visible)
         }
 	}
@@ -41,7 +41,7 @@ public extension NavigationContext {
 	///
 	/// - Parameter element: The element to await.
 	func doNotSee(_ element: Element) -> StepAction {
-        StepAction(description: "do not see the \(element.description)") {
+        return StepAction(description: "do not see the \(element.description)") {
             element.await(not: .exists)
         }
 	}
@@ -54,7 +54,7 @@ public extension NavigationContext {
 		guard !completableThings.isEmpty else { XCTFatalFail("You must provide at least one Completable thing to complete!") }
 
         let completableDescription = completableThings
-            .map(\.description)
+            .map { $0.description }
             .joined(separator: " and the ")
 
         return StepAction(description: "complete the \(completableDescription)") {
@@ -73,7 +73,7 @@ public extension NavigationContext {
 		guard !dismissableThings.isEmpty else { XCTFatalFail("You must provide at least one Dismissable thing to dismiss!") }
 
         let dismissableDescription = dismissableThings
-            .map(\.description)
+            .map { $0.description }
             .joined(separator: " and the ")
 
         return StepAction(description: "dismiss the \(dismissableDescription)") {
@@ -103,8 +103,7 @@ public extension NavigationContext {
     ///
     /// - Parameter url: The URL to open.
     func open(_ url: URL) -> StepAction {
-
-        StepAction(description: "open '\(url.absoluteString)'") {
+        return StepAction(description: "open '\(url.absoluteString)'") {
             springboard.activate()
             if !Icon.testRunner.determine(.hittable, timeout: 1) {
                 XCUIDevice.shared.press(.home) // Ensure we're on the first page of the home screen
