@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Pending
+
+- Added the ability to define a description for Elements & Screens
+- Added XCTContext activity for every step
+- Added the ability to setup screenshotting behavior
+
 ## 1.7.1
 
 ### Fixed

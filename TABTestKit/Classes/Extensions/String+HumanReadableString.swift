@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    var humanReadableString: String {
+    public var humanReadableString: String {
 
         let emptySet = CharacterSet.whitespacesAndNewlines
         let splitSet = emptySet.union(CharacterSet.uppercaseLetters)
@@ -47,7 +47,7 @@ extension String {
 }
 
 extension Sequence where Element == String {
-    var humanReadableString: String {
+    public var humanReadableString: String {
         map(\.humanReadableString)
             .filter { !$0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty }
             .joined(separator: " ")

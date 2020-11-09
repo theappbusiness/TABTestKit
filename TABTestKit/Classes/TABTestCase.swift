@@ -81,6 +81,11 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		// You can find this attachment in the .xcresult bundle (usually Derived Data).
 		let attachment = createFailureAttachment(description: description, filePath: filePath, lineNumber: lineNumber)
 		add(attachment)
+
+        if App.shared.screenshotOption.contains(.onFailure) {
+            attachScreenshot()
+        }
+        
 		let filePath = Step.current?.filePath ?? filePath
 		let lineNumber = Step.current?.lineNumber ?? lineNumber
 		super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
