@@ -43,9 +43,9 @@ public extension AppContext {
 	
 	func relaunchTheApp() -> StepAction {
         return StepAction(description: "relaunch the app") {
-            backgroundTheApp().execute()
-            terminateTheApp().execute()
-            launchTheApp(clean: false).execute()
+            self.backgroundTheApp().execute()
+            self.terminateTheApp().execute()
+            self.launchTheApp(clean: false).execute()
         }
 	}
 	
@@ -56,7 +56,7 @@ public extension AppContext {
 	}
 	
 	func openSafari() -> StepAction { // TODO: Move to Safari context
-        StepAction(description: "open safari") {
+        return StepAction(description: "open safari") {
             Safari().activate()
         }
 	}

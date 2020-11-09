@@ -37,7 +37,7 @@ extension String {
                 return cleanWord.isEmpty ? nil : cleanWord
             }
             .map { (word) -> String in
-                guard word.contains(where: \.isLowercase) else {
+                guard word.contains(where: { $0.isLowercase }) else {
                     return word
                 }
                 return word.lcfirst
@@ -48,7 +48,7 @@ extension String {
 
 extension Sequence where Element == String {
     public var humanReadableString: String {
-        map { $0.humanReadableString }
+        return map { $0.humanReadableString }
             .filter { !$0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty }
             .joined(separator: " ")
     }
@@ -56,7 +56,7 @@ extension Sequence where Element == String {
 
 private extension String {
     func occurences(of characterSet: CharacterSet) -> Int {
-        reduce(into: 0) { (result, character) in
+        return reduce(into: 0) { (result, character) in
             guard characterSet.contains(character: character) else { return }
             result += 1
         }

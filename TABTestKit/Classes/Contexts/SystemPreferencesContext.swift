@@ -13,10 +13,10 @@ public extension SystemPreferencesContext {
 	func resetAllPrivacyPrompts() -> StepAction {
         return StepAction(description: "reset all privacy prompts") {
             if SystemPreferences().state != .notRunning {
-                openSystemPreferences().execute() // Turns out you can't terminate an app if it's not in the foreground, but we want to terminate it so that it can be reset back to the start, so we're weirdly activating it here before doing anything. Might be a bug.
+                self.openSystemPreferences().execute() // Turns out you can't terminate an app if it's not in the foreground, but we want to terminate it so that it can be reset back to the start, so we're weirdly activating it here before doing anything. Might be a bug.
             }
-            terminateSystemPreferences().execute()
-            openSystemPreferences().execute()
+            self.terminateSystemPreferences().execute()
+            self.openSystemPreferences().execute()
             systemPreferencesRootScreen.generalCell.tap()
             systemPreferencesGeneralScreen.resetCell.tap()
             systemPreferencesResetScreen.resetCell.tap()
