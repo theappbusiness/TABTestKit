@@ -25,7 +25,7 @@ public protocol Screen: CustomStringConvertible {
 extension Screen {
 
     public var description: String {
-        String(describing: Swift.type(of: self)).humanReadableString
+        return String(describing: Swift.type(of: self)).humanReadableString
     }
 }
 

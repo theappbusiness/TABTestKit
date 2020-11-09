@@ -35,7 +35,7 @@ public extension InteractionContext {
 	}
 	
 	func type(_ text: String, into element: Editable & CustomStringConvertible) -> StepAction {
-            StepAction(description: "type '\(text)' into the \(element.description)") {
+        return StepAction(description: "type '\(text)' into the \(element.description)") {
             element.type(text)
         }
 	}
