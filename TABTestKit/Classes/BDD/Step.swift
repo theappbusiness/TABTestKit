@@ -41,7 +41,7 @@ public extension Step {
 
     @discardableResult
     init(_ action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
-        let description = [action.description].joined(separator: " ")
+        let description = [String(describing: Self.self), action.description].joined(separator: " ")
         self.init(handler: action.execute, description: description, line: line, function: function, file: file)
     }
 
@@ -54,7 +54,7 @@ public extension Step {
 
     @discardableResult
     init(I action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
-        let description = ["I", action.description].joined(separator: " ")
+        let description = [String(describing: Self.self), "I", action.description].joined(separator: " ")
         self.init(handler: action.execute, description: description, line: line, function: function, file: file)
     }
 
@@ -67,7 +67,7 @@ public extension Step {
 
     @discardableResult
     init(the action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
-        let description = ["the", action.description].joined(separator: " ")
+        let description = [String(describing: Self.self), "the", action.description].joined(separator: " ")
         self.init(handler: action.execute, description: description, line: line, function: function, file: file)
     }
 
@@ -80,7 +80,7 @@ public extension Step {
 
     @discardableResult
     init(a action: StepAction, line: UInt = #line, function: StaticString = #function, file: StaticString = #file) {
-        let description = ["a", action.description].joined(separator: " ")
+        let description = [String(describing: Self.self), "a", action.description].joined(separator: " ")
         self.init(handler: action.execute, description: description, line: line, function: function, file: file)
     }
 }
