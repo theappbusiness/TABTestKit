@@ -70,11 +70,11 @@ private extension String {
 
 extension Int {
 
-    public var humanReadableNumberString: String {
+    public var humanReadableIndex: String {
         let indexFormatter = NumberFormatter()
         indexFormatter.numberStyle = .ordinal
         indexFormatter.locale = Locale(identifier: "en_GB")
-        return indexFormatter.string(for: self) ?? ""
+        return indexFormatter.string(for: self + 1) ?? ""
     }
 }
 
