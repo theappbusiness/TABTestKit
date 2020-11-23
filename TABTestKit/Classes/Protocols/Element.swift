@@ -70,7 +70,7 @@ extension Element {
             return name
         }
 
-        let indexString: String? = index > 0 ? index.humanReadableNumberString : nil
+        let indexString: String? = index > 0 ? (index + 1).humanReadableNumberString : nil
         
         return [indexString, id, String(describing: Swift.type(of: self))]
             .compactMap { $0 }
