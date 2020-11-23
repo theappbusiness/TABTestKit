@@ -58,3 +58,61 @@ public enum ElementAttributes {
 	}
 	
 }
+
+extension ElementAttributes.State: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .exists:
+            return "exists"
+        case .hittable:
+            return "is hittable"
+        case .visible:
+            return "is visible"
+        case let .visibleIn(element):
+            return "is visible in the \(element.description)"
+        case .selected:
+            return "is selected"
+        case .enabled:
+            return "is enabled"
+        case .hasKeyboardFocus:
+            return "has keyboard focus"
+        }
+    }
+
+    public var negativeDescription: String {
+        switch self {
+        case .exists:
+            return "does not exist"
+        case .hittable:
+            return "is not hittable"
+        case .visible:
+            return "is not visible"
+        case let .visibleIn(element):
+            return "is not visible in the \(element.description)"
+        case .selected:
+            return "is not selected"
+        case .enabled:
+            return "is not enabled"
+        case .hasKeyboardFocus:
+            return "has no keyboard focus"
+        }
+    }
+}
+
+extension ElementAttributes.Direction: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .upwards:
+            return "upwards"
+        case .downwards:
+            return "downwards"
+        case .left:
+            return "left"
+        case .right:
+            return "right"
+        case let .from(fromCoordinate, toCoordinate):
+            return "from \(fromCoordinate.description) to \(toCoordinate.description)"
+
+        }
+    }
+}

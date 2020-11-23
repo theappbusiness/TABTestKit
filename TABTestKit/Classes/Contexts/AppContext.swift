@@ -11,38 +11,54 @@ import XCTest
 public protocol AppContext {}
 public extension AppContext {
 	
-	func backgroundTheApp() {
-		App.shared.background()
+	func backgroundTheApp() -> StepAction {
+        return StepAction(description: "background the app") {
+            App.shared.background()
+        }
 	}
 	
-	func foregroundTheApp() {
-		App.shared.activate()
+	func foregroundTheApp() -> StepAction {
+        return StepAction(description: "foreground the app") {
+            App.shared.activate()
+        }
 	}
 	
-	func terminateTheApp() {
-		App.shared.terminate()
+	func terminateTheApp() -> StepAction {
+        return StepAction(description: "terminate the app") {
+            App.shared.terminate()
+        }
 	}
 	
-	func launchTheApp(clean: Bool) {
-		App.shared.launch(clean: clean)
+	func launchTheApp(clean: Bool) -> StepAction {
+        return StepAction(description: "launch the app") {
+            App.shared.launch(clean: clean)
+        }
 	}
 	
-	func waitForApp(toBe state: XCUIApplication.State, timeout: TimeInterval = 10) {
-		XCTAssertTrue(App.shared.wait(for: App.shared.state == state, timeout: timeout), "App did not have the right state before the timeout. Expected \(state.rawValue), got \(App.shared.state.rawValue)")
+	func waitForApp(toBe state: XCUIApplication.State, timeout: TimeInterval = 10) -> StepAction {
+        return StepAction(description: "wait for the app to be \(state.description)") {
+            XCTAssertTrue(App.shared.wait(for: App.shared.state == state, timeout: timeout), "App did not have the right state before the timeout. Expected \(state.rawValue), got \(App.shared.state.rawValue)")
+        }
 	}
 	
-	func relaunchTheApp() {
-		backgroundTheApp()
-		terminateTheApp()
-		launchTheApp(clean: false)
+	func relaunchTheApp() -> StepAction {
+        return StepAction(description: "relaunch the app") {
+            self.backgroundTheApp().execute()
+            self.terminateTheApp().execute()
+            self.launchTheApp(clean: false).execute()
+        }
 	}
 	
-	func goBackToTABTestKitExampleApp() {
-		XCTAssertEqual(App.shared.name, "TABTestKit_Example")
+	func goBackToTABTestKitExampleApp() -> StepAction {
+        return StepAction(description: "go back to the TABTestKit Example app") {
+            XCTAssertEqual(App.shared.name, "TABTestKit_Example")
+        }
 	}
 	
-	func openSafari() { // TODO: Move to Safari context
-		Safari().activate()
+	func openSafari() -> StepAction { // TODO: Move to Safari context
+        return StepAction(description: "open safari") {
+            Safari().activate()
+        }
 	}
 	
 }

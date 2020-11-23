@@ -31,6 +31,35 @@ public typealias DefaultContexts = InteractionContext & NavigationContext & AppC
 /// Finally, TABTestCase will help you by creating attachments when tests failed, with the last known Scenario and Step
 /// which are found in the xcresult bundle created as part of the test run (usually in Derived Data).
 open class TABTestCase: XCTestCase, DefaultContexts {
+
+    public struct ScreenshotOption: OptionSet {
+        public let rawValue: Int
+
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
+
+        public static let onFailure = ScreenshotOption(rawValue: 1 << 0)
+        public static let beforeStep = ScreenshotOption(rawValue: 1 << 1)
+        public static let afterStep = ScreenshotOption(rawValue: 1 << 2)
+        public static let none: ScreenshotOption = []
+        public static let all: ScreenshotOption = [.onFailure, .beforeStep, .afterStep]
+    }
+
+    /// A reference to the most recently created TABTestCase.
+    public static var current: TABTestCase?
+
+    /// A reference to the most recently created Step, useful if you want to find out what step failed.
+    public static var currentStep: Step?
+
+    public private(set) var screenshotOption: ScreenshotOption = .none
+    public private(set) var screenshotQuality: XCTAttachment.ImageQuality = .medium
+    public private(set) var screenshotLifetime: XCTAttachment.Lifetime = .deleteOnSuccess
+
+    open override func invokeTest() {
+        TABTestCase.current = self
+        super.invokeTest()
+    }
 	
 	/// Provides the setup for application that happens before each XCTestCase.
 	/// As part of setUp, preLaunchSetup will be called.
@@ -75,14 +104,33 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	open func preTerminationTearDown(_ terminate: @escaping () -> Void) {
 		terminate()
 	}
+
+    /// Changes the screenshot behavior
+    public func setScreenshots(option: ScreenshotOption, quality: XCTAttachment.ImageQuality = .medium, lifetime: XCTAttachment.Lifetime = .deleteOnSuccess) {
+        screenshotOption = option
+        screenshotQuality = quality
+        screenshotLifetime = lifetime
+    }
+
+    public func createScreenshotIfNeeded(for option: ScreenshotOption ) {
+        guard screenshotOption.contains(option) else { return }
+
+        let screenshot = XCUIScreen.main.screenshot()
+        let attachment = XCTAttachment(screenshot: screenshot, quality: screenshotQuality)
+        attachment.lifetime = screenshotLifetime
+        add(attachment)
+    }
 	
 	override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
 		// When using Steps and Scenarios it can be really hard to pinpoint where failed, so this attachment saves the info with the last known step and scenario (including the line that failed), to help you.
 		// You can find this attachment in the .xcresult bundle (usually Derived Data).
 		let attachment = createFailureAttachment(description: description, filePath: filePath, lineNumber: lineNumber)
 		add(attachment)
-		let filePath = Step.current?.filePath ?? filePath
-		let lineNumber = Step.current?.lineNumber ?? lineNumber
+
+        createScreenshotIfNeeded(for: .onFailure)
+        
+        let filePath = TABTestCase.currentStep?.filePath ?? filePath
+        let lineNumber = TABTestCase.currentStep?.lineNumber ?? lineNumber
 		super.recordFailure(withDescription: description, inFile: filePath, atLine: lineNumber, expected: expected)
 	}
 	
@@ -91,7 +139,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		Full failure info (scenarios and steps may be in a different file to the actual failure):
 		
 		Failed scenario: \(Scenario.current?.description ?? "No scenario")
-		Failed step: \(name) on line \(Step.current?.line ?? 0) in file \(Step.current?.file ?? "unknown")
+		Failed step: \(name) on line \(TABTestCase.currentStep?.line ?? 0) in file \(TABTestCase.currentStep?.file ?? "unknown")
 		
 		Actual file that failed: \(filePath)
 		Actual line that failed: \(lineNumber)

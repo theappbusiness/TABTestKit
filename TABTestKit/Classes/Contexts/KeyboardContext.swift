@@ -11,9 +11,11 @@ import XCTest
 public protocol KeyboardContext {}
 public extension KeyboardContext {
 	
-	func keyboardType(is type: Keyboard.KeyboardType) {
+	func keyboardType(is type: Keyboard.KeyboardType) -> StepAction {
 		let actual = keyboard.keyboardType
-		XCTAssertEqual(type, actual, "Actual keyboard type (\(actual)) does not match expected keyboard type (\(type))")
+        return StepAction(description: "keyboard is \(type.description)") {
+            XCTAssertEqual(type, actual, "Actual keyboard type (\(actual)) does not match expected keyboard type (\(type))")
+        }
 	}
 	
 }

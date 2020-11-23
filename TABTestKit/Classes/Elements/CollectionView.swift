@@ -11,11 +11,13 @@ import XCTest
 public struct CollectionView: Element, Scrollable, CellContaining {
 	
 	public let id: String?
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .collectionView
 	
-	public init(id: String? = nil, parent: Element = App.shared) {
+	public init(id: String? = nil, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
+        self.name = name
 		self.parent = parent
 	}
 	

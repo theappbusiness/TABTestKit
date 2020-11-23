@@ -11,11 +11,13 @@ import XCTest
 public struct WebView: Element, Scrollable {
 	
 	public let id: String?
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .webView
 	
-	public init(id: String, parent: Element = App.shared) {
+	public init(id: String, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
+        self.name = name
 		self.parent = parent
 	}
 	

@@ -11,6 +11,7 @@ public struct Stepper: Element {
 	
 	public let id: String?
 	public let index: Int
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .stepper
 	public var incrementButton: Button {
@@ -20,9 +21,10 @@ public struct Stepper: Element {
 		return Button(id: "Decrement", parent: self)
 	}
 	
-	public init(id: String, index: Int = 0, parent: Element = App.shared) {
+	public init(id: String, index: Int = 0, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
 		self.index = index
+        self.name = name
 		self.parent = parent
 	}
 	

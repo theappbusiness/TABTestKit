@@ -33,7 +33,7 @@ extension TableScreen: Scrollable, Refreshable, InteractionContext {
     }
     
     func refresh() {
-        scroll(table, .upwards, until: section0Header, is: .visible)
+        scroll(table, .upwards, until: section0Header, is: .visible).execute()
         // Pull the table down to refresh
         table.scroll(.upwards)
     }

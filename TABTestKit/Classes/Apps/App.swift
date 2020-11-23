@@ -14,7 +14,7 @@ import XCTest
 /// Using this instead of XCUIApplication() means you get the
 /// enhanced waits for the correct states when launching/backgrounding etc, inherited from BaseApp.
 public final class App: BaseApp {
-	
+    
 	/// The shared App instance. Using a shared instance ensure consistency with launch arguments.
 	public static let shared = App()
 	
@@ -31,5 +31,4 @@ public final class App: BaseApp {
 		}
 		super.launch()
 	}
-	
 }

@@ -15,6 +15,7 @@ public struct Switch: Element, ValueRepresentable, Adjustable, Tappable {
 	
 	public let id: String?
 	public let index: Int
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .switch
 	public var value: State {
@@ -22,9 +23,10 @@ public struct Switch: Element, ValueRepresentable, Adjustable, Tappable {
 		return State(rawValue: rawInt)!
 	}
 	
-	public init(id: String, index: Int = 0, parent: Element = App.shared) {
+	public init(id: String, index: Int = 0, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
 		self.index = index
+        self.name = name
 		self.parent = parent
 	}
 	

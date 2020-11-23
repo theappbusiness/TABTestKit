@@ -12,12 +12,14 @@ public struct Icon: Element, Tappable {
 
     public let id: String?
     public let index: Int
+    public let name: String?
     public let parent: Element
     public let type: XCUIElement.ElementType = .icon
 
-    init(id: String? = nil, index: Int = 0, parent: Element = App.shared) {
+    init(id: String? = nil, index: Int = 0, name: String? = nil, parent: Element = App.shared) {
         self.id = id
         self.index = index
+        self.name = name
         self.parent = parent
     }
 

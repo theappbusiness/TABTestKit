@@ -10,13 +10,16 @@ import XCTest
 /// Represents a UI element.
 /// Pretty much every element on-screen has (or should have) some sort of ID, except for nav bars and tab bars etc.
 /// Sometimes identifiers can just be the text of the element, for example a UILabel ID can just be the text.
-public protocol Element {
+public protocol Element: CustomStringConvertible {
 	
 	/// The ID of the element. This could be the accessibilityIdentifier or the text of a label.
 	/// An ID is not required, but it is recommended.
 	/// You may however wish to just match the first navBar (for example), and since there's usually only one navBar in an
 	/// app, you don't really need to provide an ID for it.
 	var id: String? { get }
+
+    /// The name of the element. Used in the step description, if not provided a value will be generated
+    var name: String? { get }
 	
 	/// The parent element. By default the parent element is the app being tested.
 	var parent: Element { get }
@@ -42,6 +45,8 @@ public protocol Element {
 }
 
 public extension Element {
+
+    var name: String? { return nil }
 	
 	var parent: Element { return App.shared }
 	
@@ -56,7 +61,21 @@ public extension Element {
 	var topCoordinate: CGVector { return defaultTopCoordinate }
 	
 	var underlyingXCUIElement: XCUIElement { return defaultUnderlyingXCUIElement }
-	
+}
+
+extension Element {
+    public var description: String {
+
+        if let name = name {
+            return name
+        }
+
+        let indexString: String? = index > 0 ? index.humanReadableIndex : nil
+        
+        return [indexString, id, String(describing: Swift.type(of: self))]
+            .compactMap { $0 }
+            .humanReadableString
+    }
 }
 
 public extension Element {

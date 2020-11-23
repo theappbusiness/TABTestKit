@@ -10,8 +10,10 @@ import Foundation
 public protocol SheetContext {}
 public extension SheetContext {
 	
-	func tap(_ actionButtonID: String, in sheet: Sheet) {
-		sheet.actionButton(withID: actionButtonID).tap()
+	func tap(_ actionButtonID: String, in sheet: Sheet) -> StepAction {
+        return StepAction(description: "tap on the \(actionButtonID) button in the sheet") {
+            sheet.actionButton(withID: actionButtonID).tap()
+        }
 	}
 	
 }

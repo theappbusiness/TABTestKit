@@ -13,7 +13,7 @@ import TABTestKit
 final class BiometricLogin_HappyPathTests: TABTestCase, SystemPreferencesContext { // TODO: Enable parallel tests
     
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
-        resetAllPrivacyPrompts()
+        resetAllPrivacyPrompts().execute()
         launch()
     }
     

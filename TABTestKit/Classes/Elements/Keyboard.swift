@@ -63,6 +63,31 @@ public struct Keyboard: Element {
 	
 }
 
+extension Keyboard.KeyboardType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .regular:
+            return "regular"
+        case .numberPad:
+            return "number keypad"
+        case .decimalPad:
+            return "decimal keypad"
+        case .emailAddress:
+            return "email address"
+        case .numbersAndPunctuation:
+            return "numbers and punctuation"
+        case .phonePad:
+            return "telephone keypad"
+        case .twitter:
+            return "twitter"
+        case .url:
+            return "url"
+        case .webSearch:
+            return "web search"
+        }
+    }
+}
+
 public extension Keyboard {
 	
 	/// Represents a Key that the Keyboard contains.
@@ -96,11 +121,13 @@ public extension Keyboard {
 	struct PredicationBar: Element {
 		
 		public let id: String? = "Typing Predictions"
+        public let name: String?
 		public let type: XCUIElement.ElementType = .other
 		public let parent: Element
 		
-		init(parent: Element = App.shared) {
+		init(parent: Element = App.shared, name: String? = nil) {
 			self.parent = parent
+            self.name = name
 		}
 		
 	}

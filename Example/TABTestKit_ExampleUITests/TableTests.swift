@@ -11,7 +11,7 @@ import TABTestKit
 final class TableTests: TABTestCase, SystemPreferencesContext {
     
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
-        resetAllPrivacyPrompts()
+        resetAllPrivacyPrompts().execute()
         launch()
     }
     

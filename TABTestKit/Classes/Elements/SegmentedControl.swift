@@ -11,6 +11,7 @@ public struct SegmentedControl: Element {
 	
 	public let id: String? = nil // Unfortunately you can't set an ID or label on a segmented control, so we'll just have to reference by index in the parent.
 	public let index: Int
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .segmentedControl
 	
@@ -24,8 +25,9 @@ public struct SegmentedControl: Element {
 	/// - Parameters:
 	///   - index: The index of the segmented control. Defaults to 0, meaning the first segmented control.
 	///   - parent: The parent element of the SegmentedControl. Defaults to the app.
-	public init(index: Int = 0, parent: Element = App.shared) {
+	public init(index: Int = 0, name: String? = nil, parent: Element = App.shared) {
 		self.index = index
+        self.name = name
 		self.parent = parent
 	}
 	

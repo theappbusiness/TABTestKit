@@ -10,24 +10,30 @@ import Foundation
 public protocol SystemPreferencesContext {}
 public extension SystemPreferencesContext {
 	
-	func resetAllPrivacyPrompts() {
-		if SystemPreferences().state != .notRunning {
-			openSystemPreferences() // Turns out you can't terminate an app if it's not in the foreground, but we want to terminate it so that it can be reset back to the start, so we're weirdly activating it here before doing anything. Might be a bug.			
-		}
-		terminateSystemPreferences()
-		openSystemPreferences()
-		systemPreferencesRootScreen.generalCell.tap()
-		systemPreferencesGeneralScreen.resetCell.tap()
-		systemPreferencesResetScreen.resetCell.tap()
-		systemPreferencesResetScreen.confirmResetSheet.actionButton(withID: "Reset Warnings").tap()
+	func resetAllPrivacyPrompts() -> StepAction {
+        return StepAction(description: "reset all privacy prompts") {
+            if SystemPreferences().state != .notRunning {
+                self.openSystemPreferences().execute() // Turns out you can't terminate an app if it's not in the foreground, but we want to terminate it so that it can be reset back to the start, so we're weirdly activating it here before doing anything. Might be a bug.
+            }
+            self.terminateSystemPreferences().execute()
+            self.openSystemPreferences().execute()
+            systemPreferencesRootScreen.generalCell.tap()
+            systemPreferencesGeneralScreen.resetCell.tap()
+            systemPreferencesResetScreen.resetCell.tap()
+            systemPreferencesResetScreen.confirmResetSheet.actionButton(withID: "Reset Warnings").tap()
+        }
 	}
 	
-	func openSystemPreferences() {
-		SystemPreferences().activate()
+	func openSystemPreferences() -> StepAction {
+        return StepAction(description: "open system preferences") {
+            SystemPreferences().activate()
+        }
 	}
 	
-	func terminateSystemPreferences() {
-		SystemPreferences().terminate()
+	func terminateSystemPreferences() -> StepAction{
+        return StepAction(description: "terminate system preferences") {
+            SystemPreferences().terminate()
+        }
 	}
 	
 }
