@@ -16,7 +16,7 @@ public struct ScrollView: Element, Scrollable {
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .scrollView
 	
-	public init(id: String? = nil, name: String? = nil, index: Int = 0, parent: Element = App.shared) {
+	public init(id: String? = nil, index: Int = 0, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
 		self.index = index
         self.name = name
