@@ -70,12 +70,8 @@ extension Element {
             return name
         }
 
-        let indexFormatter = NumberFormatter()
-        indexFormatter.numberStyle = .ordinal
-        indexFormatter.locale = Locale(identifier: "en_GB")
-
-        let indexString: String? = index > 0 ? indexFormatter.string(for: index) : nil
-
+        let indexString: String? = index > 0 ? index.humanReadableNumberString : nil
+        
         return [indexString, id, String(describing: Swift.type(of: self))]
             .compactMap { $0 }
             .humanReadableString

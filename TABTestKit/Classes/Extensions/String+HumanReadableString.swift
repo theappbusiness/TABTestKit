@@ -68,6 +68,16 @@ private extension String {
     }
 }
 
+extension Int {
+
+    public var humanReadableNumberString: String {
+        let indexFormatter = NumberFormatter()
+        indexFormatter.numberStyle = .ordinal
+        indexFormatter.locale = Locale(identifier: "en_GB")
+        return indexFormatter.string(for: self) ?? ""
+    }
+}
+
 private extension CharacterSet {
     func contains(character: Character?) -> Bool {
         guard let character = character else { return false }
