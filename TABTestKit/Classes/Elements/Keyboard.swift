@@ -121,11 +121,13 @@ public extension Keyboard {
 	struct PredicationBar: Element {
 		
 		public let id: String? = "Typing Predictions"
+        public let name: String?
 		public let type: XCUIElement.ElementType = .other
 		public let parent: Element
 		
-		init(parent: Element = App.shared) {
+		init(parent: Element = App.shared, name: String? = nil) {
 			self.parent = parent
+            self.name = name
 		}
 		
 	}

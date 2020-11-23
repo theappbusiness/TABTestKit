@@ -20,6 +20,9 @@ public protocol Screen: CustomStringConvertible {
 	/// The trait of the screen. Typically a ViewController or Header.
 	/// By default, the traits are used to await a screen.
 	var trait: Trait { get }
+
+    /// The name of the screen. Used in the step description
+    var description: String { get }
 }
 
 extension Screen {

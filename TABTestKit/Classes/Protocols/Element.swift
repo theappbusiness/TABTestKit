@@ -18,8 +18,8 @@ public protocol Element: CustomStringConvertible {
 	/// app, you don't really need to provide an ID for it.
 	var id: String? { get }
 
-    /// The name of the element. Used in the step description
-    var name: String { get }
+    /// The name of the element. Used in the step description, if not provided a value will be generated
+    var name: String? { get }
 	
 	/// The parent element. By default the parent element is the app being tested.
 	var parent: Element { get }
@@ -46,7 +46,7 @@ public protocol Element: CustomStringConvertible {
 
 public extension Element {
 
-    var name: String { return [id].compactMap { $0 }.joined(separator: " ") }
+    var name: String? { return nil }
 	
 	var parent: Element { return App.shared }
 	
@@ -65,13 +65,18 @@ public extension Element {
 
 extension Element {
     public var description: String {
+
+        if let name = name {
+            return name
+        }
+
         let indexFormatter = NumberFormatter()
         indexFormatter.numberStyle = .ordinal
         indexFormatter.locale = Locale(identifier: "en_GB")
 
         let indexString: String? = index > 0 ? indexFormatter.string(for: index) : nil
 
-        return [indexString, name, String(describing: Swift.type(of: self))]
+        return [indexString, id, String(describing: Swift.type(of: self))]
             .compactMap { $0 }
             .humanReadableString
     }

@@ -12,11 +12,13 @@ import XCTest
 public struct ActivitySheet: Element {
   
   public let id: String? = "ActivityListView"
+  public let name: String?
   public let type: XCUIElement.ElementType = .other
   public let parent: Element
   
-  public init(parent: Element = App.shared) {
+  public init(parent: Element = App.shared, name: String? = nil) {
     self.parent = parent
+    self.name = name
   }
   
   /// Returns a cancel button that can be tapped to dismiss the sheet.

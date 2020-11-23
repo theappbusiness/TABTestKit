@@ -11,12 +11,14 @@ import XCTest
 public struct Label: Element, ValueRepresentable {
 	
 	public let id: String?
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .staticText
 	public var value: String { return label } // TODO: Remove `return`s for Swift 5.1+
 	
-	public init(id: String, parent: Element = App.shared) {
+	public init(id: String, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
+        self.name = name
 		self.parent = parent
 	}
 	

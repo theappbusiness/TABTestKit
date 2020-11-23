@@ -12,6 +12,7 @@ import XCTest
 public struct Alert: Element {
 	
 	public let id: String?
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .alert
 	public var dismissButton: Button {
@@ -20,8 +21,9 @@ public struct Alert: Element {
 	
 	private let dismissButtonID: String
 	
-	public init(id: String?, parent: Element = App.shared, dismissButtonID: String = "Cancel") {
+	public init(id: String?, name: String? = nil, parent: Element = App.shared, dismissButtonID: String = "Cancel") {
 		self.id = id
+        self.name = name
 		self.parent = parent
 		self.dismissButtonID = dismissButtonID
 	}

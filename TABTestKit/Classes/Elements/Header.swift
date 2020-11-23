@@ -17,12 +17,14 @@ import XCTest
 public struct Header: Element, ValueRepresentable {
 	
 	public let id: String?
+    public let name: String?
 	public let parent: Element
 	public let type: XCUIElement.ElementType = .other // This is ignored on iOS 13+ because of silliness with XCTest, see below.
 	public var value: String { return label }
 	
-	public init(id: String?, parent: Element = App.shared) {
+	public init(id: String?, name: String? = nil, parent: Element = App.shared) {
 		self.id = id
+        self.name = name
 		self.parent = parent
 	}
 	
