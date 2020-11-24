@@ -17,6 +17,8 @@ public struct And: Step {
     public let file: StaticString
     /// The description of this step.
     public let description: String
+    /// The activity of this step.
+    public var activity: XCTActivity?
 
     public init(handler: () -> Void, description: String, line: UInt, function: StaticString, file: StaticString) {
         self.line = line
@@ -24,7 +26,8 @@ public struct And: Step {
         self.file = file
         self.description = description
         TABTestCase.currentStep = self
-        XCTContext.runActivity(named: description) { _ in
+        XCTContext.runActivity(named: description) { activity in
+            self.activity = activity
 
             TABTestCase.current?.createScreenshotIfNeeded(for: .beforeStep)
 

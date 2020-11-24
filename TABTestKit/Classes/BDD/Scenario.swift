@@ -16,12 +16,15 @@ public struct Scenario {
 	public static var current: Scenario?
 	/// The description of this scenario.
 	public let description: String
+    /// The activity of this scenario.
+    public var activity: XCTActivity?
 	
 	@discardableResult
 	public init(_ description: String, _ handler: () -> Void) {
 		self.description = description
 		Scenario.current = self
-		XCTContext.runActivity(named: description) { _ in
+        XCTContext.runActivity(named: description) { activity in
+            self.activity = activity
 			handler()
 		}
 	}

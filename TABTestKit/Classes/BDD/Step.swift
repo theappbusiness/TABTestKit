@@ -26,6 +26,8 @@ public protocol Step {
     var file: StaticString { get }
     /// The description of this step.
     var description: String { get }
+    /// The activity of this step.
+    var activity: XCTActivity? { get }
 
     init(handler: () -> Void, description: String, line: UInt, function: StaticString, file: StaticString)
 }

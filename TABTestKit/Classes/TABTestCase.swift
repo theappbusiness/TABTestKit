@@ -112,22 +112,27 @@ open class TABTestCase: XCTestCase, DefaultContexts {
         screenshotLifetime = lifetime
     }
 
-    public func createScreenshotIfNeeded(for option: ScreenshotOption ) {
+    public func createScreenshotIfNeeded(for option: ScreenshotOption, in activity: XCTActivity? = nil) {
         guard screenshotOption.contains(option) else { return }
 
         let screenshot = XCUIScreen.main.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot, quality: screenshotQuality)
         attachment.lifetime = screenshotLifetime
         add(attachment)
+        activity?.add(attachment)
     }
 	
 	override open func recordFailure(withDescription description: String, inFile filePath: String, atLine lineNumber: Int, expected: Bool) {
+
+        let currentActivity: XCTActivity? = Scenario.current?.activity ?? TABTestCase.currentStep?.activity
+
 		// When using Steps and Scenarios it can be really hard to pinpoint where failed, so this attachment saves the info with the last known step and scenario (including the line that failed), to help you.
 		// You can find this attachment in the .xcresult bundle (usually Derived Data).
 		let attachment = createFailureAttachment(description: description, filePath: filePath, lineNumber: lineNumber)
 		add(attachment)
+        currentActivity?.add(attachment)
 
-        createScreenshotIfNeeded(for: .onFailure)
+        createScreenshotIfNeeded(for: .onFailure, in: currentActivity)
         
         let filePath = TABTestCase.currentStep?.filePath ?? filePath
         let lineNumber = TABTestCase.currentStep?.lineNumber ?? lineNumber
