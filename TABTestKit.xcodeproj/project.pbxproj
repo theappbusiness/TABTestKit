@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2DEC7C4924D0822D00545C45 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEC7C4824D0822D00545C45 /* Refreshable.swift */; };
 		70D1C4DD24BDEFE70047A2EB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1C4DC24BDEFE70047A2EB /* Image.swift */; };
+		9517BECC25482C9E009284FA /* Biometrics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9517BEC425482C75009284FA /* Biometrics.framework */; };
+		9517BECD25482E8F009284FA /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D4715D2397C8C1002BEFCA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517BECF25482F91009284FA /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */; };
 		9536C80D2412A7D100D4B362 /* ActivitySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536C80C2412A7D100D4B362 /* ActivitySheet.swift */; };
 		957289A72481452C00DBC55D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957289A62481452C00DBC55D /* Icon.swift */; };
 		95AB580024E55DE200016595 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB57FF24E55DE200016595 /* DatePicker.swift */; };
@@ -75,9 +78,7 @@
 		95D472042397C8C1002BEFCA /* TABTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471BA2397C8C1002BEFCA /* TABTestCase.swift */; };
 		95D472082397C90D002BEFCA /* TABTestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D472062397C90D002BEFCA /* TABTestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95D4722E2397CBEB002BEFCA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D4722A2397CB1E002BEFCA /* XCTest.framework */; };
-		95EB8E54239E4BE5007336E8 /* Biometrics-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95EB8E55239E4BE8007336E8 /* Biometrics.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D471662397C8C1002BEFCA /* Biometrics.m */; };
-		95EB8E56239E4BFD007336E8 /* Biometrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D4715D2397C8C1002BEFCA /* Biometrics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95EB8E57239E4CC4007336E8 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A52397C8C1002BEFCA /* Step.swift */; };
 		95EB8E58239E4CC7007336E8 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D471A72397C8C1002BEFCA /* Scenario.swift */; };
 /* End PBXBuildFile section */
@@ -85,12 +86,15 @@
 /* Begin PBXFileReference section */
 		2DEC7C4824D0822D00545C45 /* Refreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		70D1C4DC24BDEFE70047A2EB /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		9517BEC425482C75009284FA /* Biometrics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Biometrics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9517BEC625482C76009284FA /* Biometrics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Biometrics.h; sourceTree = "<group>"; };
+		9517BEC725482C76009284FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9536C80C2412A7D100D4B362 /* ActivitySheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitySheet.swift; sourceTree = "<group>"; };
 		957289A62481452C00DBC55D /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		95AB57FF24E55DE200016595 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		95D471462397C1A9002BEFCA /* TABTestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TABTestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95D4715D2397C8C1002BEFCA /* Biometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Biometrics.h; sourceTree = "<group>"; };
-		95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Biometrics-Bridging-Header.h"; sourceTree = "<group>"; };
+		95D4715D2397C8C1002BEFCA /* Biometrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Biometrics.h; path = include/Biometrics.h; sourceTree = "<group>"; };
+		95D471652397C8C1002BEFCA /* Biometrics-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Biometrics-Bridging-Header.h"; path = "include/Biometrics-Bridging-Header.h"; sourceTree = "<group>"; };
 		95D471662397C8C1002BEFCA /* Biometrics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Biometrics.m; sourceTree = "<group>"; };
 		95D4716B2397C8C1002BEFCA /* SheetContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetContext.swift; sourceTree = "<group>"; };
 		95D4716C2397C8C1002BEFCA /* BiometricsContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsContext.swift; sourceTree = "<group>"; };
@@ -161,10 +165,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9517BEC125482C75009284FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95D471432397C1A9002BEFCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9517BECC25482C9E009284FA /* Biometrics.framework in Frameworks */,
 				95D4722E2397CBEB002BEFCA /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,11 +184,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9517BEC525482C76009284FA /* Biometrics */ = {
+			isa = PBXGroup;
+			children = (
+				9517BEC625482C76009284FA /* Biometrics.h */,
+				9517BEC725482C76009284FA /* Info.plist */,
+			);
+			path = Biometrics;
+			sourceTree = "<group>";
+		};
 		95D4713C2397C1A9002BEFCA = {
 			isa = PBXGroup;
 			children = (
 				95D4715B2397C8C1002BEFCA /* Classes */,
 				95D472052397C90D002BEFCA /* Supporting Files */,
+				9517BEC525482C76009284FA /* Biometrics */,
 				95D471472397C1A9002BEFCA /* Products */,
 				95D472292397CB1E002BEFCA /* Frameworks */,
 			);
@@ -186,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				95D471462397C1A9002BEFCA /* TABTestKit.framework */,
+				9517BEC425482C75009284FA /* Biometrics.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,12 +377,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9517BEBF25482C75009284FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9517BECD25482E8F009284FA /* Biometrics.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95D471412397C1A9002BEFCA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95EB8E56239E4BFD007336E8 /* Biometrics.h in Headers */,
-				95EB8E54239E4BE5007336E8 /* Biometrics-Bridging-Header.h in Headers */,
+				9517BECF25482F91009284FA /* Biometrics-Bridging-Header.h in Headers */,
 				95D472082397C90D002BEFCA /* TABTestKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +397,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9517BEC325482C75009284FA /* Biometrics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9517BECB25482C76009284FA /* Build configuration list for PBXNativeTarget "Biometrics" */;
+			buildPhases = (
+				9517BEBF25482C75009284FA /* Headers */,
+				9517BEC025482C75009284FA /* Sources */,
+				9517BEC125482C75009284FA /* Frameworks */,
+				9517BEC225482C75009284FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Biometrics;
+			productName = Biometrics;
+			productReference = 9517BEC425482C75009284FA /* Biometrics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		95D471452397C1A9002BEFCA /* TABTestKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95D4714E2397C1A9002BEFCA /* Build configuration list for PBXNativeTarget "TABTestKit" */;
@@ -394,6 +442,9 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "The App Business";
 				TargetAttributes = {
+					9517BEC325482C75009284FA = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					95D471452397C1A9002BEFCA = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -413,11 +464,19 @@
 			projectRoot = "";
 			targets = (
 				95D471452397C1A9002BEFCA /* TABTestKit */,
+				9517BEC325482C75009284FA /* Biometrics */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9517BEC225482C75009284FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95D471442397C1A9002BEFCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +487,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9517BEC025482C75009284FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95D471422397C1A9002BEFCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +573,58 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		9517BEC925482C76009284FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Biometrics/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinandcarta.Biometrics;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9517BECA25482C76009284FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Biometrics/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinandcarta.Biometrics;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		95D4714C2397C1A9002BEFCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -694,6 +812,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9517BECB25482C76009284FA /* Build configuration list for PBXNativeTarget "Biometrics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9517BEC925482C76009284FA /* Debug */,
+				9517BECA25482C76009284FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		95D471402397C1A9002BEFCA /* Build configuration list for PBXProject "TABTestKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
