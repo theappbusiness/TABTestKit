@@ -1485,6 +1485,11 @@ tap("OK", in: myScreen.alert)
 
 Given(I: tap("OK", in: myScreen.alert))
 ```
+```swift
+message(in: myScreen.alert, is: "Alert message")
+
+Then(the: message(in: myScreen.alert, is: "Alert message"))
+```
 
 #### SheetContext
 
