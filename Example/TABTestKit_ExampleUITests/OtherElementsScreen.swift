@@ -16,6 +16,7 @@ struct OtherElementsScreen: Screen {
     let scrollView = ScrollView(id: "MyScrollView") // In iOS 13, XCUI matches a hidden scroll view when the keyboard is showing :(
     let label = Label(id: "Example label")
     let button = Button(id: "Example button")
+    let alertButton = Button(id: "Alert example")
     let segmentedControl = SegmentedControl(parent: View(id: "ExampleSegmentedControl"))
     let textField = TextField(id: "ExampleTextField")
     let numberPadTextField = TextField(id: "NumberPadTextField")
@@ -38,6 +39,7 @@ struct OtherElementsScreen: Screen {
     let dateTimePicker = DatePicker(id: "ExampleDateTimePicker")
     let countdownTimerPicker = DatePicker(id: "ExampleCountDownTimerPicker")
     let shareSheet = ActivitySheet()
+    let alert = Alert(id: "Alert title", message: "Alert message", dismissButtonID: "Dismiss")
     
 }
 

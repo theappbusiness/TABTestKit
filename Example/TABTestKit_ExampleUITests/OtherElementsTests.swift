@@ -39,6 +39,19 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
             And(I: see(otherElementsScreen))
         }
         
+        Scenario("Asserting the alert message") {
+            Given(I: see(otherElementsScreen.alertButton))
+            And(I: tap(otherElementsScreen.alertButton))
+            Then(I: see(otherElementsScreen.alert))
+            And(the: message(in: otherElementsScreen.alert, is: "Alert message"))
+        }
+
+        Scenario("Dismissing the alert") {
+            Given(I: see(otherElementsScreen.alert))
+            When(I: tap(otherElementsScreen.alert.dismissButton))
+            Then(I: see(otherElementsScreen))
+        }
+        
         Scenario("Seeing and interacting with the segmented control") {
             Given(I: see(otherElementsScreen.segmentedControl))
             Then(I: tap(otherElementsScreen.segmentedControl.button(withID: "Second")))
