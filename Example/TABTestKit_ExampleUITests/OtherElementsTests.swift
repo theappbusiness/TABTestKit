@@ -12,6 +12,7 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
         resetAllPrivacyPrompts()
+        App.shared.launchEnvironment["TZ"] = "UTC"
         launch()
     }
     

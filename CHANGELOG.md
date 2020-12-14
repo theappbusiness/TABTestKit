@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## Pending
+
+- Upgraded GitHub actions:
+    - Added Xcode 12.1 as part of the job for validating SwiftPM, Carthage and Cocoapods
+    - Temporary allow Cocoapods to valid a library with warning for Xcode 12
+    - Bumped to Xcode 11.7
+    - Added `carthage.sh` to fix the issue with duplicated architecture when Carthage needs to build with Xcode 12.0
+- Fixed Carthage issue to allow `Biometics` framework to be seperated from TABTestKit as the same of SwiftPM
+- Fixed a timezone issue on TestExample when switching from Summer Time to Winter Time. We make sure that the DatePicker are now always in UTC Timezone
+
+---
+
 ## 1.7.1
 
 ### Fixed
