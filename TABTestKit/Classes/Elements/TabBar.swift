@@ -41,3 +41,12 @@ public struct TabBar: Element {
 	}
 	
 }
+
+extension TabBar {
+	
+	public var numberOfTabs: Int {
+		await(.exists, .hittable)
+		return underlyingXCUIElement.buttons.count
+	}
+	
+}
