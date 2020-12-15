@@ -1564,6 +1564,19 @@ Given(I: openSystemPreferences)  // No need for `()` in Steps
 Given(I: terminateSystemPreferences)
 ```
 
+#### TabBarContext
+
+`TabBarContext` is a predefined context that `TABTestCase` already conforms to,
+which means your test cases can already use the functions in it.
+
+`TabBatContext` provides helper functions for counting tabs in TabBar.
+
+```swift
+func numberOfTabs(in tabBar: TabBar, is count: Int)
+
+And(the: numberOfTabs(in: tabBarScreen.tabBar, is: 4))
+```
+
 ##### Resetting all privacy prompts
 
 `SystemPreferencesContext` provides a way to reset all privacy prompts in a
