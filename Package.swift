@@ -6,7 +6,7 @@ import PackageDescription
 let name = "TABTestKit"
 
 /// The platforms this package supports
-let supportedPlatforms: [SupportedPlatform] = [.iOS(.v12)]
+let supportedPlatforms: [SupportedPlatform] = [.iOS(.v13)]
 
 /// The biometrics target contains the code for interacting with biometrics in simulators, which is Objective-C
 let biometricsTarget: Target = .target(name: "Biometrics", path: "TABTestKit/Classes/Biometrics/")

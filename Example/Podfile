@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '12.4'
+platform :ios, '13.0'
 
 target 'TABTestKit_Example' do
 	
