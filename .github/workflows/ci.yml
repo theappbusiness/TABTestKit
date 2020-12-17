@@ -92,7 +92,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_${{ matrix.xcode }}.app
       - name: Build Cocoapods without allowing warnings
         if: matrix.xcode == '11.7'
-        run: pod lib lint --verbosep
+        run: pod lib lint --verbose
       - name: Build Cocoapods with allowing warning
         if: matrix.xcode == '12.2'
         run: pod lib lint --verbose --allow-warnings # Record needs to be fixed on Xcode 13 when will drop iOS 13
