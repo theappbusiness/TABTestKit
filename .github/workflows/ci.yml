@@ -69,6 +69,9 @@ jobs:
   test_xcode12_ios12_13_14:
     name: Run tests on Xcode 12 and iOS 13/14
     runs-on: macOS-latest
+    strategy:
+      matrix:
+        ios: [13.7, 14.2]
 
     steps:
       - name: Checkout
@@ -76,24 +79,25 @@ jobs:
       - name: Set Xcode version to 12.2
         run: sudo xcode-select -switch /Applications/Xcode_12.2.app
       - name: Link to 13.7 Simulators
+        if: matrix.ios == '13.7'
         run: |
               echo "Creating Runtimes folder if needed..."
               sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
               echo "Creating symlink of the iOS 13.7 runtime..."
               sudo ln -s /Applications/Xcode_11.7.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 13.7.simruntime
-      - name: Build for testing on iOS 13.7
-        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
-      - name: Test on iPhone 11 on iOS 13.7
-        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
-      - name: Build for testing for iOS 14.2
-        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2'
-      - name: Test on iPhone 11 with iOS 14.2
-        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2'
+      - name: Build for testing on iOS ${{ matrix.os }}
+        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=${{ matrix.ios }}'
+      - name: Test on iPhone 11 on iOS ${{ matrix.os }}
+        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=${{ matrix.ios }}'
+#       - name: Build for testing for iOS 14.2
+#         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2'
+#       - name: Test on iPhone 11 with iOS 14.2
+#         run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2'
       - name: Archive tests results
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
-          name: Test-TABTestKit-Xcode12.2-iOS13-14.xcresult
+          name: Test-TABTestKit-Xcode12.2-iOS-${{ matrix.ios }}.xcresult
           path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
           
   build_spm:
