@@ -135,12 +135,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build Cocoapods
-        run: pod lib lint --verbose
       - name: Set Xcode version to 11.7
         run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Cocoapods
-        run: pod lib lint --verbose --allow-warnings # Record needs to be fixed on Xcode 13 when will drop iOS 13
+        run: pod lib lint --verbose
       - name: Set Xcode version to 12.1
         run: sudo xcode-select -switch /Applications/Xcode_12.1.app
       - name: Build Cocoapods
