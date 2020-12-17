@@ -70,6 +70,7 @@ jobs:
     name: Run tests on Xcode 12 and iOS 13/14
     runs-on: macOS-latest
     strategy:
+      fail-fast: false
       matrix:
         ios: [13.7, 14.2]
 
