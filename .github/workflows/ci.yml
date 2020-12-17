@@ -67,33 +67,20 @@ jobs:
 #           name: Test-TABTestKit-Xcode12.1-iOS14.xcresult
 #           path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
   test_xcode12_ios12_13_14:
-    name: Run tests on Xcode 12 and iOS 12/13/14
+    name: Run tests on Xcode 12 and iOS 13/14
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Set Xcode version to 12.2
         run: sudo xcode-select -switch /Applications/Xcode_12.2.app
-      - name: Link to 12.4 Simulators
-        run: |
-              echo "Creating Runtimes folder if needed..."
-              sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-              echo "Creating symlink of the iOS 12.4 runtime..."
-              sudo ln -s /Applications/Xcode_10.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 12.4.simruntime
-              xcrun simctl list runtimes
-              xcrun simctl create custom-test-device "iPhone X" "com.apple.CoreSimulator.SimRuntime.iOS-12-4"
-              xcrun simctl list devices 12.4
       - name: Link to 13.7 Simulators
         run: |
               echo "Creating Runtimes folder if needed..."
               sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
               echo "Creating symlink of the iOS 13.7 runtime..."
               sudo ln -s /Applications/Xcode_11.7.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 13.7.simruntime
-      - name: Build for testing on iOS 12.4
-        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone X,OS=12.4'
-      - name: Test on iPhone 8 on iOS 12.4
-        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone X,OS=12.4'
       - name: Build for testing on iOS 13.7
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
       - name: Test on iPhone 11 on iOS 13.7
@@ -106,7 +93,7 @@ jobs:
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
-          name: Test-TABTestKit-Xcode12.1-iOS14.xcresult
+          name: Test-TABTestKit-Xcode12.2-iOS13-14.xcresult
           path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
           
   build_spm:
@@ -115,7 +102,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Set Xcode version to 11.7
         run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Swift Package Manager
@@ -131,11 +118,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Set Xcode version to 10.3
-        run: sudo xcode-select -switch /Applications/Xcode_10.3.app
-      - name: Build Carthage
-        run: carthage build --archive
+        uses: actions/checkout@v2
       - name: Set Xcode version to 11.7
         run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Carthage
@@ -151,9 +134,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Set Xcode version to 10.3
-        run: sudo xcode-select -switch /Applications/Xcode_10.3.app
+        uses: actions/checkout@v2
       - name: Build Cocoapods
         run: pod lib lint --verbose
       - name: Set Xcode version to 11.7
