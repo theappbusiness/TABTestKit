@@ -44,8 +44,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        xcode: [11.7, 12.2]
-        ios: [13.7, 14.2]
         include:
           - xcode: 11.7
             ios: 13.7
