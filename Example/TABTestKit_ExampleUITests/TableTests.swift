@@ -44,6 +44,18 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
             And(the: label(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
             And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
         }
+        
+        guard #available(iOS 14, *) else {
+            return
+        }
+        
+        Scenario("Revealing iOS 14 nav menu with long press") {
+            Given(I: tap(tableSelectionScreen.nextPage))
+            And(I: see(yellowPageScreen))
+            When(I: longPress(yellowPageScreen.backButton))
+            sleep(5)
+//            And(I: see(hiddenMenu)) TBC
+        }
     }
     
 }

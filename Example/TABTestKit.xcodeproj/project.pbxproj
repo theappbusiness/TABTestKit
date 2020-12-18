@@ -10,6 +10,8 @@
 		0C69DA1124B8A78D00E10F9E /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C69DA1024B8A78D00E10F9E /* PageController.swift */; };
 		0C69DA1324B8B7DC00E10F9E /* PageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C69DA1224B8B7DC00E10F9E /* PageTests.swift */; };
 		0C69DA1524B8B85500E10F9E /* PageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C69DA1424B8B85500E10F9E /* PageScreen.swift */; };
+		2DEAE7BA258BBC3900A0BD8E /* YellowPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAE7B9258BBC3900A0BD8E /* YellowPageScreen.swift */; };
+		2DEAE7BE258BC39700A0BD8E /* YellowPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAE7BD258BC39700A0BD8E /* YellowPageController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -56,6 +58,8 @@
 		0C69DA1424B8B85500E10F9E /* PageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScreen.swift; sourceTree = "<group>"; };
 		0E196B5358EB5F29B443CE8E /* Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD6C67461B52B92ADDBB9FD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2DEAE7B9258BBC3900A0BD8E /* YellowPageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowPageScreen.swift; sourceTree = "<group>"; };
+		2DEAE7BD258BC39700A0BD8E /* YellowPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowPageController.swift; sourceTree = "<group>"; };
 		3275E3F4BE5C5BB1077B1015 /* Pods-TABTestKit_Example-TABTestKit_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_Example-TABTestKit_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_Example-TABTestKit_ExampleUITests/Pods-TABTestKit_Example-TABTestKit_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AB14B2CDD5EE795DC5CFEBE /* Pods-TABTestKit_ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABTestKit_ExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABTestKit_ExampleUITests/Pods-TABTestKit_ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* TABTestKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TABTestKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +168,7 @@
 				C368AF2E235095CC0015803A /* CollectionViewController.swift */,
 				C3DE8E4923291A34007E583B /* OtherElementsController.swift */,
 				0C69DA1024B8A78D00E10F9E /* PageController.swift */,
+				2DEAE7BD258BC39700A0BD8E /* YellowPageController.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for TABTestKit";
@@ -209,6 +214,7 @@
 				C326D6A52327DAA7001AB082 /* TableScreen.swift */,
 				C368AF32235098E70015803A /* CollectionViewScreen.swift */,
 				C3DE8E442328F646007E583B /* TableSelectionScreen.swift */,
+				2DEAE7B9258BBC3900A0BD8E /* YellowPageScreen.swift */,
 				C3DE8E4B232920F4007E583B /* OtherElementsScreen.swift */,
 				C3DE8E5E232A7564007E583B /* TabBarScreen.swift */,
 				0C69DA1424B8B85500E10F9E /* PageScreen.swift */,
@@ -442,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C69DA1124B8A78D00E10F9E /* PageController.swift in Sources */,
+				2DEAE7BE258BC39700A0BD8E /* YellowPageController.swift in Sources */,
 				C326D660232788BA001AB082 /* BiometricLoginViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C326D6AD2327E8F7001AB082 /* TableController.swift in Sources */,
@@ -466,6 +473,7 @@
 				C326D66423278D62001AB082 /* BiometricLogin_HappyPathTests.swift in Sources */,
 				C368AF312350987D0015803A /* CollectionViewTests.swift in Sources */,
 				C326D6A82327DC15001AB082 /* BiometricLogin_PermissionDeniedTests.swift in Sources */,
+				2DEAE7BA258BBC3900A0BD8E /* YellowPageScreen.swift in Sources */,
 				C326D6AC2327E847001AB082 /* TableTests.swift in Sources */,
 				0C69DA1324B8B7DC00E10F9E /* PageTests.swift in Sources */,
 				C3DE8E452328F646007E583B /* TableSelectionScreen.swift in Sources */,
