@@ -22,13 +22,13 @@ final class TableTests: TABTestCase, SystemPreferencesContext, TabBarContext {
             Then(I: see(tableScreen))
             And(the: numberOfTabs(in: tabBarScreen.tabBar, is: 4))
         }
-        
+
         Scenario("Refreshing the table screen") {
             Given(I: see(tableScreen))
             When(I: refresh(tableScreen))
             Then(the: state(of: tableScreen.section0Header, is: .visible))
         }
-        
+
         Scenario("Tapping on a cell in the first section and seeing the detail screen") {
             And(I: see(tableScreen.section0Header))
             When(I: tap(tableScreen.table.cell(index: 0)))
@@ -44,6 +44,17 @@ final class TableTests: TABTestCase, SystemPreferencesContext, TabBarContext {
             Then(I: see(tableSelectionScreen))
             And(the: label(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
             And(the: value(of: tableSelectionScreen.navBar.header, is: "Row 14 section 1"))
+        }
+        
+        guard #available(iOS 14, *) else {
+            return
+        }
+        
+        Scenario("Selecting second option from UI context menu") {
+            Given(I: tap(tableSelectionScreen.nextPage))
+            And(I: see(yellowPageScreen))
+            When(I: tap(yellowPageScreen.contextMenuButtonTwo))
+            Then(I: see(tableScreen))
         }
     }
     
