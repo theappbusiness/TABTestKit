@@ -21,13 +21,13 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
             When(I: complete(biometricLoginScreen))
             Then(I: see(tableScreen))
         }
-        
+
         Scenario("Refreshing the table screen") {
             Given(I: see(tableScreen))
             When(I: refresh(tableScreen))
             Then(the: state(of: tableScreen.section0Header, is: .visible))
         }
-        
+
         Scenario("Tapping on a cell in the first section and seeing the detail screen") {
             And(I: see(tableScreen.section0Header))
             When(I: tap(tableScreen.table.cell(index: 0)))
@@ -49,12 +49,11 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
             return
         }
         
-        Scenario("Revealing iOS 14 nav menu with long press") {
+        Scenario("Selecting second option from UI context menu") {
             Given(I: tap(tableSelectionScreen.nextPage))
             And(I: see(yellowPageScreen))
-            When(I: longPress(yellowPageScreen.backButton))
-            sleep(5)
-//            And(I: see(hiddenMenu)) TBC
+            When(I: tap(yellowPageScreen.contextMenuButtonTwo))
+            Then(I: see(tableScreen))
         }
     }
     

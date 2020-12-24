@@ -14,6 +14,6 @@ let yellowPageScreen = YellowPageScreen()
 struct YellowPageScreen: Screen {
     
     let trait = View(id: "YellowPage")
-    let navBar = NavBar()
-    let backButton = Button(id: "Row 14 section 1")
+    let contextMenuButtonOne = Button(id: "Row 14 section 1")
+    let contextMenuButtonTwo = Button(id: "Table")
 }

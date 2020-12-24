@@ -31,7 +31,6 @@
 		27CB0A5EB157C02C3FDFCC594331324E /* ShowTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69152FFA4489AC24B45BCE5208B3B41A /* ShowTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28C2F366D4A968DBCF276D13CF9EF6CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033A36A29482FD32230FE0CA177F9BD3 /* Foundation.framework */; };
 		297A89E5D9EA42B0F082560478BD138D /* ScrollableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D132E7F63ED7978B99EF4975197150F /* ScrollableScreen.swift */; };
-		2DEAE7C4258CBC8600A0BD8E /* BackButtonMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAE7C3258CBC8600A0BD8E /* BackButtonMenu.swift */; };
 		33A0126A9943D162EDCC4DE493D8A168 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C061463250766C9C05995AB8EE63E66 /* XCTest.framework */; };
 		3C892CB7517172243FF2DA110515208C /* ShowTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F094F44DD0301CC76E1365673D3FCF9C /* ShowTime-dummy.m */; };
 		3DDA18D51471D4B5A53CA30FB7A4800E /* TABTestKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F10CDF64864F18B3EEAAE5618F2993 /* TABTestKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,7 +145,6 @@
 		28FC2FFEC625B0FA3CD74A1DA0360038 /* XCTFatalFail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = XCTFatalFail.swift; sourceTree = "<group>"; };
 		2BEC99316035011631C40BFCF3197901 /* TextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		2C061463250766C9C05995AB8EE63E66 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2DEAE7C3258CBC8600A0BD8E /* BackButtonMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonMenu.swift; sourceTree = "<group>"; };
 		2E96D37C7B544B5D3F8FABFDB3A65DFD /* TextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		2E97F8EAABEDB0295C8BBA3ADB4A81C2 /* Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TABTestKit_Example_TABTestKit_ExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		310D0511477295F4E8D3A2CECA4D953A /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -425,7 +423,6 @@
 				2BEC99316035011631C40BFCF3197901 /* TextView.swift */,
 				3343170286ADD343A663D64B81BB398B /* View.swift */,
 				B8889DDD0297F197C953F944C127449C /* WebView.swift */,
-				2DEAE7C3258CBC8600A0BD8E /* BackButtonMenu.swift */,
 			);
 			name = Elements;
 			path = TABTestKit/Classes/Elements;
@@ -845,7 +842,6 @@
 				96CF87699933D48A91FDD92BBBBD3A96 /* SystemPreferencesGeneralScreen.swift in Sources */,
 				145EF16BC9E3275A3BE2EA2E24CCC25B /* SystemPreferencesResetScreen.swift in Sources */,
 				214C5AC2BEB372773B81A89E3CA9649E /* systemPreferencesRootScreen.swift in Sources */,
-				2DEAE7C4258CBC8600A0BD8E /* BackButtonMenu.swift in Sources */,
 				B390F02F5BF0E704C2530E6B864C8DA4 /* TabBar.swift in Sources */,
 				8722F7FE01B09905CE43F5FE2F84E4AB /* Table.swift in Sources */,
 				723BE432EFB0A62753F492943A3A67B4 /* TABTestCase.swift in Sources */,
