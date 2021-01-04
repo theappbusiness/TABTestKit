@@ -10,6 +10,7 @@
 - Fixed Carthage issue to allow `Biometics` framework to be seperated from TABTestKit as the same of SwiftPM
 - Fixed a timezone issue on TestExample when switching from Summer Time to Winter Time. We make sure that the DatePicker are now always in UTC Timezone
 - Added a method to assert the alert message
+- Added assert for tab bar tab count
 
 ---
 
