@@ -14,4 +14,7 @@ public extension AlertContext {
 		alert.actionButton(withID: actionButtonID).tap()
 	}
 	
+	func message(in alert: Alert, is message: String) {
+		XCTAssertEqual(alert.message, message)
+	}
 }

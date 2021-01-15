@@ -161,18 +161,25 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtX-qz-K6y">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtX-qz-K6y">
                                                 <rect key="frame" x="20" y="56.5" width="335" height="30"/>
                                                 <state key="normal" title="Example button"/>
                                                 <connections>
                                                     <action selector="buttonTapped" destination="jT9-QJ-sAL" eventType="touchUpInside" id="hhd-Ly-GM8"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdr-1c-3so">
+                                                <rect key="frame" x="20" y="102.5" width="335" height="30"/>
+                                                <state key="normal" title="Alert button"/>
+                                                <connections>
+                                                    <action selector="buttonAlertTapped" destination="jT9-QJ-sAL" eventType="touchUpInside" id="4Gz-wK-tff"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="kY2-0d-g5B">
-                                                <rect key="frame" x="20" y="102.5" width="335" height="28"/>
+                                                <rect key="frame" x="20" y="148.5" width="335" height="31"/>
                                                 <subviews>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lbh-uE-7oV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="32"/>
                                                         <segments>
                                                             <segment title="First"/>
                                                             <segment title="Second"/>
@@ -290,8 +297,8 @@
                                                     <!--2007-01-09 09:41:00 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wph-qF-GtI">
-                                                <rect key="frame" x="20" y="1327.5" width="335" height="216"/>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wph-qF-GtI">
+                                                <rect key="frame" x="20" y="1410" width="335" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="216" id="nBS-T0-mn3"/>
                                                 </constraints>
@@ -415,7 +422,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-6q-tVm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-6q-tVm">
                                 <rect key="frame" x="166.5" y="605" width="42" height="30"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
