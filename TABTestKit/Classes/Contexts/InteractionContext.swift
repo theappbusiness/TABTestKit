@@ -39,6 +39,12 @@ public extension InteractionContext {
             element.type(text)
         }
 	}
+
+    func clear<E: Element & Editable & ValueRepresentable & CustomStringConvertible>(_ element: E) -> StepAction {
+        return StepAction(description: "clear the \(element.description)") {
+            element.delete(numberOfCharacters: element.value?.count ?? 0)
+        }
+    }
 	
 	func delete(_ numberOfCharacters: Int, charactersFrom element: Editable & CustomStringConvertible) -> StepAction {
         return StepAction(description: "delete \(numberOfCharacters)  characters from the \(element.description)") {
