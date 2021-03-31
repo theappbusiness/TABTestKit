@@ -32,3 +32,12 @@ public extension Element where Self: Editable {
 	}
 	
 }
+
+public extension Element where Self: Editable & Tappable {
+
+    func clear() {
+        await(.exists, .hittable)
+        underlyingXCUIElement.doubleTap()
+        underlyingXCUIElement.typeText(String(XCUIKeyboardKey.delete.rawValue))
+    }
+}

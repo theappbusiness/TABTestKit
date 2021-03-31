@@ -40,9 +40,9 @@ public extension InteractionContext {
         }
 	}
 
-    func clear<E: Element & Editable & ValueRepresentable & CustomStringConvertible>(_ element: E) -> StepAction {
+    func clear<E: Element & Tappable & Editable & CustomStringConvertible>(_ element: E) -> StepAction {
         return StepAction(description: "clear the \(element.description)") {
-            element.delete(numberOfCharacters: element.value?.count ?? 0)
+            element.clear()
         }
     }
 	
