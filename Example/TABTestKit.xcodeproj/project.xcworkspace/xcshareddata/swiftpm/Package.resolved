@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TABTestKit",
+        "repositoryURL": "https://github.com/theappbusiness/TABTestKit",
+        "state": {
+          "branch": "develop",
+          "revision": "77bdc69ba0c5f6cc1bed9c1b94eb3db23b6aa6b1",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

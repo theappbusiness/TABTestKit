@@ -7,6 +7,7 @@
 //
 
 import TABTestKit
+import Biometrics
 
 let biometricLoginScreen = BiometricLoginScreen()
 

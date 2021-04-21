@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kin + Carta. All rights reserved.
 //
 
+import Foundation
 import TABTestKit
 
 final class DeepLinkingTests: TABTestCase {
