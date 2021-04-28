@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.4'
   s.swift_version    = '5.0'
   s.source_files = 'TABTestKit/Classes/**/*'
-  s.frameworks = 'XCTest'
+  s.weak_framework = "XCTest"
 
   s.subspec 'Biometrics' do |b|
     b.source_files = 'TABTestKit/Classes/Biometrics/**/*'
@@ -24,5 +24,11 @@ Pod::Spec.new do |s|
     b.source_files = 'TABTestKit/Classes/BDD/**/*'
   end
 
-  s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
+  s.pod_target_xcconfig = { 
+    'DEFINES_MODULE' => 'YES',
+    'ENABLE_BITCODE' => 'NO',
+    'ENABLE_TESTING_SEARCH_PATHS' => 'YES',
+    'OTHER_LDFLAGS' => '$(inherited) -weak-lXCTestSwiftSupport',
+    'OTHER_SWIFT_FLAGS' => '$(inherited) -suppress-warnings',
+  }
 end
