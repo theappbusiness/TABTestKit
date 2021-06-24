@@ -21,22 +21,38 @@ public protocol Tappable {
 public extension Element where Self: Tappable {
 
 	func tap() {
-		await(.exists)
+    #if swift(>=5.5)
+		  waitFor(.exists)
+    #else
+      await(.exists)
+    #endif
 		underlyingXCUIElement.tap()
 	}
 
 	func doubleTap() {
-		await(.exists)
+    #if swift(>=5.5)
+      waitFor(.exists)
+    #else
+      await(.exists)
+    #endif
 		underlyingXCUIElement.doubleTap()
 	}
 
 	func twoFingerTap() {
-		await(.exists)
+    #if swift(>=5.5)
+      waitFor(.exists)
+    #else
+      await(.exists)
+    #endif
 		underlyingXCUIElement.twoFingerTap()
 	}
 
 	func longPress(duration: TimeInterval) {
-		await(.exists)
+    #if swift(>=5.5)
+      waitFor(.exists)
+    #else
+      await(.exists)
+    #endif
 		underlyingXCUIElement.press(forDuration: duration)
 	}
 	

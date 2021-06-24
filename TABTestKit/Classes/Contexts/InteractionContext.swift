@@ -35,11 +35,19 @@ public extension InteractionContext {
 	}
 	
 	func state(of element: Element, is states: ElementAttributes.State...) {
-		states.forEach { element.await($0) }
+    #if swift(>=5.5)
+      states.forEach { element.waitFor($0) }
+    #else
+		  states.forEach { element.await($0) }
+    #endif
 	}
 	
 	func state(of element: Element, isNot states: ElementAttributes.State...) {
-		states.forEach { element.await(not: $0) }
+    #if swift(>=5.5)
+      states.forEach { element.waitFor(not: $0) }
+    #else
+		  states.forEach { element.await(not: $0) }
+    #endif
 	}
 	
 	func scroll(_ element: Scrollable, _ direction: ElementAttributes.Direction, until otherElement: Element, is states: ElementAttributes.State..., maxTries: Int = 10) {

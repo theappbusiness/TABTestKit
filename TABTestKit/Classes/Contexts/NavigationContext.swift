@@ -28,14 +28,22 @@ public extension NavigationContext {
 	///
 	/// - Parameter element: The element to await.
 	func see(_ element: Element) {
-        element.await(.exists, .visible)
+        #if swift(>=5.5)
+          element.waitFor(.exists, .visible)
+        #else
+          element.await(.exists, .visible)
+        #endif
 	}
 	
 	/// Asserts that an element does not exist, by waiting for it to not exist.
 	///
 	/// - Parameter element: The element to await.
 	func doNotSee(_ element: Element) {
-		element.await(not: .exists)
+    #if swift(>=5.5)
+      element.waitFor(not: .exists)
+    #else
+		  element.await(not: .exists)
+    #endif
 	}
 	
 	/// Completes one or more things that knows how to complete itself.
