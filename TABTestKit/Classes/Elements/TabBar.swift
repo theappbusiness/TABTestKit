@@ -45,7 +45,11 @@ public struct TabBar: Element {
 extension TabBar {
 	
 	public var numberOfTabs: Int {
-		await(.exists, .hittable)
+    #if swift(>=5.5)
+		  waitFor(.exists, .hittable)
+    #else
+      await(.exists, .hittable)
+    #endif
 		return underlyingXCUIElement.buttons.count
 	}
 	
