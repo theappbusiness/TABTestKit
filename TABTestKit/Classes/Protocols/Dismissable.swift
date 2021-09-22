@@ -14,15 +14,15 @@ import Foundation
 /// This works particularly well with NavigationContext.
 public protocol Dismissable {
 	
-	func await()
+	func wait()
 	func dismiss()
 	
 }
 
 public extension Element where Self: Dismissable {
 	
-	func await() {
-		await(.exists, .hittable)
+	func wait() {
+		wait(.exists, .hittable)
 	}
 	
 }

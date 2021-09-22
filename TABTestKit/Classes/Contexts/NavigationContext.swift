@@ -15,7 +15,7 @@ public extension NavigationContext {
 	/// - Parameter screen: The screen to await.
 	func see<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
         return StepAction(description: "see the \(screen.description)") {
-            screen.trait.await(.exists, .visible)
+            screen.trait.wait(.exists, .visible)
         }
 	}
 	
@@ -24,7 +24,7 @@ public extension NavigationContext {
 	/// - Parameter screen: The screen to await.
 	func doNotSee<ScreenType: Screen>(_ screen: ScreenType) -> StepAction {
         return StepAction(description: "do not see the \(screen.description)") {
-            screen.trait.await(not: .exists)
+            screen.trait.wait(not: .exists)
         }
 	}
 	
@@ -33,7 +33,7 @@ public extension NavigationContext {
 	/// - Parameter element: The element to await.
 	func see(_ element: Element) -> StepAction {
         return StepAction(description: "see the \(element.description)") {
-            element.await(.exists, .visible)
+            element.wait(.exists, .visible)
         }
 	}
 	
@@ -42,7 +42,7 @@ public extension NavigationContext {
 	/// - Parameter element: The element to await.
 	func doNotSee(_ element: Element) -> StepAction {
         return StepAction(description: "do not see the \(element.description)") {
-            element.await(not: .exists)
+            element.wait(not: .exists)
         }
 	}
 	
@@ -59,7 +59,7 @@ public extension NavigationContext {
 
         return StepAction(description: "complete the \(completableDescription)") {
             completableThings.forEach {
-                $0.await()
+                $0.wait()
                 $0.complete()
             }
         }
@@ -78,7 +78,7 @@ public extension NavigationContext {
 
         return StepAction(description: "dismiss the \(dismissableDescription)") {
             dismissableThings.forEach {
-                $0.await()
+                $0.wait()
                 $0.dismiss()
             }
         }

@@ -83,26 +83,26 @@ public extension Element {
 	/// Awaits for the provided states to be true with a max timeout.
 	/// Unlike the standard `determine` function which returns the state after a max duration, this function will fail the test if any of the states do not become true before the timeout.
 	///
-	/// You can provide multiple states, like `await(.exists, .hittable)`
+	/// You can provide multiple states, like `wait(.exists, .hittable)`
 	///
 	/// - Parameter states: The states to wait for.
 	/// - Parameter timeout: The timeout. Defaults to 30 seconds.
-	func await(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) {
+	func wait(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) {
 		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
 		states.forEach { state in
 			XCTAssertTrue(determine(state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
 		}
 	}
 	
-	/// Converse to the `await(_ states...` function, this waits for the element to _not_ be in the states
+	/// Converse to the `wait(_ states...` function, this waits for the element to _not_ be in the states
 	/// provided.
 	/// For example, you could use this to wait for an element that you're expecting to become not hittable:
-	/// `await(not: .hittable)`
+	/// `wait(not: .hittable)`
 	///
 	/// - Parameters:
 	///   - states: The states to wait for the element to _not_ be in.
 	///   - timeout: The timout. Defaults to 30 seconds.
-	func await(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
+	func wait(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
 		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
 		states.forEach { state in
 			XCTAssertTrue(determine(not: state, timeout: timeout), "Failed awaiting element to not be \(state) with timeout \(timeout)")
@@ -113,7 +113,7 @@ public extension Element {
 	/// If the element becomes (or already is) in the correct state this function will exit early,
 	/// otherwise it will keep trying until the timeout and eventually return `false`.
 	///
-	/// You can provide multiple states, like `await(.exists, .hittable)`
+	/// You can provide multiple states, like `wait(.exists, .hittable)`
 	///
 	/// - Parameters:
 	///   - states: The states to determine the element is in.

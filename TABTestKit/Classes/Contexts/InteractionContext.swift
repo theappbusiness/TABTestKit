@@ -59,7 +59,7 @@ public extension InteractionContext {
             .joined(separator: " and ")
 
         return StepAction(description: "state of the \(element) \(stateDescription)") {
-            states.forEach { element.await($0) }
+            states.forEach { element.wait($0) }
         }
 	}
 	
@@ -70,7 +70,7 @@ public extension InteractionContext {
             .joined(separator: " or ")
 
         return StepAction(description: "state of the \(element) \(stateDescription)") {
-            states.forEach { element.await(not: $0) }
+            states.forEach { element.wait(not: $0) }
         }
 	}
 	

@@ -34,7 +34,7 @@ extension Screen {
 
 public extension Screen {
 	
-	func await() {
-		trait.await(.exists, .hittable, .visible)
+	func wait() {
+		trait.wait(.exists, .hittable, .visible)
 	}
 }

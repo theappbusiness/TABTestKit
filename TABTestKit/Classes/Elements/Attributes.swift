@@ -29,7 +29,7 @@ public enum ElementAttributes {
 		case selected
 		case enabled
 		case hasKeyboardFocus
-		
+    
 	}
 
 	/// Represents a direction.
