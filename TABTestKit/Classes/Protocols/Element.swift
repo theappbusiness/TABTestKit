@@ -88,7 +88,7 @@ public extension Element {
   func await(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
     guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
     states.forEach { state in
-      XCTAssertTrue(determine(state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
+      XCTAssertTrue(determine(not: state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
     }
   }
 
