@@ -54,8 +54,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version to 12.5.1
-        run: sudo xcode-select -switch /Applications/Xcode_12.5.1.app
+      - name: Set Xcode version to 12.5
+        run: sudo xcode-select -switch /Applications/Xcode_12.5.app
       - name: Build for testing
         run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
       - name: Test on iPhone 12
@@ -64,7 +64,7 @@ jobs:
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
         with:
-          name: Test-TABTestKit-Xcode12.5.1-iOS14.xcresult
+          name: Test-TABTestKit-Xcode12-iOS14.xcresult
           path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
           
   build_spm:
@@ -78,8 +78,8 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Swift Package Manager
         run: xcodebuild -workspace package.xcworkspace -scheme TABTestKit -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
-      - name: Set Xcode version to 12.5.1
-        run: sudo xcode-select -switch /Applications/Xcode_12.5.1.app
+      - name: Set Xcode version to 12.5
+        run: sudo xcode-select -switch /Applications/Xcode_12.5.app
       - name: Build Swift Package Manager
         run: xcodebuild -workspace package.xcworkspace -scheme TABTestKit -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
 
