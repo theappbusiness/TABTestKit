@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## Pending
+## 1.8.0
 
+- Obsoleted the `await` function in Swift 5.5 and added a `waitFor` function because using `await` in Swift 5.5 will lead to ambiguity errors with the `await` keyword. No code changes are required for clients, unless they're on Swift 5.5 and are calling the `await` function in their code. In that case, they will need to update it to `waitFor`.
 - Upgraded GitHub actions:
     - Added Xcode 12.1 as part of the job for validating SwiftPM, Carthage and Cocoapods
     - Temporary allow Cocoapods to valid a library with warning for Xcode 12
