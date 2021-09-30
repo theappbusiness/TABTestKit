@@ -383,7 +383,7 @@ struct ProfileScreen: Screen {
 
 A `Screen` has one required property for you to implement, which is its `trait`. A
 `trait` can be any [Element](#elements) that consistently, and uniquely,
-identifies the screen, and is used to `await` for it to appear on-screen during tests when using [contexts](#contexts).
+identifies the screen, and is used to `await`/`waitFor` for it to appear on-screen during tests when using [contexts](#contexts).
 
 #### Elements
 
@@ -411,8 +411,16 @@ struct ProfileScreen: Screen {
 Once you've created your screen, you can use it in tests to interact with the elements:
 
 ```swift
+// If using Swift 5.4 or below
 let profileScreen = ProfileScreen()
 profileScreen.await() // Makes sure the screen is visible before going any further by waiting for its trait
+profileScreen.logOutButton.tap() // You can't call tap on an element that isn't `Tappable`, but `Button` is!
+```
+
+```swift
+// If using Swift 5.5
+let profileScreen = ProfileScreen()
+profileScreen.waitFor() // Makes sure the screen is visible before going any further by waiting for its trait
 profileScreen.logOutButton.tap() // You can't call tap on an element that isn't `Tappable`, but `Button` is!
 ```
 
@@ -822,7 +830,13 @@ you can use anywhere in your tests called `keyboard`.
 This is useful for a number of things, like checking if the keyboard is visible:
 
 ```swift
+// If using Swift 5.4 or below
 keyboard.await(.visible)
+```
+
+```swift
+// If using Swift 5.5
+keyboard.waitFor(.visible)
 ```
 
 Checking if the current softare keyboard is the expected type:
@@ -1047,10 +1061,16 @@ You can, however, assert the states of the buttons, like checking if the buttons
 enabled:
 
 ```swift
+// If using Swift 5.4 or below
 stepper.decrementButton.await(not: .enabled, timeout: 1) // Waits a max of 1 second for the button to be disabled
 ```
 
-You can learn more about `await(not:)` and other `Element` methods in the
+```swift
+// If using Swift 5.5
+stepper.decrementButton.waitFor(not: .enabled, timeout: 1) // Waits a max of 1 second for the button to be disabled
+```
+
+You can learn more about `await(not:)`/`waitFor(not:)` and other `Element` methods in the
 documentation for [`Element`](#element).
 
 #### SegmentedControl
@@ -1724,8 +1744,15 @@ that anything conforming to `Element` will have access to.
 You can wait for the element to be (or not be) in a particular state:
 
 ```swift
+// If using Swift 5.4 or below
 button.await(.visible, .enabled, timeout: 10) // You can provide more than one state to wait for :)
 button.await(not: .enabled, timeout: 10)
+```
+
+```swift
+// If using Swift 5.5
+button.waitFor(.visible, .enabled, timeout: 10) // You can provide more than one state to wait for :)
+button.waitFor(not: .enabled, timeout: 10)
 ```
 
 If the element doesn't become the expected state within the timeout, the test will fail.

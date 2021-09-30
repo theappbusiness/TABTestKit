@@ -22,7 +22,11 @@ public protocol Dismissable {
 public extension Element where Self: Dismissable {
 	
 	func await() {
-		await(.exists, .hittable)
+    #if swift(>=5.5)
+      waitFor(.exists, .hittable)
+    #else
+		  await(.exists, .hittable)
+    #endif
 	}
 	
 }
