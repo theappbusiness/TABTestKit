@@ -26,7 +26,11 @@ public protocol Screen {
 public extension Screen {
 	
 	func await() {
-		trait.await(.exists, .hittable, .visible)
+    #if swift(>=5.5)
+      trait.waitFor(.exists, .hittable, .visible)
+    #else
+		  trait.await(.exists, .hittable, .visible)
+    #endif
 	}
 	
 }

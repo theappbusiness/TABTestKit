@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## 1.8.0
+
+- Obsoleted the `await` function in Swift 5.5 and added a `waitFor` function because using `await` in Swift 5.5 will lead to ambiguity errors with the `await` keyword. No code changes are required for clients, unless they're on Swift 5.5 and are calling the `await` function in their code. In that case, they will need to update it to `waitFor`.
+- Upgraded GitHub actions:
+    - Added Xcode 12.1 as part of the job for validating SwiftPM, Carthage and Cocoapods
+    - Temporary allow Cocoapods to valid a library with warning for Xcode 12
+    - Bumped to Xcode 11.7
+    - Added `carthage.sh` to fix the issue with duplicated architecture when Carthage needs to build with Xcode 12.0
+- Fixed Carthage issue to allow `Biometics` framework to be seperated from TABTestKit as the same of SwiftPM
+- Fixed a timezone issue on TestExample when switching from Summer Time to Winter Time. We make sure that the DatePicker are now always in UTC Timezone
+- Added a method to assert the alert message
+- Added assert for tab bar tab count
+
+---
+
 ## 1.7.1
 
 ### Fixed

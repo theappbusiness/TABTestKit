@@ -12,6 +12,7 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
     
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
         resetAllPrivacyPrompts()
+        App.shared.launchEnvironment["TZ"] = "UTC"
         launch()
     }
     
@@ -37,6 +38,19 @@ final class OtherElementsTests: TABTestCase, SystemPreferencesContext {
             When(I: dismiss(otherElementsScreen.shareSheet))
             Then(I: doNotSee(otherElementsScreen.shareSheet))
             And(I: see(otherElementsScreen))
+        }
+        
+        Scenario("Asserting the alert message") {
+            Given(I: see(otherElementsScreen.alertButton))
+            And(I: tap(otherElementsScreen.alertButton))
+            Then(I: see(otherElementsScreen.alert))
+            And(the: message(in: otherElementsScreen.alert, is: "Alert message"))
+        }
+
+        Scenario("Dismissing the alert") {
+            Given(I: see(otherElementsScreen.alert))
+            When(I: tap(otherElementsScreen.alert.dismissButton))
+            Then(I: see(otherElementsScreen))
         }
         
         Scenario("Seeing and interacting with the segmented control") {

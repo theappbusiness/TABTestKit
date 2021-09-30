@@ -34,7 +34,11 @@ public struct Keyboard: Element {
 	/// The current keyboard type.
 	/// Attempting to access this before the keyboard is visible will fail the test.
 	public var keyboardType: KeyboardType {
-		await(.exists, .visible)
+    #if swift(>=5.5)
+      waitFor(.exists, .visible)
+    #else
+		  await(.exists, .visible)
+    #endif
 		guard let type = KeyboardType.allCases.first(where: expectedKeysExist) else { XCTFatalFail("Unable to determine keyboard type") }
 		return type
 	}

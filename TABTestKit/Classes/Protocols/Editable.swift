@@ -21,12 +21,20 @@ public protocol Editable  {
 public extension Element where Self: Editable {
 	
 	func type(_ text: String) {
-		await(.exists, .hittable)
+    #if swift(>=5.5)
+      waitFor(.exists, .hittable)
+    #else
+		  await(.exists, .hittable)
+    #endif
 		underlyingXCUIElement.typeText(text)
 	}
 	
 	func delete(numberOfCharacters: Int) {
-		await(.exists, .hittable)
+    #if swift(>=5.5)
+      waitFor(.exists, .hittable)
+    #else
+		  await(.exists, .hittable)
+    #endif
 		let deletionCharacters = String(repeating: XCUIKeyboardKey.delete.rawValue, count: numberOfCharacters)
 		underlyingXCUIElement.typeText(deletionCharacters)
 	}

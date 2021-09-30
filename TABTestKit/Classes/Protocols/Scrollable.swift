@@ -21,7 +21,11 @@ public protocol Scrollable {
 public extension Element where Self: Scrollable {
 	
 	func scroll(_ direction: ElementAttributes.Direction) {
-		await(.exists, .hittable)
+    #if swift(>=5.5)
+      waitFor(.exists, .hittable)
+    #else
+      await(.exists, .hittable)
+    #endif
 		switch direction {
 		case .upwards:
 			scroll(from: .topThird, to: .middle)

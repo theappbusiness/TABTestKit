@@ -73,6 +73,17 @@ final class OtherElementsController: UIViewController {
     present(sheet, animated: true)
   }
   
+    @IBAction func buttonAlertTapped() {
+        let alertController = UIAlertController(title: "Alert title", message: "Alert Message", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: { _ in
+            alertController.dismiss(animated: true)
+        })
+        
+        alertController.addAction(dismissAction)
+        
+        present(alertController, animated: true)
+    }
 }
 
 extension OtherElementsController: UITextFieldDelegate {

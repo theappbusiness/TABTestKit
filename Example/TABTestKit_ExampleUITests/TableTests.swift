@@ -8,7 +8,7 @@
 
 import TABTestKit
 
-final class TableTests: TABTestCase, SystemPreferencesContext {
+final class TableTests: TABTestCase, SystemPreferencesContext, TabBarContext {
     
     override func preLaunchSetup(_ launch: @escaping () -> Void) {
         resetAllPrivacyPrompts()
@@ -20,6 +20,7 @@ final class TableTests: TABTestCase, SystemPreferencesContext {
             Given(I: see(biometricLoginScreen))
             When(I: complete(biometricLoginScreen))
             Then(I: see(tableScreen))
+            And(the: numberOfTabs(in: tabBarScreen.tabBar, is: 4))
         }
         
         Scenario("Refreshing the table screen") {
