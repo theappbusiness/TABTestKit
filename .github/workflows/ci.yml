@@ -9,7 +9,7 @@ on:
 jobs:
   test_xcode10_ios12:
     name: Run tests on Xcode 10 and iOS 12
-    runs-on: macOS-latest
+    runs-on: macos-10.15
 
     steps:
       - name: Checkout
@@ -34,12 +34,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set Xcode version to 11.6
-        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
+      - name: Set Xcode version to 11.7
+        run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build for testing
-        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
+        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
       - name: Test on iPhone 11
-        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
+        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
       - name: Archive tests results
         if: ${{ failure() }}
         uses: actions/upload-artifact@v2
@@ -47,6 +47,26 @@ jobs:
           name: Test-TABTestKit-Xcode11-iOS13.xcresult
           path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
 
+  test_xcode12_ios14:
+    name: Run tests on Xcode 12 and iOS 14
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Set Xcode version to 12.5
+        run: sudo xcode-select -switch /Applications/Xcode_12.5.app
+      - name: Build for testing
+        run: xcodebuild build-for-testing -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
+      - name: Test on iPhone 12
+        run: xcodebuild test-without-building -workspace Example/TABTestKit.xcworkspace -scheme TABTestKit-Example -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
+      - name: Archive tests results
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test-TABTestKit-Xcode12-iOS14.xcresult
+          path: /Users/runner/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult
+          
   build_spm:
     name: Ensure Swift Package Manager builds
     runs-on: macOS-latest
@@ -54,14 +74,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Set Xcode version to 11.6
-        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
+      - name: Set Xcode version to 11.7
+        run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Swift Package Manager
-        run: xcodebuild -workspace package.xcworkspace -scheme TABTestKit -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.6'
+        run: xcodebuild -workspace package.xcworkspace -scheme TABTestKit -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7'
+      - name: Set Xcode version to 12.5
+        run: sudo xcode-select -switch /Applications/Xcode_12.5.app
+      - name: Build Swift Package Manager
+        run: xcodebuild -workspace package.xcworkspace -scheme TABTestKit -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5'
 
   build_carthage:
     name: Ensure Carthage builds
-    runs-on: macOS-latest
+    runs-on: macos-10.15
 
     steps:
       - name: Checkout
@@ -70,14 +94,18 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_10.3.app
       - name: Build Carthage
         run: carthage build --archive
-      - name: Set Xcode version to 11.6
-        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
+      - name: Set Xcode version to 11.7
+        run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Carthage
         run: carthage build --archive
+      - name: Set Xcode version to 12.1
+        run: sudo xcode-select -switch /Applications/Xcode_12.1.app
+      - name: Build Carthage
+        run: ./carthage.sh build --archive
 
   build_cocoapods:
     name: Ensure Cocoapods builds
-    runs-on: macOS-latest
+    runs-on: macos-10.15
 
     steps:
       - name: Checkout
@@ -86,7 +114,11 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_10.3.app
       - name: Build Cocoapods
         run: pod lib lint --verbose
-      - name: Set Xcode version to 11.6
-        run: sudo xcode-select -switch /Applications/Xcode_11.6.app
+      - name: Set Xcode version to 11.7
+        run: sudo xcode-select -switch /Applications/Xcode_11.7.app
       - name: Build Cocoapods
         run: pod lib lint --verbose
+      - name: Set Xcode version to 12.1
+        run: sudo xcode-select -switch /Applications/Xcode_12.1.app
+      - name: Build Cocoapods
+        run: pod lib lint --verbose --allow-warnings

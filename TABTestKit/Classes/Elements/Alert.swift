@@ -13,6 +13,7 @@ public struct Alert: Element {
 	
 	public let id: String?
 	public let parent: Element
+	public let message: String?
 	public let type: XCUIElement.ElementType = .alert
 	public var dismissButton: Button {
 		return Button(id: dismissButtonID, parent: self)
@@ -20,8 +21,9 @@ public struct Alert: Element {
 	
 	private let dismissButtonID: String
 	
-	public init(id: String?, parent: Element = App.shared, dismissButtonID: String = "Cancel") {
+	public init(id: String?, message: String? = nil, parent: Element = App.shared, dismissButtonID: String = "Cancel") {
 		self.id = id
+		self.message = message
 		self.parent = parent
 		self.dismissButtonID = dismissButtonID
 	}

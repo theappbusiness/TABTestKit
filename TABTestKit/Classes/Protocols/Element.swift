@@ -68,27 +68,60 @@ public extension Element {
 	///
 	/// - Parameter states: The states to wait for.
 	/// - Parameter timeout: The timeout. Defaults to 30 seconds.
+  @available(swift, introduced: 5.0, obsoleted: 5.5, renamed: "waitFor", message: "This method has been obsoleted to avoid conflicts with the new await concurrency keyword")
 	func await(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) {
-		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
-		states.forEach { state in
-			XCTAssertTrue(determine(state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
-		}
+    guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
+    states.forEach { state in
+      XCTAssertTrue(determine(state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
+    }
 	}
-	
-	/// Converse to the `await(_ states...` function, this waits for the element to _not_ be in the states
-	/// provided.
-	/// For example, you could use this to wait for an element that you're expecting to become not hittable:
-	/// `await(not: .hittable)`
-	///
-	/// - Parameters:
-	///   - states: The states to wait for the element to _not_ be in.
-	///   - timeout: The timout. Defaults to 30 seconds.
-	func await(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
-		guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
-		states.forEach { state in
-			XCTAssertTrue(determine(not: state, timeout: timeout), "Failed awaiting element to not be \(state) with timeout \(timeout)")
-		}
-	}
+
+  /// Converse to the `await(_ states...` function, this waits for the element to _not_ be in the states
+  /// provided.
+  /// For example, you could use this to wait for an element that you're expecting to become not hittable:
+  /// `await(not: .hittable)`
+  ///
+  /// - Parameters:
+  ///   - states: The states to wait for the element to _not_ be in.
+  ///   - timeout: The timout. Defaults to 30 seconds.
+  @available(swift, introduced: 5.0, obsoleted: 5.5, renamed: "waitFor", message: "This method has been obsoleted to avoid conflicts with the new await concurrency keyword")
+  func await(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
+    guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
+    states.forEach { state in
+      XCTAssertTrue(determine(not: state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
+    }
+  }
+
+  /// Waits for the provided states to be true with a max timeout.
+  /// Unlike the standard `determine` function which returns the state after a max duration, this function will fail the test if any of the states do not become true before the timeout.
+  ///
+  /// You can provide multiple states, like `waitFor(.exists, .hittable)`
+  ///
+  /// - Parameter states: The states to wait for.
+  /// - Parameter timeout: The timeout. Defaults to 30 seconds.
+  @available(swift, introduced: 5.5)
+  func waitFor(_ states: ElementAttributes.State..., timeout: TimeInterval = 30) {
+    guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
+    states.forEach { state in
+      XCTAssertTrue(determine(state, timeout: timeout), "Failed awaiting element to be \(state) with timeout \(timeout)")
+    }
+  }
+
+  /// Converse to the `waitFor(_ states...` function, this waits for the element to _not_ be in the states
+  /// provided.
+  /// For example, you could use this to wait for an element that you're expecting to become not hittable:
+  /// `waitFor(not: .hittable)`
+  ///
+  /// - Parameters:
+  ///   - states: The states to wait for the element to _not_ be in.
+  ///   - timeout: The timout. Defaults to 30 seconds.
+  @available(swift, introduced: 5.5)
+  func waitFor(not states: ElementAttributes.State..., timeout: TimeInterval = 30) {
+    guard !states.isEmpty else { XCTFatalFail("You must provide at least one state!") }
+    states.forEach { state in
+      XCTAssertTrue(determine(not: state, timeout: timeout), "Failed awaiting element to not be \(state) with timeout \(timeout)")
+    }
+  }
 	
 	/// Determines the sates for an element, within a  a maximum duration.
 	/// If the element becomes (or already is) in the correct state this function will exit early,
