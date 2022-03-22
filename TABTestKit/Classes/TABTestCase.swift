@@ -68,9 +68,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 		continueAfterFailure = false
 		Biometrics.unenrolled()
 		App.shared.launchEnvironment["TABTestKit.UUID"] = ProcessInfo.processInfo.environment["SIMULATOR_UDID"]
-		preLaunchSetup {
-			App.shared.launch(clean: true)
-		}
+		preLaunchSetup()
 	}
 	
 	/// Provides the tear down for the application and each XCTestCase.
@@ -89,11 +87,7 @@ open class TABTestCase: XCTestCase, DefaultContexts {
 	/// For example you could use this to reset a mock server's state or collected analytics.
 	/// By default this function does nothing except call the launch handler, so calling the super implementation
 	/// is not required, so long as you call the launch handler in your own implementation.
-	///
-	/// - Parameter launch: The handler to call when your prelaunch setup is complete to launch the app.
-	open func preLaunchSetup(_ launch: @escaping () -> Void) {
-		launch()
-	}
+	open func preLaunchSetup() { }
 	
 	/// Called automatically as part of tearDown to allow you to provide your own preTermination tear down.
 	/// For example you could use this to unregister a custom UUID on a mock server.

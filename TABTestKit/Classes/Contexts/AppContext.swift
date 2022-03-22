@@ -29,7 +29,7 @@ public extension AppContext {
         }
 	}
 	
-	func launchTheApp(clean: Bool) -> StepAction {
+	func launchTheApp(clean: Bool = true) -> StepAction {
         return StepAction(description: "launch the app") {
             App.shared.launch(clean: clean)
         }
@@ -46,12 +46,6 @@ public extension AppContext {
             self.backgroundTheApp().execute()
             self.terminateTheApp().execute()
             self.launchTheApp(clean: false).execute()
-        }
-	}
-	
-	func goBackToTABTestKitExampleApp() -> StepAction {
-        return StepAction(description: "go back to the TABTestKit Example app") {
-            XCTAssertEqual(App.shared.name, "TABTestKit_Example")
         }
 	}
 	
