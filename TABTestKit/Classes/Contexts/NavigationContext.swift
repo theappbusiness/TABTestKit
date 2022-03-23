@@ -7,9 +7,8 @@
 
 import XCTest
 
-public protocol NavigationContext {}
-public extension NavigationContext {
-	
+public extension TABTestCase {
+
 	/// Asserts that a screen can be seen, by awaiting on its trait.
 	///
 	/// - Parameter screen: The screen to await.

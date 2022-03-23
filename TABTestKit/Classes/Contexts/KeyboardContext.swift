@@ -8,14 +8,12 @@
 import XCTest
 
 /// KeyboardContext contains functions for interacting and verifying the keyboard on-screen.
-public protocol KeyboardContext {}
-public extension KeyboardContext {
-	
+public extension TABTestCase {
+
 	func keyboardType(is type: Keyboard.KeyboardType) -> StepAction {
 		let actual = keyboard.keyboardType
         return StepAction(description: "keyboard is \(type.description)") {
             XCTAssertEqual(type, actual, "Actual keyboard type (\(actual)) does not match expected keyboard type (\(type))")
         }
 	}
-	
 }

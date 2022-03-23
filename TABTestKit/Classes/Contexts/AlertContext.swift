@@ -7,8 +7,7 @@
 
 import XCTest
 
-public protocol AlertContext {}
-public extension AlertContext {
+public extension TABTestCase {
 	
 	func tap(_ actionButtonID: String, in alert: Alert) -> StepAction {
         return StepAction(description: "tap on the \(actionButtonID) button in the alert") {

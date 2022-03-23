@@ -8,8 +8,7 @@
 import Foundation
 import XCTest
 
-public protocol AppContext {}
-public extension AppContext {
+public extension TABTestCase {
 	
 	func backgroundTheApp() -> StepAction {
         return StepAction(description: "background the app") {

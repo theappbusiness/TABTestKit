@@ -10,8 +10,7 @@ import Foundation
 import Biometrics
 #endif
 
-public protocol BiometricsContext {}
-public extension BiometricsContext {
+public extension TABTestCase {
 	
 	func deviceBiometricsAreEnabled() -> StepAction {
         return StepAction(description: "device biometrics are enabled") {
@@ -36,5 +35,4 @@ public extension BiometricsContext {
             Biometrics.unsuccessfulAuthentication()
         }
 	}
-	
 }

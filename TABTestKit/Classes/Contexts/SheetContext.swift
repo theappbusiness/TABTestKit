@@ -7,9 +7,8 @@
 
 import Foundation
 
-public protocol SheetContext {}
-public extension SheetContext {
-	
+public extension TABTestCase {
+
 	func tap(_ actionButtonID: String, in sheet: Sheet) -> StepAction {
         return StepAction(description: "tap on the \(actionButtonID) button in the sheet") {
             sheet.actionButton(withID: actionButtonID).tap()

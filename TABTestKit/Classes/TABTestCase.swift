@@ -14,8 +14,6 @@ import Biometrics
 #endif
 
 /// The default contexts that TABTestCase conforms to, to provide lots of helpful functions to make it highly possible
-/// you don't have to write any extra test functions for your tests.
-public typealias DefaultContexts = InteractionContext & NavigationContext & AppContext & BiometricsContext & AlertContext & SheetContext & KeyboardContext
 
 /// All tests should inherit from this class.
 /// By inheriting from this class, you'll automatically get all the functions available in the contexts this class
@@ -30,7 +28,7 @@ public typealias DefaultContexts = InteractionContext & NavigationContext & AppC
 ///
 /// Finally, TABTestCase will help you by creating attachments when tests failed, with the last known Scenario and Step
 /// which are found in the xcresult bundle created as part of the test run (usually in Derived Data).
-open class TABTestCase: XCTestCase, DefaultContexts {
+open class TABTestCase: XCTestCase {
 
     public struct ScreenshotOption: OptionSet {
         public let rawValue: Int

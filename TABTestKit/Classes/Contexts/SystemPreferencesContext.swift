@@ -7,8 +7,7 @@
 
 import Foundation
 
-public protocol SystemPreferencesContext {}
-public extension SystemPreferencesContext {
+public extension TABTestCase {
 	
 	func resetAllPrivacyPrompts() -> StepAction {
         return StepAction(description: "reset all privacy prompts") {
@@ -30,7 +29,7 @@ public extension SystemPreferencesContext {
         }
 	}
 	
-	func terminateSystemPreferences() -> StepAction{
+	func terminateSystemPreferences() -> StepAction {
         return StepAction(description: "terminate system preferences") {
             SystemPreferences().terminate()
         }

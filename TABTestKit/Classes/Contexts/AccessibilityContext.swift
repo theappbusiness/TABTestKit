@@ -7,8 +7,7 @@
 
 import XCTest
 
-public protocol AccessibilityContext {}
-public extension AccessibilityContext {
+public extension TABTestCase {
 
     func setTextAccessibilitySizeToXXXL() -> StepAction {
         return StepAction(description: "set text accessibility size to XXXL") {

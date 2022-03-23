@@ -7,8 +7,7 @@
 
 import XCTest
 
-public protocol InteractionContext {}
-public extension InteractionContext {
+public extension TABTestCase {
 	
 	func tap(_ element: Tappable & CustomStringConvertible) -> StepAction {
         return StepAction(description: "tap on the \(element.description)") {
